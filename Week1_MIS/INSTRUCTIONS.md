@@ -12,5 +12,5 @@ We will strictly look at Rydberg atoms on a graph $G$ with vertices (physical Ry
 
 With this, we will look at a Rydberg Hamiltonian of the form
 $$
-    \hat{H} = -\sum_{i \in V} \hat{n}_i + \sum_{ i < j } \left( \frac{R_b}{r_{ij}} \right)^6 \hat{n}_i \hat{n}_j,
+H = -\sum_{i \in V} n_i + \sum_{ i < j } \left({ \frac{R_b}{r_{ij}} }\right)^6 n_i n_j
 $$
