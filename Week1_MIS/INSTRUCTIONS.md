@@ -12,4 +12,6 @@ We will strictly look at Rydberg atoms on a graph $G$ with vertices (physical Ry
 
 With this, we will look at a Rydberg Hamiltonian of the form
 $$H = -\sum_{i \in V} n_i + \sum_{ i < j } \left({ \frac{R_b}{r_{ij}} }\right)^6 n_i n_j$$
-where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |1 \rangle \langle 1|_i$ is called an occupation operator, $R_b$ is a parameter called the it blockade radius, and $r_{i,j}$ is the distance between atoms located at vertices 
+where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |1 \rangle \langle 1|_i$ is called an occupation operator, 
+$R_b$ is a parameter called the it blockade radius, 
+and $r_{i,j}$ is the distance between atoms located at vertices 
