@@ -9,17 +9,16 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 **Please edit this markdown file directly with links to your completed tasks and challenges.**
 
 ## Tasks include:
-* Simulating the unit-disk maximum independent set (UD-MIS) problem using classical simulated annealing.
-* Finding a better annealing schedule to arrive at solutions to the problem quicker.
-* Simulating the same problem but using quantum annealing.
-* Comparing the classical and quantum methods.
-* Solving a real-world problem involving cell phone tower placement in Gotham City.
+* Run this [Bloqade script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/2.adiabatic/main.jl) to prepare the Z2 state with 9 sites.
+* What's the maximum number of atoms for which you can prepare the Z2 state with this adiabatic protocol.
+* Repeat with PastaQ (Adiabatic or QAOA)
+* Run this [Bloqade script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl) to find the solution for the MIS problem using the adiabatic approach.
+* What is the maximum number of atoms for which you can define and solve the MIS problem with a random dropout graph?
+* Repeat with PastaQ - compare the expectation values of the (classical) target Hamiltonian between the state found with Bloqade.
 
 ## Further Challenges:
-* Comparing the methods used to solve the UD-MIS problem.
-* Benchmarking other quantum and classical optimization methods to solve your UD-MIS problems.
-* Demonstrating how other problems can be mapped to UD-MIS and solving said problems.
-* Solving the problem with real quantum hardware.
+* Use the [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in the above problems, and discuss performance differences.
+* Choose one of the industrial applications from [this paper](https://arxiv.org/abs/2205.08500) and solve it using your method of choice.
 
 ## Business Application
 For each week, your team is asked to complete a Business Application. Questions you will be asked are:
