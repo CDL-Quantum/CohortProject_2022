@@ -1,19 +1,19 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
 ## Project 1: INSTRUCTIONS
 
-A number of startup companies, including 
-[QuEra](https://www.quera.com), [Pasqal](https://pasqal.io), and 2021 CDL Cohort graudates Bavarya QC, are pursuing a novel architechture for quantum computing based on neutral "Rydberg" atom arrays.
-
+A new generation of programmable neutral atom quantum computer has recently matured enough that the technology has begun to transfer from academic labs to startup companies, including [QuEra](https://www.quera.com), [Pasqal](https://pasqal.io), and 2021 CDL Cohort graudates Bavarya QC. 
+This technology, based on arrays of Rydberg (or highly-excited) atoms manipulated by optical tweezers, is capable of forming strongly interacting quantum systems that can be used for a variety of purposes, including the simulation of quantum matter and materials, and the solution to challenging combinatorial problems.
 
 ### Modelling Rydberg atom arrays
+The foundation of today’s neutral-atom quantum computers is [Rydberg atoms](https://www.nature.com/articles/s41567-019-0733-z). Briefly, Rydberg atoms are highly-excited atoms (e.g. Rubidium) that interact with each other on the scale of a few micrometres. A controlled laser pulse can excite an atom into a quantum state with a large principal quantum number (i.e. a Rydberg state) that is quasi-stable. The binary nature of a Rydberg atom’s ground and excited states is analogous to the state of a qubit. 
 
-Rydberg atoms need to be placed at a physical location.
+Rydberg atoms are held into a physical location by optical tweezers.
 We will strictly look at Rydberg atoms on a graph $G$ with vertices (physical Rydberg atom locations) and edges $V$ and $E$, respectively.
 
-With this, we will look at a Rydberg Hamiltonian of the form
-$$H = -\sum_{i \in V} n_i + \sum_{ i < j } \left({ \frac{R_b}{r_{ij}} }\right)^6 n_i n_j$$
-where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |1 \rangle \langle 1|_i$ is called an occupation operator, $R_b$ is a parameter called the it blockade radius, and the distance between atoms located at vertices $i$ and $j$ is $r$.
+The general Rydberg Hamiltonian has the form
+$$H = - \frac{\Omega}{2} \sum_{i \in V}\sigma_i^x  - \delta \sum_{i \in V} n_i + \sum_{ i < j } V_{ij} n_i n_j$$
+where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |r \rangle \langle r|_i$ is called an occupation operator. The interaction $V_{ij} =R_b/r_{ij}$, $R_b$ is a parameter called the it blockade radius, and the distance between atoms located at vertices $i$ and $j$ is $r$.
 
-The computational basis we will be working in is the occupation basis, where $| 0 \rangle$ is the groundstate, and $| 1 \rangle$ is the excited or Rydberg state.
-The eigenstates of the Rydberg occupation operator are $n_i | 0 \rangle_j = 0$ for all $i$ and $j$, and $n_i | 1 \rangle_j  = \delta_{i,j} |1 \rangle_j$.
-On observing the form of our Hamiltonian, we can see that the first term (sum over $V$) favours all sites being occupied with an excitation, while the interaction term penalizes occupied pairs. 
+The computational basis we will be working in is the occupation basis, where $| g \rangle$ is the groundstate, and $| r \rangle$ is the excited or Rydberg state.
+The eigenstates of the Rydberg occupation operator are $n_i | g \rangle_j = 0$ for all $i$ and $j$, and $n_i | r \rangle_j  = \delta_{i,j} |r \rangle_j$.
+On observing the form of our Hamiltonian, we can see that the first term is off-diagonal, and analogous to a transverse field.  The second term favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
