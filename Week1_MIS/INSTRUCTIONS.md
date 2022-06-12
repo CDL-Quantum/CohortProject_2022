@@ -29,6 +29,38 @@ Below are series of Tasks and optional Challenges for each team to attempt.
 To get us started, we will use the open-source simulation software [Bloqade](https://github.com/QuEraComputing/Bloqade.jl) to prepare an ordered ground states, motivated by recent experimental studies. Our target state will be the $Z_2$ state of a one-dimensional chain of 9 atoms.  In order to prepare this state, follow the Bloqade [tutorial](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Preparation-of-Ordered-States-in-1D):
 generate the pulse/detuning sequence, specify the atomic position, then starting in the ground state, simulate the time evolution of a quantum state under the Schrödinger equation.  Plot the occupation on each site as a function of time.  In addition to the tasks in the tutorial, calculate the expectation value of $\sigma^x_i$ and the entanglement entropy $S_A = - {\rm Tr}(\rho_A \log \rho_A)$ (for any spatial bipartition $A$ of interest).
 
-## Task 2: Larger size arrays
+## Task 2: Larger arrays with tensor networks
 
-What is the largest number of lattice sites that you can simulate with Bloqade?
+What is the largest number of lattice sites that you can simulate with Bloqade? To push your classical simulations further, consider using a tensor-nework based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1)).
+
+Benchmark your tensor network against the resuls from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using Tensor Networks? How does this compare with current experimental capabilities? 
+
+## Task 3:
+
+Maximum Independent Set (MIS) is a combinatorial optimzation problem that is naturally suited to implementation on a Rydberg atom quantum comptuer. Specifially, the Rydberg blockade implies that two atoms cannot be both excited to the Rydberg state $| r \rangle$ if they are close to each other. In MIS, the independent set constraint means that two vertices on a graph cannot be both in the independent set when they are connected by an edge. Thus, one can consider atoms in the Rydberg state as vertices in an independent set. Read more about the MIS problem [here](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/4.MIS/main/#mis-tutorial).
+
+Following the Bloqade tutorial [script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl), solve the $4 \times 4$ diagonal-connected unit-disk grid graphs (DUGG) problems using the adiabatic approach. Then, attempt to solve for larger square DUGGs using your tensor network approach.
+
+## Task 4:
+
+Finally, turn your simulations to solve a ground state encoding problem for an industrial application.  You may come up with your own, or look at one of the examples given in this recent [preprint](https://arxiv.org/abs/2205.08500): i.e. Portfolio optimization (example VI), Network immunization (example VII), or Task scheduling (example XII). Set up a problem, and solve it on as large a graph as possible using adiabatic state preperation protocols. Link this to your [Business Application](https://github.com/CDL-Quantum/CohortProject_2022/blob/main/Week1_MIS/Business_Application.md).
+
+## Challenge 1:
+In addition to adiabatic protocols, other state perparation protocols are currently being explored on quantum computing hardware.  A leading variational protocol is the Quantum Approximate Optimization Algorithm (QAOA), in which time evolution occurs via rapily switching between a cost and mixer Hamiltonian.  For your problems above (particuarly your Business Application), attempt a QAOA solution and compare your results to the adiabatic approach.
+
+## Challenge 2:
+
+In order to reduce the size of the state space required to solve the Rydberg problem, one can significantly reduce the size of the Hilbert space by eliminating states that violate the blockade constraint. Implement this [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in your above problems, and discuss performance increases (particulary for your Business Application).
+
+## Challenge 3:
+
+As laid out in the [preprint](https://arxiv.org/abs/2205.08500), there are other applications of Rydberg atom arrays to industry problems, that may require quantum machine learning, quantum sampling algorithms, or other techniques. Explore one of these further applications using your numerical strategies above.
+
+## Challenge 4:
+
+Rydberg atom quantum computers are not the only hardware availabel to solve MIS and related problems. By employing a suitable mapping (e.g. to a QUBO Hamiltonian), solve any version of your problems using any available quantum hardware, e.g. D-Wave or IBM. Compare and contrast the quantum solutions to the classical simulations that you have employed above.
+
+
+
+
+
