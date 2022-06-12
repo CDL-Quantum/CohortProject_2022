@@ -4,7 +4,7 @@
 A new generation of programmable neutral atom quantum computer has recently matured enough that the technology has begun to transfer from academic labs to startup companies, including [QuEra](https://www.quera.com), [Pasqal](https://pasqal.io), and 2021 CDL Cohort graudates Bavarya QC. 
 This technology, based on arrays of Rydberg (or highly-excited) atoms manipulated by optical tweezers, is capable of forming strongly interacting quantum systems that can be used for a variety of purposes, including the simulation of quantum matter and materials, and the solution to challenging combinatorial problems.
 
-In this project, you will explore the ability of Rydberg atoms to prepare a quantum target state.  After the introductory material below, you will be given a number of increasingly difficult *tasks* and *challenges* to complete.
+In this project, you will explore the ability of Rydberg atoms to prepare a variety of quantum target states.  After the introductory material below, you will be given a number of increasingly difficult *tasks*, as well as optional *challenges* to complete.
 
 ## Modelling Rydberg atom arrays
 The foundation of today’s neutral-atom quantum computers is [Rydberg atoms](https://www.nature.com/articles/s41567-019-0733-z). Briefly, Rydberg atoms are highly-excited atoms (e.g. Rubidium or Strontium) that interact with each other on the scale of a few micrometres. A controlled laser pulse can excite an atom into a quantum state with a large principal quantum number (i.e. a Rydberg state) that is quasi-stable. The binary nature of a Rydberg atom’s ground and excited states defines a two-level system, and such atomic arrays can be used to build qubit-based quantum comptuters.
@@ -27,8 +27,8 @@ Below are series of Tasks and optional Challenges for each team to attempt.
 ## Task 1: Adiabatic state preparation with Bloqade
 
 To get us started, we will use the open-source simulation software [Bloqade](https://github.com/QuEraComputing/Bloqade.jl) to prepare an ordered ground states, motivated by recent experimental studies. Our target state will be the $Z_2$ state of a one-dimensional chain of 9 atoms.  In order to prepare this state, follow the Bloqade [tutorial](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Preparation-of-Ordered-States-in-1D):
-generate the pulse/detuning sequence, specify the atomic position, then starting in the ground state, simulate the time evolution of a quantum state under the Schrödinger equation.  Plot the occupation on each site as a function of time.
+generate the pulse/detuning sequence, specify the atomic position, then starting in the ground state, simulate the time evolution of a quantum state under the Schrödinger equation.  Plot the occupation on each site as a function of time.  In addition to the tasks in the tutorial, calculate the expectation value of $\sigma^x_i$ and the entanglement entropy $S_A = - {\rm Tr}(\rho_A \log \rho_A)$ (for any spatial bipartition $A$ of interest).
 
-## Task 2: Additional observables
+## Task 2: Larger size arrays
 
-Calculate the expectation value of $\sigma^x_i$ and the entanglement entropy...
+What is the largest number of lattice sites that you can simulate with Bloqade?
