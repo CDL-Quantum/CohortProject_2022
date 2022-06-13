@@ -7,33 +7,34 @@ This technology, based on arrays of Rydberg (or highly-excited) atoms manipulate
 In this project, you will explore the ability of Rydberg atoms to prepare a variety of quantum target states.  After the introductory material below, you will be given a number of increasingly difficult *tasks*, as well as optional *challenges* to complete.
 
 ## Modelling Rydberg atom arrays
-The foundation of today’s neutral-atom quantum computers is [Rydberg atoms](https://www.nature.com/articles/s41567-019-0733-z). Briefly, Rydberg atoms are highly-excited atoms (e.g. Rubidium or Strontium) that interact with each other on the scale of a few micrometres. A controlled laser pulse can excite an atom into a quantum state with a large principal quantum number (i.e. a Rydberg state) that is quasi-stable. The binary nature of a Rydberg atom’s ground and excited states defines a two-level system, and such atomic arrays can be used to build qubit-based quantum comptuters.
+The foundation of today’s neutral-atom quantum computers is [Rydberg atoms](https://www.nature.com/articles/s41567-019-0733-z). Briefly, Rydberg atoms are highly-excited atoms (e.g. Rubidium or Strontium) that interact with each other on the scale of a few micrometres. A controlled laser pulse can excite an atom into a quantum state with a large principal quantum number (i.e. a Rydberg state) that is quasi-stable. The binary nature of a Rydberg atom’s ground state $|g \rangle$ and excited state $|r \rangle$ defines a two-level system, and such atomic arrays can be used to build qubit-based quantum comptuters.
 
-Rydberg atoms are held into a physical location by optical tweezers.
-We will strictly look at Rydberg atoms on a graph $G$ with vertices (physical Rydberg atom locations) and edges $V$ and $E$, respectively.
+Rydberg atoms are held into a physical location by optical tweezers. This allows a high degree of tunability of the inter-atomic interactions.
+We will consider Rydberg atoms on a interaction graph $G$ with vertices (physical Rydberg atom locations) and edges $V$ and $E$, respectively.
 
 The general Rydberg Hamiltonian has the form
 $$H =  \frac{\Omega}{2} \sum_{i \in V}\sigma_i^x  - \delta \sum_{i \in V} n_i + \sum_{ i < j } V_{ij} n_i n_j$$
-where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |r \rangle \langle r|_i$ is called an occupation operator. 
+where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |r \rangle \langle r|_i$ is called an occupation operator.  
 
 The interaction $V_{ij} =R_b/r_{ij}$, $R_b$ is a parameter called the it blockade radius, and the distance between atoms located at vertices $i$ and $j$ is $r$.
 
-The computational basis we will be working in is the occupation basis, where $| g \rangle$ is the groundstate, and $| r \rangle$ is the excited or Rydberg state.
+The computational basis we will be working in is the occupation basis, $| g \rangle$ and $| r \rangle$.
 The eigenstates of the Rydberg occupation operator are $n_i | g \rangle_j = 0$ for all $i$ and $j$, and $n_i | r \rangle_j  = \delta_{i,j} |r \rangle_j$.
 On observing the form of our Hamiltonian, we can see that the first term is off-diagonal, and analogous to a transverse field.  The second term favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
 
-The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio $\delta/\Omega$ and the interaction $V_{ij}$ (which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius).  The computer can easiliy be prepared in its groundstate, where every single-atom state is $|0\rangle$.  Then, final (target) states are prepared by slowly tuning $\delta/\Omega$ using the adiabatic state preperation protocol.
+The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio $\delta/\Omega$ and the interaction $V_{ij}$ (which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius).  The computer can easiliy be prepared in its groundstate, where every single-atom state is $|0\rangle$.  Then, final (target) states are prepared by slowly tuning $\delta(t)/\Omega(t)$ as a function of time using the adiabatic state preperation protocol.
 
-Below are series of Tasks and optional Challenges for each team to attempt.
+Let's explore state preparation protocols on this neutral atom quantum computer. Below are series of Tasks and optional Challenges for each team to attempt.
 
 ## Task 1: Adiabatic state preparation with Bloqade
 
-To get us started, we will use the open-source simulation software [Bloqade](https://github.com/QuEraComputing/Bloqade.jl) to prepare an ordered ground states, motivated by recent experimental studies. Our target state will be the $Z_2$ state of a one-dimensional chain of 9 atoms.  In order to prepare this state, follow the Bloqade [tutorial](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Preparation-of-Ordered-States-in-1D):
-generate the pulse/detuning sequence, specify the atomic position, then starting in the ground state, simulate the time evolution of a quantum state under the Schrödinger equation.  Plot the occupation on each site as a function of time.  In addition to the tasks in the tutorial, calculate the expectation value of $\sigma^x_i$ and the entanglement entropy $S_A = - {\rm Tr}(\rho_A \log \rho_A)$ (for any spatial bipartition $A$ of interest).
+Our first task will be to prepare an [experimentally motivated](https://www.nature.com/articles/nature24622) ordered state consisting of alternating ground and Rydberg states in a one-dimensional chain, the so-called $Z_2$ state: $$ |\psi \rangle = | g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r  \cdots \rangle.$$
+To get us started, we will use the open-source simulation software [Bloqade](https://github.com/QuEraComputing/Bloqade.jl) to prepare the $Z_2$ state of a one-dimensional chain of 9 atoms with open boundary conditions.  In order to prepare this state, follow the Bloqade [tutorial](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Preparation-of-Ordered-States-in-1D):
+generate the pulse/detuning sequence, specify the atomic position, then starting in the ground state, simulate the time evolution of a quantum state under the Schrödinger equation.  Plot the occupation on each site as a function of time.  In addition to the tasks in the tutorial, calculate the expectation value of $\sigma^x_i$ and the entanglement entropy $S_A = - {\rm Tr}(\rho_A \log \rho_A)$, for any spatial bipartition $A$ of interest.
 
 ## Task 2: Larger arrays with tensor networks
 
-What is the largest number of lattice sites that you can simulate with Bloqade? To push your classical simulations further, consider using a tensor-nework based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1)).
+What is the largest number of lattice sites that you can simulate with Bloqade? To push your classical simulations further, consider using a tensor-nework based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1).
 
 Benchmark your tensor network against the resuls from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using Tensor Networks? How does this compare with current experimental capabilities? 
 
@@ -41,18 +42,20 @@ Benchmark your tensor network against the resuls from Bloqade, then repeat for l
 
 Maximum Independent Set (MIS) is a combinatorial optimzation problem that is naturally suited to implementation on a Rydberg atom quantum comptuer. Specifially, the Rydberg blockade implies that two atoms cannot be both excited to the Rydberg state $| r \rangle$ if they are close to each other. In MIS, the independent set constraint means that two vertices on a graph cannot be both in the independent set when they are connected by an edge. Thus, one can consider atoms in the Rydberg state as vertices in an independent set. Read more about the MIS problem [here](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/4.MIS/main/#mis-tutorial).
 
-Following the Bloqade tutorial [script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl), solve the $4 \times 4$ diagonal-connected unit-disk grid graphs (DUGG) problems using the adiabatic approach. Then, attempt to solve for larger square DUGGs using your tensor network approach.
+Following the Bloqade tutorial [script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl), solve the $4 \times 4$ diagonal-connected unit-disk grid graphs (DUGG) problems using the adiabatic approach. How large of an array can Bloqade solve?  Attempt to solve for larger square DUGGs using your tensor network approach. 
 
 ## Task 4:
 
 Finally, turn your simulations to solve a ground state encoding problem for an industrial application.  You may come up with your own, or look at one of the examples given in this recent [preprint](https://arxiv.org/abs/2205.08500): i.e. Portfolio optimization (example VI), Network immunization (example VII), or Task scheduling (example XII). Set up a problem, and solve it on as large a graph as possible using adiabatic state preperation protocols. Link this to your [Business Application](https://github.com/CDL-Quantum/CohortProject_2022/blob/main/Week1_MIS/Business_Application.md).
+
+### Once you are comfortable with the above tasks, turn to the below optional **Challenges** for the time remaining in your project. 
 
 ## Challenge 1:
 In addition to adiabatic protocols, other state perparation protocols are currently being explored on quantum computing hardware.  A leading variational protocol is the Quantum Approximate Optimization Algorithm (QAOA), in which time evolution occurs via rapily switching between a cost and mixer Hamiltonian.  For your problems above (particuarly your Business Application), attempt a QAOA solution and compare your results to the adiabatic approach.
 
 ## Challenge 2:
 
-In order to reduce the size of the state space required to solve the Rydberg problem, one can significantly reduce the size of the Hilbert space by eliminating states that violate the blockade constraint. Implement this [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in your above problems, and discuss performance increases (particulary for your Business Application).
+In order to significantly reduce the size of the state space required to solve the Rydberg problem, one can eliminate states that violate the blockade constraint. Implement this [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in your above problems, and discuss performance increases (particulary for your Business Application).
 
 ## Challenge 3:
 
