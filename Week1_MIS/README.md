@@ -10,7 +10,7 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 
 ## Tasks include:
 * Run this [Bloqade script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/2.adiabatic/main.jl) to prepare the Z2 state with 9 sites.  
-* What's the maximum number of atoms for which you can prepare the Z2 state with this adiabatic protocol.  Repeat the above using a tensor network strategy.
+* What's the maximum number of atoms for which you can prepare the Z2 state with this adiabatic protocol?  Repeat the above using a tensor network strategy.
 * Run this [Bloqade script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl) to find the solution for the MIS problem using the adiabatic approach.  Repeat with a tensor network approach.
 * Turn your numerical tools onto a problem with an industrial application, e.g. from [this paper](https://arxiv.org/abs/2205.08500).
 
