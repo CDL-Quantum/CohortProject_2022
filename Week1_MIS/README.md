@@ -1,5 +1,5 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
-## Project 1: MIS Optimization wth neutral atom arrays
+## Project 1: State preparation and MIS optimization wth neutral atom arrays
 
 This project will guide you through a novel quantum computing architechture pursued by a number of quantum startups, which trap neutral "Rydberg" atoms in an arbitrary array with optical tweezers.
 
