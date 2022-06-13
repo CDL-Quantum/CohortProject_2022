@@ -30,32 +30,32 @@ Let's explore state preparation protocols on this neutral atom quantum computer.
 
 Our first task will be to prepare an [experimentally motivated](https://www.nature.com/articles/nature24622) ordered state consisting of alternating ground and Rydberg states in a one-dimensional chain, the so-called $Z_2$ state: $$ |\psi \rangle = | g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r  \cdots \rangle.$$
 To get us started, we will use the open-source simulation software [Bloqade](https://github.com/QuEraComputing/Bloqade.jl) to prepare the $Z_2$ state of a one-dimensional chain of 9 atoms with open boundary conditions.  In order to prepare this state, follow the Bloqade [tutorial](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Preparation-of-Ordered-States-in-1D):
-generate the pulse/detuning sequence, specify the atomic position, then starting in the ground state, simulate the time evolution of a quantum state under the Schrödinger equation.  Plot the occupation on each site as a function of time.  In addition to the tasks in the tutorial, calculate the expectation value of $\sigma^x_i$ and the entanglement entropy $S_A = - {\rm Tr}(\rho_A \log \rho_A)$, for any spatial bipartition $A$ of interest.
+generate the pulse/detuning sequence, specify the atomic position, then starting in the ground state, simulate the time evolution of a quantum state under the Schrödinger equation.  Plot the occupation on each site as a function of time.  In addition to the tasks in the tutorial, calculate the expectation value of $\sigma^x_i$ and the gap $\Delta E$ between the groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol?
 
 ## Task 2: Larger arrays with tensor networks
 
-What is the largest number of lattice sites that you can simulate with Bloqade? To push your classical simulations further, consider using a tensor-nework based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1).
+What is the largest number of lattice sites that you can simulate with Bloqade? To push your classical simulations further, consider using a tensor-network based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1).
 
-Benchmark your tensor network against the resuls from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using Tensor Networks? How does this compare with current experimental capabilities? 
+Benchmark your tensor network against the results from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using Tensor Networks? How does this compare with current experimental capabilities? 
 
 ## Task 3:
 
-Maximum Independent Set (MIS) is a combinatorial optimzation problem that is naturally suited to implementation on a Rydberg atom quantum comptuer. Specifially, the Rydberg blockade implies that two atoms cannot be both excited to the Rydberg state $| r \rangle$ if they are close to each other. In MIS, the independent set constraint means that two vertices on a graph cannot be both in the independent set when they are connected by an edge. Thus, one can consider atoms in the Rydberg state as vertices in an independent set. Read more about the MIS problem [here](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/4.MIS/main/#mis-tutorial).
+Maximum Independent Set (MIS) is a combinatorial optimization problem that is naturally suited to implementation on a Rydberg atom quantum computer. Specifically, the Rydberg blockade implies that two atoms cannot be both excited to the Rydberg state $| r \rangle$ if they are close to each other. In MIS, the independent set constraint means that two vertices on a graph cannot be both in the independent set when they are connected by an edge. Thus, one can consider atoms in the Rydberg state as vertices in an independent set. Read more about the MIS problem [here](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/4.MIS/main/#mis-tutorial).
 
 Following the Bloqade tutorial [script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl), solve the $4 \times 4$ diagonal-connected unit-disk grid graphs (DUGG) problems using the adiabatic approach. How large of an array can Bloqade solve?  Attempt to solve for larger square DUGGs using your tensor network approach. 
 
 ## Task 4:
 
-Finally, turn your simulations to solve a ground state encoding problem for an industrial application.  You may come up with your own, or look at one of the examples given in this recent [preprint](https://arxiv.org/abs/2205.08500): i.e. Portfolio optimization (example VI), Network immunization (example VII), or Task scheduling (example XII). Set up a problem, and solve it on as large a graph as possible using adiabatic state preperation protocols. Link this to your [Business Application](https://github.com/CDL-Quantum/CohortProject_2022/blob/main/Week1_MIS/Business_Application.md).
+Finally, turn your simulations to solve a ground state encoding problem for an industrial application.  You may come up with your own, or look at one of the examples given in this recent [preprint](https://arxiv.org/abs/2205.08500): i.e. Portfolio optimization (example VI), Network immunization (example VII), or Task scheduling (example XII). Set up a problem, and solve it on as large a graph as possible using adiabatic state preparation protocols. Link this to your [Business Application](https://github.com/CDL-Quantum/CohortProject_2022/blob/main/Week1_MIS/Business_Application.md).
 
 ### Once you are comfortable with the above tasks, turn to the below optional **Challenges** for the time remaining in your project. 
 
 ## Challenge 1:
-In addition to adiabatic protocols, other state perparation protocols are currently being explored on quantum computing hardware.  A leading variational protocol is the Quantum Approximate Optimization Algorithm (QAOA), in which time evolution occurs via rapily switching between a cost and mixer Hamiltonian.  For your problems above (particuarly your Business Application), attempt a QAOA solution and compare your results to the adiabatic approach.
+In addition to adiabatic protocols, other state preparation protocols are currently being explored on quantum computing hardware.  A leading variational protocol is the Quantum Approximate Optimization Algorithm (QAOA), in which time evolution occurs via rapidly switching between a cost and mixer Hamiltonian.  For your problems above (particularly your Business Application), attempt a QAOA solution and compare your results to the adiabatic approach.
 
 ## Challenge 2:
 
-In order to significantly reduce the size of the state space required to solve the Rydberg problem, one can eliminate states that violate the blockade constraint. Implement this [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in your above problems, and discuss performance increases (particulary for your Business Application).
+In order to significantly reduce the size of the state space required to solve the Rydberg problem, one can eliminate states that violate the blockade constraint. Implement this [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in your above problems, and discuss performance increases (particularly for your Business Application).
 
 ## Challenge 3:
 
@@ -63,7 +63,7 @@ As laid out in the [preprint](https://arxiv.org/abs/2205.08500), there are other
 
 ## Challenge 4:
 
-Rydberg atom quantum computers are not the only hardware availabel to solve MIS and related problems. By employing a suitable mapping (e.g. to a QUBO Hamiltonian), solve any version of your problems using any available quantum hardware, e.g. D-Wave or IBM. Compare and contrast the quantum solutions to the classical simulations that you have employed above.
+Rydberg atom quantum computers are not the only hardware available to solve MIS and related problems. By employing a suitable mapping (e.g. to a QUBO Hamiltonian), solve any version of your problems using any available quantum hardware, e.g. D-Wave or IBM. Compare and contrast the quantum solutions to the classical simulations that you have employed above.
 
 
 
