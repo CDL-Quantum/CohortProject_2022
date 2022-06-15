@@ -17,7 +17,7 @@ The general Rydberg Hamiltonian has the form
 $$H =  \frac{\Omega}{2} \sum_{i \in V}\sigma_i^x  - \delta \sum_{i \in V} n_i + \sum_{ i < j } V_{ij} n_i n_j$$
 where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |r \rangle \langle r|_i$ is called an occupation operator.  
 
-The interaction $V_{ij} =R_b/r_{ij}$, $R_b$ is a parameter called the it [blockade](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/1.blockade/main/#blockade) radius, and the distance between atoms located at vertices $i$ and $j$ is $r$.
+The interaction $V_{ij} =R_b/r_{ij}$, $R_b$ is a parameter called the [blockade](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/1.blockade/main/#blockade) radius, and the distance between atoms located at vertices $i$ and $j$ is $r$.
 The computational basis we will be working in is the occupation basis, $| g \rangle $ and $| r \rangle $.
 The eigenstates of the Rydberg occupation operator are $n_i | g \rangle_j = 0$ for all $i$ and $j$, and $n_i | r \rangle_j  = \delta_{i,j} |r \rangle_j$.
 On observing the form of our Hamiltonian, we can see that the first term (Rabi frequency) is off-diagonal, and analogous to a transverse field: $\sigma^x = |g \rangle \langle r|$.  The second term (detuning) favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
