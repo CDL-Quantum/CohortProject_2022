@@ -22,7 +22,7 @@ The computational basis we will be working in is the occupation basis, $| g \ran
 The eigenstates of the Rydberg occupation operator are $n_i | g \rangle_j = 0$ for all $i$ and $j$, and $n_i | r \rangle_j  = \delta_{i,j} |r \rangle_j$.
 On observing the form of our Hamiltonian, we can see that the first term is off-diagonal, and analogous to a transverse field: $\sigma^x = |g \rangle \langle r|$.  The second term favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
 
-The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio of $\delta$ to $\Omega$ and the interaction $V_{ij}$ (which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius).  
+The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio of $ \delta $ to $ \Omega $ and the interaction $V_{ij}$, which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius.  
 
 The computer can easiliy be prepared in its groundstate, where every single-atom state is $| 0 \rangle $.  
 
