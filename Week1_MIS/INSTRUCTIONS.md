@@ -23,20 +23,24 @@ The computational basis we will be working in is the occupation basis, $| g \ran
 The eigenstates of the Rydberg occupation operator are $n_i | g \rangle_j = 0$ for all $i$ and $j$, and $n_i | r \rangle_j  = \delta_{i,j} |r \rangle_j$.
 On observing the form of our Hamiltonian, we can see that the first term is off-diagonal, and analogous to a transverse field: $\sigma^x = |g \rangle \langle r|$.  The second term favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
 
-The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio $ \delta / \Omega $ and the interaction $V_{ij}$ (which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius).  The computer can easiliy be prepared in its groundstate, where every single-atom state is $| 0 \rangle $.  Then, final (target) states are prepared by slowly tuning $\delta(t)/\Omega(t)$ as a function of time using the adiabatic state preperation protocol.
+The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio of $\delta$ to $\Omega$ and the interaction $V_{ij}$ (which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius).  The computer can easiliy be prepared in its groundstate, where every single-atom state is $| 0 \rangle $.  Then, final (target) states are prepared by slowly tuning $\delta(t)/\Omega(t)$ as a function of time using the adiabatic state preperation protocol.
 
 Let's explore state preparation protocols on this neutral atom quantum computer. Below are series of Tasks and optional Challenges for each team to attempt.
 
 ## Task 1: Adiabatic state preparation with Bloqade
 
-Our first task will be to prepare an [experimentally motivated](https://www.nature.com/articles/nature24622) ordered state consisting of alternating ground and Rydberg states in a one-dimensional chain, the so-called $Z_2$ state: $$ |\psi \rangle = | g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r  \cdots \rangle.$$
+Our first task will be to prepare an [experimentally motivated](https://www.nature.com/articles/nature24622) ordered state consisting of alternating ground and Rydberg states in a one-dimensional (1D) chain, the so-called $Z_2$ state: $$ |\psi \rangle = | g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r  \cdots \rangle.$$
 To get us started, we will use the open-source simulation software [Bloqade](https://github.com/QuEraComputing/Bloqade.jl) to prepare the $Z_2$ state of a one-dimensional chain of 9 atoms with open boundary conditions.  In order to prepare this state, follow the Bloqade [tutorial](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Preparation-of-Ordered-States-in-1D):
 generate the pulse/detuning sequence, specify the atomic position, then starting in the ground state, simulate the time evolution of a quantum state under the Schrödinger equation.  
-Plot the occupation on each site as a function of time.  In addition to the tasks in the tutorial, calculate the expectation value of $ \sigma^x_i $ and the gap $ \Delta E $ between the groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol?
+Plot the occupation on each site as a function of time.  
+
+In addition to the tasks in the tutorial, calculate the expectation value of $\sigma^x_i$ and the gap $\Delta E$ between the groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol? Do you know how it scales with increasing array size?
+
+What is the largest 1D array that you can simulate with exact time evolution in Bloqade? In order to push your simulations to larger sizes using an approximate Hamiltonian, consider the "blockade subspace" in Challenge 1 below.
 
 ## Task 2: Larger arrays with tensor networks
 
-What is the largest number of lattice sites that you can simulate with Bloqade? To push your classical simulations further, consider using a tensor-network based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1).
+To push your classical simulations further, consider using a tensor-network based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1).
 
 Benchmark your tensor network against the results from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using Tensor Networks? How does this compare with current experimental capabilities? 
 
@@ -53,11 +57,10 @@ Finally, turn your simulations to solve a ground state encoding problem for an i
 ### Once you are comfortable with the above tasks, turn to the below optional **Challenges** for the time remaining in your project. 
 
 ## Challenge 1:
-In addition to adiabatic protocols, other state preparation protocols are currently being explored on quantum computing hardware.  A leading variational protocol is the Quantum Approximate Optimization Algorithm (QAOA), in which time evolution occurs via rapidly switching between a cost and mixer Hamiltonian.  For your problems above (particularly your Business Application), attempt a QAOA solution and compare your results to the adiabatic approach.
+In order to significantly reduce the size of the state space required to solve the Rydberg problem, one can eliminate states that violate the blockade constraint. Implement this [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in your above problems, and discuss performance increases (particularly for your Business Application).
 
 ## Challenge 2:
-
-In order to significantly reduce the size of the state space required to solve the Rydberg problem, one can eliminate states that violate the blockade constraint. Implement this [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in your above problems, and discuss performance increases (particularly for your Business Application).
+In addition to adiabatic protocols, other state preparation protocols are currently being explored on quantum computing hardware.  A leading variational protocol is the Quantum Approximate Optimization Algorithm (QAOA), in which time evolution occurs via rapidly switching between a cost and mixer Hamiltonian.  For your problems above (particularly your Business Application), attempt a QAOA solution and compare your results to the adiabatic approach.
 
 ## Challenge 3:
 
