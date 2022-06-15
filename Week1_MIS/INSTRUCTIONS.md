@@ -23,8 +23,7 @@ The computational basis we will be working in is the occupation basis, $| g \ran
 The eigenstates of the Rydberg occupation operator are $n_i | g \rangle_j = 0$ for all $i$ and $j$, and $n_i | r \rangle_j  = \delta_{i,j} |r \rangle_j$.
 On observing the form of our Hamiltonian, we can see that the first term is off-diagonal, and analogous to a transverse field: $\sigma^x = |g \rangle \langle r|$.  The second term favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
 
-The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio $\delta/\Omega$ and the interaction $V_{ij}$ (which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius).  The computer can easiliy be prepared in its groundstate, where every single-atom state is $| 0 \rangle $.  
-Then, final (target) states are prepared by slowly tuning $\delta(t)/\Omega(t)$ as a function of time using the adiabatic state preperation protocol.
+The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio $ \delta / \Omega $ and the interaction $V_{ij}$ (which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius).  The computer can easiliy be prepared in its groundstate, where every single-atom state is $| 0 \rangle $.  Then, final (target) states are prepared by slowly tuning $\delta(t)/\Omega(t)$ as a function of time using the adiabatic state preperation protocol.
 
 Let's explore state preparation protocols on this neutral atom quantum computer. Below are series of Tasks and optional Challenges for each team to attempt.
 
@@ -33,7 +32,7 @@ Let's explore state preparation protocols on this neutral atom quantum computer.
 Our first task will be to prepare an [experimentally motivated](https://www.nature.com/articles/nature24622) ordered state consisting of alternating ground and Rydberg states in a one-dimensional chain, the so-called $Z_2$ state: $$ |\psi \rangle = | g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r  \cdots \rangle.$$
 To get us started, we will use the open-source simulation software [Bloqade](https://github.com/QuEraComputing/Bloqade.jl) to prepare the $Z_2$ state of a one-dimensional chain of 9 atoms with open boundary conditions.  In order to prepare this state, follow the Bloqade [tutorial](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Preparation-of-Ordered-States-in-1D):
 generate the pulse/detuning sequence, specify the atomic position, then starting in the ground state, simulate the time evolution of a quantum state under the Schrödinger equation.  
-Plot the occupation on each site as a function of time.  In addition to the tasks in the tutorial, calculate the expectation value of $\sigma^x_i$ and the gap $\Delta E$ between the groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol?
+Plot the occupation on each site as a function of time.  In addition to the tasks in the tutorial, calculate the expectation value of $ \sigma^x_i $ and the gap $ \Delta E $ between the groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol?
 
 ## Task 2: Larger arrays with tensor networks
 
