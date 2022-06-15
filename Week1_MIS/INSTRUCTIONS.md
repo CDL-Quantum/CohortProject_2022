@@ -18,10 +18,10 @@ $$H =  \frac{\Omega}{2} \sum_{i \in V}\sigma_i^x  - \delta \sum_{i \in V} n_i + 
 where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |r \rangle \langle r|_i$ is called an occupation operator.  
 
 The interaction $V_{ij} =R_b/r_{ij}$, $R_b$ is a parameter called the it blockade radius, and the distance between atoms located at vertices $i$ and $j$ is $r$.
-
 The computational basis we will be working in is the occupation basis, $| g \rangle $ and $| r \rangle $.
 The eigenstates of the Rydberg occupation operator are $n_i | g \rangle_j = 0$ for all $i$ and $j$, and $n_i | r \rangle_j  = \delta_{i,j} |r \rangle_j$.
-On observing the form of our Hamiltonian, we can see that the first term is off-diagonal, and analogous to a transverse field: $\sigma^x = |g \rangle \langle r|$.  The second term favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
+On observing the form of our Hamiltonian, we can see that the first term is off-diagonal, and analogous to a transverse field: $\sigma^x = |g \rangle \langle r|$.  
+The second term favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
 
 The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio of $\delta$ to $\Omega$ and the interaction $V_{ij}$ (which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius).  The computer can easiliy be prepared in its groundstate, where every single-atom state is $| 0 \rangle $.  Then, final (target) states are prepared by slowly tuning $\delta(t)/\Omega(t)$ as a function of time using the adiabatic state preperation protocol.
 
