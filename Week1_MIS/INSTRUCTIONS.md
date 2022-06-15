@@ -37,7 +37,7 @@ To get us started, we will use the open-source simulation software [Bloqade](htt
 generate the pulse/detuning sequence, specify the atomic position, then starting in the ground state, simulate the time evolution of a quantum state under the Schrödinger equation.  
 Plot the occupation on each site as a function of time.  
 
-In addition to the tasks in the tutorial, calculate the expectation value of $\langle \sigma^x_i \rangle$ and the gap $\Delta E$ between the groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol? Do you know how it scales with increasing array size?
+In addition to the tasks in the tutorial, calculate the expectation value of $\langle \sigma^x_i \rangle$ and the gap $Delta E = E_1 - E_0$ between the groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol? Do you know how it scales with increasing array size?
 
 What is the largest 1D array that you can simulate with exact time evolution in Bloqade? In order to push your simulations to larger sizes using an approximate Hamiltonian, consider the "blockade subspace" in Challenge 1 below.
 
