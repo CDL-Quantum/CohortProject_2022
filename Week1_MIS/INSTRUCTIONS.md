@@ -17,7 +17,7 @@ The general Rydberg Hamiltonian has the form
 $$H =  \frac{\Omega}{2} \sum_{i \in V}\sigma_i^x  - \delta \sum_{i \in V} n_i + \sum_{ i < j } V_{ij} n_i n_j$$
 where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |r \rangle \langle r|_i$ is called an occupation operator.  
 
-The interaction $V_{ij} =R_b/r_{ij}$, $R_b$ is a parameter called the it blockade radius, and the distance between atoms located at vertices $i$ and $j$ is $r$.
+The interaction $V_{ij} =R_b/r_{ij}$, $R_b$ is a parameter called the it [blockade](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/1.blockade/main/#blockade) radius, and the distance between atoms located at vertices $i$ and $j$ is $r$.
 The computational basis we will be working in is the occupation basis, $| g \rangle $ and $| r \rangle $.
 The eigenstates of the Rydberg occupation operator are $n_i | g \rangle_j = 0$ for all $i$ and $j$, and $n_i | r \rangle_j  = \delta_{i,j} |r \rangle_j$.
 On observing the form of our Hamiltonian, we can see that the first term (Rabi frequency) is off-diagonal, and analogous to a transverse field: $\sigma^x = |g \rangle \langle r|$.  The second term (detuning) favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
@@ -45,7 +45,7 @@ What is the largest 1D array that you can simulate with exact time evolution in 
 
 To push your classical simulations further, consider using a tensor-network based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1).
 
-Benchmark your tensor network against the results from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using Tensor Networks? How does this compare with current experimental capabilities? 
+Benchmark your tensor network against the results from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using tensor networks? How does this compare with current experimental capabilities?  If tensor networks are state-of-the-art, what can you say about *quantum advantage* in Rydberg devices?
 
 ## Task 3:
 
