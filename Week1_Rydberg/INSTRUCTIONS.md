@@ -11,9 +11,7 @@ The foundation of today’s neutral-atom quantum computers is [Rydberg atoms](ht
 The binary nature of a Rydberg atom’s ground state $|g \rangle $ and excited state $|r \rangle $ defines a two-level system, and such atomic states can be used to build qubit-based quantum comptuters.
 
 Rydberg atoms are held into a physical location in the array by optical tweezers. This allows a high degree of tunability of the inter-atomic interactions.
-We will consider Rydberg atom arrays on a interaction graph $G$ with vertices (physical Rydberg atom locations) and edges $V$ and $E$, respectively.
-
-The general Rydberg Hamiltonian has the form
+We will consider Rydberg atom arrays on a interaction graph, where the Hamiltonian has the general form
 $$H =  \frac{\Omega}{2} \sum_{i \in V}\sigma_i^x  - \delta \sum_{i \in V} n_i + \sum_{ i < j } V_{ij} n_i n_j$$
 where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |r \rangle \langle r|_i$ is called an occupation operator.  
 
