@@ -9,16 +9,16 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 **Please edit this markdown file directly with links to your completed tasks and challenges.**
 
 ## Tasks include:
-* Run this [Bloqade script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/2.adiabatic/main.jl) to prepare the Z2 state with 9 sites.  
-* What's the maximum number of atoms for which you can prepare the Z2 state with this adiabatic protocol?  Repeat the above using a tensor network strategy.
-* Run this [Bloqade script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl) to find the solution for the MIS problem using the adiabatic approach.  Repeat with a tensor network approach.
+* Simulate the preparation of a quantum state in a 1D Rydberg atom array of 9 sites.  
+* Explore the maximum number of atoms for which you can simulate the state quantum preparation procedure.  Attempt a tensor network strategy.
+* Find the solution for a Maximum Independent Set (MIS) problem using the adiabatic approach.
 * Turn your numerical tools onto a problem with an industrial application, e.g. from [this paper](https://arxiv.org/abs/2205.08500).
 
 After you have completed your tasks, consider the optional Challenges below!
 
 ## Further Challenges:
-* Repeat the above using the Quantum Approximate Optimization Algorithm (QAOA). Compare and contrast results.
-* Use the [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in the above problems, and discuss performance differences.
+* Use the *blockade approximation* in the above problems, and discuss performance differences.
+* Attempt other state preparation protocols, such as the Quantum Approximate Optimization Algorithm (QAOA).
 * Explore additional business applications beyond the groundstate preparation protocol.
 * Employing the appropriate mapping, attempt to run your problems on real quantum computing hardware.
 
