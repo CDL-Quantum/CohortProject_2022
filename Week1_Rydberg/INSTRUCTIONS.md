@@ -57,13 +57,13 @@ Following the Bloqade tutorial [script](https://github.com/QuEraComputing/Bloqad
 
 Finally, turn your simulations to solve a ground state encoding problem for an industrial application.  You may come up with your own, or look at one of the examples given in this recent [preprint](https://arxiv.org/abs/2205.08500): i.e. Portfolio optimization (example VI), Network immunization (example VII), or Task scheduling (example XII). Set up a problem, and solve it on as large a graph as possible using adiabatic state preparation protocols. Link this to your [Business Application](https://github.com/CDL-Quantum/CohortProject_2022/blob/main/Week1_MIS/Business_Application.md).
 
-### Once you are comfortable with the above tasks, turn to the below optional **Challenges** for the time remaining in your project. 
+### Once you are comfortable with the above tasks, you may turn to the below optional **Challenges** for any time remaining in your project. 
 
 ## Challenge 1:
 In order to significantly reduce the size of the state space required to solve the Rydberg problem, one can eliminate states that violate the blockade constraint. Implement this [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in your above problems, and discuss performance increases (particularly for your Business Application).
 
 ## Challenge 2:
-In addition to adiabatic protocols, other state preparation protocols are currently being explored on quantum computing hardware.  A leading variational protocol is the Quantum Approximate Optimization Algorithm (QAOA), in which time evolution occurs via rapidly switching between a cost and mixer Hamiltonian.  For your problems above (particularly your Business Application), attempt a QAOA solution and compare your results to the adiabatic approach.
+In addition to adiabatic protocols, other state preparation protocols are currently being explored on quantum computing hardware.  A leading variational protocol is the Quantum Approximate Optimization Algorithm ([QAOA](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/4.MIS/main/#QAOA-with-Piecewise-Constant-Pulses)), in which time evolution occurs via rapidly switching between a cost and mixer Hamiltonian.  For your problems above particularly your Business Application, attempt a QAOA solution and compare your results to the adiabatic approach.
 
 ## Challenge 3:
 
