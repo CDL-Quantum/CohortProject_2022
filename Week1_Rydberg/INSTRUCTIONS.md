@@ -13,12 +13,14 @@ The binary nature of a Rydberg atom’s ground state $|g \rangle $ and excited s
 Rydberg atoms are held into a physical location in the array by optical tweezers. This allows a high degree of tunability of the inter-atomic interactions.
 We will consider Rydberg atom arrays on a interaction graph, where the Hamiltonian has the general form
 $$H =  \frac{\Omega}{2} \sum_{i \in V}\sigma_i^x  - \delta \sum_{i \in V} n_i + \sum_{ i < j } V_{ij} n_i n_j$$
-where $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |r \rangle \langle r|_i$ is called an occupation operator.  
+Here, $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |r \rangle \langle r|_i$ is called an occupation operator.  
+
+The first term (Rabi frequency) is off-diagonal, and analogous to a transverse field: $\sigma^x = |g \rangle \langle r| + |r \rangle \langle g|$.  The second term (detuning) favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
 
 The interaction $V_{ij} =R_b/r_{ij}$, $R_b$ is a parameter called the [blockade](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/1.blockade/main/#blockade) radius, and the distance between atoms located at vertices $i$ and $j$ is $r$.
 The computational basis we will be working in is the occupation basis, $| g \rangle $ and $| r \rangle $.
 The eigenstates of the Rydberg occupation operator are $n_i | g \rangle_j = 0$ for all $i$ and $j$, and $n_i | r \rangle_j  = \delta_{i,j} |r \rangle_j$.
-On observing the form of our Hamiltonian, we can see that the first term (Rabi frequency) is off-diagonal, and analogous to a transverse field: $\sigma^x = |g \rangle \langle r|$.  The second term (detuning) favours all sites being occupied with an excitation, while the final (interaction) term penalizes occupied pairs. 
+
 
 The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio of the detuning to the Rabi frequency, and the interaction $V_{ij}$, which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius.  
 
