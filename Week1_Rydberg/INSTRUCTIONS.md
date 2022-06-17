@@ -45,7 +45,7 @@ What is the largest 1D array that you can simulate with exact time evolution in 
 
 To push your classical simulations further, consider using a tensor-network based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1).
 
-Benchmark your tensor network against the results from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using tensor networks? How does this compare with current experimental capabilities?  If tensor networks are state-of-the-art, what can you say about *quantum advantage* in Rydberg devices?
+Benchmark your tensor network against the results from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using tensor networks? How does this compare with current experimental capabilities?  Can you prepare a 2D state of size comparable to current [experiments](https://arxiv.org/abs/2012.12281)? If tensor networks are state-of-the-art, what can you say about *quantum advantage* in Rydberg devices?
 
 ## Task 3:
 
