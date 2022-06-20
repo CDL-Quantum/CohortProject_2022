@@ -39,28 +39,33 @@ Plot the occupation on each site as a function of time.
 
 In addition, calculate the expectation value of $\langle \sigma^x_i \rangle$ and the gap $E_1 - E_0 = \Delta E$ between the groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol? Can you determine how it scales with increasing array size?
 
-What is the largest 1D array that you can simulate with exact time evolution in Bloqade? In order to push your simulations to larger sizes using an approximate Hamiltonian, consider the "blockade subspace" in Challenge 1 below.
 
-## Task 2: Larger arrays with tensor networks
+## Task 2: Larger arrays with the Blockade Approximation
 
-To push your classical simulations further, consider using a tensor-network based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1).
+What is the largest 1D array that you can simulate for the full Rydberg Hamiltonian, with exact time evolution as above? 
+What implications does this have for quantum advantage?
+Next, in order to significantly reduce the size of the state space required to solve Rydberg problems, one can eliminate states that violate the blockade constraint.  
+Implement the [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Emulation-in-the-Blockade-Subspace) justify it; i.e. when do you expect it to be valid?
+Repeat your study of 1D arrays, and find the largest system for which you can adiabatically prepare the $Z_2$ state.
+What is the largest 2D array for which you can prepare the checkerboard phase?
 
-Benchmark your tensor network against the results from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using tensor networks? How does this compare with current experimental capabilities?  Can you prepare a 2D state of size comparable to current [experiments](https://arxiv.org/abs/2012.12281)? If tensor networks are state-of-the-art, what can you say about *quantum advantage* in Rydberg devices?
-
-## Task 3:
+## Task 3: MIS
 
 Maximum Independent Set (MIS) is a combinatorial optimization problem that is naturally suited to implementation on a Rydberg atom quantum computer. Specifically, the Rydberg blockade implies that two atoms cannot be both excited to the Rydberg state $| r \rangle$ if they are close to each other. In MIS, the independent set constraint means that two vertices on a graph cannot be both in the independent set when they are connected by an edge. Thus, one can consider atoms in the Rydberg state as vertices in an independent set. Read more about the MIS problem [here](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/4.MIS/main/#mis-tutorial).
 
 Following the Bloqade tutorial [script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl), solve the $4 \times 4$ diagonal-connected unit-disk grid graphs (DUGG) problems using the adiabatic approach. How large of an array can Bloqade solve?  Attempt to solve for larger square DUGGs using your tensor network approach. 
 
-## Task 4:
+## Task 4: Business applications
 
 Finally, turn your simulations to solve a ground state encoding problem for an industrial application.  You may come up with your own, or look at one of the examples given in this recent [preprint](https://arxiv.org/abs/2205.08500): i.e. Portfolio optimization (example VI), Network immunization (example VII), or Task scheduling (example XII). Set up a problem, and solve it on as large a graph as possible using adiabatic state preparation protocols. Link this to your [Business Application](https://github.com/CDL-Quantum/CohortProject_2022/blob/main/Week1_MIS/Business_Application.md).
 
 ### Once you are comfortable with the above tasks, you may turn to the below optional **Challenges** for any time remaining in your project. 
 
 ## Challenge 1:
-In order to significantly reduce the size of the state space required to solve the Rydberg problem, one can eliminate states that violate the blockade constraint. Implement this [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/subspace/) in your above problems, and discuss performance increases (particularly for your Business Application).
+To push your classical simulations further, consider using a tensor-network based method, implemented in [iTensor](https://itensor.org) or [PastaQ](https://github.com/GTorlai/PastaQ.jl). To time-evolve a quantum state under the dynamics of the Rydberg Hamiltonian, the simplest method is to us use "time evolving block decimation" (TEBD). This is the procedure of decomposing the time-evolution operator into a circuit of quantum gates (two-site unitaries) using the Trotter-Suzuki approximation and applying these gates to the tensor network state. See tutorials [here](https://docs.juliahub.com/ITensors/P3pqL/0.2.0/getting_started/Tutorials.html#Getting-Started-with-MPS-Time-Evolution-1).
+
+Benchmark your tensor network against the results from Bloqade, then repeat for larger 1D arrays.  How large can you trust your results using tensor networks? How does this compare with current experimental capabilities?  Can you prepare a 2D state of size comparable to current [experiments](https://arxiv.org/abs/2012.12281)? If tensor networks are state-of-the-art, what can you say about *quantum advantage* in Rydberg devices?
+
 
 ## Challenge 2:
 In addition to adiabatic protocols, other state preparation protocols are currently being explored on quantum computing hardware.  A leading variational protocol is the Quantum Approximate Optimization Algorithm ([QAOA](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/4.MIS/main/#QAOA-with-Piecewise-Constant-Pulses)), in which time evolution occurs via rapidly switching between a cost and mixer Hamiltonian.  For your problems above particularly your Business Application, attempt a QAOA solution and compare your results to the adiabatic approach.
