@@ -43,7 +43,7 @@ In addition, calculate the expectation value of $\langle \sigma^x_i \rangle$ and
 ## Task 2: Larger arrays with the Blockade Approximation
 
 What is the largest 1D array that you can simulate for the full Rydberg Hamiltonian, with exact time evolution as above? 
-What implications does this have for quantum advantage?
+What implications does this have for quantum advantage, particularly in light of recent [experiments](https://www.nature.com/articles/nature24622)?
 
 Next, in order to significantly reduce the size of the state space required to solve Rydberg problems, one can eliminate states that violate the blockade constraint.  Implement the [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Emulation-in-the-Blockade-Subspace) and justify it; i.e. when do you expect it to be valid?
 Repeat your study of 1D arrays, and find the largest system for which you can adiabatically prepare the $Z_2$ state.
