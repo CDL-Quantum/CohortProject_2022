@@ -54,7 +54,7 @@ What is the largest 2D array for which you can adiabatically prepare the checker
 
 Maximum Independent Set (MIS) is a combinatorial optimization problem that is naturally suited to implementation on a Rydberg atom quantum computer. Specifically, the Rydberg blockade implies that two atoms cannot be both excited to the Rydberg state $| r \rangle$ if they are close to each other. In MIS, the independent set constraint means that two vertices on a graph cannot be both in the independent set when they are connected by an edge. Thus, one can consider atoms in the Rydberg state as vertices in an independent set. Read more about the MIS problem [here](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/4.MIS/main/#mis-tutorial).
 
-Following the Bloqade tutorial [script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl), solve the $4 \times 4$ diagonal-connected unit-disk grid graphs (DUGG) problems using the adiabatic approach. How large of an array can Bloqade solve?  Attempt to solve for larger square DUGGs using your tensor network approach. 
+Following the Bloqade tutorial [script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl), solve the $4 \times 4$ diagonal-connected unit-disk grid graphs (DUGG) problems using the adiabatic approach. How large of an array can Bloqade solve?  Attempt to solve for larger square DUGGs using your tensor network approach. Try different pulse parameterization and compare which is better, and explore how does smoothing effect the performance?
 
 ## Task 4: Business applications
 
