@@ -10,14 +10,14 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 
 ## Tasks include:
 * Simulate the preparation of a quantum state in a 1D Rydberg atom array of 9 sites.  
-* Explore the maximum number of atoms for which you can simulate the state quantum preparation procedure.  Attempt a tensor network strategy.
+* Explore the maximum number of atoms for which you can simulate the state quantum preparation procedure, and compare to the *blockade approximation*.
 * Find the solution for a Maximum Independent Set (MIS) problem using the adiabatic approach.
 * Turn your numerical tools onto a problem with an industrial application, e.g. from [this paper](https://arxiv.org/abs/2205.08500).
 
 After you have completed your tasks, consider the optional Challenges below!
 
 ## Further Challenges:
-* Use the *blockade approximation* in the above problems, and discuss performance differences.
+* Apply a tensor network strategy to the above problems.
 * Attempt other state preparation protocols, such as the Quantum Approximate Optimization Algorithm (QAOA).
 * Explore additional business applications beyond the groundstate preparation protocol.
 * Employing the appropriate mapping, attempt to run your problems on real quantum computing hardware.
