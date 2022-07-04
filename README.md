@@ -12,9 +12,9 @@ designed to engage their science, technology, and business skills on problems re
 ### Project Legacy:
 The Cohort Project is open source, and hosted on GitHub. Each Tuesday morning the teams will 
 [fork](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-forks) 
-this repository to their own GitHub account to begin work on the challenges.  By **the following Sunday night** each team must issue a pull request with their final entry. The CDL judges will review the pull requests, and choose one team's work to merge into the main upstream repository. From that point on it will become part of the legacy of the 2022 Boot Camp.
+this repository to their own GitHub account to begin work on the challenges.  By the following Sunday night (11:59pm ET) each team must issue a pull request with their final entry. The CDL judges will review the pull requests, and choose one team's work to merge into the main upstream repository. From that point on it will become part of the legacy of the 2022 Boot Camp.
 
 ### 2022 Weekly Challenges
 * Week 1: Quantum computing with neutral atom arrays
-* Week 2: Variational Quantum Eigensolvers
+* Week 2: TBD
 * Week 3: TBD
