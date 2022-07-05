@@ -75,15 +75,14 @@ the conversion of the message between text and integers works.
 
 Shor's algorithm is a method for determining the prime factors `p` and `q` of a
 number `N`. While often described as a quantum algorithm, most of it is actually
-classical - only one part of it uses a quantum computer. However, that part is
+classical; only one part of it uses a quantum computer. However, that part is
 very important, since it is the part that is classically hard.
 
 The specific part is called *order finding*. In regular modular arithmetic,
-given a value `a` and modulus `N`, the task is to find an `m` such that
-`a ** m = 1 mod N`. This involves repeated multiplication of `a` by itself, or
-*modular exponentiation*. 
-
-The quantum version looks similar. Suppose we have a unitary operation $U_{Na}$ that acts as follows:
+given a value `a` and modulus `N`, the task is to find an `m` such that `a ** m
+= 1 mod N`. This involves repeated multiplication of `a` by itself, or *modular
+exponentiation*. The quantum version looks similar. Suppose we have a unitary
+operation $U_{Na}$ that acts as follows:
 
 $$
 U_{Na} \vert k \rangle = |a k \hbox{mod} N \rangle
@@ -96,9 +95,9 @@ U_{Na}^m \vert k  \rangle = |a^m k \hbox{mod} N \rangle = \vert k \rangle.
 $$
 
 For this task, research and implement the order-finding method on a quantum
-computer - there are multiple approaches! Apply your method in the larger
-context of Shor's algorithm, starting from the pseudocode below. Use you
-algorithm to factor the value `N = 91` from the previous task.
+computer. Apply your method in the larger context of Shor's algorithm, starting
+from the pseudocode below. Use you algorithm to factor the value `N = 91` from
+the previous task.
 
 
 ```
@@ -172,14 +171,14 @@ data will still be vulnerable to quantum attack once large enough devices come o
 despite having quantum-resistant algorithms available.
 
 To that end, your knowledge of Shor's algorithm is powerful, and with great
-power comes great responsibility. It is important to both understand and be able
+power comes great responsibility. It is important not only understand, but also be able
 to convey to others the risks of using vulnerable cryptographic protocols,
-within both your own organization, and with organizations that you do business with.
+within both your own organization, and to organizations that you do business with.
 
 Suppose that your team is part of a company, Qrypto, that has developed a new
 protocol which was selected by the (fictional) standards body QIST as one of its
 options for quantum-resistant cryptography. Using any type media you wish,
-create an advertisement for your product. Be creative - for example, you can
+create an advertisement for your product. Be creative! For example, you can
 make
 
  - A flashy web page
