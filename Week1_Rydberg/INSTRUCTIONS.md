@@ -58,7 +58,7 @@ Following the Bloqade tutorial [script](https://github.com/QuEraComputing/Bloqad
 
 ## Task 4: Business applications
 
-Finally, use your simulations to solve a groundstate encoding problem for an industrial application.  You may come up with your own, or look at one of the examples given in this recent [preprint](https://arxiv.org/abs/2205.08500): i.e. Portfolio optimization (example VI), Network immunization (example VII), or Task scheduling (example XII). Set up a problem, and solve it on as large a graph as possible using adiabatic state preparation protocols. Link this to your [Business Application](https://github.com/CDL-Quantum/CohortProject_2022/blob/main/Week1_MIS/Business_Application.md).
+Finally, use your simulations to solve a groundstate encoding problem for an industrial application.  You may come up with your own, or look at one of the examples given in this recent [preprint](https://arxiv.org/abs/2205.08500): i.e. Portfolio optimization (example VI), Network immunization (example VII), or Task scheduling (example XII). Set up a problem, and solve it on as large a graph as possible using adiabatic state preparation protocols. Link this to your [Business Application](./Business_Application.md).
 
 ### Once you are comfortable with the above tasks, you may turn to one or more of the below optional **Challenges** for any time remaining in your project. 
 
