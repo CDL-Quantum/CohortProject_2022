@@ -51,7 +51,7 @@ provided in [these slides](rsa_number_theory.pdf), if you are keen to explore
 them.  The critical thing to note is that everything relies on the choice of two
 prime numbers, `p` and `q`, which are used to construct the value of the modulus `N`,
 *which is part of the public key*. If we can factor `N` and learn `p` and `q`,
-we can use compute `theta`, which, since we know `e`, would allow us to recover
+we can compute `theta`, which, since we know `e`, would allow us to recover
 the private value `d`.
 
 ## Task 1: 
