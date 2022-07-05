@@ -37,7 +37,7 @@ To get us started, we will use the open-source simulation software [Bloqade](htt
 generate the pulse/detuning sequence, specify the atomic position, then starting in the groundstate, simulate the time evolution of a quantum state under the Schrödinger equation.  
 Plot the average occupation on each site as a function of time.
 
-In addition, calculate the expectation value of $\langle \sigma^x_i \rangle$ and gap $E_1 - E_0 = \Delta E$ between the Rydberg Hamiltonian's groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol? Can you determine how it scales with increasing array size?
+In addition, calculate the expectation value of $\langle \sigma^x_i \rangle$ and gap $E_1 - E_0 = \Delta E$ between the Rydberg Hamiltonian's groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol for this type of quantum computer? Can you determine how it scales with increasing array size?
 
 
 ## Task 2: Larger arrays with the Blockade Approximation
@@ -45,7 +45,7 @@ In addition, calculate the expectation value of $\langle \sigma^x_i \rangle$ and
 What is the largest 1D array that you can simulate for the full Rydberg Hamiltonian, with exact time evolution as above? 
 What implications does this have for quantum advantage, particularly in light of the experiments mentioned above?
 
-Next, in order to significantly reduce the size of the state space required to solve Rydberg problems, one can eliminate states that violate the blockade constraint.  Implement the [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Emulation-in-the-Blockade-Subspace) and justify it; i.e. when do you expect it to be valid? You can find more detailed explaination about this approximation in [Rydberg Blockade](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/1.blockade/main/) section.
+Next, in order to significantly reduce the size of the state space required to solve Rydberg problems, one can eliminate states that violate the blockade constraint (e.g. more than one atom being excited within $R_b$).  Implement the [blockade approximation](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Emulation-in-the-Blockade-Subspace) and justify it; i.e. when do you expect it to be valid? You can find more detailed explaination about this approximation in [Rydberg Blockade](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/1.blockade/main/) section.
 
 Repeat your study of 1D arrays, and find the largest system for which you can adiabatically prepare the $\mathbb{Z}_2$ state.
 What is the largest 2D array for which you can adiabatically prepare the checkerboard phase?  Has quantum advantage for 2D arrays already [been achieved](https://www.nature.com/articles/s41586-021-03582-4)?
