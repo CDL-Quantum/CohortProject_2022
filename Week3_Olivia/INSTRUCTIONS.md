@@ -78,19 +78,19 @@ classical. Only one part of it uses a quantum computer! However, that part is
 very important, since it is the part that is classically hard.
 
 The specific subroutine is called *order finding*. In regular modular arithmetic,
-given a value $a$ and modulus $N$, the task is to find an $m$ such that $a^m
-= 1 \enskip \hbox{mod} N$. This involves repeated multiplication of $a$ by itself, or *modular
+given a value $a$ and modulus $N$, the task is to find an $m$ such that 
+$a^m = 1 \hbox{ mod} N$. This involves repeated multiplication of $a$ by itself, or *modular
 exponentiation*. The quantum version looks similar. Suppose we have a unitary
 operation $U_{Na}$ that acts as follows:
 
 $$
-U_{Na} \vert k \rangle = |a k \enskip \hbox{mod} N \rangle
+U_{Na} \vert k \rangle = |a k \hbox{ mod} N \rangle
 $$
 
 For the order $m$ such that $a^m = 1 \enskip \hbox{mod} N$ it will also be the case that
 
 $$
-U_{Na}^m \vert k  \rangle = |a^m k \enskip \hbox{mod} N \rangle = \vert k \rangle.
+U_{Na}^m \vert k  \rangle = |a^m k \hbox{ mod} N \rangle = \vert k \rangle.
 $$
 
 For this task, research and implement the order-finding method on a quantum
