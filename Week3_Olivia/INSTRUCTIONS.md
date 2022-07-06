@@ -12,19 +12,18 @@ infrastructure to be secure against quantum computers.
 You are most likely aware that a well-known (and potentially nefarious)
 application of quantum computers is "breaking cryptography". While this is a
 sweeping generalization, the situation is still dire: *Shor's algorithm* can be
-used to determine the prime factors of numbers. More specifically, it contains a 
-subroutine, called order finding, for which there is a known
-quantum algorithm that is exponentially faster than the best known
-classical algorithm. Some widely-used cryptographic protocols, such as [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)), are
-built around the assumption that this factoring task is computationally
-intractable. But if we can build a big enough quantum computer, algorithms like RSA
-will be rendered insecure.
+used to determine the prime factors of numbers. More specifically, it contains a
+subroutine, called *order finding*, for which there is a known quantum algorithm
+that is exponentially faster than the best known classical algorithm. Some
+widely-used cryptographic protocols, such as
+[RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)), are deemed secure based
+on the assumption that factoring is computationally intractable. This will no
+longer be the case if we can build a big enough quantum computer.
 
-In this project, you will explore the implementation of Shor's
-algorithm, and perform some experiments to investigate its scaling on a
-gate-model quantum computer. In addition, you will have the opportunity to
-explore two other quantum approaches that have been designed to factor numbers:
-a variational algorithm, and a method based on quantum annealing.
+In this project you will explore the gate-model implementation of Shor's
+algorithm and perform some experiments to investigate its scaling. In addition,
+you will have the opportunity to explore two other quantum approaches to
+factoring: a variational algorithm, and a method based on quantum annealing.
 
 ## Background: RSA
 
@@ -49,23 +48,23 @@ something like this:
 There is some underlying number theory behind *why* this works. The details are
 provided in [these slides](rsa_number_theory.pdf), if you are keen to explore
 them.  The critical thing to note is that everything relies on the choice of two
-prime numbers, `p` and `q`, which are used to construct the value of the modulus `N`,
-*which is part of the public key*. If we can factor `N` and learn `p` and `q`,
-we can compute `theta`, which, since we know `e`, would allow us to recover
-the private value `d`.
+prime numbers, $p$ and $q$, which are used to construct the value of the modulus $N$,
+*which is part of the public key*. If we can factor $N$ and learn $p$ and $q$,
+we can compute $\theta$, which, since we know $e$, allows us to recover
+the private value $d$.
 
 ## Task 1: 
 
 Suppose you would like to send and receive messages using RSA. To start, you
-generate the key pair `(d, e, N) = (169, 25, 299)` and publish your key `(25,
-299)`. Shortly after, you receive an encrypted message from a friend. Implement
+generate the key $(d, e, N) = (169, 25, 299)$ and publish your the public part, $(25,
+299)$. Shortly after, you receive an encrypted message from a friend. Implement
 two functions, `decrypt` and `encrypt`, according to the RSA protocol described
 above, to decrypt your friend's message. 
 
-Then, you can send them a response! Their public key is `(e, N) = (29,
-91)`. Note that since this is a small case, you can determine by hand what their
-private key is. In a real-world setting, `N` is generally a very large number,
-e.g., 2048- or 4096-bit.
+Then, you can send them a response! Their public key is $(e, N) = (29,
+91)$. Note that since this is a small case, you can determine by hand what their
+private key is. In a real-world setting, $N$ is a very large number, e.g., 2048-
+or 4096-bit.
 
 The file `task_1.py` provides some starter Python code for you, but feel free to
 translate this into any language. Within the file is also a description of how
@@ -73,30 +72,30 @@ the conversion of the message between text and integers works.
 
 ## Task 2: 
 
-Shor's algorithm is a method for determining the prime factors `p` and `q` of a
-number `N`. While often described as a quantum algorithm, most of it is actually
-classical; only one part of it uses a quantum computer. However, that part is
+Shor's algorithm can be used to determine the prime factors $p$ and $q$ of a
+number $N$. While often described as a quantum algorithm, most of it is actually
+classical. Only one part of it uses a quantum computer! However, that part is
 very important, since it is the part that is classically hard.
 
-The specific part is called *order finding*. In regular modular arithmetic,
-given a value `a` and modulus `N`, the task is to find an `m` such that `a ** m
-= 1 mod N`. This involves repeated multiplication of `a` by itself, or *modular
+The specific subroutine is called *order finding*. In regular modular arithmetic,
+given a value $a$ and modulus $N$, the task is to find an $m$ such that $a^m
+= 1 \enskip \hbox{mod} N$. This involves repeated multiplication of $a$ by itself, or *modular
 exponentiation*. The quantum version looks similar. Suppose we have a unitary
 operation $U_{Na}$ that acts as follows:
 
 $$
-U_{Na} \vert k \rangle = |a k \hbox{mod} N \rangle
+U_{Na} \vert k \rangle = |a k \enskip \hbox{mod} N \rangle
 $$
 
-For the order `m` such that `a ** m = 1 mod N`, it will also be the case that
+For the order $m$ such that $a^m = 1 \enskip \hbox{mod} N$ it will also be the case that
 
 $$
-U_{Na}^m \vert k  \rangle = |a^m k \hbox{mod} N \rangle = \vert k \rangle.
+U_{Na}^m \vert k  \rangle = |a^m k \enskip \hbox{mod} N \rangle = \vert k \rangle.
 $$
 
 For this task, research and implement the order-finding method on a quantum
 computer. Apply your method in the larger context of Shor's algorithm, starting
-from the pseudocode below. Use you algorithm to factor the value `N = 91` from
+from the pseudocode below. Use you algorithm to factor the value $N = 91$ from
 the previous task.
 
 
@@ -109,30 +108,30 @@ Outputs: p, q
 p, q = 1, 1
 
 while p * q is not N:
-	choose value a in the range [2, ..., N - 2]
+    choose value a in the range [2, ..., N - 2]
 	
-	if a and N are coprime:
-		# we are lucky!
-		p = a
-		q = N / a
+    if a and N are coprime:
+        # we are lucky!
+        p = a
+        q = N / a
 
-	else:
-		use a quantum computer to find order r of U_Na
+    else:
+        use a quantum computer to find order r of U_Na
 	    
-		if r is odd:
-			# invalid
-			continue
+        if r is odd:
+            # invalid
+            continue
 			
-		else:
-			compute x = a ** (r / 2) mod N
+        else:
+            compute x = a ** (r / 2) mod N
 		
-			if x = 1 or -1 mod N:
-				# invalid
-				continue
-			else:
-				# valid!
-				p = GCD(x - 1, N)
-				q = GCD(x + 1, N)
+            if x = 1 or -1 mod N:
+                # invalid
+                continue
+            else:
+                # valid!
+                p = GCD(x - 1, N)
+                q = GCD(x + 1, N)
 ```
 
 
@@ -140,12 +139,12 @@ while p * q is not N:
 
 You will likely have noticed in Task 2 that Shor's algorithm is not guaranteed
 to find a solution. In fact, there are few potential points of failure. How
-often does your implementation succeed? How does this depend on the size of `N`?
+often does your implementation succeed? How does this depend on the size of $N$?
 
 Further to this point, now that you have an implementation of Shor's algorithm,
 let's stress test it. Apply the algorithm to factor a sequence of increasingly
-large `N`. How large of a number can you reliably factor with your computer?
-As you are increasing `N`, take the opportunity to perform an analysis of:
+large $N$. How large of a number can you reliably factor with your computer?
+As you are increasing $N$, take the opportunity to perform an analysis of:
 
  - Run time (wall time)
  - Number of qubits required
