@@ -56,13 +56,13 @@ the private value $d$.
 ## Task 1: 
 
 Suppose you would like to send and receive messages using RSA. To start, you
-generate the key $(d, e, N) = (169, 25, 299)$ and publish your the public part, $(25,
-299)$. Shortly after, you receive an encrypted message from a friend. Implement
+generate the key $(d, e, N) = (169, 25, 299)$ and publish the public part, 
+$(25, 299)$. Shortly after, you receive an encrypted message from a friend. Implement
 two functions, `decrypt` and `encrypt`, according to the RSA protocol described
 above, to decrypt your friend's message. 
 
-Then, you can send them a response! Their public key is $(e, N) = (29,
-91)$. Note that since this is a small case, you can determine by hand what their
+Then, you can send them a response! Their public key is $(e, N) = (29, 91)$. 
+Note that since this is a small case, you can determine by hand what their
 private key is. In a real-world setting, $N$ is a very large number, e.g., 2048-
 or 4096-bit.
 
