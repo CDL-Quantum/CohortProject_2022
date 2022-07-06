@@ -53,7 +53,7 @@ prime numbers, $p$ and $q$, which are used to construct the value of the modulus
 we can compute $\theta$, which, since we know $e$, allows us to recover
 the private value $d$.
 
-## Task 1: 
+## Task 1: Privacy is key
 
 Suppose you would like to send and receive messages using RSA. To start, you
 generate the key $(d, e, N) = (169, 25, 299)$ and publish the public part, 
@@ -70,7 +70,7 @@ The file `task_1.py` provides some starter Python code for you, but feel free to
 translate this into any language. Within the file is also a description of how
 the conversion of the message between text and integers works.
 
-## Task 2: 
+## Task 2: Everything is in order
 
 Shor's algorithm can be used to determine the prime factors $p$ and $q$ of a
 number $N$. While often described as a quantum algorithm, most of it is actually
@@ -84,17 +84,17 @@ exponentiation*. The quantum version looks similar. Suppose we have a unitary
 operation $U_{Na}$ that acts as follows:
 
 $$
-U_{Na} \vert k \rangle = |a k \hbox{ mod} N \rangle
+U_{Na} \vert k \rangle = |a k \hbox{ mod} N \rangle.
 $$
 
-For the order $m$ such that $a^m = 1 \enskip \hbox{mod} N$ it will also be the case that
+For the order $m$ such that $a^m = 1 \hbox{ mod} N$ it will also be the case that
 
 $$
 U_{Na}^m \vert k  \rangle = |a^m k \hbox{ mod} N \rangle = \vert k \rangle.
 $$
 
-For this task, research and implement the order-finding method on a quantum
-computer. Apply your method in the larger context of Shor's algorithm, starting
+For this task, research and implement the quantum algorithm for order finding. 
+Then, apply it in the larger context of Shor's algorithm, starting
 from the pseudocode below. Use you algorithm to factor the value $N = 91$ from
 the previous task.
 
@@ -116,14 +116,14 @@ while p * q is not N:
         q = N / a
 
     else:
-        use a quantum computer to find order r of U_Na
+        use a quantum computer to find order m of U_Na
 	    
-        if r is odd:
+        if m is odd:
             # invalid
             continue
 			
         else:
-            compute x = a ** (r / 2) mod N
+            compute x = a ** (m / 2) mod N
 		
             if x = 1 or -1 mod N:
                 # invalid
@@ -141,8 +141,8 @@ You will likely have noticed in Task 2 that Shor's algorithm is not guaranteed
 to find a solution. In fact, there are few potential points of failure. How
 often does your implementation succeed? How does this depend on the size of $N$?
 
-Further to this point, now that you have an implementation of Shor's algorithm,
-let's stress test it. Apply the algorithm to factor a sequence of increasingly
+Further to this point, now that you have an implementation,
+let's stress test it. Use Shor's algorithm to factor a sequence of increasingly
 large $N$. How large of a number can you reliably factor with your computer?
 As you are increasing $N$, take the opportunity to perform an analysis of:
 
@@ -156,28 +156,29 @@ resources with the size of the problem instance.
 After, consider the following: how does the size of your largest solved instance
 compare with the size of RSA keys in use today? Can you estimate the quantum
 resources that would be needed to factor numbers of this size?  Consider the
-number of qubits and gates, assuming the qubits are perfect. (If you want to go
+number of qubits and gates, assuming the qubits are perfect. If you want to go
 further, you could even estimate a rough wall time by looking at the gate
-operation speeds of present-day hardware).
+operation speeds of present-day hardware.
 
 ## Task 4: Business applications
 
-Even though organizations like NIST are deciding on standards, it can
-take years or decades for such protocols to be widely adopted (case in point:
+Even though organizations like NIST are establishing standards, it can
+take years or decades for them to be widely adopted (case in point:
 explore the history of the hash function
 [SHA-1](https://en.wikipedia.org/wiki/SHA-1)). It is likely that much of our
 data will still be vulnerable to quantum attack once large enough devices come online,
 despite having quantum-resistant algorithms available.
 
 To that end, your knowledge of Shor's algorithm is powerful, and with great
-power comes great responsibility. It is important not only understand, but also be able
+power comes great responsibility. It is important not only to understand, but
+also to be able
 to convey to others the risks of using vulnerable cryptographic protocols,
 within both your own organization, and to organizations that you do business with.
 
-Suppose that your team is part of a company, Qrypto, that has developed a new
+Suppose that your team is part of a company that has developed a new
 protocol which was selected by the (fictional) standards body QIST as one of its
 options for quantum-resistant cryptography. Using any type media you wish,
-create an advertisement for your product. Be creative! For example, you can
+design an advertisement for your product. Be creative! For example, you can
 make
 
  - A flashy web page
@@ -198,21 +199,21 @@ hardware. How large of a number can you successfully (and reliably) factor?
 
 ## Challenge 2:
 
-As you will have discovered Task 3 (and Challenge 1), Shor's algorithm is not
+As you will have discovered in Task 3 (and Challenge 1), Shor's algorithm is not
 going to be running at scale on NISQ devices any time soon. However, given that
 NISQ devices are particularly suited to variational algorithms, researchers have
 investigated whether factoring can be recast into this framework. For this
-challenge, explore and implement the [variational quantum
-factoring](https://arxiv.org/abs/1808.08927) protocol. Compare its resource
+challenge, explore and implement [variational quantum
+factoring](https://arxiv.org/abs/1808.08927). Compare its resource
 usage and solution quality to that of your initial approach. How large of a
 number can you successfully factor?
 
 ## Challenge 3:
 
-Researchers have also explored the use of quantum annealers to factor
-numbers. Try implementing the method described [in this
+Researchers have also explored how to factor using quantum annealers. Try
+implementing the method described [in this
 paper](https://www.nature.com/articles/s41598-018-36058-z). Again, compare its
 resources and solution quality to your initial implementation, and that of
-Challenge 2 if you implemented it.
+Challenge 2 if you completed it.
 
 
