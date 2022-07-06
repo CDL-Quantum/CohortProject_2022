@@ -135,16 +135,16 @@ while p * q is not N:
 ```
 
 
-## Task 3: 
+## Task 3: Are we running Shor-t on time?
 
 You will likely have noticed in Task 2 that Shor's algorithm is not guaranteed
 to find a solution. In fact, there are few potential points of failure. How
 often does your implementation succeed? How does this depend on the size of $N$?
 
-Further to this point, now that you have an implementation,
-let's stress test it. Use Shor's algorithm to factor a sequence of increasingly
-large $N$. How large of a number can you reliably factor with your computer?
-As you are increasing $N$, take the opportunity to perform an analysis of:
+Further to this point, now that you have an implementation, let's stress test
+it. Use Shor's algorithm to factor a sequence of increasingly large $N$. How
+large of a number can you reliably factor with your computer?  As you are
+increasing $N$, take the opportunity to perform an analysis of:
 
  - Run time (wall time)
  - Number of qubits required
@@ -155,10 +155,10 @@ resources with the size of the problem instance.
 
 After, consider the following: how does the size of your largest solved instance
 compare with the size of RSA keys in use today? Can you estimate the quantum
-resources that would be needed to factor numbers of this size?  Consider the
-number of qubits and gates, assuming the qubits are perfect. If you want to go
-further, you could even estimate a rough wall time by looking at the gate
-operation speeds of present-day hardware.
+resources that would be needed to factor numbers of this size, and when we might
+have a device capable of doing so? Consider the qubit count and gate count in
+your estimate. To take things further, you could even estimate a rough wall time
+by looking at circuit depth, and gate operation speeds of present-day hardware.
 
 ## Task 4: Business applications
 
