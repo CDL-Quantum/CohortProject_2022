@@ -108,7 +108,7 @@ function calculate_gap(nsites)
     return gap
 end
 
-for i in 1:3
+for i in 1:10
     n = 5+i
     gap = calculate_gap(n)
     print(n)
