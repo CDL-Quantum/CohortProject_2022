@@ -1,10 +1,10 @@
-![CDL 2022 Cohort Project](../figures/CDL_logo.jpg)
+![CDL 2022 Cohort Project](../CDL_logo.jpg)
 
 ## Project 2: VQE: Constructing potential energy surfaces for small molecules
 
 This project will guide you through the state-of-the-art techniques for solving electronic structure problems on NISQ computers.
 
-Open up [instructions.pdf](https://github.com/CDL-Quantum/CohortProject_2021/tree/main/Week3_VQE/Instructions.pdf) to begin learning about your tasks for this week!
+Open up [instructions.pdf](https://github.com/CDL-Quantum/CohortProject_2022/blob/main/Week2_Artur/Instructions.pdf) to begin learning about your tasks for this week!
 
 **Please edit this markdown file directly with links to your completed tasks and challenges.**
 
