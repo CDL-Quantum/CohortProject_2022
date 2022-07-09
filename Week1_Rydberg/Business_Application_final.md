@@ -54,10 +54,8 @@ Solid material structures such as graphene, ferromagnetic lattices, Silicium squ
 
 # References
 
-[1]
-
-[2]
-
+[1] B.M. Rubenstein, Sh. Zhang, and D.R. Reichman, Phys.Rev.A 86, 053606 (2012); Sh. Zhang, Phys.Rev.Lett. 83, 2777 (1999).
+[2] F.H.L. Essler, H. Frahm, F. Gohmann, V.E. Korepin, A. Klümper, The one-dimensional Hubbard model, Cambridge University Press (2005).
 [3]
 
 [4]
