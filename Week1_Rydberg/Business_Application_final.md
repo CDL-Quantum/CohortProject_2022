@@ -61,6 +61,9 @@ Solid material structures such as graphene, ferromagnetic lattices, Silicium squ
 [3]
 
 [4]
+
 [5]
+
 [6]
+
 [7]
