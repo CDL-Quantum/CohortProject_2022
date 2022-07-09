@@ -13,9 +13,9 @@ Full stack approach:
 
 - Compilation (Processor design / gate implementation)
 
-- Performance analysis
+- Performance analysis: We present an auxiliary field quantum Monte Carlo (QMC) simulations for one-dimensional Hubbard model at low temperature regime to mimic the Rydberg Hamiltonian at ground state. QMC algorithm is intensively employed for calculations of electronic structure of solids and molecules. The calculations are done for a 9-sites spin chain with nearest neighbor interaction and without periodic boundary conditions: the first and the last sites (antipodes) do not interact.
 
-- Hubbard model:
+- Hubbard model: The Hubbard Hamiltonian reads,
 
 $H = - \sum_{\langle i,j \rangle, \sigma} t_{xy}^{ij}(\hat{c]_{i \sigma}^{\dagger} \hat{c}_{j \sigma} + h.c.) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})$
 
@@ -56,12 +56,9 @@ Solid material structures such as graphene, ferromagnetic lattices, Silicium squ
 
 [1] B.M. Rubenstein, Sh. Zhang, and D.R. Reichman, Phys. Rev. A 86, 053606 (2012); Sh. Zhang, Phys. Rev. Lett. 83, 2777 (1999).
 [2] F.H.L. Essler, H. Frahm, F. Gohmann, V.E. Korepin, A. Klümper, The one-dimensional Hubbard model, Cambridge University Press (2005).
+
 [3]
-
 [4]
-
 [5]
-
 [6]
-
 [7]
