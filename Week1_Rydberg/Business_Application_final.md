@@ -14,7 +14,7 @@ Full stack approach:
 - Compilation (Processor design / gate implementation)
 
 - Performance analysis: 
-  We present an auxiliary field quantum Monte Carlo (QMC) simulations for one-dimensional Hubbard model at low temperature regime to mimic the Rydberg Hamiltonian at ground state. QMC algorithm is extensively employed for calculations of electronic structure of solids and molecules. Within the auxiliary field QMC the partition function is expressed as a many-dimensional integral (calculated by Monte Carlo techniques) over a set of random auxiliary fields. The calculations are done for a 9-sites spin chain with nearest neighbor interaction and without periodic boundary conditions: the first and the last sites (antipodes) do not interact.
+  We present an auxiliary field quantum Monte Carlo (QMC) simulations for one-dimensional Hubbard model at low temperature regime to mimic the Rydberg Hamiltonian at ground state. QMC algorithm is extensively employed for calculations of electronic structure of solids and molecules. Within the auxiliary field QMC the partition function is expressed as a multi-dimensional integral (calculated by Monte Carlo techniques) over a set of random auxiliary fields. The calculations are done for a 9-sites spin chain with nearest neighbor interaction and without periodic boundary conditions: the first and the last sites (antipodes) do not interact.
 
 - Hubbard model: The Hubbard Hamiltonian reads,
 
