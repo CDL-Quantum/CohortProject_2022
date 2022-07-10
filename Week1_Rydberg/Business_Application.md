@@ -1,5 +1,5 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
-# Quantum Cohort Project Business Application
+# Quantum-enhanced Text Summarization
 
 ![AbstraQt](resources/a.png)
 
