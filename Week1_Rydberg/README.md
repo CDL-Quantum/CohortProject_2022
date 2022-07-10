@@ -23,6 +23,9 @@ After you have completed your tasks, consider the optional Challenges below!
 * Employing the appropriate mapping, attempt to run your problems on real quantum computing hardware.
 
 ## Business Application
+
+Business application for this project: [Hubbard model](https://github.com/MQS-mark/CohortProject_2022/blob/main/Week1_Rydberg/Business_Application_final.md)
+
 For each week, your team is asked to complete a Business Application. Questions you will be asked are:
 
 * Explain to a layperson the technical problem you solved in this exercise.

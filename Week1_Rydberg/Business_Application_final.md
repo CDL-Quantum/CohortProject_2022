@@ -75,6 +75,8 @@ Solid material structures such as graphene, ferromagnetic lattices, Silicium squ
 
 # Video for customer value proposition
 
+https://www.loom.com/share/ff77cd7f199c4208889f6308379f9c30
+
 
 # References
 
