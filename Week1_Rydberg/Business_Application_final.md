@@ -17,10 +17,7 @@ Arrays of atoms have been used as simple toy model in spin systems. The simplest
 
 - Hubbard model: The one-dimensional Fermi-Hubbard Hamiltonian reads
 
-<img src="https://render.githubusercontent.com/render/math?math={H = - x123}">
-
-
-$H = - \sum_{i, \sigma} t(\hat{c}_{i, \sigma}^{\dagger} \hat{c}_{i+1, \sigma} + \hat{c}_{i+1, \sigma}^{\dagger} \hat{c}_{i, \sigma}) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})$,
+$H =$ $ - \sum_{i, \sigma} t(\hat{c}_{i, \sigma}^{\dagger} \hat{c}_{i+1, \sigma} + \hat{c}_{i+1, \sigma}^{\dagger} \hat{c}_{i, \sigma}) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})$,
 
 where i enumerates the sites along the chain. The first term of the hamiltonian represents the hopping integrals for nearest neighbor interactions and the second term, represents the repulsive interaction between electrons on the same site. t denotes the hopping parameter, which describes how favorable it is for electrons to hop from site to site, U defines the strength of the electron repulsion, and mu is the chemical potential.
 
