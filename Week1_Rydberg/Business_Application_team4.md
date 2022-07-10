@@ -8,7 +8,7 @@
 
 
 
-<center><img src=images/"Oracle.png" width="200"></center>
+<center><img src="images/Oracle.png" width="200"></center>
 <center>Figure 1. Logo for Oracle of assets. </center>
 
 
@@ -45,8 +45,6 @@ By considering the above case, the portfolio optimization problem can be impleme
 To solve this problem can be based on the maximum clique problem, where this is represented in a graph is the largest subset of vertices that are completely connected. That is, each vertex is adjacent to all other vertices in the clique.  The natural complement to this problem is MIS. 
 
 
-![MIS solution of a Graph](images/graph_sol.png)
-<center>Figure 5. Example of a Graph for Portfolio optimization using MIS. </center>
 
 
 
@@ -62,8 +60,19 @@ The oracle of assets is a tool for investors that identifies a subgroup of asset
 
 ## Business
 
-Any system that has multiple processes that are altered in the evolution of time, through certain factors that we cannot control, as is the case of the complex environment in which technology, media and telecommunications companies or investors who want to value their assets considering the risks and current situations of the companies of their interest. Where they are trying to drive growth by optimizing their asset portfolios.
+Any system that has multiple processes that are altered in the evolution of time, through certain factors that we cannot control, as is the case of the complex environment in which technology, media and telecommunications companies or investors who want to value their assets considering the risks and current situations of the companies of their interest. Where they are trying to drive growth by optimizing their asset portfolios. It consists of two phases, the quantitative finance problems, which is the prediction, and the decision-based optimization of these predictions. Therefore, covariance forecasting models are important, they are optimized with unique objectives and constraints based on the prediction. In the case of identifying the shares of a company, when investing it is important to consider the positions, the line of business and that some depend on another company for their relationships or that they are a block of a larger company, such as the shares of their CEOs. 
 
+
+![Example of a Graph](images/cor.png)
+<center>Figure 5. Example of covariance in a Conglomerate. </center>
+
+
+Like the case Multiverse & BBVA mentioned in their news, we need to find a way that we can tell investors where to put their money. Where the best sequence of buying and selling is most accurate with our proposal. But this will depend on time with multiple conditions where the objective is to increase profits and decrease losses, being a rational being is what we are looking for.
+
+
+
+![MIS solution of a Graph](images/graph_sol.png)
+<center>Figure 6. Example of a Graph for Portfolio optimization using MIS. </center>
 
 
 #### 
