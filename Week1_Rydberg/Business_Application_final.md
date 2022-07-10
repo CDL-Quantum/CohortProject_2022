@@ -41,7 +41,7 @@ To have a baseline calculation, which an implementation can be compared to, we p
 
 
 - Figures [1-3] show the calculated total energy (Kinetic + Potential) for a 9-sites spin chain with nearest neighbor interaction. The parameters U and $\beta$
- are the Hubbard U and the inverse temperature, respectively. The larger $\beta =10$ corresponds to the low temperature regime to depict the ground state of the system. As seen the Kinetic/potential energy decreases/increases with increasing the chemical potential. The lowest total energy is obtained at chemical potential=0. The total energy increases by increasing/decreasing the chemical potential, and the larger $\beta$ (lower temperature), the lower enrgy. The calculations show that the total energy for a relaxed system (at $\mu=0$) changes by %10 upon changing $\beta$  from 3 to 10. Please note that while the calculations are reported for the Hubbard parameters, they can be applied to the Rydberg atom system by appropriate scalling.
+ are the Hubbard U and the inverse temperature, respectively. The larger $\beta=10$ corresponds to the low temperature regime to depict the ground state of the system. As seen the Kinetic/potential energy decreases/increases with increasing the chemical potential. The lowest total energy is obtained at chemical potential=0. The total energy increases by increasing/decreasing the chemical potential, and the larger $\beta$ (lower temperature), the lower enrgy. The calculations show that the total energy for a relaxed system (at $\mu=0$) changes by %10 upon changing $\beta$ from 3 to 10. Please note that while the calculations are reported for the Hubbard parameters, they can be applied to the Rydberg atom system by appropriate scalling.
 
 ![Figure 1](images/beta3new.png)
 
