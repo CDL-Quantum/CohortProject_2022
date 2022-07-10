@@ -1,44 +1,12 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
 # Project 1: INSTRUCTIONS
 
-A new generation of programmable neutral atom quantum computer has recently matured enough that the technology has begun to transfer from academic labs to startup companies, including [QuEra](https://www.quera.com), [Pasqal](https://pasqal.io), and 2021 CDL Cohort graudates [PlanQC](https://creativedestructionlab.com/companies/plan-qc/). 
-This technology, based on arrays of Rydberg (or highly-excited) atoms manipulated by optical tweezers, is capable of forming strongly interacting quantum systems that can be used for a variety of purposes, including the simulation of quantum matter and materials, and finding solutions to challenging combinatorial problems.
+Contributed by Arunanghu Debnath on behalf of the working subgroup.
 
-In this project, you will explore the ability of Rydberg atoms to prepare a variety of quantum target states.  After the introductory material below, you will be given a number of increasingly difficult *tasks*, as well as optional *challenges* to complete.
-
-## Modelling Rydberg atom arrays
-The foundation of today’s neutral-atom quantum computers is [Rydberg atoms](https://arxiv.org/abs/2002.07413). Briefly, Rydberg atoms are highly-excited atoms (e.g. Rubidium or Strontium) that interact with each other on the scale of a few micrometres. A controlled laser pulse can excite an atom into a quantum state with a large principal quantum number (i.e. a Rydberg state) that is quasi-stable. 
-The binary nature of a Rydberg atom’s ground state $|g \rangle $ and excited state $|r \rangle $ defines a two-level system, and such atomic states can be used to build qubit-based quantum computers.
-
-Rydberg atoms are held into a physical location in the array by optical tweezers. This allows a high degree of tunability of the inter-atomic interactions.
-We will consider Rydberg atom arrays on a interaction graph, where the Hamiltonian has the general form
-$$H =  \frac{\Omega}{2} \sum_{i \in V}\sigma_i^x  - \delta \sum_{i \in V} n_i + \sum_{ i < j } V_{ij} n_i n_j$$
-Here, $n_i = 1/2 \left({ I - \sigma_i^z }\right) = |r \rangle \langle r|_i$ is called an occupation operator.  
-
-The first term (Rabi frequency) is off-diagonal, and analogous to a transverse field: $\sigma^x = |g \rangle \langle r| + |r \rangle \langle g|$.  The second term (detuning) favours all sites being occupied with an excitation, while the final (interaction) term penalizes simultaneously occupied pairs. 
-
-The interaction takes the form $V_{ij} = \Omega\left(\frac{R_b}{r_{ij}}\right)^6$, where $R_b$ is a parameter called the [blockade](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/1.blockade/main/#blockade) radius, and the distance between atoms located at vertices $i$ and $j$ is $r$.
-The computational basis we will be working in is the occupation basis, $| g \rangle $ and $| r \rangle $.
-The eigenstates of the Rydberg occupation operator are $n_i | g \rangle_j = 0$ and $n_i | r \rangle_j  = \delta_{i,j} |r \rangle_j$, for all sites $i$ and $j$.
-
-
-The goal of the simplest Rydberg atom quantum computer is to prepare the groundstate wavefunction of some target Hamiltonian, defined by the ratio of the detuning to the Rabi frequency, and the interaction $V_{ij}$, which is in turn defined by the geometry of the optical tweezer lattice $r_{ij}$, and the blockade radius.  
-
-The computer can easily be prepared with all atoms are in their groundstate, that is, every single-atom state is $| 0 \rangle $.  
-
-Then, final (target) states are prepared by slowly tuning $\delta(t)/\Omega(t)$ as a function of time using the adiabatic state preperation protocol.
-
-Let's explore state preparation protocols on this neutral atom quantum computer. Below are series of Tasks and optional Challenges for each team to attempt.
 
 ## Task 1: Adiabatic state preparation with Bloqade
 
-Our first task will be to prepare an [experimentally motivated](https://www.nature.com/articles/nature24622) ordered state consisting of alternating ground and Rydberg states in a one-dimensional (1D) chain, the so-called $\mathbb{Z}_2$ state: $$ |\psi \rangle = | g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r  \cdots \rangle.$$
-To get us started, we will use the open-source simulation software [Bloqade](https://github.com/QuEraComputing/Bloqade.jl) to prepare the $\mathbb{Z}_2$ state of a one-dimensional chain of 9 atoms with open boundary conditions.  In order to prepare this state, follow the Bloqade [tutorial](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Preparation-of-Ordered-States-in-1D):
-generate the pulse/detuning sequence, specify the atomic position, then starting in the groundstate, simulate the time evolution of a quantum state under the Schrödinger equation.  
-Plot the average occupation on each site as a function of time.
-
-In addition, calculate the expectation value of $\langle \sigma^x_i \rangle$ and gap $E_1 - E_0 = \Delta E$ between the Rydberg Hamiltonian's groundstate and first excited state.  What does the latter imply about the viability of the adiabatic protocol for this type of quantum computer? Can you determine how it scales with increasing array size?
-
+The study was performed to study symmetric detuning range, higher Rabi pulse area. Predictably it prepares a site distribution and not site-specific state profiles.
 
 ## Task 2: Larger arrays with the Blockade Approximation
 
