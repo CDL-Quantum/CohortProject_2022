@@ -12,14 +12,14 @@ In this exercise we investigated a specific quantum physical model which can be 
 
 - Problem definition:
 
-Arrays of atoms have been used as simple toy model in spin systems. The simplest model is the well-know Heisenberg spin chain, which has been extended to one-dimensional Hubbard model (Hubbard chains). These toy models have been played an in describing lattice spin models and have also been employed in quantum computing, e.g. in quantum state (qubit) transfer in spin networks. Another system that has recently been of interest is the cold atom system (Rydberg atom). Arrays of Rydberg atom can be exited to their exited state using laser beam and revealed potential quantum computing application, e.g. in quantum enhanced sensing. Coherent coupling between such exited Rydberg states provides an avenue for realizing strongly interacting quantum systems.
+Arrays of atoms have been used as simple toy model in spin systems. The simplest model is the well-know Heisenberg spin chain, which has been extended to one-dimensional Hubbard model (Hubbard chains). These toy models have been played a pivotal role in describing lattice spin models and have also been employed in quantum computing, e.g. in quantum state (qubit) transfer in spin networks. Another system that has recently been of interest is the cold atom system (Rydberg atom). Arrays of Rydberg atom can be exited to their exited state using laser beam and revealed potential quantum computing application, e.g. in quantum enhanced sensing. Coherent coupling between such exited Rydberg states provides an avenue for realizing strongly interacting quantum systems. It has been shown that appropriate configuration of Rydberg atoms into a system of itinerant electrons and phonons can be described by Hubbard model.
 
 
 - Hubbard model: The one-dimensional Fermi-Hubbard Hamiltonian reads
 
-$$H = - \sum_{i, \sigma} t(\hat{c}_{i, \sigma}^{\dagger} \hat{c}_{i+1, \sigma} + \hat{c}_{i+1, \sigma}^{\dagger} \hat{c}_{i, \sigma}) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})$$
+$$H = - \sum_{i, \sigma} t(\hat{c}_{i, \sigma}^{\dagger} \hat{c}_{i+1, \sigma} + \hat{c}_{i+1, \sigma}^{\dagger} \hat{c}_{i, \sigma}) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})$$,
 
-, where i enumerates the sites along the chain. The first term of the hamiltonian represents the hopping integrals for nearest neighbor interactions and the second term, represents the repulsive interaction between electrons on the same site. t denotes the hopping parameter, which describes how favorable it is for electrons to hop from site to site, U defines the strength of the electron repulsion, and mu is the chemical potential.
+where i enumerates the sites along the chain. The first term of the hamiltonian represents the hopping integrals for nearest neighbor interactions and the second term, represents the repulsive interaction between electrons on the same site. t denotes the hopping parameter, which describes how favorable it is for electrons to hop from site to site, U defines the strength of the electron repulsion, and mu is the chemical potential.
 
 
 - Emulating the one-dimensional Fermi-Hubbard model on a neutral atom quantum computer:
@@ -28,7 +28,11 @@ We propose that a neutral atom quantum computer could be used to perform an anal
 
 $$H = \sum_{i, \sigma} g^x(\hat{\sigma}_{i, \sigma}^{+} \hat{\sigma}_{i+1, \sigma}^{-} + \hat{\sigma}_{i+1, \sigma}^{+} \hat{\sigma}_{i, \sigma}^{-}) + g^z \sum_{i} (\hat{\sigma}_{i \uparrow}^z \hat{\sigma}_{i \downarrow}^z) + \frac{1}{2}\epsilon\sum_{i} (\hat{\sigma}_{i \uparrow}^z + \hat{\sigma}_{i \downarrow}^z)$$
 
-where we have introduced new parameters $$\epsilon$$, $$g^{z}$$, $$g^{x}$$, which relate to the Hubbard model parameters with $$\mu=-\epsilon+2g^{z}$$, $$U=4g^{z}$$ and $$t=-g^{x}$$. Such a hamiltonian can be realized as a double chain of qubits, where each pair along the chain is representative of the two different spin species on each physical sight. Such a configuration is easily achievable with neutral atom arrays, as the platform has the capability to arrange the qubits into all kinds of 2D structures. Now all that is needed is a way to have a $$\sigma^{z}$$ interaction within each pair and a $$\sigma^{\pm}$$ interaction with the neighbouring pair. A method to create this has been proposed for superconducting qubits [6], but to our knowledge this has not been explored for neutral atoms yet. However, taking advantage of the finite range nature of the Rydberg blockade effect may be interesting to consider, beacuse it provides a way to differentiate between neighbouring qubits that differ by representative spin from those that differ by representative site. For example, the double chain can be constructed such that qubits which represent the same site are positioned close to each other so that thay experiance Rydberg blockade, whereas qubits of different sites are positioned on longer intervals, where this effect no longer dominates. 
+where we have introduced new parameters $\epsilon$, $g^{z}$, and $g^{x}$, 
+which relate to the Hubbard model parameters with $\mu=-\epsilon+2g^{z}$, $U=4g^{z}$ and $t=-g^{x}$. 
+Such a hamiltonian can be realized as a double chain of qubits, where each pair along the chain is representative of the two different spin species on each physical sight. Such a configuration is easily achievable with neutral atom arrays, as the platform has the capability to arrange the qubits into all kinds of 2D structures. Now all that is needed is a way to have a $\sigma^{z}$
+interaction within each pair and a $\sigma^{\pm}$
+interaction with the neighbouring pair. A method to create this has been proposed for superconducting qubits [6], but to our knowledge this has not been explored for neutral atoms yet. However, taking advantage of the finite range nature of the Rydberg blockade effect may be interesting to consider, beacuse it provides a way to differentiate between neighbouring qubits that differ by representative spin from those that differ by representative site. For example, the double chain can be constructed such that qubits which represent the same site are positioned close to each other so that thay experiance Rydberg blockade, whereas qubits of different sites are positioned on longer intervals, where this effect no longer dominates. 
 
 
 - Performance analysis:
@@ -36,13 +40,14 @@ where we have introduced new parameters $$\epsilon$$, $$g^{z}$$, $$g^{x}$$, whic
 To have a baseline calculation, which an implementation can be compared to, we present an auxiliary field quantum Monte Carlo (QMC) simulations for one-dimensional Hubbard model at low temperature regime. QMC algorithm is extensively employed for calculations of electronic structure of solids and molecules. Within the auxiliary field QMC the partition function is expressed as a multi-dimensional integral (calculated by Monte Carlo techniques) over a set of random auxiliary fields. The calculations are done for a 9-sites spin chain with nearest neighbor interaction and without periodic boundary conditions: the first and the last sites (antipodes) do not interact.
 
 
-- Figures [1-3] show the calculated total energy (Kinetic + Potential) for a 9-sites spin chain with nearest neighbor interaction. The parameters U and beta are the Hubbard U and the inverse temperature, respectively. The larger beta=10 corresponds to the low temperature regime to depict the ground state of the system. As seen the lowest energy is obtained at chemical potential=0. The energy increases by increasing/decreasing the chemical potential, and the larger beta (lower temperature), the lower enrgy. The calculations show that the total energy for a relaxed system (at mu=0) changes by %10 upon changing beta from 3 to 10.
+- Figures [1-3] show the calculated total energy (Kinetic + Potential) for a 9-sites spin chain with nearest neighbor interaction. The parameters U and $\beta$
+ are the Hubbard U and the inverse temperature, respectively. The larger $\beta=10$ corresponds to the low temperature regime to depict the ground state of the system. As seen the Kinetic/potential energy decreases/increases with increasing the chemical potential. The lowest total energy is obtained at chemical potential=0. The total energy increases by increasing/decreasing the chemical potential, and the larger $\beta$ (lower temperature), the lower enrgy. The calculations show that the total energy for a relaxed system (at $\mu=0$) changes by %10 upon changing $\beta$  from 3 to 10. Please note that while the calculations are reported for the Hubbard parameters, they can be applied to the Rydberg atom system by appropriate scalling.
 
-![Figure 1](images/beta3.png)
+![Figure 1](images/beta3new.png)
 
-![Figure 2](images/beta3_10.png)
+![Figure 2](images/beta3_10new.png)
 
-![Figure 3](images/beta10.png)
+![Figure 3](images/beta10new.png)
 
 # Real-world problems
 
@@ -92,6 +97,4 @@ https://www.loom.com/share/ff77cd7f199c4208889f6308379f9c30
 
 [Reiner, 2016] Reiner, Jan-Michael, et al. "Emulating the one-dimensional Fermi-Hubbard model by a double chain of qubits." Physical Review A 94.3 (2016): 032338.
 
-[]
-
-[]
+[Hague-2014] J.P. Hague, S. Downes, C. MacCormick, et al., J Supercond Nov Magn 27, 937–940 (2014).
