@@ -95,5 +95,3 @@ Solid material structures such as graphene, ferromagnetic lattices, Silicium squ
 [Reiner, 2016] Reiner, Jan-Michael, et al. "Emulating the one-dimensional Fermi-Hubbard model by a double chain of qubits." Physical Review A 94.3 (2016): 032338.
 
 [Hague-2014] J.P. Hague, S. Downes, C. MacCormick, et al., J Supercond Nov Magn 27, 937–940 (2014).
-
-[]
