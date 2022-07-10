@@ -7,7 +7,8 @@
 
 Full stack approach:
 
-- Problem definition
+- Problem definition:
+ Arrays of atoms have been used as simple toy model in spin systems. The simplest model is the well-know Heisenberg spin chain, which has been extended to one-dimensional Hubbard model (Hubbard chains). These toy models have been played an in describing lattice spin models and have also been employed in quantum computing, e.g. in quantum state (qubit) transfer in spin networks. Another system that has recently been of interest is the cold atom system (Rydberg atom). Arrays of Rydberg atom can be exited to their exited state using laser beam and revealed potential quantum computing application, e.g. in quantum enhanced sensing. Coherent coupling between such exited Rydberg states provides an avenue for realizing strongly interacting quantum systems.
 
 - Quantum algorithm
 
@@ -55,13 +56,14 @@ Solid material structures such as graphene, ferromagnetic lattices, Silicium squ
 
 # References
 
-[1] B.M. Rubenstein, Sh. Zhang, and D.R. Reichman, Phys. Rev. A 86, 053606 (2012); Sh. Zhang, Phys. Rev. Lett. 83, 2777 (1999).
+[1] H. Bernien et. al. Nature 551: 579-584 (2017).
 
-[2] F.H.L. Essler, H. Frahm, F. Gohmann, V.E. Korepin, A. Klümper, The one-dimensional Hubbard model, Cambridge University Press (2005).
+[2] M. A. Jafarizadeh, R. Sufiani, S. F. Taghavi, and E. Barati, “Optimal transfer of a d-level quantum
+state over pseudo-distance-regular networks”, J. Phys. A: Math. Theor. 41, 475302 (2008).
 
-[3]
+[3] B.M. Rubenstein, Sh. Zhang, and D.R. Reichman, Phys. Rev. A 86, 053606 (2012); Sh. Zhang, Phys. Rev. Lett. 83, 2777 (1999).
 
-[4]
+[4] F.H.L. Essler, H. Frahm, F. Gohmann, V.E. Korepin, A. Klümper, "The one-dimensional Hubbard model", Cambridge University Press (2005).
 
 [5]
 
