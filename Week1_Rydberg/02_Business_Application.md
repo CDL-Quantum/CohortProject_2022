@@ -1,5 +1,5 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
-# Quantum Cohort Project Business Application
+# Quantum Cohort Project Business Application I
 
 Contributed by Arunanghu Debnath on behanlf of the working subgroup.
 
@@ -129,3 +129,52 @@ constraints.
 -   https://www.bcg.com/capabilities/operations/digital-supply-chain
 
 -   https://www.mckinsey.com/industries/travel-logistics-and-infrastructure/our-insights/startup-funding-in-logistics-focused-investment-in-a-growing-industry
+
+
+
+# Quantum Cohort Business application project 02
+
+Contributed by Sultana Hadi on behalf of the working subgroup
+
+For industrial application, one can also look at Protein-folding.
+Protein is a sequence of amino-acid. In the protein folding problem, one
+is given a sequence on 1D, unfolded protein, based on its interactions
+with each other and outside, one has to find how it becomes functions
+and folds to a 3D shape. Protein folding is crucial for designing new
+therapeutics. In general, protein folding is NP-hard. Quantum promises
+to provide speedup for an optimization problem. Protein folding is an
+optimization problem, and we expect that quantum computers can speed up
+the process. There has been ongoing work to experimentally show speed
+for useful application of quantum speed up for the optimization is one
+of them. There has been some work on designing Quantum algorithms for
+protein folding problems, that has indicated speed up on quantum
+computers. We can write the problem Hamiltonian
+\[\[1\]\[2\]\[3\]\](https://arxiv.org/abs/1811.00713,https://www.nature.com/articles/srep00571.pdf,https://arxiv.org/pdf/2205.06084.pdf)
+as
+*H*<sub>*I*</sub> = *H*<sub>pair</sub> + *H*<sub>penalty</sub>
+where *H*<sub>pair</sub> encodes the interaction between different
+acids, valid interaction, and *H*<sub>penalty</sub> penalizes the
+unwanted amino-acid fold, and the the full Hamiltonian is the sum of a
+non-interacting and the interacting part
+*H* = *H*<sub>free</sub> + *H*<sub>pair</sub> + *H*<sub>penalty</sub>.
+The ground state of *H* gives us the string with valid protein folds. To
+solve this problem with Rydberg-Hamiltonian, we have to map it that
+Hamiltonian. The Rydberg-Hamiltonian is
+$$H= \\frac{\\Omega}{2}\\sum\_{i\\in V}\\sigma_i^x-\\delta\\sum\_{i\\in V}n_i+\\sum\_{i\>j}V\_{ij}n_in_j.$$
+We map
+*H*<sub>free</sub> →  − *δ*∑<sub>*i* ∈ *V*</sub>*n*<sub>*i*</sub>,
+*H*<sub>pair</sub> + *H*<sub>penalty</sub> → ∑<sub>*i* \> *j*</sub>*V*<sub>*i**j*</sub>*n*<sub>*i*</sub>*n*<sub>*j*</sub>.
+The problem is to start in the ground-state of
+∑<sub>*i* ∈ *V*</sub>*σ*<sub>*i*</sub><sup>*x*</sup>,
+\|*ψ*<sub>0</sub>⟩
+, and then addibaitcally go the ground sate of the full Hamiltonain
+$$\|\\psi_g\\rangle= e^{-i\\int\_{t_0}^{t_f}\\left(\\frac{\\Omega}{2}f(t)\\sum\_{i\\in V}\\sigma_i^x-g(t)(\\delta\\sum\_{i\\in V}n_i+\\sum\_{i\>j}V\_{ij}n_in_j)\\right)dt}\|\\psi_0\\rangle.$$
+The function f(t) and g(t), for the adibatic protocoal, is define such
+that at *t*<sub>*i*</sub> the state \|*ψ*<sub>0</sub>⟩, and at time
+*t*<sub>*f*</sub>, one gets \|*ψ*<sub>*g*</sub>⟩. Note
+$e^{-i\\int\_{t_0}^{t_f}\\left(\\frac{\\Omega}{2}f(t)\\sum\_{i\\in V}\\sigma_i^x-g(t)(\\delta\\sum\_{i\\in V}n_i+\\sum\_{i\>j}V\_{ij}n_in_j)\\right)dt}$
+can be discretized. The state \|*ψ*<sub>*g*</sub>⟩ is populated with
+different protein folds and the one with high probability is considered
+the stable folds. It is multi-objective optimization and solves for a
+solution space in a multivariate setup. We can also encode molecular
+docking as an optimization in the Ryberg-Hamiltonian.
