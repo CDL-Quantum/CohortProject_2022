@@ -21,7 +21,7 @@ Full stack approach:
 
 $H = - \sum_{\langle i,j \rangle, \sigma} t_{xy}^{ij}(\hat{c]_{i \sigma}^{\dagger} \hat{c}_{j \sigma} + h.c.) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})$
 
-i and j denote the sites which are adjacent to each other. 
+where i and j denote the sites which are adjacent to each other. 
 The first term of the hamiltonian represents the hopping integrals for nearest neighbor interactions indicated by $\langle i,j \rangle$ and the second term, represents the repulsive interaction between electrons on the same site. $t$ denotes the hopping parameter, which describes how favorable it is for electrons to hop from site to site, $U$ defines the strength of the electron repulsion, $\mu$ is the chemical potential.
 
 
