@@ -18,7 +18,7 @@ Arrays of atoms have been used as simple toy model in spin systems. The simplest
 - Hubbard model: The one-dimensional Fermi-Hubbard Hamiltonian reads
 
 $$
-H=-\sum_{\langle i,j \rangle,\sigma}t (\hat{c}_{i\sigma}^{\dag} \hat{c}_{j\sigma}+h.c.) +U\sum_{i}(\hat{n}_{i\uparrow}\hat{n}_{i\downarrow})
+H=-\sum_{\langle i,j \rangle,\sigma}t (\hat{c}_{i\sigma}^{\dagger} \hat{c}_{j\sigma}+h.c.) +U\sum_{i}(\hat{n}_{i\uparrow}\hat{n}_{i\downarrow})
 -\mu \sum_{i}(\hat{n}_{i\uparrow}+\hat{n}_{i\downarrow}), 
 $$
 
