@@ -132,9 +132,12 @@ constraints.
 
 
 
-# Quantum Cohort Business application project 02
+# Quantum Cohort Business application project II
 
 Contributed by Sultana Hadi on behalf of the working subgroup
+
+
+## Step 1 & 2: Motivation and problem formulation 
 
 For industrial application, one can also look at Protein-folding.
 Protein is a sequence of amino-acid. In the protein folding problem, one
