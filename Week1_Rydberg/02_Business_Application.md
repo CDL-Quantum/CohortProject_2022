@@ -181,3 +181,17 @@ different protein folds and the one with high probability is considered
 the stable folds. It is multi-objective optimization and solves for a
 solution space in a multivariate setup. We can also encode molecular
 docking as an optimization in the Ryberg-Hamiltonian.
+
+
+## Remarks
+
+The problem that was given in the cohort project was to solve the
+optimization problem with Rydberg devices. Any optimization problem can
+be mapped into the Ryberg Hamiltonian, but knowing whether it gives a
+speed-up or not, one has to run it against the best classical
+algorithms. In the article, we give a road map of how we can use Rydberg
+devices to solve a real-world problem in drug development (DD). We will
+outline two steps in DD, where we think optimization techniques like
+Ryberg atom, quantum annealing, QAOA, and tensor-network (TN) can be
+used or are already used. We can map the optimization problem into
+Rydberg devices, QAOA, and quantum annealing.
