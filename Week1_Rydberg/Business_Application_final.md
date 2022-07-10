@@ -56,10 +56,9 @@ Solid material structures such as graphene, ferromagnetic lattices, Silicium squ
 
 # References
 
-[1] H. Bernien et. al. Nature 551: 579-584 (2017).
+[1] H. Bernien et.al., Nature 551: 579-584 (2017).
 
-[2] M. A. Jafarizadeh, R. Sufiani, S. F. Taghavi, and E. Barati, “Optimal transfer of a d-level quantum
-state over pseudo-distance-regular networks”, J. Phys. A: Math. Theor. 41, 475302 (2008).
+[2] M.A. Jafarizadeh, R. Sufiani, S.F. Taghavi, and E. Barati, J. Phys. A: Math. Theor. 41, 475302 (2008).
 
 [3] B.M. Rubenstein, Sh. Zhang, and D.R. Reichman, Phys. Rev. A 86, 053606 (2012).
 
