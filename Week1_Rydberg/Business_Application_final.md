@@ -61,9 +61,11 @@ Solid material structures such as graphene, ferromagnetic lattices, Silicium squ
 [2] M. A. Jafarizadeh, R. Sufiani, S. F. Taghavi, and E. Barati, “Optimal transfer of a d-level quantum
 state over pseudo-distance-regular networks”, J. Phys. A: Math. Theor. 41, 475302 (2008).
 
-[3] B.M. Rubenstein, Sh. Zhang, and D.R. Reichman, Phys. Rev. A 86, 053606 (2012); Sh. Zhang, Phys. Rev. Lett. 83, 2777 (1999).
+[3] B.M. Rubenstein, Sh. Zhang, and D.R. Reichman, Phys. Rev. A 86, 053606 (2012).
 
-[4] F.H.L. Essler, H. Frahm, F. Gohmann, V.E. Korepin, A. Klümper, "The one-dimensional Hubbard model", Cambridge University Press (2005).
+[4] Sh. Zhang, Phys. Rev. Lett. 83, 2777 (1999).
+
+[5] F.H.L. Essler, H. Frahm, F. Gohmann, V.E. Korepin, A. Klümper, "The one-dimensional Hubbard model", Cambridge University Press (2005).
 
 [5]
 
