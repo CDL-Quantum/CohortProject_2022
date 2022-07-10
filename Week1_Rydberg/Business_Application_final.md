@@ -10,7 +10,7 @@ Full stack approach:
 - Problem definition:
  Arrays of atoms have been used as simple toy model in spin systems. The simplest model is the well-know Heisenberg spin chain, which has been extended to one-dimensional Hubbard model (Hubbard chains). These toy models have been played an in describing lattice spin models and have also been employed in quantum computing, e.g. in quantum state (qubit) transfer in spin networks. Another system that has recently been of interest is the cold atom system (Rydberg atom). Arrays of Rydberg atom can be exited to their exited state using laser beam and revealed potential quantum computing application, e.g. in quantum enhanced sensing. Coherent coupling between such exited Rydberg states provides an avenue for realizing strongly interacting quantum systems.
 
-- Hubbard model: The 1D Fermi-Hubbard Hamiltonian reads
+- Hubbard model: The one-dimensional Fermi-Hubbard Hamiltonian reads
 
 $$H = - \sum_{i, \sigma} t(\hat{c}_{i, \sigma}^{\dagger} \hat{c}_{i+1, \sigma} + \hat{c}_{i+1, \sigma}^{\dagger} \hat{c}_{i, \sigma}) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})$$
 
