@@ -53,6 +53,54 @@ describe a hybrid workflow that can leverage the power of quantum
 information processing at the back-end.  
 
 
+## Step 2: Proposed workflow
+
+Given the Cohort project which involves the preparation of specific
+states in Rydberg atomic aggregates via manipulation of inter-site
+interactions, and externally induced detunings, we focus on a simple
+extension that involves state-to-state amplitude transfer.  
+We identify the logistical ports of interest as the nodes of a weighted
+graph. The assignment of these weights (referred to as intrinsic
+weights) can be obtained from the values representing rates of transport
+in-flow and out-flow. This simple exercise completes the mapping of the
+logistical transport problem to a weighted graph.  
+Subsequently, we define a control objective as sum of weights (assigned
+to edges of the constructed graph) which are further multiplied by
+extrinsic weights
+*J*<sub>1</sub> = ∑<sub>*i*, *j*</sub>∑<sub>*k*</sub>*w*<sub>*i**j*</sub><sup>(*k*)</sup>*t*<sub>*i**j*</sub><sup>(*k*)</sup>.
+We note that the control objective is a generalizable one. We may also
+define the objective as a quantity that describes deviation from a
+predefined objective as,
+*J*<sub>2</sub> = (*J*<sub>1</sub>−*J*<sub>goal</sub>)<sup>2</sup>.
+Thereafter, the state-to-state amplitude transfer problem can be
+reformulated as finding a set of weights which minimizes the above
+mentioned control objective via a reformulation of optimal control
+algorithms. We seek the MIS problem to be implemented in a quantum
+variational hardware and offer us the identification of the independent
+sets of nodes. The resultant independent sets are assigned to matrix
+elements which are then utilized in a classical finite-time optimal
+control problem using Hamilton-Jacobi-Bellman formulation i.e.
+∂*J*<sub>*m*</sub>({**r**(*t*)},*t*)/*d**t* = max<sub>*u*</sub>*H*(*u*).
+Here *H*(*u*) is may be specified as, $\\begin{pmatrix}
+\\partial J\_{m}(r_1, t)/dt & \\partial J\_{m}(r_2, t)/dt & \\cdots\\\\
+\\end{pmatrix}^T \\times \\begin{pmatrix}
+-k_1 & t\_{12} & \\cdots\\\\
+t\_{21} & -k_2 & \\cdots \\\\
+\\vdots &  \\vdots    & \\ddots
+\\end{pmatrix} \\times \\begin{pmatrix}
+r_1 & r_2 & \\cdots\\\\
+\\end{pmatrix}$. Here we look for the maximum attainable
+*r*<sub>val</sub>(*T*) for all initialized ({**r**}) for a finite time
+*T*. The maximum or the optimal return function is denoted as
+*J*<sub>*m*</sub>({**r**},*t*). Such a description incorporates the
+problem of finding MIS integrated within a broader logistics control
+problem. It is important to note that such a hybrid framework is
+particularly advantageous because of its ability to include several
+dissipative terms within the classical control part of the framework.
+The latter can be used to model adversities of different nature.  
+
+
+
 
 ## References
 
