@@ -6,51 +6,16 @@ Contributed by Arunanghu Debnath on behanlf of the working subgroup.
 
 ## Step 1a: Motivation
 
-Here we analyze another domain of application that is expected to
-benefit immensely from the incorporation of MIS (maximum independent
-set) based and related strategies. We focus on developing the operations
-research-based decision-making framework which can leverage the
-strengths of MIS and related optimization problems. In particular, we
-focus on the acceleration of transport logistics in competitive,
-underregulated markets. Such markets are usually less amenable to
-quantitative modeling due to the overdetermined nature of the governing
-equations. However, they often have a higher number of predictable
-constraints owing to the fact that an evolving framework of regulations
-conforms to the established robust, working ones.  
+Here we analyze another application domain expected to benefit immensely from the incorporation of MIS (maximum independent set) based and related strategies. We focus on developing the operations research-based decision-making framework that can leverage MIS's strengths and related optimization problems. In particular, we focus on accelerating transport logistics in competitive, underregulated markets. Such markets are usually less amenable to quantitative modeling due to the overdetermined nature of the governing equations. However, they often have more predictable constraints because an evolving framework of regulations conforms to the established robust, working ones.
+
+
 
 
 ## Step 1b: Introduction
 
-Logistics management is an undeniably essential component of the B2B and
-B2C distribution processes in the manufacturing and retail sectors. The
-long-term implications for strategic investments in this area with an
-aim to build up optimization strategies of logistics management may
-mitigate a wide range of concerns for the company. For example, the
-improvement of accuracy of delivery, and increase in transparency of
-transactions - all of which contribute to the robust functioning of the
-company and streamline the pivoting capabilities in the face of
-unexpected constraints.  
-The recent macroeconomic drivers e.g., regulated globalization and
-geopolitically motivated recalibration of the supply chain in the
-manufacturing sector have shown early signs which reiterate the need for
-such requirements. As the established companies try to find a way to
-compete with the new disruptors in the sector, a common route is to
-gradually veer away from the services to a platform-building business.
-The latter reduces the need for logistics outsourcing but signals a
-pressing need for investing in data-driven, technology solutions.
-Furthermore, it is notable that the current shift in consumer demand is
-dominantly governed by rapid urbanization, internet penetration, steady
-increase in spending power linked to a higher tendency to consumption.
-While the above-mentioned reasons and their consequences were predicted,
-the involuntary migrations related to climate alterations, voluntary
-economic migrations, and workforce realignments driven by global
-political and strategic changes are yet to manifest themselves. It
-points towards a demand for developing novel forecasting strategies.  
-Together, they are expected to have a significant impact on the
-optimized logistical models that are currently in use. Within this
-broader context, we propose the construction of a minimal model and
-describe a hybrid workflow that can leverage the power of quantum
-information processing at the back-end.  
+Logistics management is an undeniably essential component of the B2B and B2C distribution processes in the manufacturing and retail sectors. The long-term implications for strategic investments in this area to build up optimization strategies of logistics management may mitigate a wide range of concerns for the company. For example, the improvement of delivery accuracy and increase in transparency of transactions contribute to the company's robust functioning and streamline the pivoting capabilities in the face of unexpected constraints.  
+The recent macroeconomic drivers, e.g., regulated globalization and geopolitically motivated recalibration of the supply chain in the manufacturing sector, have shown early signs which reiterate the need for such requirements. As the established companies try to find a way to compete with the new disruptors in the sector, a standard route is to veer away from the services to a platform-building business gradually. The latter reduces the need for logistics outsourcing but signals a pressing need for investing in data-driven technology solutions.
+While the reasons mentioned above and their consequences were predicted, the involuntary migrations related to climate alterations, voluntary economic migrations, and workforce realignments driven by global political and strategic changes are yet to manifest themselves. Furthermore, it is notable that the current shift in consumer demand is dominantly governed by rapid urbanization, internet penetration, steady increase in spending power linked to a higher tendency to consumption. It points towards a need for developing novel forecasting strategies. Together, they are expected to have a significant impact on the optimized logistical models that are currently in use. Within this broader context, we propose constructing a minimal model and describe a hybrid workflow that can leverage the power of quantum information processing at the back-end. 
 
 
 ## Step 2: Proposed workflow
@@ -126,19 +91,7 @@ Contributed by Sultana Hadi on behalf of the working subgroup
 
 ## Step 1 & 2: Motivation and problem formulation 
 
-For industrial application, one can also look at Protein-folding.
-Protein is a sequence of amino-acid. In the protein folding problem, one
-is given a sequence on 1D, unfolded protein, based on its interactions
-with each other and outside, one has to find how it becomes functions
-and folds to a 3D shape. Protein folding is crucial for designing new
-therapeutics. In general, protein folding is NP-hard. Quantum promises
-to provide speedup for an optimization problem. Protein folding is an
-optimization problem, and we expect that quantum computers can speed up
-the process. There has been ongoing work to experimentally show speed
-for useful application of quantum speed up for the optimization is one
-of them. There has been some work on designing Quantum algorithms for
-protein folding problems, that has indicated speed up on quantum
-computers. We can write the problem Hamiltonian
+For industrial application, one can also look at Protein-folding. A protein is a set of amino acids that fold into a specific three-dimensional structure encoded in its one-dimensional sequence. In the protein folding problem, one is given a sequence on 1D, unfolded protein; based on its interactions with each other, and outside, one has to find how it becomes functions and folds to a 3D shape. Protein folding is crucial for designing new therapeutics. In general, protein folding is NP-hard. Quantum promises to provide speedup for an optimization problem. Protein folding is an optimization problem, and we expect that quantum computers can speed up the process. There has been ongoing work to experimentally show speed for practical application of quantum speed up for the optimization is one of them. There has been some work on designing Quantum algorithms for protein folding problems that have indicated speed up on quantum computers. We can write the problem Hamiltonian
 \[\[1\]\[2\]\[3\]\](https://arxiv.org/abs/1811.00713,https://www.nature.com/articles/srep00571.pdf,https://arxiv.org/pdf/2205.06084.pdf)
 as
 *H*<sub>*I*</sub> = *H*<sub>pair</sub> + *H*<sub>penalty</sub>
@@ -172,13 +125,4 @@ docking as an optimization in the Ryberg-Hamiltonian.
 
 ## Step 03: Remarks
 
-The problem that was given in the cohort project was to solve the
-optimization problem with Rydberg devices. Any optimization problem can
-be mapped into the Ryberg Hamiltonian, but knowing whether it gives a
-speed-up or not, one has to run it against the best classical
-algorithms. In the article, we give a road map of how we can use Rydberg
-devices to solve a real-world problem in drug development (DD). We will
-outline two steps in DD, where we think optimization techniques like
-Ryberg atom, quantum annealing, QAOA, and tensor-network (TN) can be
-used or are already used. We can map the optimization problem into
-Rydberg devices, QAOA, and quantum annealing.
+The problem given in the cohort project was solving the optimization problem with Rydberg devices. Any optimization problem can be mapped into the Ryberg Hamiltonian. Still, to know whether it provides a speed-up, one has to run it against the best classical algorithms. In the article, we give a road map of how we can use Rydberg devices to solve a real-world problem in drug development (DD). We will outline two steps in DD, where we think optimization techniques like Ryberg atom, quantum annealing, QAOA, and tensor-network (TN) can be used or are already used. We can map the optimization problem into Rydberg devices, QAOA, and quantum annealing.
