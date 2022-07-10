@@ -21,7 +21,9 @@ Full stack approach:
 
 $H = - \sum_{\langle i,j \rangle, \sigma} t_{xy}^{ij}(\hat{c]_{i \sigma}^{\dagger} \hat{c}_{j \sigma} + h.c.) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})$
 
-i and j denote the sites which are adjacent to each other.
+i and j denote the sites which are adjacent to each other. 
+
+- Figures show the calculated total energy (Kinetic + Potential) for a 9-sites spin chain with nearest neighbor interaction. The parameters U and beta are the Hubbard U and the inverse temperature, respectively. The larger beta=10 corresponds to the low temperature regime to realize the ground state of the system.  
 
 total density operator $\hat{n}_i = \hat{n}_{i \downarrow} + \hat{n}_{i \uparrow}$
 
