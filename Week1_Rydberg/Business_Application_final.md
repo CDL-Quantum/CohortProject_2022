@@ -17,7 +17,7 @@ Arrays of atoms have been used as simple toy model in spin systems. The simplest
 
 - Hubbard model: The one-dimensional Fermi-Hubbard Hamiltonian reads
 
-<img src="https://render.githubusercontent.com/render/math?math={\H = - \sum_{i, \sigma} t(\hat{c}_{i, \sigma}^{\dagger} \hat{c}_{i+1, \sigma} + \hat{c}_{i+1, \sigma}^{\dagger} \hat{c}_{i, \sigma}) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})}#gh-light-mode-only">
+<img src="https://render.githubusercontent.com/render/math?math={H = - \sum_{i, \sigma} t(\hat{c}_{i, \sigma}^{\dagger} \hat{c}_{i+1, \sigma} + \hat{c}_{i+1, \sigma}^{\dagger} \hat{c}_{i, \sigma}) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})}#gh-light-mode-only">
 
 
 $H = - \sum_{i, \sigma} t(\hat{c}_{i, \sigma}^{\dagger} \hat{c}_{i+1, \sigma} + \hat{c}_{i+1, \sigma}^{\dagger} \hat{c}_{i, \sigma}) + U \sum_{i} (\hat{n}_{i \uparrow} \hat{n}_{i \downarrow}) - \mu \sum_{i} (\hat{n}_{i \uparrow} + \hat{n}_{i \downarrow})$,
