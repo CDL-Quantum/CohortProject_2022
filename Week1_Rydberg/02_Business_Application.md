@@ -183,7 +183,7 @@ solution space in a multivariate setup. We can also encode molecular
 docking as an optimization in the Ryberg-Hamiltonian.
 
 
-## Remarks
+## Step 03: Remarks
 
 The problem that was given in the cohort project was to solve the
 optimization problem with Rydberg devices. Any optimization problem can
