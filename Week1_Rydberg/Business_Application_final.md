@@ -46,7 +46,7 @@ To have a baseline calculation, which an implementation can be compared to, we p
 
 ![Figure 2](images/beta3_10.png)
 
-![Figure 3](images/beta10.png)
+![Figure 3](images/beta10new.png)
 
 # Real-world problems
 
