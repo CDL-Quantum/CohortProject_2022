@@ -8,7 +8,11 @@
 
 
 
+<<<<<<< HEAD
 <center><img src="Images/Oracle.png" width="200"></center>
+=======
+<center><img src="images/Oracle_2.png" width="1000"></center>
+>>>>>>> fba0f20bde7938980930c0abaaeb909b2a836b23
 <center>Figure 1. Logo for Oracle of assets. </center>
 
 
@@ -141,7 +145,7 @@ The cost function is obtained in the following plot.
 
 ![Cost fun](Images/cost_func.png)
 <center>Figure 11. Cost function.</center>
-
+ 
 
 The result is the same like in the previous proposal, we cna compare both graph.
 
