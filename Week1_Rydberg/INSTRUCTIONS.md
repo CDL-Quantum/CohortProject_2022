@@ -1,4 +1,7 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
+
+Team members: Shinibali Bhattacharyya, Yaqi Han, Sourav Sen Choudhury
+
 # Project 1: INSTRUCTIONS
 
 A new generation of programmable neutral atom quantum computer has recently matured enough that the technology has begun to transfer from academic labs to startup companies, including [QuEra](https://www.quera.com), [Pasqal](https://pasqal.io), and 2021 CDL Cohort graudates [PlanQC](https://creativedestructionlab.com/companies/plan-qc/). 
@@ -32,6 +35,8 @@ Let's explore state preparation protocols on this neutral atom quantum computer.
 
 ## Task 1: Adiabatic state preparation with Bloqade
 
+See our solution [here](Task1_final.ipynb).
+
 Our first task will be to prepare an [experimentally motivated](https://www.nature.com/articles/nature24622) ordered state consisting of alternating ground and Rydberg states in a one-dimensional (1D) chain, the so-called $\mathbb{Z}_2$ state: $$ |\psi \rangle = | g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r \hspace{1mm} g \hspace{1mm} r  \cdots \rangle.$$
 To get us started, we will use the open-source simulation software [Bloqade](https://github.com/QuEraComputing/Bloqade.jl) to prepare the $\mathbb{Z}_2$ state of a one-dimensional chain of 9 atoms with open boundary conditions.  In order to prepare this state, follow the Bloqade [tutorial](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/2.adiabatic/main/#Preparation-of-Ordered-States-in-1D):
 generate the pulse/detuning sequence, specify the atomic position, then starting in the groundstate, simulate the time evolution of a quantum state under the Schrödinger equation.  
@@ -41,6 +46,8 @@ In addition, calculate the expectation value of $\langle \sigma^x_i \rangle$ and
 
 
 ## Task 2: Larger arrays with the Blockade Approximation
+
+See our solution [here](Task2_final.ipynb).
 
 What is the largest 1D array that you can simulate for the full Rydberg Hamiltonian, with exact time evolution as above? 
 What implications does this have for quantum advantage, particularly in light of the experiments mentioned above?
@@ -52,11 +59,15 @@ What is the largest 2D array for which you can adiabatically prepare the checker
 
 ## Task 3: MIS
 
+See our solution [here](Task3_final.ipynb).
+
 Maximum Independent Set (MIS) is a combinatorial optimization problem that is naturally suited to implementation on a Rydberg atom quantum computer. Specifically, the Rydberg blockade implies that two atoms cannot be both excited to the Rydberg state $| r \rangle$ if they are close to each other. In MIS, the independent set constraint means that two vertices on a graph cannot be both in the independent set when they are connected by an edge. Thus, one can consider atoms in the Rydberg state as vertices in an independent set. Read more about the MIS problem [here](https://queracomputing.github.io/Bloqade.jl/dev/tutorials/4.MIS/main/#mis-tutorial).
 
 Following the Bloqade tutorial [script](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl), solve the $4 \times 4$ diagonal-connected unit-disk grid graphs (DUGG) problems using the adiabatic approach. How large of an array can Bloqade solve?  Attempt to solve for larger square DUGGs using your tensor network approach. Try different pulse parameterization and compare which is better, and explore how smoothing affects the performance.
 
 ## Task 4: Business applications
+
+*We didn't get to this part due to lack of member input.*
 
 Finally, use your simulations to solve a groundstate encoding problem for an industrial application.  You may come up with your own, or look at one of the examples given in this recent [preprint](https://arxiv.org/abs/2205.08500): i.e. Portfolio optimization (example VI), Network immunization (example VII), or Task scheduling (example XII). Set up a problem, and solve it on as large a graph as possible using adiabatic state preparation protocols. Link this to your [Business Application](./Business_Application.md).
 
