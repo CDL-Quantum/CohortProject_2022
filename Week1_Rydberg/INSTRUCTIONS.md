@@ -20,7 +20,6 @@ Linked code: Rydberg_MIS_2.ipynb
 
 ## Task 4: Business applications
 
-Addressed in the Business applications document.
+Addressed in the accompanying Business applications document.
 
-### Once you are comfortable with the above tasks, you may turn to one or more of the below optional **Challenges** for any time remaining in your project. 
 
