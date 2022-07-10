@@ -20,7 +20,7 @@ We propose that a neutral atom quantum computer could be used to perform an anal
 
 $$H = \sum_{i, \sigma} g^x(\hat{\sigma}_{i, \sigma}^{+} \hat{\sigma}_{i+1, \sigma}^{-} + \hat{\sigma}_{i+1, \sigma}^{+} \hat{\sigma}_{i, \sigma}^{-}) + g^z \sum_{i} (\hat{\sigma}_{i \uparrow}^z \hat{\sigma}_{i \downarrow}^z) + \frac{1}{2}\epsilon\sum_{i} (\hat{\sigma}_{i \uparrow}^z + \hat{\sigma}_{i \downarrow}^z)$$
 
-where we have introduced new parameters $\epsilon$, $g^{z}$ and $g^{x}$, which relate to the Hubbard model parameters with $\mu=-\epsilon+2g^{z}$, $U=4g^{z}$ and $t=-g^{x}$. Such a hamiltonian can be realized as a double chain of qubits, where each pair along the chain is representative of the two different spin species on each physical sight. Such a configuration is easily achievable with neutral atom arrays, as the platform has the capability to arrange the qubits into all kinds of 2D structures. Now all that is needed is a way to have a $\sigma^{z}$ interaction within each pair and a $\sigma^{\pm}$ interaction with the neighbouring pair. A method to create this has been proposed for superconducting qubits [6], but to our knowledge this has not been explored for neutral atoms yet. However, taking advantage of the finite range nature of the Rydberg blockade effect may be interesting to consider, beacuse it provides a way to differentiate between neighbouring qubits that differ by representative spin from those that differ by representative site. For example, the double chain can be constructed such that qubits which represent the same site are positioned close to each other so that thay experiance Rydberg blockade, whereas qubits of different sites are positioned on longer intervals, where this effect no longer dominates. 
+where we have introduced new parameters $$\epsilon$$, $$g^{z}$$ and $$g^{x}$$, which relate to the Hubbard model parameters with $$\mu=-\epsilon+2g^{z}$$, $$U=4g^{z}$$ and $$t=-g^{x}$$. Such a hamiltonian can be realized as a double chain of qubits, where each pair along the chain is representative of the two different spin species on each physical sight. Such a configuration is easily achievable with neutral atom arrays, as the platform has the capability to arrange the qubits into all kinds of 2D structures. Now all that is needed is a way to have a $$\sigma^{z}$$ interaction within each pair and a $$\sigma^{\pm}$$ interaction with the neighbouring pair. A method to create this has been proposed for superconducting qubits [6], but to our knowledge this has not been explored for neutral atoms yet. However, taking advantage of the finite range nature of the Rydberg blockade effect may be interesting to consider, beacuse it provides a way to differentiate between neighbouring qubits that differ by representative spin from those that differ by representative site. For example, the double chain can be constructed such that qubits which represent the same site are positioned close to each other so that thay experiance Rydberg blockade, whereas qubits of different sites are positioned on longer intervals, where this effect no longer dominates. 
 
 
 - Performance analysis:
@@ -30,11 +30,11 @@ To have a baseline calculation, which an implementation can be compared to, we p
 
 - Figures [1-3] show the calculated total energy (Kinetic + Potential) for a 9-sites spin chain with nearest neighbor interaction. The parameters U and beta are the Hubbard U and the inverse temperature, respectively. The larger beta=10 corresponds to the low temperature regime to depict the ground state of the system. As seen the lowest energy is obtained at chemical potential=0. The energy increases by increasing/decreasing the chemical potential, and the larger beta (lower temperature), the lower enrgy. The calculations show that the total energy for a relaxed system (at mu=0) changes by %10 upon changing beta from 3 to 10.
 
-[[images/beta3.png]]
+![Figure 1](images/beta3.png)
 
-[[images/beta3_10.png]]
+![Figure 2](images/beta3_10.png)
 
-[[images/beta10.png]]
+![Figure 3](images/beta10.png)
 
 # Real-world problems
 
@@ -58,7 +58,7 @@ The lesson learned from this project is:
 
 Potential customers of a simulation tool to predict the band structures of solid materials are photovoltaics companies. With quantum computing based simulations they may be able to predict structures in the future with greater accuracy and obtain the results faster. A high-throughput screening of novel materials with desired properties will help to improve the efficiency of photovoltaics.
 
-In Copenhagen exist two start-up companies which build micro-reactors for nuclear (thorium) heat generation to generate electricity via steam. These two companies are Seaborg (https://seaborg.com) and Copenhagen Atomics (https://copenhagenatomics.com/). Crucial for these micro-reactors are liquid molten salts which act has the heat transport material between the micro-reactor and the water flow to be heated up.
+In Copenhagen exist two start-up companies which build micro-reactors for nuclear (thorium) heat generation to generate electricity via steam. These two companies are Seaborg (https://seaborg.com) and Copenhagen Atomics (https://copenhagenatomics.com/). Crucial for these micro-reactors are liquid molten salts which act has the heat transport material between the micro-reactor and the water flow to be heated up. []
 https://aip.scitation.org/doi/10.1063/1.1324709
 https://www.sciencedirect.com/science/article/abs/pii/S0378381216302394?via%3Dihub
 
@@ -70,18 +70,18 @@ Solid material structures such as graphene, ferromagnetic lattices, Silicium squ
 
 # References
 
-[1] H. Bernien et al., Nature 551: 579-584 (2017).
+[Bernien et al., 2017] H. Bernien et al., Nature 551: 579-584 (2017).
 
-[2] M.A. Jafarizadeh, R. Sufiani, S.F. Taghavi, and E. Barati, J. Phys. A: Math. Theor. 41, 475302 (2008).
+[Jafarizadeh, 2008] M.A. Jafarizadeh, R. Sufiani, S.F. Taghavi, and E. Barati, J. Phys. A: Math. Theor. 41, 475302 (2008).
 
-[3] B.M. Rubenstein, Sh. Zhang, and D.R. Reichman, Phys. Rev. A 86, 053606 (2012).
+[Rubenstein, 2012] B.M. Rubenstein, Sh. Zhang, and D.R. Reichman, Phys. Rev. A 86, 053606 (2012).
 
-[4] Sh. Zhang, Phys. Rev. Lett. 83, 2777 (1999).
+[Zhang, 1999] Sh. Zhang, Phys. Rev. Lett. 83, 2777 (1999).
 
-[5] F.H.L. Essler, H. Frahm, F. Gohmann, V.E. Korepin, A. Klümper, "The one-dimensional Hubbard model", Cambridge University Press (2005).
+[Essler, 2005] F.H.L. Essler, H. Frahm, F. Gohmann, V.E. Korepin, A. Klümper, "The one-dimensional Hubbard model", Cambridge University Press (2005).
 
-[6] Reiner, Jan-Michael, et al. "Emulating the one-dimensional Fermi-Hubbard model by a double chain of qubits." Physical Review A 94.3 (2016): 032338.
+[Reiner, 2016] Reiner, Jan-Michael, et al. "Emulating the one-dimensional Fermi-Hubbard model by a double chain of qubits." Physical Review A 94.3 (2016): 032338.
 
-[7]
+[]
 
-[8]
+[]
