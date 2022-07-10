@@ -46,7 +46,7 @@ sets of nodes. The resultant independent sets are assigned to matrix
 elements which are then utilized in a classical finite-time optimal
 control problem using Hamilton-Jacobi-Bellman formulation i.e.
 ∂*J*<sub>*m*</sub>({**r**(*t*)},*t*)/*d**t* = max<sub>*u*</sub>*H*(*u*).
-Here *H*(*u*) is may be specified as, $\\begin{pmatrix}
+Here *H*(*u*) is may be specified as, $\begin{pmatrix}
 \\partial J\_{m}(r_1, t)/dt & \\partial J\_{m}(r_2, t)/dt & \\cdots\\\\
 \\end{pmatrix}^T \\times \\begin{pmatrix}
 -k_1 & t\_{12} & \\cdots\\\\
@@ -54,7 +54,7 @@ t\_{21} & -k_2 & \\cdots \\\\
 \\vdots &  \\vdots    & \\ddots
 \\end{pmatrix} \\times \\begin{pmatrix}
 r_1 & r_2 & \\cdots\\\\
-\\end{pmatrix}$. Here we look for the maximum attainable
+\end{pmatrix}$. Here we look for the maximum attainable
 *r*<sub>val</sub>(*T*) for all initialized ({**r**}) for a finite time
 *T*. The maximum or the optimal return function is denoted as
 *J*<sub>*m*</sub>({**r**},*t*). Such a description incorporates the
