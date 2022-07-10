@@ -17,12 +17,13 @@ Abstractive summarization– generating high-level summaries of text– is the r
 The solution has a broad applicability across both vertical and horizontal markets. The first require an improved text summarization for specific business applications like product review summaries in e-commerce or legal text summarization. The second type of customers are horizontal applications vendors that provide text summarization as a service. 
 
 Established companies:
-Otter.ai – effective summarization of meetings
-Blinkist, YouTube – no longer a need for human curation
-Google – provide high-quality summarizations of website content. A clear advantage over other browsers.
+* Otter.ai – effective summarization of meetings
+* Blinkist, YouTube – no longer a need for human curation
+* Google – provide high-quality summarizations of website content. A clear advantage over other browsers.
+
 Startups:
-Summari – no longer a need for human curation
-Hebbia – effective summaries of knowledge-intensive content
+* Summari – no longer a need for human curation
+* Hebbia – effective summaries of knowledge-intensive content
 
 ## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
 
