@@ -22,7 +22,7 @@ H=-\sum_{\langle i,j \rangle,\sigma}t (\hat{c_{i\sigma}}^{\dagger} \hat{c_{j\sig
 -\mu \sum_{i}(\hat{n}_{i\uparrow}+\hat{n}_{i\downarrow}), 
 $$
 
-where i and j enumerate the interacting sites along the chain. The first term of the hamiltonian represents the hopping integrals for nearest neighbor interactions and the second term, represents the repulsive interaction between electrons on the same site. t denotes the hopping parameter, which describes how favorable it is for electrons to hop from site to site, U defines the strength of the electron repulsion, and mu is the chemical potential.
+where i and j enumerate the interacting sites along the chain. The first term of the hamiltonian represents the hopping integrals for nearest neighbor interactions and the second term, represents the repulsive interaction between electrons on the same site. t denotes the hopping parameter, which describes how favorable it is for electrons to hop from site to site, U defines the strength of the electron repulsion, and $\mu$ is the chemical potential.
 
 
 - Emulating the one-dimensional Fermi-Hubbard model on a neutral atom quantum computer:
