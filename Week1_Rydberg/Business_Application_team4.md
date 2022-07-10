@@ -1,4 +1,3 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
@@ -8,11 +7,8 @@
 
 
 
-<<<<<<< HEAD
 <center><img src="Images/Oracle.png" width="200"></center>
-=======
-<center><img src="images/Oracle_2.png" width="1000"></center>
->>>>>>> fba0f20bde7938980930c0abaaeb909b2a836b23
+
 <center>Figure 1. Logo for Oracle of assets. </center>
 
 
@@ -153,3 +149,24 @@ The result is the same like in the previous proposal, we cna compare both graph.
 ![QAOA's result](Images/graph_sol.png)
 <center>Figure 12. QAOA's result.</center>
 
+
+### Competitors
+
+
+Our main competitor for this work is Multiverse computing, as it is the direct and benchmarked company that we can compare and it had a grant of $2.8 million on December 17, 2021.
+
+
+### Potential Customers
+
+Aimed at banks and investors who need to identify possible actions and conditions to identify risks when investing in different assets.
+
+
+
+## Video Presentation
+
+[Video presentation](https://www.youtube.com/watch?v=UE8o_7odF_M)
+
+
+![Cover video](Images/cover.png)
+
+# References
