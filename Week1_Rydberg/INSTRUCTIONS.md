@@ -1,5 +1,5 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
-# Project 1: INSTRUCTIONS
+# Project 1: Solutions
 
 Contributed by Arunanghu Debnath on behalf of the working subgroup.
 
