@@ -101,21 +101,8 @@ The latter can be used to model adversities of different nature.
 
 ## Step 3: Remarks
 
-Although the present description presents a minimal workflow for the
-formulation of the problem, this has larger applicability. The solutions
-remain adaptable to include industry-specific and consumer
-sentiment-driven control objectives. We note that a particular use case
-of minimal-time delivery of essential consumer requirements by FedEx
-Corporation could be an ideal test ground for such analysis. Given the
-competition it faces from the recent decision by companies such as
-Amazon to enter this space, they will be an ideal customer for testing
-and implementing such a solution framework.  
-Additionally, for a company, it may offer better adaptation to GDP
-fluctuations and evolving trade agreements and multilateral treaties. If
-multiple locally optimized outcomes are identified apriori and the local
-dissipative causes are incorporated, it can help the company cope with
-the amplified consequences of relatively smaller fluctuations of
-constraints.  
+Although the present description presents a minimal workflow for formulating the problem, this has more considerable applicability. The solutions remain adaptable to include industry-specific and consumer sentiment-driven control objectives. We note that a particular use case of minimal-time delivery of essential consumer requirements by FedEx Corporation could be an ideal test ground for such analysis. Given the competition it faces from companies like Amazon's recent decision to enter this space, they will be a perfect customer for testing and implementing such a solution framework.
+Additionally, for a company, it may offer better adaptation to GDP fluctuations and evolving trade agreements and multilateral treaties. Suppose multiple locally optimized outcomes are identified apriori, and the local dissipative causes are incorporated. In that case, it can help the company cope with the amplified consequences of relatively more minor fluctuations of constraints.
 
 
 ## References
