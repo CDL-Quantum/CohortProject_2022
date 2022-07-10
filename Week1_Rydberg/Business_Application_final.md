@@ -52,13 +52,13 @@ To have a baseline calculation, which an implementation can be compared to, we p
 
 Different real-world applications exist to apply cold atoms quantum computers such as:
 
-- Correlation clustering problem (undirected graph): Multiple-person pose estimation [Pishchulin et al., 2016]
+- Correlation clustering problem (undirected graph): Multiple-person pose estimation [Pishchulin et al., 2015; https://arxiv.org/abs/1511.06645]
 
-- MAXAGREE on general graphs, weighted [Charikar et al., 2003], unweighted [Tan, 2007]; best approximation algorithm by [Swamy, 2004]: 
+- MAXAGREE on general graphs, weighted [Charikar et al., 2003; https://ieeexplore.ieee.org/document/1238225], unweighted [Tan, 2007; https://ui.adsabs.harvard.edu/abs/2007arXiv0704.2092T/abstract]; best approximation algorithm by [Swamy, 2004; https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwio6OPMne_4AhUIwAIHHZlNBUYQFnoECAYQAQ&url=https%3A%2F%2Fwww.math.uwaterloo.ca%2F~cswamy%2Fpapers%2Fmaxclstrsoda.pdf&usg=AOvVaw1bYH4sqh8JGXMHX95MoQCj]: 
 
-- Hubbard model for one-dimensional organic metals and conductivity of Bechgaard salts under pressure [Celebonovic, 2010]
+- Hubbard model for one-dimensional organic metals and conductivity of Bechgaard salts under pressure [Celebonovic, 2011; https://arxiv.org/abs/1101.0363]
 
-- Hubbard model for two-dimensional systems by applying the Determinant Quantum Monte Carlo Method (DQMCM) [Celebonovic, 2010]
+- Hubbard model for two-dimensional systems by applying the Determinant Quantum Monte Carlo Method (DQMCM) [Celebonovic, 2011; https://arxiv.org/abs/1101.0363]
 
 As a computational chemistry company we focus on solving use-case applications for material design problems and therefore investigating how to solve the Hubbard model with a cold atoms quantum computer has been chosen as a valuable problem to tackle.
 
@@ -70,9 +70,7 @@ The lesson learned from this project is:
 
 Potential customers of a simulation tool to predict the band structures of solid materials are photovoltaics companies. With quantum computing based simulations they may be able to predict structures in the future with greater accuracy and obtain the results faster. A high-throughput screening of novel materials with desired properties will help to improve the efficiency of photovoltaics.
 
-In Copenhagen exist two start-up companies which build micro-reactors for nuclear (thorium) heat generation to generate electricity via steam. These two companies are Seaborg (https://seaborg.com) and Copenhagen Atomics (https://copenhagenatomics.com/). Crucial for these micro-reactors are liquid molten salts which act has the heat transport material between the micro-reactor and the water flow to be heated up. []
-https://aip.scitation.org/doi/10.1063/1.1324709
-https://www.sciencedirect.com/science/article/abs/pii/S0378381216302394?via%3Dihub
+In Copenhagen exist two start-up companies which build micro-reactors for nuclear (thorium) heat generation to generate electricity via steam. These two companies are Seaborg (https://seaborg.com) and Copenhagen Atomics (https://copenhagenatomics.com/). Crucial for these micro-reactors are liquid molten salts which act has the heat transport material between the micro-reactor and the water flow to be heated up. [https://aip.scitation.org/doi/10.1063/1.1324709, https://www.sciencedirect.com/science/article/abs/pii/S0378381216302394?via%3Dihub]
 
 Solid material structures such as graphene, ferromagnetic lattices, Silicium square and cubic lattices can also be simulated with the Hubbard model. Such materials can be found in a wide range of applications such as aviation composites, semi-conductors and specialized coatings.
 
