@@ -8,7 +8,7 @@
 
 
 
-<center><img src="images/Oracle.png" width="200"></center>
+<center><img src="images/Oracle_2.png" width="1000"></center>
 <center>Figure 1. Logo for Oracle of assets. </center>
 
 
