@@ -23,7 +23,7 @@ $H = - \sum_{\langle i,j \rangle, \sigma} t_{xy}^{ij}(\hat{c]_{i \sigma}^{\dagge
 
 i and j denote the sites which are adjacent to each other. 
 
-- Figures show the calculated total energy (Kinetic + Potential) for a 9-sites spin chain with nearest neighbor interaction. The parameters U and beta are the Hubbard U and the inverse temperature, respectively. The larger beta=10 corresponds to the low temperature regime to realize the ground state of the system.  
+- Figures [1-3] show the calculated total energy (Kinetic + Potential) for a 9-sites spin chain with nearest neighbor interaction. The parameters U and beta are the Hubbard U and the inverse temperature, respectively. The larger beta=10 corresponds to the low temperature regime to realize the ground state of the system. As seen the lowest energy is obtained at chemical potential=0. The energy increases by increasing/decreasing the chemical potential, and the larger beta (lower temperature), the lower enrgy.  
 
 total density operator $\hat{n}_i = \hat{n}_{i \downarrow} + \hat{n}_{i \uparrow}$
 
