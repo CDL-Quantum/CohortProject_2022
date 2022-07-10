@@ -7,11 +7,12 @@
 *Quantum in economics, it changes everything and we help you make your decisions!*
 
 
-![Logo](Oracle.png)
+
+<center><img src="Oracle.png" width="200"></center>
 
 ## Introduction
 
-One of the challenges of computing is to solve problems with a large amount of data, but there are some problems due to their complexity that take a long time to solve, these are known as NP problems, and one of these is the Maximum Independent set (MIS), there are different proposals to solve but they fail to reduce its complexity as the greedy strategy. There is possible in  a graph $G(n, m)$ that contains $n$ vertices and $m$ edges, it is known that unless $\mathrm{P}=\mathrm{NP}$ no polynomial algorithm can find a $O\left(n^{1-\epsilon}\right)$-approximate solution in the worst case.
+One of the challenges of computing is to solve problems with a large amount of data, but there are some problems due to their complexity that take a long time to solve, these are known as NP problems, and one of these is the Maximum Independent set (MIS), there are different proposals to solve but they fail to reduce its complexity as the greedy strategy. There is possible in  a graph $G(n, m)$ that contains $n$ vertices and $$m$$ edges, it is known that unless $$\mathrm{P}=\mathrm{NP}$$ no polynomial algorithm can find a $$O\left(n^{1-\epsilon}\right)$$-approximate solution in the worst case.
 
 
 ![Example of a Graph](graph.png)
