@@ -56,7 +56,7 @@ Solid material structures such as graphene, ferromagnetic lattices, Silicium squ
 
 # References
 
-[1] H. Bernien et.al., Nature 551: 579-584 (2017).
+[1] H. Bernien et al., Nature 551: 579-584 (2017).
 
 [2] M.A. Jafarizadeh, R. Sufiani, S.F. Taghavi, and E. Barati, J. Phys. A: Math. Theor. 41, 475302 (2008).
 
