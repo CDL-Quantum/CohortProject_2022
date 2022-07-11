@@ -1,5 +1,7 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
 
+Team 11: Jordan Smith, Kenneth Sharman, Shan Zhong, Ezad Shojaee
+
 ## Project 1: State preparation and MIS optimization wth neutral atom arrays
 
 This project will guide you through a novel quantum computing architecture pursued by a number of quantum startups, which trap neutral "Rydberg" atoms in an arbitrary array using optical tweezers.
