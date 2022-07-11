@@ -7,9 +7,9 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 
 #begin edits
 
-A document(./billsdoc.txt) explains our work.  
+A [document](./billsdoc.txt) explains our work.  
 
-A video(--dropbox--) of Bill Poirier.
+A [video](--dropbox--) of Bill Poirier.
 
 #end edits
 
