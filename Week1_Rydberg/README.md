@@ -51,39 +51,39 @@ Please see [task3_calculations.ipynb](./Calculations/task3_calculations.ipynb) f
 
 ### 3.0 Background
 
-In graph theory, an independent set means no two vertices in a graph belong to the same set can be connected by an edge. A maximal independent set (MIS) is the largest independent set out of all independent sets. Usually, the MIS problems are NP-hard or non-deterministic polynomial-time hard problems which is unlikely to be solved in a time polynomial to the problem size. Interestingly, this NP-hard problems can be addressed on Rydberg atom arrays thanks to the Rydberg Blockade phenomenon in neutral-atom Rydberg states. 
+In graph theory, an independent set means no two vertices in a graph that belong to the same set can be connected by an edge. A maximal independent set (MIS) is the largest independent set of all independent sets. Usually, the MIS problems are NP-hard, or non-deterministic polynomial-time hard, which are unlikely to be solved in an amount of time that scales polynomially with the problem size. Interestingly, these NP-hard problems can be addressed on Rydberg atom arrays thanks to the Rydberg Blockade phenomenon in neutral-atom Rydberg states. 
 
-Rydberg blockade is triggered due to the strong interaction between atoms excited to Rydberg state. If two atoms are within the blockade radius $R_b$ then they cannot be both excited to the Rydberg state. Independent set constraint means two vertices cannot be both in the independent set when they are connected by an edge. Thus Rydberg atoms can be considered as the independent vertices and the solutions of MIS problems can be efficiently encoded in the ground state of interacting atoms in 2D arrays by utilizing the Rydberg blockade mechanism.
+A Rydberg blockade is triggered due to the strong interaction between atoms excited to Rydberg states. If two atoms are within the blockade radius, $R_b$, then they cannot be both excited to the Rydberg state. The independent set constraint means two vertices cannot both be in the independent set when they are connected by an edge. Thus, Rydberg atoms can be considered to be the independent vertices and the solutions of MIS problems can be efficiently encoded in the ground state of interacting atoms in 2D arrays by utilizing the Rydberg blockade mechanism.
 
 ### 3.1 Solving 4x4 DUGG
 
-In task 3, we follow the steps in [tutorial](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl) to solve the 4x4 DUGG problem. We first create a 4x4 diagonal-connected unit-disk grid graphs (DUGG) with 0.8 filling, by using the random_dropout function. Here, we choose the lattice constant (a) equals to 4.5 um. Next, we set the blockade radius to be 7.5 um, such that all nearest neighbors and next-nearest neighbors (diagonal) are within the blockade radius. The mechanism of Rydberg blockade only allows one Rydberg excitation in the blockade radius. 
+In task 3, we follow the steps in the [tutorial](https://github.com/QuEraComputing/Bloqade.jl/blob/master/examples/4.MIS/main.jl) to solve the 4x4 DUGG problem. We first create a 4x4 diagonally connected unit-disk grid graph (DUGG) with 0.8 filling, by using the random_dropout function. Here, we choose the lattice constant (a) to be equal to 4.5 um. Next, we set the blockade radius to be 7.5 um, such that all nearest neighbors and next-nearest neighbors (diagonal) are within the blockade radius. The mechanism of Rydberg blockade only allows one Rydberg excitation in the blockade radius. 
 
 ![4x4dugg.png](./Images/4x4dugg.png)
 
-We first solve this MIS problem using a classical algorithm called Generic Tensor Network. For this specific DUGG, we get the MIS size is 4, and the number of maximum independent sets is 26. Then we solve the same problem with quantum algorithm and visulize the configuration by coloring the Rydberg excitations on the 4x4 graph. The following figures show two cases where the MIS size equals 4 for this specific DUGG.
+We first solve this MIS problem using a classical algorithm called Generic Tensor Network. For this specific DUGG, we get the MIS size as 4, and the number of maximum independent sets is 26. Then we solve the same problem with the quantum algorithm and visualize the configuration by coloring the Rydberg excitations on the 4x4 graph. The following figures show two cases where the MIS size equals 4 for this specific DUGG.
 
 ![4x4Bloqade.png](./Images/4x4Bloqade.png)
 
-In some cases, two vertices are on the edge that violate the blockade constraint, this is usually becuase the Rydberg interaction is not strong enough close to the edge of the unit disk to trigger the energy penalty. This can be fixed by running some some postprocessing.  
+In some cases, two vertices are on the edge that violates the blockade constraint. This is usually because the Rydberg interaction is not strong enough close to the edge of the unit disk to trigger the energy penalty. This can be fixed by running some postprocessing.  
 
-The mean value of MIS size calculated by quantum algorithm $\approx$ 4.16 which is close to 4. This means there is a substantial probability for measuring an MIS state.
+The mean value of the MIS size that is calculated by the quantum algorithm is $\approx$ 4.16, which is close to 4. This means there is a substantial probability for measuring an MIS state.
 
 ### 3.2 Parametrize the pulses
 
-Next, we parametrize the Rabi frequency and the detuning to optimize our system to get more accurate MIS. We use two methods: one is to add coefficients to the value of Rabi frequency and the detuning at each time step; the other one is to smoothen the picecwise linear pulses with Gaussian filter. The Rabi fequency and detuning pulses for the two methods are shown as follows:
+Next, we parameterize the Rabi and detuning frequencies to optimize our system and get a more accurate MIS. We use two methods: one is to add coefficients to the value of the Rabi frequency and the detuning at each time step; the other is to smoothen the piece-wise linear pulses with a Gaussian filter. The Rabi fequency and detuning pulses for the two methods are shown as follows:
 
 ![Parameters.png](./Images/Parameters.png)
 
 ![Gaussian_filter.png](./Images/Gaussian_filter.png)
 
-After pulse parametrizations, the mean value of MIS become more acurrate with 4.05 and 4.12, respectively in each case.
+After pulse parameterizations, the mean value of the MIS becomes more accurate with values of 4.05 and 4.12, respectively in each case.
 
-### 3.3 A Larger Array: 5x5  DUGG
+### 3.3 A Larger Array: 5x5 DUGG
 
-In the last step, we generate a 5x5 diagonal-connected unit-disk grid graphs (DUGG) with 0.68 filling by using the random_dropout function. Here, we choose the lattice constant, a, equals to 4.5 um and set the blockade radius to be 7.5 um. 0.68 filling gives us 17 sites filled with atoms, adding more atoms will dramatically increase the computational time.
+In the last step, we generate a 5x5 diagonally connected unit-disk grid graph (DUGG) with 0.68 filling by using the random_dropout function. Here, we choose the lattice constant, a, to be equal to 4.5 um and set the blockade radius to be 7.5 um. A filling value of 0.68 gives us 17 sites filled with atoms. Adding more atoms will dramatically increase the computation time.
 
-Similarly, we first use classical algorithm to calculate the MIS size, we get the MIS size is 7, and the number of MIS is 6. Then we use quantum algorithm, and visulize the configurations by coloring the Rydberg excitations. The figure below are two examples:
+Similarly, we use a classical algorithm to calculate the MIS size, and we get a resulting MIS size of 7, and the number of MISs is 6. Then we use a quantum algorithm, and visulize the configurations by coloring the Rydberg excitations. The figures below are two examples:
 
 ![5x5Bloqade.png](./Images/5x5Bloqade.png)
 
