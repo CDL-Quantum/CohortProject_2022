@@ -45,6 +45,25 @@ Our analysis indicates that despite a speedup in the runtime, executing the adia
 
 Please see [task2_calculations.ipynb](./Calculations/task2_calculations.ipynb) for the calculation details associated with task #2.
 
+Full space simulation of higher than 15 atoms takes long (if possible)
+But, by eliminating the states that violate the Rydberg blockade (eventhough not perfect) reduces the size of 
+our problem, drastically. The question is how are we sure that this truncation is a good approximation?
+We are going to do the following to compare the subspace method with the fullspace 
+
+### To do
+1. Prepare 11 sites with d = 5.48 and fix the Maximum Rabi frequence according to the recipe
+2. Do the simulation for both methods  
+3. Plot the Rydberg density as a function of time for both methods
+
+                
+### Result:
+
+Compare the full evolution of 11 atoms in the Z2 phase transition with the subspace method (meaning 
+eliminating the parts of Hilbert space where two adjacent atoms are in the Rydberg state). We see that the deviation in Rydberg densities are 
+more aparent in the middle sites, however all the populations converge in the end.
+
+![Task2](./Images/Task2.png)
+
 ## Task 3: MIS
 
 Please see [task3_calculations.ipynb](./Calculations/task3_calculations.ipynb) for the calculation details associated with task #3.
@@ -173,11 +192,39 @@ Combining the two solutions, we have determined that cell towers should be posit
 
 Our solution has neighboring cell towers. Introducing redundancy into our network may result in direct neighbors. Of course, our basic calculations only simulated a single random power-outage. A more complete calculation would consider a larger array and numerous power-outage simulations- perhaps involving more than one site that goes down. That aside, our example illustrates a potential application that could be used in an industrial setting.
 
-## Challenge 2:
+## CHALLENGE 2: QAOA (Quantum Approximate Optimisation Algorithm) vs Adiabatic for MIS (Maximum Independent Set) 
 
 ### In addition to adiabatic protocols, other state preparation protocols are currently being explored on quantum computing hardware. A leading variational protocol is the Quantum Approximate Optimization Algorithm (QAOA), in which time evolution occurs via rapidly switching between a cost and mixer Hamiltonian. For your problems above, particularly your Business Application, attempt a QAOA solution and compare your results to the adiabatic approach.
 
 Please see [task2_calculations.ipynb](./Calculations/task2_calculations.ipynb) for the calculation details associated with challenge #2.
+
+### To do           
+
+#### C2.1 Creat a 4 by 4 graph with 20% dropouts   
+
+#### C2.2 Solve classcialy via Tensor Networks
+
+#### C2.3 Do the adiabatic simulation (either fullspace or subspace)
+
+![Challenge2_Adiabatic](./Images/Challenge2_Adiabatic.png)
+
+#### C2.4 Use the QAOA algorithm (arxiv:1411.4028) which is a hybrid quantum-classical algorithm. The classical part is an optimizer, and the quantum part can be a neutral-atom quantum computer first evolving under the Rydberg Hamiltonian parameterized pulse sequences and then being measured in the computational basis. Here, the pulse sequence is 3 periods in detuning/Rabi waveform. 
+    
+#### Flowchart
+    
+##### C2.4.1 Evaluate loss (a metric which the more negative the better) with no optimization and no smoothing of the pulse shape
+    
+##### C2.4.2 Evaluate loss with smooth pulse shapes: Gets better
+
+![Challenge2_Smooth_pulse_shape](./Images/Challenge2_Smooth_pulse_shape.png)
+
+#### C2.4.3 Optimize through the Nelder-Mead method to make the right answers, more probable  
+
+For instance, look at the following sequences, as correct instances:
+(1) starts with 1001 and ends with 11 (no more 1s)
+(2) starts with 1001 and ends with 10001 (no more 1s) 
+
+![Challenge2_QAOA_Solution](./Images/Challenge2_QAOA_Solution.png)
 
 
 # References
