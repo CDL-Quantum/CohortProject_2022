@@ -47,9 +47,9 @@ Please see [task2_calculations.ipynb](./Calculations/task2_calculations.ipynb) f
 
 Full space simulation of more than 15 atoms takes prohibitively long (if even possible). But, by eliminating the states that violate the Rydberg blockade (even though not perfect), this reduces the size of our problem, drastically. The question is, how are we sure that this truncation is a good approximation? We are going to do the following to compare the subspace method with the fullspace: 
 
-1. Prepare 11 sites with d = 5.48 and fix the Maximum Rabi frequence according to the recipe
-2. Do the simulation for both methods  
-3. Plot the Rydberg density as a function of time for both methods
+1. Prepare 11 sites with d = 5.48 $\mu$m and fix the maximum Rabi frequency according to the algorithm
+2. Calculate the simulation for both methods.
+3. Plot the Rydberg density as a function of time for both methods.
 
 Using the results, we compare the full evolution of 11 atoms in the $Z_2$ phase transition with the subspace method (meaning eliminating the parts of the Hilbert space where two adjacent atoms are in the Rydberg state). We see that the deviation in Rydberg densities are more apparent in the middle sites, however all the populations converge in the end.
 
