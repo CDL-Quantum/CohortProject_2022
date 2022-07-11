@@ -9,6 +9,8 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 
 A [document](./billsdoc.txt) explains our work.  
 
+[Task 3](https://docs.google.com/document/d/1ykX46K0-KibtrriC2XjFWQ6Ta0swXN9KRrCoyMXL2jU/edit?usp=sharing)
+
 A [video](--dropbox--) of Bill Poirier.
 
 #end edits
