@@ -7,7 +7,7 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 
 #begin edits
 
-A [document](./billsdoc.txt) explains our work.  
+A [document](./project 1.docx) explains our work.  
 
 [Task 3](https://docs.google.com/document/d/1ykX46K0-KibtrriC2XjFWQ6Ta0swXN9KRrCoyMXL2jU/edit?usp=sharing)
 
