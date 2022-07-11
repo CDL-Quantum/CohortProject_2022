@@ -28,7 +28,7 @@ access system sizes up to 512 atoms.
 
 ## Task 1 - State preparation
 
-For more details follow [TASK 1 notebook](http://notebooklink)
+For more details follow TASK 1 notebook.
 
 In this task we run a number of experiments with preparation of a CDW-like state using Bloqade.  Namely:
 
