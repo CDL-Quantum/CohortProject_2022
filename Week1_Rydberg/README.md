@@ -193,7 +193,7 @@ Please see [task2_calculations.ipynb](./Calculations/task2_calculations.ipynb) f
 
 ### To do           
 
-#### C2.1 Creat a 4 by 4 graph with 20% dropouts   
+#### C2.1 Create a 4 by 4 graph with 20% dropouts   
 
 #### C2.2 Solve classcialy via Tensor Networks
 
