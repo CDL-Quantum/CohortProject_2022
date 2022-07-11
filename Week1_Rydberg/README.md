@@ -5,8 +5,13 @@ This project will guide you through a novel quantum computing architecture pursu
 
 Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project for this week!
 
+#begin edits
 
-**Please edit this markdown file directly with links to your completed tasks and challenges.**
+A document(./billsdoc.txt) explains our work.  
+
+A video(--dropbox--) of Bill Poirier.
+
+#end edits
 
 ## Tasks include:
 * Simulate the preparation of a quantum state in a 1D Rydberg atom array of 9 sites.  
