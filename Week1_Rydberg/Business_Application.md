@@ -27,5 +27,4 @@ Startups:
 
 ## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
 
-[Link to a video
-](https://drive.google.com/file/d/1LS0LRjkUjOUPSvgL0R_RMF5zM8UyqjFN/view)
+[Link to Pitch video](https://drive.google.com/file/d/1LS0LRjkUjOUPSvgL0R_RMF5zM8UyqjFN/view?usp=sharing)
