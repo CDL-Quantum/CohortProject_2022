@@ -11,7 +11,7 @@ A [document](./project1.docx) explains our work.
 
 [Task 3](https://docs.google.com/document/d/1ykX46K0-KibtrriC2XjFWQ6Ta0swXN9KRrCoyMXL2jU/edit?usp=sharing)
 
-A [video](--dropbox--) of Bill Poirier.
+A [video](https://www.dropbox.com/s/ulav14ljhx0yd0y/week-1-video.mp4?dl=0) of Bill Poirier.
 
 #end edits
 
