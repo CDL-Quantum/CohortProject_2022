@@ -30,7 +30,7 @@ stands for spin, and i and j enumerate the interacting sites along the chain. Th
 
 We propose that a neutral atom quantum computer could be used to perform an analog simulation of a Fermi Hubbard system. The first step is to recognize that the objects in the Fermi-Hubbard model are fermions, which have their charactestic anticommutation rules that must be taken into account. In contrast, a neutral-atom quantum computer is composed of qubits, which do not have these rules intrinsically encoded into them. To resolve this, we have to use a mapping, which is consistent with the rules, to represent fermions on qubits. The most well-known mapping is the Jordan-Wigner mapping, which transforms the Fermi-Hubbard model into [6]:
 
-$$H = \sum_{i, \sigma} g^x(\hat{\sigma}_{i, \sigma}^{+} \hat{\sigma}_{i+1, \sigma}^{-} + \hat{\sigma}_{i+1, \sigma}^{+} \hat{\sigma}_{i, \sigma}^{-}) + g^z \sum_{i} (\hat{\sigma}_{i \uparrow}^z \hat{\sigma}_{i \downarrow}^z) + \frac{1}{2}\epsilon\sum_{i} (\hat{\sigma}_{i \uparrow}^z + \hat{\sigma_{i\downarrow}}^z)$$
+$$H = \sum_{i, \sigma} g^x(\hat{\sigma}_{i, \sigma}^{+} \hat{\sigma}_{i+1, \sigma}^{-} + \hat{\sigma}_{i+1, \sigma}^{+} \hat{\sigma}_{i, \sigma}^{-}) + g^z \sum_{i} (\hat{\sigma}_{i \uparrow}^z \hat{\sigma}_{i \downarrow}^z) + \frac{1}{2}\epsilon\sum_{i} (\hat{\sigma}_{i \uparrow}^z + \hat{\sigma}_{i \downarrow}^z)$$
 
 where we have introduced new parameters $\epsilon$, $g^{z}$, and $g^{x}$, 
 which relate to the Hubbard model parameters with $\mu=-\epsilon+2g^{z}$, $U=4g^{z}$ and $t=-g^{x}$. 
