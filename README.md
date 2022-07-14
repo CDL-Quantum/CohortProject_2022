@@ -16,5 +16,5 @@ this repository to their own GitHub account to begin work on the challenges.  By
 
 ### 2022 Weekly Challenges
 * Week 1: [Quantum computing with neutral atom arrays](./Week1_Rydberg)
-* Week 2: TBD
-* Week 3: TBD
+* Week 2: [VQE: Constructing potential energy surfaces for small molecules](./Week2_VQE)
+* Week 3: [An exploration of the gate-model implementation of Shor's algorithm](./Week3_Shor) 
