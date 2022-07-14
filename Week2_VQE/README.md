@@ -4,17 +4,35 @@
 
 This project will guide you through the state-of-the-art techniques for solving electronic structure problems on NISQ computers.
 
-Open up [instructions.pdf](./Instructions.pdf) to begin learning about your tasks for this week!
 
-**Please edit this markdown file directly with links to your completed tasks and challenges.**
+## Task 1: Generating PES using classical methods
 
-## Tasks include:
+[ Plots comparing accuracy of PES generated for different chemical species using different methods ]
 
-- Generating PES using classical methods.
-- Generating the qubit Hamiltonian.
-- Unitary transformations.
-- Hamiltonian measurements.
-- Use of quantum hardware.
+### The variational approach and its advantages
+Among the classical methods introduced, HF, FCI, and truncated CI such as CISD are variational, while CCSD is not. The main advantage of the variational approach is that any energy calculated from it is never less than the true energy of the electronic state and system in question, i.e. the calculated energy forms and upper bound to the true energy. Energies can be lowered systematically by increasing the size of the basis set, and the variational behavior serves as a helpful guide to the quality of the trial wavefunction $-$ the lower the energy the better the ansatz.
+
+### Separability/size-consistency of HF, CISD, and CCSD
+
+[ Table comparing $E_{H_2 + H_2}$ with $2E_{H_2}$ for each of HF, CISD, and CCSD ]
+
+### Convergence to the exact non-relativistic electronic energies
+
+[ Table of $E_{method} - E_{FCI}$ for a given basis set and different methods and $E_{basis}$ for a given method ]
+
+## Task 2: Generating the qubit Hamiltonian
+
+### Requirements for a function of qubit operators to be a valid mapping from the fermionic operators
+
+### Consequences of the time-reversal symmetry on the qubit Hamiltonian Jordan-Wigner transformed from the electronic Hamiltonian
+
+### Pros and cons of Bravyi-Kitaev vs Jordan-Wigner
+
+## Task 3: Unitary transformations
+
+## Task 4: Hamiltonian measurements
+
+## Task 5: Use of quantum hardware
 
 ## Further Challenges:
 
