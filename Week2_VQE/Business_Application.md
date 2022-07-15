@@ -17,6 +17,8 @@ Example: Finding a global minimum in settings where a classical approach may not
 
 Example: A courier has to deliver parcels to several locations and is looking to minimize its travel time. (e.g., “the travelling salesman problem”).
 
+In this exercise, we used various methods to calculate the potential energy surfaces (PESs), electronic orbital structures, and other properties that can be obtained by solving the Shr$\ddot{o}$dinger equation of a given quantum system. Of specific commercial relevance, we used density functional theory (DFT) to analyze 
+
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
 
 Examples: 
