@@ -11,13 +11,21 @@ A brief example for each question is included for the
 
 ## Step 1: Explain the technical problem you solved in this exercise
 
-Example: Finding a global minimum in settings where a classical approach may not be able to find a global minimum.
+In this exercise, we used various methods to calculate the potential energy surfaces (PESs), electronic orbital structures, and other properties that can be obtained by solving the Shrödinger equation of a given quantum system. As the Hilbert space of a system grows, classical approximation and exact analytical solution methods require exponentially more computational resources. By using the variational quantum eigensolver (VQE) method on quantum computing hardware, one can produce solutions in super-polynomial time which may be advantageous for analyzing large quantum systems. By modelling molecular orbital structures and calculationg bond lengths, molecular formation energies, and other quantities of interest, molecular engineering and design can be used to solve many pain-points in industry. Of specific commercial relevance, here we used density functional theory (DFT) to analyze the molecular orbital structure of a $N_2O-O_2^{ .-}$ system and gain some insight about the potential applicability of $N_2O$ within a proposed mechanism for general anesthesia that was recently published [1].
 
-In this exercise, we used various methods to calculate the potential energy surfaces (PESs), electronic orbital structures, and other properties that can be obtained by solving the Shrödinger equation of a given quantum system. As the Hilbert space of a system grows, classical approximation and exact analytical solution methods require exponentially more computational resources. By using the variational quantum eigensolver (VQE) method on quantum computing hardware, one can produce solutions in super-polynomial time which may be advantageous for analyzing large quantum systems. By modelling molecular orbital structures and calculationg bond lengths, molecular formation energies, and other quantities of interest, molecular engineering and design can be used to solve many pain-points in industry. Of specific commercial relevance, here we used density functional theory (DFT) to analyze the molecular orbital structure of a $N_2O-O_2^{-.}$ system and gain some insight about the potential applicability of $N_2O$ within a proposed mechanism for general anesthesia that was recently published.
+[1] Smith, Jordan, et al. "Radical pairs may play a role in xenon-induced general anesthesia." Scientific Reports 11.1 (2021): 1-13.
 
 ## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
 
-Example: A courier has to deliver parcels to several locations and is looking to minimize its travel time. (e.g., “the travelling salesman problem”). 
+Here we provide several examples of real-world problems that precise and computationally resource-efficient molecular characterization and design would help solve:
+
+First, molecular design is an ongoing challenge in improving battery technology which may help pave the way for future clean energy storage technology.
+
+Second, the past two years have shown us that molecular engineering and synthesis is an important problem to solve in the design of vaccines and other drugs and pharmaceuticals.
+
+Third, understanding molecular structures can help solve the global energy production problem by enabling the production of more efficient materials for energy transformation and harnessing (solar, wind, hydro, etc).
+
+Finally, general anesthesia is a poorly understood phenomenon that has significant health risk for the patient, including death. The design and creation of more effective, safer, and more cost-effective anesthetic agents would present a solution to an enormous world-wide medical problem. The mechanism by which general anesthesia takes places remains an open question, althought recent work has proposed one explanation [1]. One 
 
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
 
