@@ -29,12 +29,15 @@ Finally, in the field of medicine, general anesthesia is a poorly understood phe
 While the recent study analyzed xenon as an anesthetic agent, we used DFT to model a similar quantum system using $N_2O$, another member of the same anesthetic family, instead of xenon, and found that the molecular orbital including the radical electron density extends to the $N_2O$ molecule, indicating that it may also fit within the same mechanism proposed to explain xenon-induced general anesthesia.
 
 Published image showing radical electron HOMO of $Xe-O_2^{.-}$[1]:
+
 ![Week2_VQE/Images/](https://github.com/Jordan-D-Smith/CohortProject_2022/blob/55854f7f7db98f345dfa6f776c4b9f73face7e8c/Week2_VQE/Images/DFT_HOMO.png)
 
 Our DFT-produced images showing similar behaviour. First to show an approximate replication of the published image:
+
 ![Week2_VQE/Images/](https://github.com/Jordan-D-Smith/CohortProject_2022/blob/55854f7f7db98f345dfa6f776c4b9f73face7e8c/Week2_VQE/Images/xe_DFT.png)
 
 Now to apply it to our $N_2O-O_2^{.-}$ case:
+
 ![Week2_VQE/Images/](https://github.com/Jordan-D-Smith/CohortProject_2022/blob/55854f7f7db98f345dfa6f776c4b9f73face7e8c/Week2_VQE/Images/n2o_DFT.png)
 
 This result highlights that classical approximation methods, such as DFT, can be used to model and design molecules that are fairly small but have particularly desirable properties as anesthetic agents. In contrast, the VQE method on quantum hardware can enable similar modelling and design of much larger molecules in significantly less time, enabling the synthesis and production of far more numerous molecular designs, and may lead to safer and more cost-effective anesthetics.
