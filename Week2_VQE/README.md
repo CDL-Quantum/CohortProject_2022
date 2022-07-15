@@ -13,7 +13,7 @@ This project will guide you through the state-of-the-art techniques for solving 
 
 Among the classical methods introduced, HF, FCI, and truncated CI such as CISD are variational, while CCSD is not. The main advantage of the variational approach is that any energy calculated from it is never less than the true energy of the electronic state and system in question, i.e. the calculated energy is an upper bound to the true energy. Energies can be lowered systematically by increasing the size of the basis set, and the variational behavior serves as a helpful guide to the quality of the trial wavefunction $-$ the lower the energy the better the ansatz.
 
-The arugument for a non-variational technique such as CCSD over, say, CISD is self-consistency (energy of n widely-separated atoms/molecules of the same species is the same as n times the energy of one of them; see below), which is a physical condition that should be met whenever possible. CCSD is also more accurate as it captures more of the correlation energy than CISD. CC methods also exhibit fast convergence to the FCI solution, which is exact.
+The arugument for a non-variational technique such as CCSD over, say, CISD is self-consistency (energy of n widely-separated atoms/molecules of the same species is the same as n times the energy of one of them; see below), which is a physical condition that should be met whenever possible. CCSD is also more accurate as it captures more of the correlation energy than CISD. CC methods also exhibit fast convergence to the (exact) FCI solution.
 
 ### (2) Separability/size-consistency of HF, CISD, and CCSD
 
@@ -49,17 +49,25 @@ For a given symmetry, a unitary operator can be constructed to rotate the initia
 
 There are two ways to restore broken symmetries:
 
-(i) Re-incorporate them as constraints in a variational estimator.
+(i) Incorporate them as constraints in a variational estimator.
 
-(ii) Use symmetry projectors to project back into the appropriate symmetry subspaces.
+(ii) Use symmetry projectors to project into the appropriate symmetry subspaces.
 
 ## Task 4: Hamiltonian measurements
 
-### (1) Optimal splitting of the total number of measurements as per Hamiltonian fragment to minimize total error
+### (1) Optimal splitting of the total number of measurements between Hamiltonian fragments
 
-### (2) Achieving 1 mili Hartree (mH) error for qubit-wise commuting (QWC) and full commuting (FC) partitionings
+With the total error of the Hamiltonian estimator bounded above by 
+$|\langle\Psi|\hat{H}|\Psi\rangle - \bar{H}|^2 \leq \sum_n\frac{\sigma_{H_n}^2}{N_n}$ subject to the constraint $\sum_n N_n = N_T$ , the minimal bound is found by minimizing the function $L(\{N_n\},\lambda) = \sum_n\frac{\sigma_{H_n}^2}{N_n} + \lambda(\sum_n N_n - N_T)$ where $\lambda$ is the Lagrangian multiplier. Solving $\nabla L = 0$ to find the minimum, we have $\partial_{N_n}L = -\frac{\sigma_{H_n}^2}{N_n^2} + \lambda = 0 \implies N_n = \sqrt{\frac{\sigma_{H_n}^2}{\lambda}}$ for each n. The constraint equation then gives $\sqrt{\lambda} = \sum_n\sqrt{\sigma_{H_n}^2}/N_T$ , and we obtain:
 
-### (3) Achieving 1 mH error if the entire $\hat{H}$ can be measured as a single operator
+(i) the optimal splitting: $N_n/N_T = \sqrt{\sigma_{H_n}^2}/\sum_n\sqrt{\sigma_{H_n}^2}$ ,
+
+(ii) the minimal error bound: $|\langle\Psi|\hat{H}|\Psi\rangle - \bar{H}| \leq \sum_n\sqrt{\sigma_{H_n}^2}/\sqrt{N_T}$ .
+
+
+### (2) Achieving 1 mHa accuracy for qubit-wise and full commuting partitionings
+
+### (3) Achieving 1 mHa accuracy measuring $\hat{H}$ as a single operator
 
 ## Task 5: Use of quantum hardware
 
