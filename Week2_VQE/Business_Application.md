@@ -13,11 +13,11 @@ A brief example for each question is included for the
 
 Example: Finding a global minimum in settings where a classical approach may not be able to find a global minimum.
 
+In this exercise, we used various methods to calculate the potential energy surfaces (PESs), electronic orbital structures, and other properties that can be obtained by solving the Shrödinger equation of a given quantum system. As the Hilbert space of a system grows, classical approximation and exact analytical solution methods require exponentially more computational resources. By using the variational quantum eigensolver (VQE) method on quantum computing hardware, one can produce solutions in super-polynomial time which may be advantageous for analyzing large quantum systems. By modelling molecular orbital structures and calculationg bond lengths, molecular formation energies, and other quantities of interest, molecular engineering and design can be used to solve many pain-points in industry. Of specific commercial relevance, here we used density functional theory (DFT) to analyze the molecular orbital structure of a $N_2O-O_2^{-.}$ system and gain some insight about the potential applicability of $N_2O$ within a proposed mechanism for general anesthesia that was recently published.
+
 ## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
 
-Example: A courier has to deliver parcels to several locations and is looking to minimize its travel time. (e.g., “the travelling salesman problem”).
-
-In this exercise, we used various methods to calculate the potential energy surfaces (PESs), electronic orbital structures, and other properties that can be obtained by solving the Shr$\ddot{o}$dinger equation of a given quantum system. Of specific commercial relevance, we used density functional theory (DFT) to analyze 
+Example: A courier has to deliver parcels to several locations and is looking to minimize its travel time. (e.g., “the travelling salesman problem”). 
 
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
 
