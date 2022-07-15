@@ -6,9 +6,6 @@ To complement the technical tasks, please consdier the four questions below.
 You are free to format your response to these four questions as you wish (with the final question done as a short recorded video), and to include
 the content (or links to the content) on your forked repository.
 
-A brief example for each question is included for the 
-[Traveling Salesman Problem.](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
-
 ## Step 1: Explain the technical problem you solved in this exercise
 
 In this exercise, we used various methods to calculate the potential energy surfaces (PESs), electronic orbital structures, and other properties that can be obtained by solving the Shrödinger equation of a given quantum system. As the Hilbert space of a system grows, classical approximation and exact analytical solution methods require exponentially more computational resources. By using the variational quantum eigensolver (VQE) method on quantum computing hardware, one can produce solutions in super-polynomial time which may be advantageous for analyzing large quantum systems. By modelling molecular orbital structures and calculationg bond lengths, molecular formation energies, and other quantities of interest, molecular engineering and design can be used to solve many pain-points in industry. Of specific commercial relevance, here we used density functional theory (DFT) to analyze the molecular orbital structure of a $N_2O-O_2^{ .-}$ system and gain some insight about the potential applicability of $N_2O$ within a proposed mechanism for general anesthesia that was recently published [1].
@@ -25,7 +22,11 @@ Second, the past two years have shown us that molecular engineering and synthesi
 
 Third, understanding molecular structures can help solve the global energy production problem by enabling the production of more efficient materials for energy transformation and harnessing (solar, wind, hydro, etc).
 
-Finally, general anesthesia is a poorly understood phenomenon that has significant health risk for the patient, including death. The design and creation of more effective, safer, and more cost-effective anesthetic agents would present a solution to an enormous world-wide medical problem. The mechanism by which general anesthesia takes places remains an open question, althought recent work has proposed one explanation [1]. One 
+Finally, in the field of medicine, general anesthesia is a poorly understood phenomenon that has significant health risk for the patient, including death. The design and creation of safer, more efficient, and more cost-effective anesthetic agents would present a meaningful solution to an enormous world-wide medical challenge. The mechanism by which general anesthesia takes places remains an open question, although recent work[1] has proposed one explanation for xenon-induced general anesthsia. One particular family of general anesthetics, including xenon, $N_2O$, and cyclopropane, is thought to act on the NMDA receptor of central-nervous-system neurons. The proposed mechanism which explains this behaviour requires the creation of radical pairs in the neuronal biological environment. It is suggested that the quantum effects inherent in the radical-pair mechanism may play a role in a loss of consciousness.
+
+While the recent study analyzed xenon as an anesthetic agent, we used DFT to model a similar quantum system using $N_2O$, another member of the same anesthetic family, instead of xenon, and found that the molecular orbital including the radical electron density extends to the $N_2O$ molecule, indicating that it may also fit within the same mechanism proposed to explain xenon-induced general anesthesia.
+
+This result highlights that classical approximation methods, such as DFT, can be used to model and design molecules that have particularly desirable properties as anesthetic agents, and VQE on quantum hardware can enable similar modelling and design of much larger molecules in significantly less time, enabling the synthesis and production of safer and more cost-effective anesthetics.
 
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
 
