@@ -339,7 +339,7 @@ post_E
 -0.82233726267396
 ```
 
-While still different from the correct value, this expectation value is very much closer to the actual expectation value! 
+While still different from the correct value, this expectation value is very much closer to the actual expectation value! As we can see, much of deviance came from the second measurement group, which is to be expected due to the error induced by the long circuit.
 
 ## Further Challenges:
 
