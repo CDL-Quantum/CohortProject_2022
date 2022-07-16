@@ -366,9 +366,36 @@ post_E
 
 While still different from the correct value, this expectation value is very much closer to the actual expectation value! As we can see, much of deviance came from the second measurement group, which is to be expected due to the error induced by the long circuit.
 
-### (2)  Can the error-mitigation protocol described in Ref. [14] be used for more complicated symmetries, like $\hat Sˆ2$?
+### (2)  Can the error-mitigation protocol described in Ref. [14] be used for more complicated symmetries, like ${\hat S}ˆ2$?
 
-The answer here is absolutely yes! Indeed, as discussed, there is some evidence to suggest that we are already working in a spin-symmetry-adapted basis, in terms of the numerical results reported above. There are, however, some caveats. To begin with, for this to work, then ALL measurement groups must respect all desired symmetries--meaning that the operators corresponding to each group H_n must individually commute with all desired symmetry operations. Even if it is known that the total H does so, it is not necessarily that case that the individual H_n will also do so. 
+The answer here is absolutely yes! Indeed, as discussed, there is some evidence to suggest that we are already working in a spin-symmetry-adapted basis, in terms of the numerical results reported above. There are, however, some caveats. To begin with, for this to work, then ALL measurement groups must respect all desired symmetries--meaning that the operators corresponding to each group $H_n$ must individually commute with all desired symmetry operations. Even if it is known that the total H does so, it is not necessarily that case that the individual $H_n$ will also do so. 
+
+With regard to the "Pauli word" (x/y/z tensor product) contributions to the Hamiltonian that emerge in say, the UCC and QCC schemes, to the extent that these procedures can be symmetry adapted in principle (which is in any event clearly not always the case in practice, according to the youtube videos),  it is not immediately obvious (at least to me) that the associated minimal clique groupings necessarily also satisfy the same symmetry requirements, nor exactly what kind of symmetries this may be expected to be the case for.  However, at least in cases where one grouping is found to consist of pure z tensor products, and there is only one other grouping with all of the x's and y's, as is the case here, then the necessary condition described above is clearly  satisfied, at least with respect to $\hat N$ and $S_z$ symmetry.
+
+### (3) Optional: Suggest an error-mitigation protocol if you know that the right wavefunction should be an eigenstate of a certain multi-qubit operator $\hat A$ with eigenvalue a.
+
+This challenge is a little bit oddly worded. Is $\hat A$ the Hamiltonian operator whose expectation value we are seeking, or is it the symmetry operation for which the eigenvalue a corresponds to the desired irrep (irreducible representation)? Is |$\Psi$> presumed to be an eigenstate of the Hamiltonian? Either way, I suppose, |$\Psi$> must be an eigenstate of $\hat A$, at least in principle. 
+
+So, one could try following a similar procedure to that described
+above. If $\hat A$ were not first decomposed into pieces, one would
+first transform unitarily to a diagonalizing representaton, and then
+make measurements. All measurements corresponding to basis functions
+NOT associated with the desired eigenvalue a would be ignored. But
+then of course, we already know a priori that the result will be a, 
+so this seem a bit useless, unless we actually are seeking the expectation
+value for some other operator (unclear from the way the problem is written).
+
+One could also try to decompose $\hat A$ into as small a sum as possible
+of x/y/z tensor products across individual qubits.  Then, apply a minimal
+clique analysis to divide these terms into the fewest number of maximally
+commuting groups. Then, ensure that each such group also satisfies 
+the desired symmetry---i.e., commutes with the desired symmetry operations.
+Here though, one would have to have sorted out in advance which eigenvalue
+(really irrep) contributions from each piece give rise to the desired final
+value of a, once they are all combined together.  
+ 
+Other options would be to apply constraint penalty within the variational
+algorithm, or to apply an (approximate unitary) projection operator. 
 
 ## Further Challenges:
 
