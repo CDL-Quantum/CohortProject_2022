@@ -307,7 +307,7 @@ base_E = base_E_0 + base_E_1
 -0.6913418867664956
 ```
 
-As you can tell, this expectation value is very different from the actual expectation value that we were hoping to get. 
+As you can tell, this expectation value is very different from the actual expectation value that we were hoping to get. On the other hand, it is also very clear that there is a lot of noise across all basis functions--including those basis functions that correspond to the wrong number of electrons, whose identity we can at least confirm for the first measurement group, as discussed.  
 
 
 #### With Post-processing Error Mitigation
