@@ -314,9 +314,18 @@ As you can tell, this expectation value is very different from the actual expect
 
 Now, we attempt to implement the error mitigation protocol. To implement it, we remove all the measurement results for the 10 out of 16 basis functions that DO NOT correspond to two electrons. This would be easily enough achieved in the case of the first measurement group---i.e., we would throw away all results except those for the six measurement outcomes, |0011>, |1100>, |0101>, |0110>, |1010>, and |1001>.  However, if you have been following the preceding discussion, you immediately recognize the problem we encounter with this approach--which is that FOR THE SECOND MEASUREMENT GROUP, WE DO NOT KNOW THE ALLOWED SET OF SIX BASIS FUNCTIONS (though we do know that it exists...). So, we cannot consistently apply this procedure to both parts of the Hamiltonian. 
 
+Of course, this is not a fundamental limitation. More research into the methodology would reveal this information. Also, we could have implemented the number operator, transform it, and apply it to the individual transformed second-group basis functions, to identify the requisite six. Time limits restricted us from actually doing any of this. However, we have a simpler and very effective approach that we can also justify, as described above. 
 
+Consider that in the exact calculation, we discovered that each measurement group in fact receives an exact contribution from just two basis functions.  In the case of the first measurement group, these are |1100> and |0011>, both of which are seen to belong the aforementioned group of six. In the case of the second measurement group, these are |1100> and |1101>. So we know that at least these two transformed basis functions belong to the correct group of six, but we have no means of identifying the other four. 
 
-After removing those measurements, we were left with the following total number of measurements from each measurement group:
+All of that being the case, the best we can do here in terms of applying the proposed error-mitigation scheme, in a way that is consistent across both groups, is to throw away all data 
+in each group, EXCEPT for that from the two basis functions from each group that are identified above. So this is the scheme that we have implemented, and provide data for below. Of course, this
+is ``cheating'' a little bit, because we are using information from the exact result that in principle we would not know, to throw away more data than the true method would allow based on symmetry. Nevertheless, it is still an excellent approximation to the true method, as we can 
+justify from the first group quantum calculation as follows.  
+
+In particular, by examining the first group data above, we see that the |1100> and |0011> outcomes received the most measurements by far, which is exactly as expected.  However, the important question then becomes, of the remaining outcomes, which receive more measurements the two-electron outcomes, or the others? Remarkably, the non-included two-electron outcomes received FAR FEWER measurements than the others. Therefore, excluding them from the calculation, in addition to the others, will not skew the results too unduly. 
+
+Applying the above procedure, we were left with the following total number of measurements from each measurement group:
 
 ```
 The total number of samples for first measurement group remaining is: 1420
