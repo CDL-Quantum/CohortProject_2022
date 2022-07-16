@@ -366,6 +366,10 @@ post_E
 
 While still different from the correct value, this expectation value is very much closer to the actual expectation value! As we can see, much of deviance came from the second measurement group, which is to be expected due to the error induced by the long circuit.
 
+### (2)  Can the error-mitigation protocol described in Ref. [14] be used for more complicated symmetries, like $\hat Sˆ2$?
+
+The answer here is absolutely yes! Indeed, as discussed, there is some evidence to suggest that we are already working in a spin-symmetry-adapted basis, in terms of the numerical results reported above. There are, however, some caveats. To begin with, for this to work, then ALL measurement groups must respect all desired symmetries--meaning that the operators corresponding to each group H_n must individually commute with all desired symmetry operations. Even if it is known that the total H does so, it is not necessarily that case that the individual H_n will also do so. 
+
 ## Further Challenges:
 
 - How to obtain excited electronic states of the same or different symmetry?
