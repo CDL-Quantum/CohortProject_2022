@@ -7,7 +7,18 @@ This project will guide you through the state-of-the-art techniques for solving 
 
 ## Task 1: Generating PES using classical methods
 
-[ Plots comparing accuracy of PES generated for different chemical species using different methods ]
+### PES for weakly correlated systems ($H_2$, $LiH$)
+
+![fig1](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/h2PES.png)
+![fig2](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/lihPES.png)
+
+### PES for strongly correlated systems ($H_2 0$, $N_2$, $H_4$)
+
+![fig3](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/h2oPES.png)
+![fig4](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/n2PES.png)
+![fig5](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/h4PES.png)
+
+
 
 ### (1) The variational approach and its advantages
 
