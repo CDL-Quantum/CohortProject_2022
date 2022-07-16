@@ -42,7 +42,7 @@ For a mapping from fermionic operators to qubits operators to be valid, the way 
 
 ### (2) Consequences of a real electronic Hamiltonian on the qubit Hamiltonian after the Jordan-Wigner transformation
 
-A real Hamiltonian, which is a hermitian operator, must be symmetric. There should also be an even number of $\hat\sigma_y$'s.
+A real Hamiltonian, which is a hermitian operator, must be symmetric. There should also be an even number of $\hat\sigma_y$'s acting on each qubit.
 
 ### (3) Pros and cons of Bravyi-Kitaev vs Jordan-Wigner
 
