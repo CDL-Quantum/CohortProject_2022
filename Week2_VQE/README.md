@@ -261,7 +261,7 @@ Now, let's address the symmetry of the basis-transformed second measurement grou
 
 #### Running on IBMQ
 
-We ran these two circuits on an IBMQ device (imbq_quito, chosen as the queue time was the shortest) with a sameple size of 2000, and got the following measurement results.
+We ran these two circuits on an IBMQ device (imbq_quito, chosen as the queue time was the shortest) with a sameple size of 2000, and got the following measurement results. NOTE! for some reason these results do not appear correctly, but the data can be seen by entering edit mode, or consulting the file ?????.
 ```
 res_0_test = tq.simulate(circ_0, variables=vars, samples = no_samples, backend="qiskit", device='ibmq_quito')
 res_0_test
