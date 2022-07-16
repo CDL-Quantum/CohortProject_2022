@@ -82,16 +82,212 @@ $|\langle\Psi|\hat{H}|\Psi\rangle - \bar{H}|^2 \leq \sum_n\frac{\sigma_{H_n}^2}{
 
 ## Task 5: Use of quantum hardware
 
+### (1) Implementing the post-processing protocol
+
+#### Introduction
+
+For this question, we were tasked to implement an error mitigation protocol that is based on removing measurement results corresponding to the wrong number of electrons, as described in the reference below:
+
+Ilya G. Ryabinkin, Scott N. Genin, and Artur F. Izmaylov. Constrained variational quantum eigensolver: Quantum computer search engine in the Fock space. J. Chem. Theory Comput., 15(1):249{255, 2019.
+
+Our full implementation using the code can be found in the notebook **S5_circuit_qec.ipynb**, so please view it for full details. We use the hydrogen molecule as an example to test the error mitigation protocol, and to see the effects of the error mitigation, we want to see three different results: firstly, the correct expectation value; secondly, the expectation value without the psot processing error mitigation protocol; and thirdly, the expectation value after implementing said protocol. As we had learnt previously in the last few steps, we can easily find the correct expectation value using tequila:
+
+```
+print("The correct expectation value is: ", tq.simulate(E, variables=vars))
+```
+
+```
+The correct expectation value is: -0.9486411121761621
+```
+
+#### Split Hamiltonians by Measurement Groups
+
+To implement the error mitigation protocol, we are going to need to see the measurement results of the sample directly. As we had learnt in step 4, we split it up into measurement groups (which in this case there are 2), and use that as the measurement protocol to view the measurement results.
+
+```
+binary_H = BinaryHamiltonian.init_from_qubit_hamiltonian(H)
+commuting_parts = binary_H.commuting_groups()
+print(The first group is: ", commuting_parts[0].to_qubit_hamiltonian())
+print(The second group is: ", commuting_parts[1].to_qubit_hamiltonian())
+```
+
+```
+The first group is: -0.5339+0.0673Z(0)+0.0673Z(1)+0.0067Z(2)+0.0067Z(3)+0.1274Z(0)Z(1)+0.0650Z(0)Z(2)+0.1298Z(0)Z(3)+0.1298Z(1)Z(2)+0.0650Z(1)Z(3)+0.1337Z(2)Z(3)
+The second group is: -0.0648X(0)X(1)Y(2)Y(3)+0.0648X(0)Y(1)Y(2)X(3)+0.0648Y(0)X(1)X(2)Y(3)-0.0648Y(0)Y(1)X(2)X(3)
+
+```
+
+To measure each group independently, we implemented a function to split the Hamiltonians by measurement group, which also introduced different measurement protocols. We can see the different circuits that will be implemented for each measurement group:
+
 ```
 circ_0 = tq.circuit.compiler.compile_exponential_pauli_gate(U + U_0)
 tq.draw(circ_0, backend="qiskit")
 ```
 
 ```
+     ┌────────────────────┐┌─────────────────────┐┌──────────┐               »
+q_0: ┤ Rx(f((beta_0,))_0) ├┤ Rz(f((gamma_0,))_1) ├┤ Ry(-π/2) ├──■────────────»
+     ├────────────────────┤├─────────────────────┤├─────────┬┘┌─┴─┐          »
+q_1: ┤ Rx(f((beta_1,))_2) ├┤ Rz(f((gamma_1,))_3) ├┤ Rx(π/2) ├─┤ X ├──■───────»
+     ├────────────────────┤├─────────────────────┤├─────────┴┐└───┘┌─┴─┐     »
+q_2: ┤ Rx(f((beta_2,))_4) ├┤ Rz(f((gamma_2,))_5) ├┤ Ry(-π/2) ├─────┤ X ├──■──»
+     ├────────────────────┤├─────────────────────┤├──────────┤     └───┘┌─┴─┐»
+q_3: ┤ Rx(f((beta_3,))_6) ├┤ Rz(f((gamma_3,))_7) ├┤ Ry(-π/2) ├──────────┤ X ├»
+     └────────────────────┘└─────────────────────┘└──────────┘          └───┘»
+c: 4/════════════════════════════════════════════════════════════════════════»
+                                                                             »
+«                                                     ┌─────────┐ 
+«q_0: ──────────────────────────────────────────■─────┤ Ry(π/2) ├─
+«                                             ┌─┴─┐   ├─────────┴┐
+«q_1: ───────────────────────────────■────────┤ X ├───┤ Rx(-π/2) ├
+«                                  ┌─┴─┐   ┌──┴───┴──┐└──────────┘
+«q_2: ───────────────────────■─────┤ X ├───┤ Ry(π/2) ├────────────
+«     ┌───────────────────┐┌─┴─┐┌──┴───┴──┐└─────────┘            
+«q_3: ┤ Rz(f((tau_0,))_8) ├┤ X ├┤ Ry(π/2) ├───────────────────────
+«     └───────────────────┘└───┘└─────────┘                       
+«c: 4/════════════════════════════════════════════════════════════
+«
+```
+
+The first measurement group basically has nothing to change the measurement basis since it is all in the Z basis.
+
+```
 circ_1 = tq.circuit.compiler.compile_exponential_pauli_gate(U + U_1)
 tq.draw(circ_1, backend="qiskit")
 ```
+```
+q_0: ┤ Rx(f((beta_0,))_0) ├┤ Rz(f((gamma_0,))_1) ├┤ Ry(-π/2) ├──■────────────»
+     ├────────────────────┤├─────────────────────┤├─────────┬┘┌─┴─┐          »
+q_1: ┤ Rx(f((beta_1,))_2) ├┤ Rz(f((gamma_1,))_3) ├┤ Rx(π/2) ├─┤ X ├──■───────»
+     ├────────────────────┤├─────────────────────┤├─────────┴┐└───┘┌─┴─┐     »
+q_2: ┤ Rx(f((beta_2,))_4) ├┤ Rz(f((gamma_2,))_5) ├┤ Ry(-π/2) ├─────┤ X ├──■──»
+     ├────────────────────┤├─────────────────────┤├──────────┤     └───┘┌─┴─┐»
+q_3: ┤ Rx(f((beta_3,))_6) ├┤ Rz(f((gamma_3,))_7) ├┤ Ry(-π/2) ├──────────┤ X ├»
+     └────────────────────┘└─────────────────────┘└──────────┘          └───┘»
+c: 4/════════════════════════════════════════════════════════════════════════»
+                                                                             »
+«                                                     ┌─────────┐      »
+«q_0: ──────────────────────────────────────────■─────┤ Ry(π/2) ├───■──»
+«                                             ┌─┴─┐   ├─────────┴┐  │  »
+«q_1: ───────────────────────────────■────────┤ X ├───┤ Rx(-π/2) ├──┼──»
+«                                  ┌─┴─┐   ┌──┴───┴──┐└──────────┘  │  »
+«q_2: ───────────────────────■─────┤ X ├───┤ Ry(π/2) ├──────────────┼──»
+«     ┌───────────────────┐┌─┴─┐┌──┴───┴──┐└─────────┘            ┌─┴─┐»
+«q_3: ┤ Rz(f((tau_0,))_8) ├┤ X ├┤ Ry(π/2) ├───────────────────────┤ X ├»
+«     └───────────────────┘└───┘└─────────┘                       └───┘»
+«c: 4/═════════════════════════════════════════════════════════════════»
+«                                                                      »
+«                      ┌──────────┐                      ┌──────────┐»
+«q_0: ──────────────■──┤ Rx(-π/2) ├──■────────────────■──┤ Ry(-π/2) ├»
+«                   │  └──────────┘  │                │  └──────────┘»
+«q_1: ──────────────┼────────────────┼────────────────┼───────■──────»
+«                   │                │                │       │      »
+«q_2: ──────────────┼────────────────┼────────────────┼───────┼──────»
+«     ┌──────────┐┌─┴─┐            ┌─┴─┐┌──────────┐┌─┴─┐   ┌─┴─┐    »
+«q_3: ┤ Rz(-π/2) ├┤ X ├────────────┤ X ├┤ Rz(-π/2) ├┤ X ├───┤ X ├────»
+«     └──────────┘└───┘            └───┘└──────────┘└───┘   └───┘    »
+«c: 4/═══════════════════════════════════════════════════════════════»
+«                                                                    »
+«                                                                    »
+«q_0: ───────────────────────────────────────────────────────────────»
+«                      ┌──────────┐                      ┌──────────┐»
+«q_1: ──────────────■──┤ Rx(-π/2) ├──■────────────────■──┤ Ry(-π/2) ├»
+«                   │  └──────────┘  │                │  └──────────┘»
+«q_2: ──────────────┼────────────────┼────────────────┼───────■──────»
+«     ┌──────────┐┌─┴─┐            ┌─┴─┐┌──────────┐┌─┴─┐   ┌─┴─┐    »
+«q_3: ┤ Rz(-π/2) ├┤ X ├────────────┤ X ├┤ Rz(-π/2) ├┤ X ├───┤ X ├────»
+«     └──────────┘└───┘            └───┘└──────────┘└───┘   └───┘    »
+«c: 4/═══════════════════════════════════════════════════════════════»
+«                                                                    »
+«                                                                              »
+«q_0: ─────■───────────────────────────────────────────────────────────────────»
+«        ┌─┴─┐                                                                 »
+«q_1: ───┤ X ├─────────────────────────────────────────────────────────■───────»
+«        └───┘         ┌──────────┐                      ┌──────────┐┌─┴─┐     »
+«q_2: ──────────────■──┤ Rx(-π/2) ├──■────────────────■──┤ Ry(-π/2) ├┤ X ├──■──»
+«     ┌──────────┐┌─┴─┐└──────────┘┌─┴─┐┌──────────┐┌─┴─┐├──────────┤└───┘┌─┴─┐»
+«q_3: ┤ Rz(-π/2) ├┤ X ├────────────┤ X ├┤ Rz(-π/2) ├┤ X ├┤ Ry(-π/2) ├─────┤ X ├»
+«     └──────────┘└───┘            └───┘└──────────┘└───┘└──────────┘     └───┘»
+«c: 4/═════════════════════════════════════════════════════════════════════════»
+«                                                                              »
+«                                             ┌─────────┐ ┌──────────┐     »
+«q_0: ─────────────────────────────────■──────┤ Ry(π/2) ├─┤ Ry(-π/2) ├──■──»
+«                                    ┌─┴─┐    ├─────────┤ ├──────────┤┌─┴─┐»
+«q_1: ──────────────────────■────────┤ X ├────┤ Ry(π/2) ├─┤ Ry(-π/2) ├┤ X ├»
+«                         ┌─┴─┐   ┌──┴───┴──┐ ├─────────┴┐└──────────┘└───┘»
+«q_2: ──────────────■─────┤ X ├───┤ Ry(π/2) ├─┤ Ry(-π/2) ├─────────────────»
+«     ┌──────────┐┌─┴─┐┌──┴───┴──┐├─────────┴┐├──────────┤                 »
+«q_3: ┤ Rz(-π/2) ├┤ X ├┤ Ry(π/2) ├┤ Rz(-π/2) ├┤ Ry(-π/2) ├─────────────────»
+«     └──────────┘└───┘└─────────┘└──────────┘└──────────┘                 »
+«c: 4/═════════════════════════════════════════════════════════════════════»
+«                                                                          »
+«                                                      ┌─────────┐ ┌──────────┐»
+«q_0: ───────────────────────────────────────────■─────┤ Ry(π/2) ├─┤ Rz(-π/2) ├»
+«                                              ┌─┴─┐   ├─────────┤ ├──────────┤»
+«q_1: ──■─────────────────────────────■────────┤ X ├───┤ Ry(π/2) ├─┤ Rz(-π/2) ├»
+«     ┌─┴─┐                         ┌─┴─┐   ┌──┴───┴──┐├─────────┴┐├──────────┤»
+«q_2: ┤ X ├──■────────────────■─────┤ X ├───┤ Ry(π/2) ├┤ Rz(-π/2) ├┤ Rx(-π/2) ├»
+«     └───┘┌─┴─┐┌──────────┐┌─┴─┐┌──┴───┴──┐└─────────┘└──────────┘└──────────┘»
+«q_3: ─────┤ X ├┤ Rz(-π/2) ├┤ X ├┤ Ry(π/2) ├───────────────────────────────────»
+«          └───┘└──────────┘└───┘└─────────┘                                   »
+«c: 4/═════════════════════════════════════════════════════════════════════════»
+«                                                                              »
+«     ┌──────────┐┌──────────┐
+«q_0: ┤ Rx(-π/2) ├┤ Rz(-π/2) ├
+«     ├──────────┤├──────────┤
+«q_1: ┤ Rx(-π/2) ├┤ Rz(-π/2) ├
+«     ├──────────┤└──────────┘
+«q_2: ┤ Rz(-π/2) ├────────────
+«     └──────────┘            
+«q_3: ────────────────────────
+«                             
+«c: 4/════════════════════════
+«                             
+```
 
+On the other hand, the second measurement group has to have quite a long circuit to change the measurement basis to fit the measurement group.
+
+#### Running on IBMQ
+
+We ran these two circuits on an IBMQ device (imbq_quito, chosen as the queue time was the shortest) with a sameple size of 2000, and got the following measurement results.
+```
+res_0_test = tq.simulate(circ_0, variables=vars, samples = no_samples, backend="qiskit", device='ibmq_quito')
+res_0_test
+```
+```
++57.0000|0000> +123.0000|1000> +109.0000|0100> +1020.0000|1100> +48.0000|0010> +26.0000|1010> +23.0000|0110> +33.0000|1110> +27.0000|0001> +18.0000|1001> +16.0000|0101> +45.0000|1101> +400.0000|0011> +18.0000|1011> +26.0000|0111> +11.0000|1111> 
+```
+```
+res_1_test = tq.simulate(circ_1, variables=vars, samples = no_samples, backend="qiskit", device='ibmq_quito')
+res_1_test
+```
+```
++121.0000|0000> +102.0000|1000> +90.0000|0100> +233.0000|1100> +69.0000|0010> +51.0000|1010> +52.0000|0110> +82.0000|1110> +151.0000|0001> +97.0000|1001> +101.0000|0101> +560.0000|1101> +85.0000|0011> +68.0000|1011> +35.0000|0111> +103.0000|1111> 
+```
+
+#### Without Post-processing Error Mitigation
+
+Now that we have the measurement results by running the two circuits, we can calculate the expectation value using the measurement results. To describe the process briefly (to see the full code, please check the notebook), we first convert the measurement results into a state-vector form, and then use a tequila function to compute the expectation value. We calculate the expectation value for each Hamiltonian (split by measurement group) separately, and then add them to gether to get the expectation value from the run.
+
+The expectation value we got from the first measurement group was:
+```
+base_E_0 = base_res_0.compute_expectationvalue(H_0)
+base_E_0
+```
+```
+-0.6467700690869538
+```
+
+The expectation value we got from the second measurement group was:
+```
+base_E_1 = base_res_1.compute_expectationvalue(H_1)
+base_E_1
+```
+```
+-0.04457181767954178
+```
+
+And so combined together, we got the expectation value of:
 ```
 base_E = base_E_0 + base_E_1
 ```
@@ -99,12 +295,51 @@ base_E = base_E_0 + base_E_1
 -0.6913418867664956
 ```
 
+As you can tell, this expectation value is very different from the actual expectation value that we were hoping to get. 
+
+
+#### With Post-processing Error Mitigation
+
+Now, we implement the error mitigation protocol. To implement it, we remove all the measurement results that do not have the correct number of electrons. After removing those measurements, we were left with the following total number of measurements from each measurement group:
+
+```
+The total number of samples for first measurement group remaining is: 1420
+```
+```
+The total number of samples for second measurement group remaining is: 793
+```
+
+These numbers make sense, as we expect errors to be introduced when we apply gates and apply the measurement readout. The second group definitely lost many more samples (through the protocol) due to the sheer number of gates that we had to use to implement the measurement. Now, we check the expectation value post implementation of protocol:
+
+
+The expectation value we got from the first measurement group was:
+```
+post_E_0 = post_res_0.compute_expectationvalue(H_0)
+post_E_0
+```
+```
+-0.7154794048100186
+```
+
+The expectation value we got from the second measurement group was:
 ```
 post_E_1 = post_res_1.compute_expectationvalue(H_1)
+post_E_1
 ```
 ```
 -0.10685785786394145
 ```
+
+And so combined together, we got the expectation value of:
+```
+post_E = post_E_0 + post_E_1
+post_E
+```
+```
+-0.82233726267396
+```
+
+While still different from the correct value, this expectation value is very much closer to the actual expectation value! 
 
 ## Further Challenges:
 
