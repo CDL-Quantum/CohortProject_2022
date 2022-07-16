@@ -1,23 +1,24 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
 # Quantum Cohort Project Business Application
 
-For each weekly project, your team is asked to complete the below business application exercise.
-To complement the technical tasks, please consdier the four questions below.
-You are free to format your response to these four questions as you wish (with the final question done as a short recorded video), and to include
-the content (or links to the content) on your forked repository.
-
-A brief example for each question is included for the 
-[Traveling Salesman Problem.](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+In this project, we use state-of-the-art techniques for solving electronic structure problems on NISQ computers and simulators.
 
 ## Step 1: Explain the technical problem you solved in this exercise
 
-Example: Finding a global minimum in settings where a classical approach may not be able to find a global minimum.
+Beyond just finding the ground state energy for small molecules, one of the greatest feats that we had managed to achieve was the simulation of the bond-breaking for the nitrogen molecule, a much bigger molecule that requires a far more complex simulation than most current day simulators are able to handle. We managed to simulate this in ...
+
+(Jonathan, please help fill this up! I think put down a brief description of how you were able to achieve it)
 
 ## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
 
-Example: A courier has to deliver parcels to several locations and is looking to minimize its travel time. (e.g., “the travelling salesman problem”).
+In this day and age, most of the ammonia that we get are by breaking the bonds of nitrogen we find in air. Most of the current industrial methods of doing so involve energy demanding processes, which drives up cost for businesses in the agricultural industry (due to ammonia being used in fertilizers), in manufacturing of plastics, textiles and other materials, and so many more. It is a versatile substance that is used extremely widely, so by being able to simulate the bond-breaking for the nitrogen molecule, we are able to study the processes required to manufacture ammonia much more easily.
+
+
+(Jonathan, please help fill this up! Maybe write down how the bond breaking simulation helps us study ammonia production?)
 
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
+
+As the
 
 Examples: 
 - Federal Express
