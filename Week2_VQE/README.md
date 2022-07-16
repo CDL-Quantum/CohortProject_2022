@@ -312,7 +312,11 @@ As you can tell, this expectation value is very different from the actual expect
 
 #### With Post-processing Error Mitigation
 
-Now, we implement the error mitigation protocol. To implement it, we remove all the measurement results that do not have the correct number of electrons. After removing those measurements, we were left with the following total number of measurements from each measurement group:
+Now, we attempt to implement the error mitigation protocol. To implement it, we remove all the measurement results for the 10 out of 16 basis functions that DO NOT correspond to two electrons. This would be easily enough achieved in the case of the first measurement group---i.e., we would throw away all results except those for the six measurement outcomes, |0011>, |1100>, |0101>, |0110>, |1010>, and |1001>.  However, if you have been following the preceding discussion, you immediately recognize the problem we encounter with this approach--which is that FOR THE SECOND MEASUREMENT GROUP, WE DO NOT KNOW THE ALLOWED SET OF SIX BASIS FUNCTIONS (though we do know that it exists...). So, we cannot consistently apply this procedure to both parts of the Hamiltonian. 
+
+
+
+After removing those measurements, we were left with the following total number of measurements from each measurement group:
 
 ```
 The total number of samples for first measurement group remaining is: 1420
