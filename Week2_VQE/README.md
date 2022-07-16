@@ -71,6 +71,30 @@ $|\langle\Psi|\hat{H}|\Psi\rangle - \bar{H}|^2 \leq \sum_n\frac{\sigma_{H_n}^2}{
 
 ## Task 5: Use of quantum hardware
 
+```
+circ_0 = tq.circuit.compiler.compile_exponential_pauli_gate(U + U_0)
+tq.draw(circ_0, backend="qiskit")
+```
+
+```
+circ_1 = tq.circuit.compiler.compile_exponential_pauli_gate(U + U_1)
+tq.draw(circ_1, backend="qiskit")
+```
+
+```
+base_E = base_E_0 + base_E_1
+```
+```
+-0.6913418867664956
+```
+
+```
+post_E_1 = post_res_1.compute_expectationvalue(H_1)
+```
+```
+-0.10685785786394145
+```
+
 ## Further Challenges:
 
 - How to obtain excited electronic states of the same or different symmetry?
