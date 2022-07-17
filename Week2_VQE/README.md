@@ -108,6 +108,8 @@ There is also a simple way to mitigate errors based on symmetry, that can be app
 
 ## Task 4: Hamiltonian measurements
 
+Again, the splitting of the Hamiltonian terms into a minimal number of measurement groups has been applied in the notebook, "S5_circuit_qec.ipynb". Please see also additional discussion in the Task 5 section.
+
 ### (1) Optimal splitting of the total number of measurements between Hamiltonian fragments
 
 With the total error of the Hamiltonian estimator bounded above by 
