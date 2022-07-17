@@ -83,23 +83,28 @@ As an additional, intriguing consideration, it also may  be possible to eliminat
 
 ## Task 3: Unitary transformations
 
+Again, for coding examples where we have used unitary transformations to simulate VQE solution on a quantum computer, please consult the notebook S5_circuit_qec.ipynb.
+
+
 ### (1) Standard symmetries of the Hamiltonian preserved in (a) UCC and (b) QCC
 
-(a) UCC preserves time-reversal $\mathcal{T}$, particle number $\hat{N}_e$, and spin projection $\hat{S}_z$. Total spin $\hat{S}$ and point-group symmetry (?)
+(a) In principle, UCC preserves time-reversal $\mathcal{T}$, particle number $\hat{N}_e$, and spin projection $\hat{S}_z$. It should also be possible, working in a spin-symmetry adapted basis, to preserve total spin symmetry, $\hat{S}^2$ as well. As for point-group symmetry, this should be automatically satisfied by the underlying Fock operator solutions, used to define the molecular orbitals of the calculation. If you have, for example, two MOs that are doubly-degenerate by point-group symmetry, then both should be included in the MO set, and both will be singly or doubly excited in the same manner. So UCC should preserve point group symmetry as well. 
 
-(b) QCC preserves only $\mathcal{T}$.
+(b) QCC certainly preserves $\mathcal{T}$. For this approach, the way that individual Pauli words are chosen is based on the magnitude of the commutator of a given Pauli word operator with the Hamiltonian.  If this is sufficiently large, then that particular Pauli word operator is retained. Since it is directly based on energy, then degenerate MOs will be treated identically in this framework, and therefore again, point group symmetry should be respected. Beyond that, QCC respects the remaining symmetries less well than UCC. In principle, they might be conserved, but unlike UCC the QCC implementation makes no attempt to ensure that symmetry is in fact preserved. The advantage, however, is that QCC requires fewer quantum gates.  
 
 ### (2) Why symmetries are helpful
 
-For a given symmetry, a unitary operator can be constructed to rotate the initial state to the particular symmetry eigenstate. Symmetries thus restrict the Hilbert space to a smaller subspace that conforms with them, thereby reducing the complexity of the porblem, making computation easier to perform.
+For a given symmetry, a unitary operator can be constructed to rotate the initial state to the particular symmetry eigenstate. Symmetries thus restrict the Hilbert space to a smaller subspace that conforms with them, thereby reducing the complexity of the problem, making computation easier to perform. Symmetries are also useful as a "check" on such transformations, after the fact. 
 
 ### (3) Ways to restore symmetries broken by a unitary transformation
 
-For restorimg broken symmetries ther are two options:
+For restorimg broken symmetries there are at least two options:
 
 (i) Construct and apply symmetry projectors to move into subspaces preserving the symmetries in question, or
 
 (ii) Incorporate the symmetries as constraints in a variational formulation.
+
+There is also a simple way to mitigate errors based on symmetry, that can be applied post-measurement, as discussed in Task 5.
 
 ## Task 4: Hamiltonian measurements
 
