@@ -23,9 +23,14 @@ Open up [instructions.pdf](./Instructions.pdf) to begin learning about your task
 - Applying unitary transformations on the Hamiltonian.
 - Compress larger basis sets into smaller number of qubits.
 
-## Business Application
+## Ansatzer - your ansatz distributor - Business Application
+
+Different techniques have been proposed for generating ansatz for finding ground states in VQE problems. Our method search will give you the ansatz that best adapts to your specific problem. We have distributing ansatz for different moleculas that improves performance in terms of convergence and required number of parameters.
+
+
 
 For each week, your team is asked to complete a Business Application. Questions you will be asked are:
+
 
 - Explain to a layperson the technical problem you solved in this exercise.
 - Explain or provide examples of the types of real-world problems this solution can solve.
