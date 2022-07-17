@@ -56,7 +56,7 @@ CCSD, in contrast, being a coupled-pair theory, is size-consistent by design. So
 | $E_{CCSD(T)}$ | -1.13727457 | -1.16340297 | -1.1723349  | -1.17379598 | -1.17422279 |
 | $E_{FCI}$     | -1.13727441 | -1.16340296 | -1.17233494 | -1.17379598 | -1.17422279 |
 
-The table above shows the energy (in unit of Hartree) of $H_2$ calculated using different methods and basis sets. We see that for a given basis, the more electronic correlation is accounted for by a method, the closer it gets to the FCI value (note that for $H_2$ CISD gives the FCI value). While for a given method, the larger the basis the lower the calculated energy. Note that all post-HF methods using the cc-pVQZ and cc-pV5Z basis sets are within 1 mHa to the  experimental value of $E_{expt} = -1.17377$ $E_h$.
+The table above shows the energy (in unit of Hartree) of $H_2$ calculated using different methods and basis sets. We see that for a given basis, the more electronic correlation is accounted for by a method, the closer it gets to the FCI value (note that for $H_2$ CISD gives the FCI value). While for a given method, the larger the basis the lower the calculated energy. Note that all post-HF methods using the cc-pVQZ and cc-pV5Z basis sets are within 1 mHa to the  experimental value of $E_{expt} = -1.17377$ $E_h$.  In principle, one would expect the FCI calculation with the largest basis set (i.e. closest to complete basis set limit) to be closest to experiment. However, we must recall that we are also running into the limits of the Born-Oppenheimer approximation; in reality, non-Born-Oppenheimer transitions and nuclear quantum effects also play a role in any experimental measurement. 
 
 ## Task 2: Generating the qubit Hamiltonian
 
