@@ -7,16 +7,22 @@ This project will guide you through the state-of-the-art techniques for solving 
 
 ## Task 1: Generating PES using classical methods
 
-### PES for weakly correlated systems ($H_2$, $LiH$)
+PESs were generated for all of the model diatomic systems (H$_2$, LiH, H$_2$O$, N$_2$, H$_4$), using all of the suggested classical electronic structure methods, i.e.: Hartree-Fock (HF); configuration interaction singles and doubles (CISD); coupled cluster singles and doubles (CCSD); full configuration interaction (FCI). All of these calculations were performed using a minimal STO-3G basis set. In that sense, the FCI calculations are of course still far from "exact", in that we are still very far from the complete basis set limit. Nevertheless, these will serve as illustrative examples. 
+
+Below we present the computed PESs using all methods for all systems, separated into strongly correlated and weakly correlated categories. Please consult the notebook S1-sol.ipynb, where the work was actually performed. 
+
+### PES for weakly correlated systems (H$_2$, LiH)
 
 ![fig1](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/h2PES.png)
 ![fig2](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/lihPES.png)
 
-### PES for strongly correlated systems ($H_2 0$, $N_2$, $H_4$)
+### PES for strongly correlated systems (H$_2$O$, N$_2$, H$_4$)
 
 ![fig3](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/h2oPES.png)
 ![fig4](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/n2PES.png)
 ![fig5](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/h4PES.png)
+
+The results are as expected. In particular, only FCI performs well as the molecules dissociate, in the case of the strongly correlated systems. 
 
 ### (1) The variational approach and its advantages
 
