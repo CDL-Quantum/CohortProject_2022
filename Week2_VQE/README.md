@@ -60,9 +60,11 @@ The table above shows the energy (in unit of Hartree) of $H_2$ calculated using 
 
 ## Task 2: Generating the qubit Hamiltonian
 
+Please see our notebook, "S5_circuit_qec.ipynb", for examples of generating qubit Hamiltonians. In particular, we have used the Jordan-Wigner mapping in the full CI space, i.e. without using any qubit tapering. Additional discussion may be found in the Task 5 section, as well.
+
 ### (1) Requirements for a function of qubit operators to be a valid mapping for fermionic operators
 
-For a mapping from fermionic operators to qubits operators to be valid, the way anti-commuting fermionic operators act on the fermion Fock space must be reproduced by the qubit operators acting on the qubit space. Furthermore, the anti-commutation relations that fermionic operators satisfy must also hold for the qubit operators.
+For a mapping from fermionic operators to qubits operators to be valid, it becomes necessary and sufficient to find a way to represent annihilation and creation operators from the Fock space as spin operators on the qubit space. In particular, the anti-commuting fermionic operator relationships must be properly satisfied in the qubit or spin-based representation.  In practice, this means introducing a kind of "non-locality", in that creation and annihilation of occupation for a specific configuration, i, is accompanied with a phase change that depends on the values of other configurations, j.  The precise manner in which this happens depends on the particular mapping used. For Jordan-Wigner, it is the occupations of the j<i that govern the phase shift. For Bravyi-Kitaev, the phase change is designed to be more local.  
 
 ### (2) Consequences of a real electronic Hamiltonian on the qubit Hamiltonian after the Jordan-Wigner transformation
 
