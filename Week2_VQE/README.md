@@ -31,18 +31,14 @@ Open up [instructions.pdf](./Instructions.pdf) to begin learning about your task
 
 ### Our Solution for different molecules 
 
-In this section we show the solution of VQE with our special ansatz for two different cases: 
-For each week, your team is asked to complete a Business Application. Questions you will be asked are:
+In this section, we show the solution of VQE with our special ansatz for two different cases H<sub>2 and BeH<sub>2. The TTN is compared against a strongly correlating layer ansatz STL. Here, it can be seen that our model improves the results for the STL ansatz. 
 
 | **H<sub>2**| **BeH<sub>2**    |
 | ------------ | ------------------------ |
 | ![image](Images/H2.png) | ![image](Images/BeH2.png) |
-| ![image](resources/task4_graph1_optimized.png) | ![image](resources/task4_graph2_optimized.png) |
+| ![image](Images/H2_TTNvsSEL.png) | ![image](Images/TTNvsSEL.png) |
 
 
-- Explain to a layperson the technical problem you solved in this exercise.
-- Explain or provide examples of the types of real-world problems this solution can solve.
-- Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved.
-- Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language.
+### Potential Customers
 
-For more details refer to the [Business Application found here](./Business_Application.md)
+BASF SE is a German multinational chemical company and the largest chemical producer in the world. For this chemical company, quantum-computing will improve the modeling quantum-mechanical systems capabilities in molecules and polymers. Identifying the most effective molecular design or structures to achieve required effects—before synthesizing molecules in the lab.
