@@ -1,51 +1,54 @@
-![CDL 2022 Cohort Project](../CDL_logo.jpg)
-# Quantum Cohort Project Business Application
+## REAQT
+![reaqt](resources/Reaqt.png)
 
-For each weekly project, your team is asked to complete the below business application exercise.
-To complement the technical tasks, please consdier the four questions below.
-You are free to format your response to these four questions as you wish (with the final question done as a short recorded video), and to include
-the content (or links to the content) on your forked repository.
+## Explain the technical problem you solved in this exercise
 
-A brief example for each question is included for the 
-[Traveling Salesman Problem.](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+We determine the activation energy barriers and reaction rates of simple chemical reactions by solving for the reactants' PES (potential energy surface). To solve for the PES, we use VQE to determine the collective ground state of the reactants at different atomic distances. In our example problem, we solve for the PES of hydrogen exchange between Lithium and Hydrogen. This determines the activation energy needed for the H atom in LiH to disassociate from the molecule and bond with another H atom, as such:
 
-## Step 1: Explain the technical problem you solved in this exercise
+$$ LiH + H \longrightarrow Li + H^{2} $$
 
-Example: Finding a global minimum in settings where a classical approach may not be able to find a global minimum.
+Below is a diagram of potential energy surface of the hydrogen exchange reaction. The two minima in the curve represent the energy of the reactants (LiH and H) and products (Li and H^2). The transition state is represented by the local maximum. These are the configurations illustrated in the animation above.
 
-## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
-
-Example: A courier has to deliver parcels to several locations and is looking to minimize its travel time. (e.g., “the travelling salesman problem”).
-
-## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
-
-Examples: 
-- Federal Express
-- Canada Post
-
-## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
-
-Example: By travelling to all destinations via the shortest route, a courier can generate the same revenue that it would have generated following any other route, but will minimize travel costs (e.g., fuel costs). By minimizing travel costs, the courier will be more profitable than it would have been had it travelled through any other route.
-
-**Please store your video externally to the repo, and provide a link e.g. to Google Drive**
+![PES](PES.png)
 
 
+## Explain or provide examples of the types of real-world problems this solution can solve
+Drug discovery services market is projected to reach USD 31.4 billion by 2026 from USD 16.1 billion in 2021, at a CAGR of 14.3% during the forecast period of 2021 to 2026. This growth is largely driven by improvements in deep learning models, such as DeepMind's FermiNet, that can predict the electronic structure of molecules. Although quantum computing will improve our ability to generate new candidate materials and drugs, this is currently not the biggest pain point within the industry. We have many promising candidates already-- the difficulty is figuring out how to synthesize them in the lab so that we can test whether they behave as expected. 
 
-## Quantum chemical reaction with VQE
-This is the technical section of the business application. We will  outline how the electronic structure Hamiltonian is used in the process to get an accurate description of the interaction. The electronic structure Hamiltonian for a geometry $x$ is defined
+Retrosynthesis is the process of determining which series of transformations need be applied to off-the-shelf reactants to form a desired candidate molecule. Current state-of-the-art deep learning models predict the [top 50 reaction paths with a probability of 75%](https://www.nature.com/articles/nature25978). Attempting each synthesis route currently costs around $1000 in labor and resource costs. The guessing game of retrosynthesis can quickly lead to bills in the tens of thousands of dollars, for molecules as simple as derivatives of glycine (i.e. NH2–CF2–CO2H, which has, until the use of quantum simulation, resisted synthesis). This is where we at Reaqt come in.
 
-$$ H(x) = \sum_{pq} h_{pq}(x)c_p^\dagger c_q+\frac{1}{2}\sum_{pqrs}h_{pqrs}(x)c_p^\dagger c_q^\dagger c_rc_s.$$
+Reacqt's quantum-informed AI performs the retrosynthesis route screening process and then simulates the most promising routes on a quantum computer (by determining the PES of the reaction as stated above). These high accuracy simulations allow us to eliminate most of the faulty route suggestions that would have made it to the lab. Only the top few candidates are tested in the lab, mitigating costs. The outcomes of these experiments are used as additional training data for the candidate-screening neural net. Our screening neural net also benefits from using Quantum Monte Carlo Search to identify more promising paths more quickly. Below is a diagram illustrating how Reaqt works.
 
+![architecture](resources/q_retro.png)
+ 
+# Competitors 
 
+We expect our system to outperform competitor AI models (typically graph or seq-2-seq neural networks) as quantum hardware scales. Below is a competitors analysis chart of how we rate our near and long term competitiveness.
 
-   1. Generte an initial reaction path (geometry)  $x_0.$
-   
-   2. Generate a circuit for some parameters $\theta_0$, to get an ansatz state  
-      $$|\psi(\theta_0)= U(\theta_0) |HF\rangle. $$
-   
-   3. Compute the expectation value of the Hamiltonian $$g(\theta_0, x_0)= \langle \psi(\theta_0)|H(x_0)|\psi(\theta_0)\rangle. $$
-   
-   4.  Optimize $\theta_0$ and $x_0,$ by computing the gradient  $$\nabla_{\theta_0}g(\theta_0, x_0) ;\nabla_{x_0}g(\theta_0, x_0).$$
-    Repeat this step until you get optimal parameters  $\theta_{\text{opt}}$  and  $x_{\text{opt}}.$
-   
-   5. The optimized reaction path is then given to the neural network.  The activation energy $E_a$ is computed from the ground state $$\psi(\theta^*)\rangle $$ and the reaction path. From the activation energy, one can then compute the reaction rate. The data from the electronic structure Hamiltonian can be used to train neural-network and which can later predicct a chemical reaction with high acuracy. One of the challange in AI based leanred drug discovery is the lack of good data to train the model on. So, if the data is not good, what ever it preidcts is also not good. 
+[Reaxys Predictive Retrosynthesis](https://www.elsevier.com/solutions/reaxys/predictive-retrosynthesis) 
+
+[SciFinder](https://www.cas.org/solutions/cas-scifinder-discovery-platform/cas-scifinder/retrosynthesis-planning) 
+
+[Synthia](https://www.sigmaaldrich.com/UA/en/services/software-and-digital-platforms/synthia-retrosynthesis-software) 
+
+[IBM RXN](https://rxn.res.ibm.com/) 
+
+# Competitors analysis
+
+![Competitors matrix](resources/competitors_matrix.png)
+
+The above competitors matrix showcases that focusing on Quantum-Engine and cross-platform integrations could be benefitial to win CROs customer segment in a near-term and further expand to other customers segment as a long-term strategy.
+
+## Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
+
+Pharmaceutical & biotechnology companies, CROs, and research centers and academic & government institutes. Pharmaceutical & biotechnology companies are the largest end user of this market.
+
+* [Bienta](https://bienta.net/)
+* [Enamine](https://enamine.net/services/biology-services)
+* [Life Chemicals](https://lifechemicals.com/) 
+* [Comgenex](https://www.rdchemicals.com/targeted-compound-libraries/comgenex.html)
+* [Exscienta](https://www.exscientia.ai/)
+
+## Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
+
+[Check out Reaqt](https://drive.google.com/drive/folders/1bCvCgwjpHO-ZL-JmLLNoXr04_PGx3zbJ?usp=sharing)
