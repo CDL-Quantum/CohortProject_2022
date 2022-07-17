@@ -188,7 +188,9 @@ make
  
 The particulars of this fictional algorithm and how it works are not
 important. Rather, we will be judging how your creation portrays the risks and
-the benefits present in this situation.
+the benefits present in this situation. 
+
+Develop your solution in your [Business Application](./Business_Application.md) file, and don't forget to include a link to your 90-second video!
 
 ### Once you are comfortable with the above tasks, you may turn to one or more of the below optional **Challenges** for any time remaining in your project. 
 
