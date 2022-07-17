@@ -1,35 +1,51 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
 
+Team 12: Jitesh Lalwani, Babita Jajodia, Amit Patel, Buvan Prajwal A, Ehsan Barat 
+
 ## Project 2: VQE: Constructing potential energy surfaces for small molecules
 
-This project will guide you through the state-of-the-art techniques for solving electronic structure problems on NISQ computers.
+Over the entire project, we have picked H4 to be our desired molecule for investigation as it had two bonds and that model could then be extrapolated to complex molecules.
+### Task 1: Generating PES using classical methods
+For first task we were assigned with Generating Potential Energy Surfaces (PES) calculations for minimal atomic basis, here we went with H<sub>4</sub> and N<sub>2</sub> molecules using FCI, HF, CISD, and CCSD. 
 
-Open up [instructions.pdf](./Instructions.pdf) to begin learning about your tasks for this week!
+**1.  (a) Among classical methods, there are techniques based on the variational approach and those that are not. Identify variational methods among those that were used and explain advantages of the variational approach.**
 
-**Please edit this markdown file directly with links to your completed tasks and challenges.**
+| **Method** | **Identification** |
+|------------|--------------------|
+|     HF     |     Variational    |
+|    CCSD    |   NOT Variational  |
+|    CISD    |     Variational    |
+|     FCI    |     Variational    |
 
-## Tasks include:
+**1. (b) Are there any arguments for using non-variational techniques?**
+There are arguments for using non-variational techniques which have to do with them providing size-consistency as well as improving accuracy (at low/medium computational cost). Since there are different implementations for different techniques, they might have some reason for using them.
 
-- Generating PES using classical methods.
-- Generating the qubit Hamiltonian.
-- Unitary transformations.
-- Hamiltonian measurements.
-- Use of quantum hardware.
+The scalability of post HF methods, is the main constriction to simulate larger molecules with high accuracy.
 
-## Further Challenges:
+In the figure provided below, we present the pontential energy surfaces (PESs) for the dissociation of H<sub>4</sub> and N<sub>2</sub> molecules (in STO-3G) using the different classical methods. 
 
-- How to obtain excited electronic states of the same or different symmetry?
-- Partitioning in the fermionic operator space.
-- Applying unitary transformations on the Hamiltonian.
-- Compress larger basis sets into smaller number of qubits.
+![Classical Methods](images/h4.png)  
 
-## Business Application
+### Task 2: Generating the qubit Hamiltonian
+Before we get started with VQE, we have to generate a qubit Hamiltonian, where the  eigenvalues in the effective Hamiltonian come out to be: 
 
-For each week, your team is asked to complete a Business Application. Questions you will be asked are:
+     [-1.10115031  0.03904763]
 
-- Explain to a layperson the technical problem you solved in this exercise.
-- Explain or provide examples of the types of real-world problems this solution can solve.
-- Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved.
-- Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language.
+**1. What are the requirements for a function of qubit operators to be a valid mapping for the
+fermionic operators?**
+The requirements to be valid mapping for fermionic (creation and annihilation) operators, function of operations on qubits should preserve the fermionic anti-commutation relations.
 
-For more details refer to the [Business Application found here](./Business_Application.md)
+**2.  The electronic Hamiltonian is real (due to time-reversal symmetry), what consequences does that have on the terms in the qubit Hamiltonian after the Jordan-Wigner transformation?**
+
+The simulator hamiltonian becomes a sum of pauli words which are One-body number operators, One-body excitation operators, Two-body number operators and Two-body excitation operators.
+
+It can be shown then mathematically shown that coefficient of each pauli word in the qubit hamiltonian is real.
+
+### Task 3: Unitary Transformations
+In this task we will explore two approaches, the Unitary Coupled Clustered (UCC) approach and the Qubit Coupled Clustered (QCC) approach. We will look at how to generate unitary operations in the UCC and QCC schemes for model systems and to optimize their continous parameters (amplitudes).
+
+### Task 4: Hamiltonian Measurements
+We need to partition the Hamiltonian to a minimal number of group, whose elements can be all measured simultaneously as the entire Hamiltonian cannot be measured. Doing the partition which followed by measurement will help us obtain the expectation value of the qubit Hamiltonian. 
+
+### Task 5: Use of Quantum Hardware
+In order to run the Variational Quantum Eigensolver (VQE) algorithm on the actual quantum hardware, we need to present unitary transformations as a sequence of gates. Once we had represented it in terms of gate, we ran the circuit on actual quantum hardware (ibmq_manila) provided by IBM Quantum. 

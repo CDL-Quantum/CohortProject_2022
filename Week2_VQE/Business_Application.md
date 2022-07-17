@@ -11,14 +11,19 @@ A brief example for each question is included for the
 
 ## Step 1: Explain the technical problem you solved in this exercise
 
+### Finding new materials for batteries using VQE for manufacturing on Mars and Earth
+
+![Earth and Mars Comparison](images/earth-mars-comparison.png)
+
 Lithium based batteries have been go to batteries for the current tech industry. Despite having so many advantages it has some big disadvantages, as it is a rare element on Earth, so it's very costly and its mining process is very harmful for our environment.
 
-New variants of Lithium battery has already used the variational quantum eigensolver (VQE) algorithm to simulate elements of Li-S batteries to get the ground state energies and the dipole moments of the molecules that could form in lithium-sulfur batteries during operation: lithium hydride (LiH), hydrogen sulfide (H2S), lithium hydrogen sulfide (LiSH), and the desired product, lithium sulfide (Li2S). These batteries are promised to provide 4 times charging capacity and longevity.  
+New variants of Lithium battery has been already designed by using the variational quantum eigensolver (VQE) algorithm to simulate elements of Li-S batteries to get the ground state energies and the dipole moments of the molecules that could form in lithium-sulfur batteries during operation: lithium hydride (LiH), hydrogen sulfide (H2S), lithium hydrogen sulfide (LiSH), and the desired product, lithium sulfide (Li2S). These batteries are promised to provide 4 times charging capacity and longevity.  
 
 Similarly, our goal is to simulate molecules like Lithium oxides such as Potassium, Magnesium and Aluminum oxides to get the ground state energies using variational quantum eigensolver (VQE) algorithm so that we could replace this rare metal.
 
 Also to simulate Metal-CO2 batteries, which is another kind of battery where CO2 becomes the energy carrier thus helping in reducing carbon dioxide emissions and also getting better energy capacity.
-![CDL 2022 Cohort Project](images/battery-architecture.jpg)
+
+![Battery Architecture](images/battery-architecture.jpg)
 
 ## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
 
@@ -27,7 +32,8 @@ These other variants of Lithium batteries are definitely cheaper, better and eas
 Also it could be used in Space missions for Mars, where CO2 and other elements like Potassium, Magnesium and Aluminum are present in abundance, thus reducing payload of the mission. 
 
 On Earth it will help to reduce global warming and climate change and on Mars it will reduce the excess CO2 from the environment.
-![CDL 2022 Cohort Project](images/mars-colony.png)
+
+![Mars Colony](images/mars-colony.png)
 
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
 
