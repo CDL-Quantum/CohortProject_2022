@@ -116,6 +116,6 @@ We base our technology hypothesis on a number of recent papers that assess chemi
 
 ![path_selection](resources/Mita-Figure.jpg)
 
-Moving to VQE opens up potential to scale up future solutions once the large and robust enough quantum computers will be available on the market. To this end, we evaluate the chemical reactions simulations on the PoC example of [LiH and H2 hydrogen exchange](BusinessApplication_PoC.ipynb).
+Moving to VQE opens up potential to scale up future solutions once the large and robust enough quantum computers will be available on the market. To this end, we evaluate the chemical reactions simulations on the PoC example of [LiH and H2 hydrogen exchange](LiHH_hydrogen_exchange.ipynb).
 
 For more details refer to the [Business Application found here](./Business_Application.md)
