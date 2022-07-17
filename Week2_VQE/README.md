@@ -400,9 +400,18 @@ algorithm, or to apply an (approximate unitary) projection operator.
 ## Further Challenges:
 
 - How to obtain excited electronic states of the same or different symmetry?
+For different symmetry it is straightforward; one can apply an error mitigation scheme as discussed above, or introduce a symmetry constraint into the variational optimization. For excited states of different symmetry, it is generally more challenging (at least on classical computers). However, in principle, one can introduce a constraint based on overlap with the known ground state, say, to compute the first excited state. However, this approach becomes difficult if a number of excited states are desired--as new constraints must be added for each such lower-lying state. 
+
+Of course, this is all in the context of quantum computing with VQE. Using our FCI-based proprietary code, we can compute excited electronic states--quite many of them, actually--on classical computers. 
+
 - Partitioning in the fermionic operator space.
+As discussed in the provided references, this can be a real challenge. For UCC for instance, symmetry is generally (better) conserved, but many terms (and therefore quantum gates) are needed. For QCC, it is the opposite; the number of gates is minimized, but at the expense of preserving symmetry. Perhaps better methods could be developed that provide the "best of both worlds"?  Doubtful, unless better representations were first discovered.  In particular, there must be ways to nontrivially transform the initial basis, such that in the new representation, far fewer terms are needed to represent the desired operators.  
+
 - Applying unitary transformations on the Hamiltonian.
+This has been discussed in many contexts. The challenge is to limit not only the number of quantum gates needed, but also to keep them as local as possible. That said, it appears locality is not always all it is cracked up to be--with Bravyi-Kitaev vs. Jordan-Wigner mappings being a case in point. 
+
 - Compress larger basis sets into smaller number of qubits.
+Of course, spin symmetry provides one way to do this. There are other techniques discussed in the references, e.g. "qubit tapering". 
 
 ## Business Application
 
