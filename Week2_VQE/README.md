@@ -22,7 +22,7 @@ Below we present the computed PESs using all methods for all systems, separated 
 ![fig4](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/n2PES.png)
 ![fig5](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/h4PES.png)
 
-The results are as expected. In particular, only FCI performs well as the molecules dissociate, in the case of the strongly correlated systems. Also, the CCSD method, being a coupled-pair theory, is clearly seen to be non-variational, as evidenced by computed energy values that are below the FCI values. All other methods are "variational" however (although that does not really mean much in the case of HF), in the sense that the results are larger than the FCI values. 
+The results are as expected. In particular, only FCI performs well as the molecules dissociate, in the case of the strongly correlated systems. Also, the CCSD method, being a coupled-pair theory, is clearly seen to be non-variational, as evidenced by computed energy values that are below the FCI values. All other methods are "variational" however (although that does not really mean much in the case of HF), in the sense that the results are larger than the FCI values. Also, HF always fails completely as one approaches the dissociation limit, even for the weakly correlated systems. This is primarily because restricted HF is being used, whose restrictive assumption is appropriate for chemical bonding but entirely inappropriate in bond-breaking situations.  Actually, this can be fruitfully thought of in symmetry terms, as will be discussed more later in the size consistency section.  
 
 ### (1) The variational approach and its advantages
 
