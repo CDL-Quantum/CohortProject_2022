@@ -389,6 +389,8 @@ post_E
 
 While still different from the correct value, this expectation value is very much closer to the actual expectation value! As we can see, much of deviance came from the second measurement group, which is to be expected due to the error induced by the long circuit.
 
+It is worth mentioning that the error mitigation of this approach must in some sense be related to the fraction of $2^M$ configurations (where $M$ is the total number of orbitals) that correspond to the desired number of electrons N. If N=M/2, as is often the case and is definitely the case here, then this fraction is the largest, and larger than one might like--e.g., 6/16 in this case. In principle, this will not lead to tremendous reduction, assuming that error is spread uniformly across all basis functions. However, we have seen that this is not really the case.  In particular, the error associated with the two-electron basis functions, for whatever reason, appears to be SMALLER than the others. This means that the method will work better than expected.   
+
 ### (2)  Can the error-mitigation protocol described in Ref. [14] be used for more complicated symmetries, like ${\hat S}ˆ2$?
 
 The answer here is absolutely yes! Indeed, as discussed, there is some evidence to suggest that we are already working in a spin-symmetry-adapted basis, in terms of the numerical results reported above. There are, however, some caveats. To begin with, for this to work, then ALL measurement groups must respect all desired symmetries--meaning that the operators corresponding to each group $H_n$ must individually commute with all desired symmetry operations. Even if it is known that the total H does so, it is not necessarily that case that the individual $H_n$ will also do so. 
