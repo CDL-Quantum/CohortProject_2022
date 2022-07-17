@@ -34,10 +34,9 @@ Open up [instructions.pdf](./Instructions.pdf) to begin learning about your task
 In this section we show the solution of VQE with our special ansatz for two different cases: 
 For each week, your team is asked to complete a Business Application. Questions you will be asked are:
 
-| **Molecule** | **Finding Ground State** |
+| **H<sub>2**| **BeH<sub>2**    |
 | ------------ | ------------------------ |
-| H<sub>2         |         BeH<sub>2            |
-| ![image](resources/task4_text1_graph.png) | ![image](resources/task4_text2_graph.png) |
+| ![image](Images/H2.png) | ![image](Images/BeH2.png) |
 | ![image](resources/task4_graph1_optimized.png) | ![image](resources/task4_graph2_optimized.png) |
 
 
