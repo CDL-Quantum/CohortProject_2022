@@ -44,4 +44,4 @@ Examples:
 
 ## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
 
-[![Explainer Video](images/mars-colony.png)](https://youtu.be/i1VLorYIZ24 "CDL Week 2 - VQE")
+[![Explainer Video](images/mars-colony-youtube.png)](https://youtu.be/i1VLorYIZ24 "CDL Week 2 - VQE")
