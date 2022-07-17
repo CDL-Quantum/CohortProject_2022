@@ -24,7 +24,7 @@ Among the classical methods introduced, HF, FCI, and truncated CI such as CISD a
 
 The arugument for a non-variational technique such as CCSD over, say, CISD is self-consistency (energy of n widely-separated atoms/molecules of the same species is the same as n times the energy of one of them; see below), which is a physical condition that should be met whenever possible. CCSD is also more accurate as it captures more of the correlation energy than CISD. CC methods also exhibit fast convergence to the FCI (exact) solution.
 
-### (2) Separability/size-consistency of HF, CISD, and CCSD
+### (2) Size-consistency of HF, CISD, and CCSD
 
 | Method | $2E_{H_2}$ | $E_{H_2+H_2}$ | $E_{H_2+H_2}-2E_{H_2}$ | Size-consistent |
 | --- | --- | --- | :---: | :---: |
@@ -44,8 +44,7 @@ The table above shows the difference between the energy (in unit of Hartree) cal
 | $E_{CCSD(T)}$ | -1.13727457 | -1.16340297 | -1.1723349  | -1.17379598 | -1.17422279 |
 | $E_{FCI}$     | -1.13727441 | -1.16340296 | -1.17233494 | -1.17379598 | -1.17422279 |
 
-The table above shows the energy (in unit of Hartree) of $H_2$ calculated using different methods and basis sets. We see that for a given basis, the more a method accounts for the electronic correlation, the closer it gets to the FCI value (note that for $H_2$ CISD gives the FCI value). While for a given method, increase the size of the basis lowers the energy calculated. Compared to the experimentally measured value of 
-$E_{expt} = -1.17377$ $E_h$, all post-HF methods using the cc-pVQZ basis set are within chemical accuracy.
+The table above shows the energy (in unit of Hartree) of $H_2$ calculated using different methods and basis sets. We see that for a given basis, the more electronic correlation is accounted for by a method, the closer it gets to the FCI value (note that for $H_2$ CISD gives the FCI value). While for a given method, the larger the basis the lower the calculated energy. Note that all post-HF methods using the cc-pVQZ and cc-pV5Z basis sets are within 1 mHa to the  experimental value of $E_{expt} = -1.17377$ $E_h$.
 
 ## Task 2: Generating the qubit Hamiltonian
 
@@ -57,10 +56,11 @@ For a mapping from fermionic operators to qubits operators to be valid, the way 
 
 A real Hamiltonian, which is a hermitian operator, must be symmetric. There should also be an even number of $\hat\sigma_y$'s acting on each qubit.
 
-### (3) Pros and cons of Bravyi-Kitaev vs Jordan-Wigner
+### (3) Pros and cons of Bravyi-Kitaev (BK) compared to Jordan-Wigner (JW) encoding
 
-Pros: Reduction of gates, especially for entangled gates although trotterization may absorb some of the reduction.  
-Cons: Information is more non-local.
+***Pros***: Reduction of gate count, especially for entangled gates, although trotterization may absorb some of the reduction.  
+
+***Cons***: BK compromises on the locality of occupation number with that on the parity information. In JW, the occupation number of a spin orbital is stored locally and the parity nonlocally; but in BK, the orbitals store partial sums of occupation numbers. The qubit operators are also considerably more complicated in BK than in JW.
 
 ## Task 3: Unitary transformations
 
@@ -76,18 +76,18 @@ For a given symmetry, a unitary operator can be constructed to rotate the initia
 
 ### (3) Ways to restore symmetries broken by a unitary transformation
 
-There are two ways to restore broken symmetries:
+For restorimg broken symmetries ther are two options:
 
-(i) Incorporate them as constraints in a variational estimator.
+(i) Construct and apply symmetry projectors to move into subspaces preserving the symmetries in question, or
 
-(ii) Use symmetry projectors to project into the appropriate symmetry subspaces.
+(ii) Incorporate the symmetries as constraints in a variational formulation.
 
 ## Task 4: Hamiltonian measurements
 
 ### (1) Optimal splitting of the total number of measurements between Hamiltonian fragments
 
 With the total error of the Hamiltonian estimator bounded above by 
-$|\langle\Psi|\hat{H}|\Psi\rangle - \bar{H}|^2 \leq \sum_n\frac{\sigma_{H_n}^2}{N_n}$ subject to the constraint $\sum_n N_n = N_T$ , the minimal bound is found by minimizing the function $L(\{N_n\},\lambda) = \sum_n\frac{\sigma_{H_n}^2}{N_n} + \lambda(\sum_n N_n - N_T)$ where $\lambda$ is the Lagrangian multiplier. Solving $\nabla L = 0$ to find the minimum, we have $\partial_{N_n}L = -\frac{\sigma_{H_n}^2}{N_n^2} + \lambda = 0 \implies N_n = \sqrt{\frac{\sigma_{H_n}^2}{\lambda}}$ for each n. The constraint equation then gives $\sqrt{\lambda} = \sum_n\sqrt{\sigma_{H_n}^2}/N_T$ , and we obtain:
+$|\langle\Psi|\hat{H}|\Psi\rangle - \bar{H}|^2 \leq \sum_n\frac{\sigma_{H_n}^2}{N_n}$ subject to the constraint $\sum_n N_n = N_T$ , the minimal bound is found by minimizing the function $L(\{N_n\},\lambda) = \sum_n\frac{\sigma_{H_n}^2}{N_n} + \lambda(\sum_n N_n - N_T)$ where $\lambda$ is the Lagrangian multiplier. Solving $\nabla L = 0$ to find the minimum, we have $\partial_{N_n}L = -\frac{\sigma_{H_n}^2}{N_n^2} + \lambda = 0 \implies N_n = \sqrt{\frac{\sigma_{H_n}^2}{\lambda}}$ for each n. The constraint equation then gives $\sqrt{\lambda} = \sum_n\sqrt{\sigma_{H_n}^2}/N_T$ , and with this we obtain
 
 (i) the optimal splitting: $N_n/N_T = \sqrt{\sigma_{H_n}^2}/\sum_n\sqrt{\sigma_{H_n}^2}$ ,
 
