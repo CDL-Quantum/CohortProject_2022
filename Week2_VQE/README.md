@@ -120,7 +120,7 @@ Having the subgroups, we need to rotate the state (in preparation step) to prepa
 So, the flowchart is:
    (1) find the minimum subgroups of the Hamiltonian (sum of products of Pauli's) each contain commuting terms.
    (2) find the eigenbasis per each subgroup and measure in that basis, meaning prepare the eigenbasis by the suitable unitary.  
-   (3) for each initial state in the ansatz (each $U(\theta)$) measure many times after preparing each one of the shared eigenbasis obtained above.
+   (3) for each initial state in the ansatz (each U($\theta$)) measure many times after preparing each one of the shared eigenbasis obtained above.
    (4) analyze data to estimate $\langle \Psi(\theta) | H | \Psi(\theta) \rangle$.
    
 Please refer to Ref. [4] for a tutorial on measurement optimization.
