@@ -5,18 +5,43 @@
 ## Layperson description:
 
 
-Similar to soccer, hockey, and other shooting-ball-to-score-goal sports, spectator qubits can affect player qubits’ shooting in a quantum processor. A player influenced by spectators' unwanted interactions can make unwanted mistakes. In a quantum processor, even with a few qubits, there are always-on unwanted interactions between qubits. A quantum algorithm requires hundreds of perfect and fast interactions between qubits. Mixing these interactions with unwanted interactions makes optimization difficult. We may be able to reduce unwanted interactions on the hardware but will never get entirely rid of them. Facing this reality makes an opportunity to consider co-designing hardware and software, our key target. 
+Similar to soccer, hockey, and other shooting-ball-to-score-goal sports, spectator qubits can affect player qubits’ shooting in a quantum processor. A player influenced by spectators' unwanted interactions can make unwanted mistakes. In a quantum processor, even with a few qubits, there are always unwanted interactions between qubits. A quantum algorithm requires hundreds of perfect and fast interactions between qubits. Mixing these interactions with unwanted interactions makes optimization difficult. We may be able to reduce unwanted interactions on the hardware but will never get entirely rid of them. Facing this reality makes an opportunity to consider co-designing hardware and software, our key target.
 
-Co-designing quantum hardware and quantum algorithms is the critical link to making processors reliable for quantum algorithms, aiming at tailoring hardware and software as efficiently as possible. We can all relate to simple mental examples of companies such as Tesla, Porsche, Leica, Braun or Casio that have taken different approaches to co-design their products and the software layer. However, they are all approaching a unified model to maximize production efficiency by upgrading their software. 
+Co-designing quantum hardware and quantum algorithms is the critical link to making processors reliable for quantum algorithms, aiming at tailoring hardware and software as efficiently as possible. We can all relate to simple mental examples of companies such as Tesla, Porsche, Leica, Braun or Casio that have taken different approaches to co-design their products and the software layer. However, they are all approaching an unified model to maximize production efficiency by upgrading their software. 
 
 Similar strategies have inspired us to develop a quantum hardware/software stack and to compete in the future against other market players; it will be essential to have identified an economically feasible approach to co-designing the elements in this stack while pursuing high-quality, novel and valuable tools for the end user.
 
 
 ## Hardware under study
 
-Given that superconducting qubnits are the most scalable and tunable harware we use quantum computers based on superconducting circuits.
+Numerous physical quantum hardware technologies exist to leverage the extended state space with qubits to compile quantum algorithms. The following table give an overview of some of the selected hardware technologies:
 
-https://sites.google.com/site/mansari/home/research
+| Aspect                        | Superconducting circuits                                               | Trapped ion                                                 | Photonic                                          | Cold atoms |
+|-------------------------------|------------------------------------------------------------------------|-------------------------------------------------------------|---------------------------------------------------|------------|
+| Qubit lifetime                | Short period (50-100 µs) and susceptible to noises [Hazra2021]         | Minutes and more [Wang2021]                                 | 150 microseconds, but destroyed by measurement [Gerbert2018] |            |
+| Gate speed                    | 10-100 ns []                                                           | 20 microseconds []                                          | ~ 1 ns []                                         |            |
+| Connectivity & entanglement   | Poor connectivity to other qubits (only nearest and few neighbours) [] | all to all []                                               | Easy to generate entanglement []                  |            |
+| Reproducibility & scalability | No significant obstacles to reproduce and control qubits []            | No significant obstacles to reproduce and control qubits [] | Scalable architectures are possible []            |            |
+| Operation conditions          | Near absolute zero temperature to operate (20 mK), no vacuum []        | No near absolute zero temperature needed; vacuum needed []  | Possible room temperature []                      |            |
+| Maturity [Gerbert2018]        | The furthest developed technology []                                   | Similar to superconducting circuit technology []            | Early stage development (TRL 3) []                |            |
+
+Given that superconducting qubits are the most mature and numerous companies have provided access to their superconducting qubit hardware (IBM, Rigetti, Quantum Inspire) we study VQE quantum computers based on superconducting circuits.
+
+[Hazra2021] S. Hazra, A. Bhattacharjee, M. Chand, K. V. Salunkhe, S. Gopalakrishnan, M. P. Patankar, R. Vijay,
+Ring-resonator-based coupling architecture for enhanced connectivity in a superconducting multiqubit
+network, Phys. Rev. Applied 16 (2021); https://doi:10.1103/PhysRevApplied.16.024018
+
+[Wang2021] P. Wang, C. Luan, M. Qiao, Single ion qubit with estimated coherence time exceeding one
+hour, Nature Communications 12 (1) (2021) 233; https://doi.org/10.1038/s41467-020-20330-w
+
+[Gerbert2018] P. Gerbert, F. Ruess, The Next Decade in Quantum Computing—and How to Play; https://www.bcg.com/publications/2018/next-decade-quantum-computing-how-play
+
+[]
+
+[]
+
+[]
+
 
 ## Technical/detailed description:
 
