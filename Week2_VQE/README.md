@@ -146,7 +146,7 @@ $O^{\dagger}_{n} = |n><0|$
 
 2- Find the approximate solution of the following
 
-$E_{0 n} = E_{n} - E_{0} = \frac{ \langle 0 | O_{n}, H, O^{\dagger}_{n} | 0 \rangle }{\langle 0 | O_{n}, O^{\dagger}_{n} | 0 \rangle}$
+![c1_image](./Images/c1.PNG)
 
 where $E_{n}$ and $E_{0}$ are the $n^{th}$ excited state and ground state energies, respectively, and $[ A,B,C ] = \frac{1}{2} ([[A,B],C] + [A,[B,C]])$. Notice the knowledge of the ground state (evaluated by any method such as UCCSD or QCC discussed before is enough)
 
