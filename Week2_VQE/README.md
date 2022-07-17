@@ -18,21 +18,34 @@ This project will guide you through the state-of-the-art techniques for solving 
 ![fig4](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/n2PES.png)
 ![fig5](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/h4PES.png)
 
-
-
 ### (1) The variational approach and its advantages
 
 Among the classical methods introduced, HF, FCI, and truncated CI such as CISD are variational, while CCSD is not. The main advantage of the variational approach is that any energy calculated from it is never less than the true energy of the electronic state and system in question, i.e. the calculated energy is an upper bound to the true energy. Energies can be lowered systematically by increasing the size of the basis set, and the variational behavior serves as a helpful guide to the quality of the trial wavefunction $-$ the lower the energy the better the ansatz.
 
-The arugument for a non-variational technique such as CCSD over, say, CISD is self-consistency (energy of n widely-separated atoms/molecules of the same species is the same as n times the energy of one of them; see below), which is a physical condition that should be met whenever possible. CCSD is also more accurate as it captures more of the correlation energy than CISD. CC methods also exhibit fast convergence to the (exact) FCI solution.
+The arugument for a non-variational technique such as CCSD over, say, CISD is self-consistency (energy of n widely-separated atoms/molecules of the same species is the same as n times the energy of one of them; see below), which is a physical condition that should be met whenever possible. CCSD is also more accurate as it captures more of the correlation energy than CISD. CC methods also exhibit fast convergence to the FCI (exact) solution.
 
 ### (2) Separability/size-consistency of HF, CISD, and CCSD
 
-[ Table comparing $E_{H_2 + H_2}$ with $2E_{H_2}$ for each of HF, CISD, and CCSD ]
+| Method | $2E_{H_2}$ | $E_{H_2+H_2}$ | $E_{H_2+H_2}-2E_{H_2}$ | Size-consistent |
+| --- | --- | --- | :---: | :---: |
+| HF   | -2.23341227 | -2.23341227 | $2.35189646*10^{-12}$ | Y |
+| CCSD | -2.27454914 | -2.27454907 | $7.57789431*10^{-8}$  | Y |
+| CISD | -2.27454881 | -2.27403870 | $5.10108724*10^{-4}$  | N |
+
+The table above shows the difference between the energy (in unit of Hartree) calculated using different methods of a $H_2$ dimer with the two $H_2$'s separated by a large distance of 100 $\unicode{x212B}$ and twice that of a single $H_2$. Physically, when separation tends to infinity, identical molecules would not affect each other, and the energy of the whole should be the sum of each individual molecule. We see that HF and CCSD reproduce this behavior to a very high accuracy, and are thus ***size-consistent***, while CISD is not. The reason for this is that CISD includes only single and double excitations, and so cannot give the full-CI energy of a non-nteracting system, whereas HF is effectively a single particle theory where energies are additive, while CCSD accounts for all excitation albeit only up to the doubles level.
 
 ### (3) Convergence to the exact non-relativistic electronic energies
 
-[ Table of $E_{method} - E_{FCI}$ for a given basis set and different methods and $E_{basis}$ for a given method ]
+| Basis | sto3g | cc-pVDZ | cc-pVTZ | cc-pVQZ | cc-pV5Z |
+| --- | --- | --- | --- | --- | --- |
+| $E_{HF}$      | -1.11670614 | -1.12871101 | -1.13295914 | -1.13345751 | -1.13360663 |
+| $E_{CISD}$    | -1.13727441 | -1.16340296 | -1.17233494 | -1.17379598 | -1.17422279 |
+| $E_{CCSD}$    | -1.13727457 | -1.16340297 | -1.1723349  | -1.17379598 | -1.17422279 |
+| $E_{CCSD(T)}$ | -1.13727457 | -1.16340297 | -1.1723349  | -1.17379598 | -1.17422279 |
+| $E_{FCI}$     | -1.13727441 | -1.16340296 | -1.17233494 | -1.17379598 | -1.17422279 |
+
+The table above shows the energy (in unit of Hartree) of $H_2$ calculated using different methods and basis sets. We see that for a given basis, the more a method accounts for the electronic correlation, the closer it gets to the FCI value (note that for $H_2$ CISD gives the FCI value). While for a given method, increase the size of the basis lowers the energy calculated. Compared to the experimentally measured value of 
+$E_{expt} = -1.17377$ $E_h$, all post-HF methods using the cc-pVQZ basis set are within chemical accuracy.
 
 ## Task 2: Generating the qubit Hamiltonian
 
