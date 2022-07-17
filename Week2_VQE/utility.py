@@ -321,7 +321,7 @@ def obtain_PES(molecule, bond_lengths, basis, method):
 
             try:
                 mol_data = get_molecular_data(molecule, bond_lengths[i], xyz_format=True)
-                mol_data = quantumchemistry.Molecule(mol_data, basis)
+                mol_data = quantumchemistry.Molecule(mol_data, basis, backend="pyscf")
 
                 if method == 'cisd':
                     result = mol_data.compute_energy('detci', options={"detci__ex_level": 2})
