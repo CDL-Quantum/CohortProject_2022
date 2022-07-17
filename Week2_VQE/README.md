@@ -1,6 +1,6 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
 
-Team 8 - Week 2 : Madhava Syamlal, Ezad Shojaee, Amogh Apsingekar, Ken Sharman, Jordan Smith.
+Team 8 - Week 2 :  Ezad Shojaee, Jordan Smith, Ken Sharman, Madhava Syamlal, Amogh Apsingekar
 
 ## Project 2: VQE: Constructing potential energy surfaces for small molecules
 
