@@ -142,7 +142,7 @@ We ran the H$_2$ molecule calculation on the IBM manila machine. The job summary
 We're going to review the method called EOM (Equation of Motion) [4]. 
 
 1- Define excitation operator i.e. jump from ground state $| 0 \rangle$ to $| n \rangle$ being the $n^{th}$ excited state
-$ O^{\dagger}_{n} = |n><0| $
+$O^{\dagger}_{n} = |n><0|$
 
 2- Find the approximate solution of the following
 
