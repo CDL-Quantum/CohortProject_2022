@@ -13,7 +13,7 @@ To this end, we
 * 3. Prepared the VQE algorithm and run it on a quantum simulator and hardware backend [VQE Notebook in Qiskit](VQE_LiH_Qiskit.ipynb) and [VQE Notebook in Pennylane](LiH_energy_surface.ipynb)
 
 
-Our Business application is focused on **enhancing retrosynthesis analysis with Quantum Computing**. Here [we prepare a PoC](BusinessApplication_PoC.ipynb) based on Hydrogen exchange reaction for LiH and H2. This demo highlihts energy surface and reactivity calculations for such reaction.
+Our Business application is focused on **enhancing retrosynthesis analysis with Quantum Computing**. Here [we prepare a PoC](LiHH_hydrogen_exchange.ipynb) based on Hydrogen exchange reaction for LiH and H2. This demo highlihts energy surface and reactivity calculations for such reaction.
 
 Below we provide details on each of the steps and answer task related questions.
 
@@ -116,6 +116,6 @@ We base our technology hypothesis on a number of recent papers that assess chemi
 
 ![path_selection](resources/Mita-Figure.jpg)
 
-Moving to VQE opens up potential to scale up future solutions once the large and robust enough quantum computers will be available on the market. To this end, we evaluate the chemical reactions simulations on the PoC example of [LiH and H2 hydrogen exchange](BusinessApplication_PoC.ipynb).
+Moving to VQE opens up potential to scale up future solutions once the large and robust enough quantum computers will be available on the market. To this end, we evaluate the chemical reactions simulations on the PoC example of [LiH and H2 hydrogen exchange](LiHH_hydrogen_exchange.ipynb).
 
 For more details refer to the [Business Application found here](./Business_Application.md)
