@@ -125,7 +125,7 @@ $N_T = \left(\sum_n\sqrt{\sigma_{H_n}^2}\right)^2 / \epsilon_T$.
 </p>
 
 To calculate $N_T$, we also need to know the fragment variances, $\sigma_{H_n}$, which we can estimate using the wavefunction obtained by classical methods. In [S4-sol.ipynb](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/S4-sol.ipynb), we carried out the calculation for the $H_2$ molecular system using both QWC and FC partitionings. We find for $H_2$ at equilibrium ($r_0 = 0.741\unicode{x212B}$), an error tolerance of 
-$\epsilon = 10^{-3}E_h$ requires
+$\epsilon = 10^{-3}E_h$ requires the following number of measurements:
 
 <div align="center">
      
@@ -134,6 +134,8 @@ $\epsilon = 10^{-3}E_h$ requires
 | $N_T$ | 31208 | 32929 |
      
 </div>
+
+Note that for FC, there are two measurement groupings--the first corresponding to all z spin operations (thus, the original basis representation suffices for measurement and no transformation is required), and the second consisting of all x and y spin operations. But in the STO-3G basis, there are are only four such terms in the second grouping.  As it happens, none of these terms has the same spin (or no) operations for all qubits. This means that each individual term comprises its own QWC grouping. In contrast, the first grouping from FC also satisfies qubit-wise commutativity. Thus, the QWC calculation involves five groupings in all: four from the second FC grouping, plus the first FC grouping. 
 
 ### (3) Achieving $10^{-3}E_h$ accuracy measuring $\hat{H}$ as a single operator
 
