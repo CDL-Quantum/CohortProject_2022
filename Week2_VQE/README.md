@@ -139,13 +139,13 @@ Note that for FC, there are two measurement groupings--the first corresponding t
 
 ### (3) Achieving $10^{-3}E_h$ accuracy measuring $\hat{H}$ as a single operator
 
-Suppose we can prepare without error an exact energy eigenstate to the Hamiltonian $\psi\rangle$ such that $H|\psi\rangle = E|\psi\rangle$, then
+Suppose we can prepare without error an exact energy eigenstate to the Hamiltonian $|\psi\rangle$ such that $H|\psi\rangle = E|\psi\rangle$, then
 
 <p align="center">
 $\sigma_H^2 = \langle\psi|\hat{H}^2|\psi\rangle - \langle\psi|\hat{H}|\psi\rangle^2 = E^2 - E^2 = 0$ ,
 </p>
 
-and so $N_T = 1$ is enough.
+and so $N_T = 1$ would suffice.
 
 ## Task 5: Use of quantum hardware
 
