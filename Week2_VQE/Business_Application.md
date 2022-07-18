@@ -85,10 +85,10 @@ Quantum Computer simulation
 
 ## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
 
-Transcript link - https://docs.google.com/document/d/10Nneqw6CnNDhuYWJcCd2aDLhHG-YPvmjv_cykZrAW9c/edit?usp=sharing
+Transcript link - https://docs.google.com/document/d/10Nneqw6CnNDhuYWJcCd2aDLhHG-YPvmjv_cykZrAW9c/edit
 
-Slides link - https://docs.google.com/presentation/d/1j8aARAxIkn6I1lqRPOBKmFBGS6xGRzOflEeMl0q8MEY/edit?usp=sharing
+Slides link - https://docs.google.com/presentation/d/1j8aARAxIkn6I1lqRPOBKmFBGS6xGRzOflEeMl0q8MEY/edit#slide=id.g13c5cf8800b_0_286
 
-Video link -
+Video link - https://drive.google.com/file/d/15CIrBLtLWnIogKsmsaLCM4l8CWBrYhTF/view?usp=sharing
 
 **Please store your video externally to the repo, and provide a link e.g. to Google Drive**
