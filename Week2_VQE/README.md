@@ -116,10 +116,34 @@ $|\langle\Psi|\hat{H}|\Psi\rangle - \bar{H}|^2 \leq \sum_n\frac{\sigma_{H_n}^2}{
 
 (ii) the minimal error bound: $|\langle\Psi|\hat{H}|\Psi\rangle - \bar{H}| \leq \sum_n\sqrt{\sigma_{H_n}^2}/\sqrt{N_T}$ .
 
+### (2) Achieving $10^{-3}E_h$ accuracy for qubit-wise and full commuting partitionings
 
-### (2) Achieving 1 mHa accuracy for qubit-wise and full commuting partitionings
+From the minimal error bound above, the total number of measurements need to achieve a given error tolerance, $\epsilon_T$, is
 
-### (3) Achieving 1 mHa accuracy measuring $\hat{H}$ as a single operator
+<p align="center">
+$N_T = \left(\sum_n\sqrt{\sigma_{H_n}^2}\right)^2 / \epsilon_T$. 
+</p>
+
+To calculate $N_T$, we also need to know the fragment variances, $\sigma_{H_n}$, which we can estimate using the wavefunction obtained by classical methods. In [S4-sol.ipynb](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/S4-sol.ipynb), we carried out the calculation for the $H_2$ molecular system using both QWC and FC partitionings. We find for $H_2$ at equilibrium ($r_0 = 0.741\unicode{x212B}$), an error tolerance of 
+$\epsilon = 10^{-3}E_h$ requires
+
+<div align="center">
+     
+|  | QWC | FC |
+| --- | --- | --- |
+| $N_T$ | 31208 | 32929 |
+     
+</div>
+
+### (3) Achieving $10^{-3}E_h$ accuracy measuring $\hat{H}$ as a single operator
+
+Suppose we can prepare without error an exact energy eigenstate to the Hamiltonian $\psi\rangle$ such that $H|\psi\rangle = E|\psi\rangle$, then
+
+<p align="center">
+$\sigma_H^2 = \langle\psi|\hat{H}^2|\psi\rangle - \langle\psi|\hat{H}|\psi\rangle^2 = E^2 - E^2 = 0$ ,
+</p>
+
+and so $N_T = 1$ is enough.
 
 ## Task 5: Use of quantum hardware
 
