@@ -12,7 +12,6 @@ Open up [instructions.pdf](./Instructions.pdf) to begin learning about your task
 
 ### Generating PES using classical methods.
 
-*Hartree-Fock (HF), Configuration Interaction Singles and Doubles (CISD), Coupled Cluster Singles and Doubles (CCSD), and the exact answer within the chosen basis Full Configuration Interaction (FCI). All these methods can easily be used for all molecules in minimal atomic basis, STO-3G. Comparing accuracy of PES generated for different species using different methods you can see the difference between weakly correlated $\left(H_{2}, LiH\right)$ and strongly correlated $\left(H_{4}, H_{2}O, N_{2}\right)$ systems. Even though the FCI method provides the exact answer it scales exponentially with the number of basis functions and thus cannot be used for larger systems (system size can be either correlated with the number of electrons or number of basis functions). All approximated methods (HF, CISD, CCSD) scale polynomially with the system size but fail to deliver chemical accuracy along PESs.*
 
 **1) Among classical methods, there are techniques based on the variational approach and those that are not. Identify variational methods among those that were used and explain advantages of the variational approach. Are there any arguments for using non-variational techniques?**
 
@@ -44,8 +43,6 @@ CISD and FCI are "post-Hartree–Fock linear variational method for solving the 
 ### Generating the qubit Hamiltonian.
 
 
-*To proceed to VQE one needs to generate the qubit Hamiltonian, the easiest path is via first generating the electronic Hamiltonian in the second quantized form and then transform it into the qubit form using one of the fermion-to-qubit transformations: Jordan-Wigner or Bravyi-Kitaev . Next, some qubit operators can be substituted by numbers $(\pm 1)$ because their states are stationary for the specific electronic state (e.g. ground state). This reduction is very useful for fitting larger problem in a fewer qubit description and is based on Hamiltonian symmetries*
-
 **1) What are the requirements for a function of qubit operators to be a valid mapping for the fermionic operators?**
 
 
@@ -54,7 +51,7 @@ Following the ref [Lecture 3: Fermion-qubit mappings](https://www.youtube.com/wa
 Electronic structure problem needs to be translated to qubits, this requires to transfer both wavefunction and operators (Hamiltonian).
 
 $$
-\hat{H}_{e}(\R)\left|\Phi_{j}(R)\right\rangle=E_{j}(R)\left|\Phi_{j}(R)\right\rangle \\
+\hat{H}_{e}(R)|\Phi_{j}(R)\rangle=E_{j}(R)|\Phi_{j}(R)\rangle \\
 \hat{H}_{e}=\sum_{p q} h_{p q} \hat{a}_{p}^{\dagger} \hat{a}_{q}+\sum_{p q r s} g_{p q, r s} \hat{a}_{p}^{\dagger} \hat{a}_{q}^{\dagger} \hat{a}_{r} \hat{a}_{s}
 $$
 
@@ -62,8 +59,8 @@ $$
 Fermions:
 
 $$
-\left\{\hat{a}_{i}^{\dagger}, \hat{a}_{j}\right\} &=\delta_{i j} \quad\left\{\hat{a}_{i}, \hat{a}_{j}\right\}=\left\{\hat{a}_{i}^{\dagger}, \hat{a}_{j}^{\dagger}\right\}=0 \\
-\left|\Phi_{j}(R)\right\rangle &=\sum_{\bar{n}} C_{\bar{n}, j}\left|n_{1}, n_{2}, \ldots n_{N_{o}}\right\rangle, n_{i}=\{0,1\}
+\{\hat{a}_{i}^{\dagger}, \hat{a}_{j}\} &=\delta_{i j} \quad\{\hat{a}_{i}, \hat{a}_{j}\}=\{\hat{a}_{i}^{\dagger}, \hat{a}_{j}^{\dagger}\}=0 \\
+|\Phi_{j}(R)\rangle &=\sum_{\bar{n}} C_{\bar{n}, j}|n_{1}, n_{2}, \ldots n_{N_{o}}\rangle, n_{i}=\{0,1\}
 $$
 
 i.e., it must be fulfilled that the function is anticomponent with respect to the operators, since fermionic operators are anticomponent.
@@ -76,6 +73,20 @@ When mapping the values in terms of fermions it is using the Pauli operators and
 
 ### Unitary transformations.
 
+
+**1) Standard Hamiltonian symmetries are i) number of electrons $\hat{N}_e =  \sum_k  \hat{a}_{k}^{\dagger} \hat{a}_k$, ii) electron spin $\hat{S}^2$, iii) electron spin projection $\hat{S}_z$, iv) time-reversal symmetry, and v) point-group symmetry for symmetric molecules. Which of these symmetries are conserved in a) UCC and b) QCC ?**
+
+
+
+
+
+
+
+**2) Why symmetries are helpful for constructing a unitary operator which rotates the initial state $|0\rangle$ to the eigenstate $|\Psi \rangle$?**
+
+
+
+**3) What are the ways to restore symmetries if your unitary transformation break them?**
 
 
 ### Hamiltonian measurements.
