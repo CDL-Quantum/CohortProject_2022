@@ -1,0 +1,74 @@
+
+Scratch directory: /tmp/
+
+*** tstart() called on toto
+*** at Thu Jul 14 14:09:12 2022
+
+   => Loading Basis Set <=
+
+    Name: STO-3G
+    Role: ORBITAL
+    Keyword: BASIS
+    atoms 1-2 entry H          line    19 file /home/toto/anaconda3/envs/tequila/share/psi4/basis/sto-3g.gbs 
+
+
+         ---------------------------------------------------------
+                                   SCF
+               by Justin Turney, Rob Parrish, Andy Simmonett
+                          and Daniel G. A. Smith
+                              RHF Reference
+                        1 Threads,    500 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: d2h
+    Full point group: D_inf_h
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 1:
+
+       Center              X                  Y                   Z               Mass       
+    ------------   -----------------  -----------------  -----------------  -----------------
+         H            0.000000000000     0.000000000000    -1.250000000000     1.007825032230
+         H            0.000000000000     0.000000000000     1.250000000000     1.007825032230
+
+  Running in d2h symmetry.
+
+  Rotational constants: A = ************  B =      5.35256  C =      5.35256 [cm^-1]
+  Rotational constants: A = ************  B = 160465.63407  C = 160465.63407 [MHz]
+  Nuclear repulsion =    0.211670884268000
+
+  Charge       = 0
+  Multiplicity = 1
+  Electrons    = 2
+  Nalpha       = 1
+  Nbeta        = 1
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is DF.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is SAD.
+  Energy threshold   = 1.00e-06
+  Density threshold  = 1.00e-06
+  Integral threshold = 1.00e-12
+
+  ==> Primary Basis <==
+
+  Basis Set: STO-3G
+    Blend: STO-3G
+    Number of shells: 2
+    Number of basis functions: 2
+    Number of Cartesian functions: 2
+    Spherical Harmonics?: true
+    Max angular momentum: 0
+
+   => Loading Basis Set <=
+
+    Name: (STO-3G AUX)
+    Role: JKFIT
+    Keyword: DF_BASIS_SCF
+    atoms 1-2 entry H          line    18 file /home/toto/anaconda3/envs/tequila/share/psi4/basis/def2-universal-jkfit.gbs 
+

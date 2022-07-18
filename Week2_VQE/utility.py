@@ -107,7 +107,13 @@ def get_molecular_data(mol, geometry, xyz_format=False):
             ['H', [thirdxRatio * geometry, thirdyRatio * geometry, cos * geometry]],
             ['N', [0.0, 0.0, 0.0]]
             ]
-
+    elif mol == 'beh2':
+        mol_data = [
+            ['Be', [0, 0, 0]],
+            ['H', [0, 0, geometry]],
+            ['H', [0, 0, -geometry]]
+        ]
+    
     else:
         raise(ValueError(mol, 'Unknown moleucles given'))
 
@@ -321,8 +327,9 @@ def obtain_PES(molecule, bond_lengths, basis, method):
 
             try:
                 mol_data = get_molecular_data(molecule, bond_lengths[i], xyz_format=True)
-                mol_data = quantumchemistry.Molecule(mol_data, basis)
-
+                #mol_data = quantumchemistry.Molecule(mol_data, basis)
+                mol_data = quantumchemistry.Molecule(mol_data, basis, backend="pyscf")
+                
                 if method == 'cisd':
                     result = mol_data.compute_energy('detci', options={"detci__ex_level": 2})
                 else:
