@@ -1,6 +1,6 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
 
-Team 12: Jitesh Lalwani, Babita Jajodia, Amit Patel, Buvan Prajwal A, Ehsan Barat 
+Team 12: Jitesh Lalwani, Babita Jajodia, Amit Patel, Buvan Prajwal A, Ehsan Barati 
 
 ## Project 2: VQE: Constructing potential energy surfaces for small molecules
 
