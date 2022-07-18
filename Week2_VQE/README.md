@@ -59,9 +59,14 @@ $$
 Fermions:
 
 $$
-\{\hat{a}_{i}^{\dagger}, \hat{a}_{j}\} &=\delta_{i j} \quad\{\hat{a}_{i}, \hat{a}_{j}\}=\{\hat{a}_{i}^{\dagger}, \hat{a}_{j}^{\dagger}\}=0 \\
+\{a_{i}^{\dagger}, a_{j}\} &=\delta_{i j} \quad\{a_{i}, a_{j}\}=\{a_{i}^{\dagger}, a_{j}^{\dagger}\}=0 
+$$
+
+$$
 |\Phi_{j}(R)\rangle &=\sum_{\bar{n}} C_{\bar{n}, j}|n_{1}, n_{2}, \ldots n_{N_{o}}\rangle, n_{i}=\{0,1\}
 $$
+
+
 
 i.e., it must be fulfilled that the function is anticomponent with respect to the operators, since fermionic operators are anticomponent.
 
@@ -74,29 +79,30 @@ When mapping the values in terms of fermions it is using the Pauli operators and
 ### Unitary transformations.
 
 
-**1) Standard Hamiltonian symmetries are i) number of electrons $\hat{N}_e =  \sum_k  \hat{a}_{k}^{\dagger} \hat{a}_k$, ii) electron spin $\hat{S}^2$, iii) electron spin projection $\hat{S}_z$, iv) time-reversal symmetry, and v) point-group symmetry for symmetric molecules. Which of these symmetries are conserved in a) UCC and b) QCC ?**
+**1) Standard Hamiltonian symmetries are i) number of electrons $N_e =  \sum_k  a_{k}^{\dagger} a_k$, ii) electron spin $S^2$, iii) electron spin projection $S_z$, iv) time-reversal symmetry, and v) point-group symmetry for symmetric molecules. Which of these symmetries are conserved in a) UCC and b) QCC ?**
 
-
-
-
+both can in the case of UCC preserves particle number and Ŝz symmetry. In the case of QCC it has the ability to deromperate the particle number symmetry, Ŝ2 as well as Ŝz symmetries. in turn it can break the group symmetry of symmetric molecules.  Although it manages to be faster at the time of operation with this
 
 
 
 **2) Why symmetries are helpful for constructing a unitary operator which rotates the initial state $|0\rangle$ to the eigenstate $|\Psi \rangle$?**
 
+Working in a huge space such as the Hilbert space, by applying the symmetry as a consequence we can reduce the size of the problem and this translates as the reduction of operators. 
 
 
 **3) What are the ways to restore symmetries if your unitary transformation break them?**
 
-
-### Hamiltonian measurements.
-
-
-### Use of quantum hardware.
-
-
+Exist to proposal
+- One could be a contraint  in the format:
+$$
+F[\psi]=\left\langle\psi\left|\hat{H}-\lambda(\hat{S}-S)^{2}\right| \psi\right\rangle
+$$
 
 
+- The  second one is the idea to pass the problem i na subspace, with the equation
+$$
+F[\psi]=\frac{\left\langle\psi\left|\hat{P}^{\dagger} \hat{H} \hat{P}\right| \psi\right\rangle}{\left\langle\psi\left|\hat{P}^{\dagger} \hat{P}\right| \psi\right\rangle}
+$$
 
 
 
@@ -114,6 +120,14 @@ When mapping the values in terms of fermions it is using the Pauli operators and
 
 <center><img src="./Images/theAnsatzer.png" width="400"></center>
 
+
+
+#### Business Model
+
+We develop novel quantum/classic  algorithms and methods for the design and benchmarkings of differents  molecules on our hybrid computing powered platform.  We license our models  and methods, giving our clients the opportunity to assure them that when using our tool according to their problem we can find the best combination of finding the answer and in the shortest possible time.
+
+
+
 ### Our Solution for different molecules 
 
 In this section, we show the solution of VQE with our special ansatz for two different cases H<sub>2 and BeH<sub>2. The TTN is compared against a strongly correlating layer ansatz STL. Here, it can be seen that our model improves the results for the STL ansatz. 
@@ -122,6 +136,9 @@ In this section, we show the solution of VQE with our special ansatz for two dif
 | ------------ | ------------------------ |
 | ![image](Images/H2.png) | ![image](Images/BeH2.png) |
 | ![image](Images/H2_TTNvsSEL.png) | ![image](Images/TTNvsSEL.png) |
+
+
+
 
 
 ### Potential Customers
