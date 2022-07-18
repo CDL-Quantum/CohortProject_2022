@@ -34,20 +34,26 @@ All of that said, the best approach is clearly always FCI. It is conceptually si
 
 ### (2) Size-consistency of HF, CISD, and CCSD
 
+<div align="center">
+
 | Method | $2E_{H_2}$ | $E_{H_2+H_2}$ | $E_{H_2+H_2}-2E_{H_2}$ | Size-consistent |
 | --- | --- | --- | :---: | :---: |
 | HF   | -2.23341227 | -2.23341227 | $2.35189646*10^{-12}$ | Y |
 | CCSD | -2.27454914 | -2.27454907 | $7.57789431*10^{-8}$  | Y |
 | CISD | -2.27454881 | -2.27403870 | $5.10108724*10^{-4}$  | N |
+     
+</div>
 
 The table above shows the difference between the energy (in units of Hartree) calculated using different methods, for the H$_2$ dimer (with the two H$_2$'s separated by a large distance of 100 $\unicode{x212B}$) vs. twice that of a single H$_2$. Physically, when separation tends to infinity, identical molecules would not affect each other, and the energy of the whole should be the sum of each individual molecule. This exercise is thus a simple test of size consistency, as described above. From this calculation, we see that HF and CCSD reproduce this behavior to a very high accuracy, and are thus ***size-consistent***, whereas CISD is not. 
 
 The reason why CISD is not size-consistent is because of the basis set truncation that it applies. In particular, it includes only configurations/basis functions with single and double excitations. While these are naturally the most important (besides the ground configuration) for computing the ground electronic state, this truncation of the FCI basis set introduces a type of "basis truncation correlation" that does not properly respect the symmetry of the separated fragments. Note that the fragment symmetry is different from, and greater than, the symmetry of the combined molecule itself. To be sure, all HF and post-HF methods automatically respect the symmetry of the molecule itself (e.g. in the calculation of HF molecular orbitals), but not necessarily that of the fragments. In technical  terms, a proper understanding of the fragment symmetry in relation to that of the molecule is achieved through the use of group theory correlation tables.  Note that the greater symmetry of the fragments always leads to increased degeneracy of energy levels. It is for this reason that different PES curves often correlate to the same value asymptotically $-$ at least in principle, when a suitable computational method is employed.
 
-CCSD, in contrast, being a coupled-pair theory, is size-consistent by design. So not surprisingly, it achieves size-consistency in the above exercise to better than 10$^{-7}$ Hartree $-$ i.e., a full four orders of magnitude better than CISD. What is perhaps at first glance remarkable is that HF is by far the best at achieving size consistency $-$ all the way down to 10$^{-12}$ Hartree! This can be understood based on two properties. First, from a purely mathematical standpoint, the fact that there is only one basis function implies that we do not have any correlated basis truncation. Second, as more of a technical point, we are actually using restricted HF rather than unrestricted. So this means we have to be very careful in terms of the examples we consider. For example, as seen in part 1 above, we know full well that restricted HF is not "size consistent" when applied to the dissociation of the H$_2$ molecule into two H atom fragments! That is because the H atom fragments themselves are clearly open-shell species. In order to observe size-consistency with restricted HF, it is necessary to apply the method to a system for which all of the fragments are themselves closed-shell systems $-$ which is no doubt the reason why H$_2$ dimer was chosen for this particular exercise...
+CCSD, in contrast, being a coupled-pair theory, is size-consistent by design. So not surprisingly, it achieves size-consistency in the above exercise to better than $10^{-7}$ Hartree $-$ i.e., a full four orders of magnitude better than CISD. What is perhaps at first glance remarkable is that HF is by far the best at achieving size consistency $-$ all the way down to $10^{-12}$ Hartree! This can be understood based on two properties. First, from a purely mathematical standpoint, the fact that there is only one basis function implies that we do not have any correlated basis truncation. Second, as more of a technical point, we are actually using restricted HF rather than unrestricted. So this means we have to be very careful in terms of the examples we consider. For example, as seen in part 1 above, we know full well that restricted HF is not "size consistent" when applied to the dissociation of the H$_2$ molecule into two H atom fragments! That is because the H atom fragments themselves are clearly open-shell species. In order to observe size-consistency with restricted HF, it is necessary to apply the method to a system for which all of the fragments are themselves closed-shell systems $-$ which is no doubt the reason why H$_2$ dimer was chosen for this particular exercise...
 
 ### (3) Convergence to the exact non-relativistic electronic energies
 
+<div align="center">
+     
 | Basis | sto3g | cc-pVDZ | cc-pVTZ | cc-pVQZ | cc-pV5Z |
 | --- | --- | --- | --- | --- | --- |
 | $E_{HF}$      | -1.11670614 | -1.12871101 | -1.13295914 | -1.13345751 | -1.13360663 |
@@ -56,7 +62,12 @@ CCSD, in contrast, being a coupled-pair theory, is size-consistent by design. So
 | $E_{CCSD(T)}$ | -1.13727457 | -1.16340297 | -1.1723349  | -1.17379598 | -1.17422279 |
 | $E_{FCI}$     | -1.13727441 | -1.16340296 | -1.17233494 | -1.17379598 | -1.17422279 |
 
-The table above shows the energy (in unit of Hartree) of $H_2$ calculated using different methods and basis sets. We see that for a given basis, the more electronic correlation is accounted for by a method, the closer it gets to the FCI value (note that for $H_2$ CISD gives the FCI value). While for a given method, the larger the basis the lower the calculated energy. Note that all post-HF methods using the cc-pVQZ and cc-pV5Z basis sets are within $10^{-3}$ Hartree to the experimental value of $E_{expt} = -1.17377$ $E_h$.  In principle, one would expect the FCI calculation with the largest basis set (i.e. closest to complete basis set limit) to be closest to experiment. However, we must recall that we are also running into the limits of the Born-Oppenheimer approximation; in reality, non-Born-Oppenheimer transitions and nuclear quantum effects also play a role in any experimental measurement. 
+</div>
+
+The table above shows the energy (in unit of Hartree) of H$_2$ calculated using different methods and basis sets. We see that for a given basis, the more electronic correlation is accounted for by a method, the closer it gets to the FCI value (note that for H$_2$ CISD gives the FCI value). While for a given method, the larger the basis the lower the calculated energy. Note that all post-HF methods using the cc-pVQZ and cc-pV5Z basis sets are within $10^{-3}$ Hartree to the experimental value of -1.17377 Hartree.
+
+In principle, one would expect the FCI calculation with the largest basis set (i.e. closest to complete basis set limit) to be closest to experiment. However, we must recall that we are also running into the limits of the Born-Oppenheimer approximation; in reality, non-Born-Oppenheimer transitions and nuclear quantum effects also play a role in any experimental measurement. 
+
 
 ## Task 2: Generating the qubit Hamiltonian
 
@@ -68,9 +79,9 @@ For a mapping from fermionic operators to qubits operators to be valid, it becom
 
 ### (2) Consequences of a real electronic Hamiltonian on the qubit Hamiltonian after the Jordan-Wigner transformation
 
-All Hamiltonians in quantum mechanics are necessarily Hermitian operators, representable as Hermitian matrices.  If, however, the Hamiltonian also satisfies time-reversal symmetry, then it can be shown that it is always possible to represent the Hamiltonian as a real-valued matrix--which, given the further condition of Hermiticity, implies a real symmetric matrix. Given that the Jordan-Wigner transformation replaces creation and annihilation operators with tensor products of spin operators, x, y, and z, on the multi-qubit space, it becomes clear that each spin-product term or "Pauli word" in the Hamiltonian should be expressible using an $even$ number of y spin (i.e. $\hat\sigma_y$) operators. Otherwise, there would have to be imaginary contributions to the matrix elements.
+All Hamiltonians in quantum mechanics are necessarily Hermitian operators, representable as Hermitian matrices.  If, however, the Hamiltonian also satisfies time-reversal symmetry, then it can be shown that it is always possible to represent the Hamiltonian as a real-valued matrix--which, given the further condition of Hermiticity, implies a real symmetric matrix. Given that the Jordan-Wigner transformation replaces creation and annihilation operators with tensor products of spin operators on the multi-qubit space, it becomes clear that each spin-product term or "Pauli word" in the Hamiltonian should be expressible using an $even$ number of $y$ spin (i.e. $\hat\sigma_y$) operators. Otherwise, there would have to be imaginary contributions to the matrix elements.
 
-### (3) Optional: Pros and cons of Bravyi-Kitaev (BK) compared to Jordan-Wigner (JW) encoding
+### (3) Pros and cons of Bravyi-Kitaev (BK) compared to Jordan-Wigner (JW) encoding
 
 ***Pros***: BK gives rise to more local qubit Hamiltonians than does JW. In particular, JW mapping requires a non-local mapping across essentially the entire lattice (i.e., for all j < i, which implies the entire lattice if i adopts the maximal value). The hope is that this would somehow translate into a reduction of gate count on a quantum computer, especially for entangled or two-qubit gates.   
 
@@ -125,12 +136,12 @@ From the minimal error bound above, the total number of measurements need to ach
 $N_T = \left(\sum_n\sqrt{\sigma_{H_n}^2}\right)^2 / \epsilon_T$. 
 </p>
 
-To calculate $N_T$, we also need to know the fragment variances, $\sigma_{H_n}$, which we can estimate using the wavefunction obtained by classical methods. In [S4-sol.ipynb](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/S4-sol.ipynb), we carried out the calculation for the $H_2$ molecular using both QWC and FC partitionings. We find for $H_2$ at equilibrium ($r_0 = 0.741\unicode{x212B}$), an error tolerance of 
-$\epsilon = 10^{-3}E_h$ requires the following number of measurements:
+To calculate $N_T$, we also need to know the fragment variances, $\sigma_{H_n}$, which we can estimate using the wavefunction obtained by classical methods. In [S4-sol.ipynb](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/S4-sol.ipynb), we carried out the calculation for the H$_2$ molecular using both QWC and FC partitionings. We find for H$_2$ at equilibrium ($r_0 = 0.741\unicode{x212B}$), an error tolerance of 
+$\epsilon_T = 10^{-3}E_h$ requires the following number of measurements:
 
 <div align="center">
      
-|  | QWC | FC |
+| H$_2$ | QWC | FC |
 | --- | --- | --- |
 | $N_T$ | 31208 | 32929 |
      
@@ -156,7 +167,7 @@ and so $N_T = 1$ would suffice.
 
 For this question, we were tasked to implement an error mitigation protocol that is based on removing measurement results corresponding to the wrong number of electrons, as described in the reference below:
 
-Ilya G. Ryabinkin, Scott N. Genin, and Artur F. Izmaylov. Constrained variational quantum eigensolver: Quantum computer search engine in the Fock space. J. Chem. Theory Comput., 15(1):249{255, 2019.
+Ilya G. Ryabinkin, Scott N. Genin, and Artur F. Izmaylov. Constrained variational quantum eigensolver: Quantum computer search engine in the Fock space. J. Chem. Theory Comput. 2019, 15(1), 249 - 255.
 
 Our full implementation using the code can be found in the notebook 
 [S5_circuit_qec.ipynb](https://github.com/FoggyBrain/CohortProject_2022/blob/main/Week2_VQE/S5_circuit_qec.ipynb), so please view it for full details. We use the hydrogen molecule as an example to test the error mitigation protocol, and to see the effects of the error mitigation, we want to see three different results: firstly, the correct expectation value; secondly, the expectation value without the post processing error mitigation protocol; and thirdly, the expectation value after implementing said protocol. As we had learnt previously in the last few steps, we can easily find the correct expectation value using tequila:
@@ -442,13 +453,13 @@ While still different from the correct value, this expectation value is very muc
 
 It is worth mentioning that the error mitigation of this approach must in some sense be related to the fraction of $2^M$ configurations (where $M$ is the total number of orbitals) that correspond to the desired number of electrons N. If N=M/2, as is often the case and is definitely the case here, then this fraction is the largest, and larger than one might like--e.g., 6/16 in this case. In principle, this will not lead to tremendous reduction, assuming that error is spread uniformly across all basis functions. However, we have seen that this is not really the case.  In particular, the error associated with the two-electron basis functions, for whatever reason, appears to be SMALLER than the others. This means that the method will work better than expected.   
 
-### (2)  Can the error-mitigation protocol described in Ref. [14] be used for more complicated symmetries, like ${\hat S}ˆ2$?
+### (2) Can the error-mitigation protocol in Ref. [14] be used for more complicated symmetries like $\hat{S}^2$?
 
 The answer here is absolutely yes! Indeed, as discussed, there is some evidence to suggest that we are already working in a spin-symmetry-adapted basis, in terms of the numerical results reported above. There are, however, some caveats. To begin with, for this to work, then ALL measurement groups must respect all desired symmetries--meaning that the operators corresponding to each group $H_n$ must individually commute with all desired symmetry operations. Even if it is known that the total H does so, it is not necessarily that case that the individual $H_n$ will also do so. 
 
 With regard to the "Pauli word" (x/y/z tensor product) contributions to the Hamiltonian that emerge in say, the UCC and QCC schemes, to the extent that these procedures can be symmetry adapted in principle (which is in any event clearly not always the case in practice, according to the youtube videos),  it is not immediately obvious (at least to me) that the associated minimal clique groupings necessarily also satisfy the same symmetry requirements, nor exactly what kind of symmetries this may be expected to be the case for.  However, at least in cases where one grouping is found to consist of pure z tensor products, and there is only one other grouping with all of the x's and y's, as is the case here, then the necessary condition described above is clearly  satisfied, at least with respect to $\hat N$ and $S_z$ symmetry.
 
-### (3) Optional: Suggest an error-mitigation protocol if you know that the right wavefunction should be an eigenstate of a certain multi-qubit operator $\hat A$ with eigenvalue a.
+### (3) An error-mitigation protocol if the right wavefunction is known to be an eigenstate of a certain multi-qubit operator $\hat{A}$ with eigenvalue a.
 
 This challenge is a little bit oddly worded. Is $\hat A$ the Hamiltonian operator whose expectation value we are seeking, or is it the symmetry operation for which the eigenvalue a corresponds to the desired irrep (irreducible representation)? Is |$\Psi$> presumed to be an eigenstate of the Hamiltonian? Either way, I suppose, |$\Psi$> must be an eigenstate of $\hat A$, at least in principle. 
 
