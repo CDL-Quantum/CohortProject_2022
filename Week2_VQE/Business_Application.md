@@ -7,7 +7,7 @@ In this project, we use state-of-the-art techniques for solving electronic struc
 
 ### Introduction
 
-The technical problem that we were tasked to focus on for this exercise was to explore using variational methods to solve the electronic structure problem. For the many sub-parts of the exercise, we were using state-of-the-art techniques to solve for many small molecules like the H2 molecule or the LiH molecule. However, beyond just finding the ground state energy for small molecules, one of the greatest feats that we had managed to achieve was the simulation of the bond-breaking for the nitrogen molecule, a much bigger molecule that requires a far more complex simulation than most current day simulators are able to handle. We achieved this by using a proprietary software package that can go even bigger than most simulators.
+The technical problem that we were tasked to focus on for this exercise was to explore using variational methods to solve the electronic structure problem. For the many sub-parts of the exercise, we were using state-of-the-art techniques to solve for many small molecules like the H2 molecule or the LiH molecule. However, beyond just finding the ground state energy for small molecules, one of the greatest feats that we had managed to achieve was the simulation of the bond-breaking for the nitrogen molecule, a much bigger molecule that requires a far more complex simulation than most current day simulators are able to handle. We achieved this by using a proprietary software package called Andromeda (https://github.com/Quantum-Galaxies-Corporation/Cepheus) that can go even bigger than most simulators.
 
 ### How we did it
 
@@ -21,16 +21,28 @@ We could also have solved even more complex arrangements of atoms with perhaps a
 
 ## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
 
-In this day and age, most of the ammonia that we get are by breaking the bonds of nitrogen that we get from the atmosphere. Most of the current industrial methods of producing ammonia involve energy demanding processes, so much so that 1 to 2% of worldwide energy is being used to create ammonia just for use in fertilizers. Developing new ways to produce ammonia in a less energy-intensive fashion would therefore lead to two main benefits:
+### Electronic Structure Simulations
+
+In this day and age, there are many industrial applications where more accurate electronic structure simulations are in great demand. Businesses interested in materials design, pharmaceutical development, agriculture and many more would inevitably turn to electronic structure simulations for research to improve their product or processses. Actual experiments are slow and expensive, so simulations are needed to speed the process and give us an idea what the experiment will achieve, therefore **accurate and efficient** simulations are necessary to ensure that results of experiments are reliable and can be done within a reasonable time-scale.
+
+### Example: Ammonia production
+
+Here we give an example of an industry that would be interested in the project we have done. In our project, we used Andromeda to perform an electronic structure simulation of the nitrogen bond-breaking process. This is of great interest to businesses in many industries, like in agriculture, materials design or fuel design. Ammonia is an important compound used in fertilizers, plastics, and explosives, so much so that in 2021, 235 million tons of NH3 were produced worldwide! Most of the ammonia that we get are by using the energy demanding Haber process (although othe synthetic methods do exist), so much so that 1 to 2% of worldwide energy is being used to create ammonia just for use in fertilizers. Synthetic methods all require breaking the bonds of nitrogen, so developing new synthetic methods to reduce the energy used to break the bonds of nitrogen will therefore lead to two main benefits:
 
 - Firstly, and most obviously, the high energy usage drives up cost for many businesses. This most directly affects the ammonia production companies, but also indirectly the many businesses dependent on the ammonia. These include agricultural businesses, since 80% of produced ammonia is used for fertilizers, as well as many other industries, like in the manufacturing of plastics, textiles and fuels
 - Secondly, it is extremely harmful to the environment. Most of the energy used on ammonia production comes from fossil fuels (since they need to drive up the temperature to higher than 500 degrees celcius), so reducing the energy used would make it more eco-friendly. This will also generate movement in the green ammonia sector, which is a market which is still small, but projected to grow extremely quickly (https://www.marketsandmarkets.com/Market-Reports/green-ammonia-market-118396942.html).
 
-In this task, we were able to simulate the bond-breaking of the nitrogen molecule. As mentioned previously, the simulation nitrogen molecule is a far more complex simulation than most current day simulators are able to handle. Our solution utilizes the aforementioned software, which uses a tensor network approach to tackle the curse of dimensionality problem, to achieve the simulation. The inability to simulate the bond breaking process in an efficient manner is a major hindrance to the research on new ways to produce ammonia, so the simulation we achieved is an important step to accelerating the computational development for ammonia production, in hopes of making ammonia production not only a less energy expensive (and hence also literally less expensive) process, but ideally greener one too.
+As we mentioned earlier, we were able to simulate the bond-breaking of the nitrogen molecule. The simulation of the nitrogen bond breaking process is a challenge for most current day simulators, which hinders the research for new ways to produce ammonia. Having an accurate and efficient simulation process would then be an important step to accelerating the computational development for ammonia production. Our solution utilizes the aforementioned software Andromeda, which is designed to do Full CI, which in layman’s terms means the most accurate possible, electronic structure calculations for extremely challenging molecular applications. It is able to scale such electronic structure calculations up to astronomical sizes on classical computers. In the case of ammonia production, we have demonstrated in this project that we were able to simulate the nitrogen bond breaking process, hence achieving that important step to help accelerate research for new ways to produce ammonia, which ideally would help make ammonia production not only a less energy expensive (and hence also literally less expensive) process, but also greener one too.
+
+### On a wider scale
+
+On a wider scale however, this software is applicable to any type of electronic structure or quantum problem, including simulating quantum computers. It's ability to scale up electronic structure calculations up to astronomical sizes on classical computers (e.g., in some cases one trillion times larger than other codes) makes it useful outside the example of ammonia production. For example, companies interested in accelerating research in materials design or drug discovery (of which there are many in the world) would inevitably have to solve this computational chemistry problem, which makes the software and the services we are able to provide of interest to them. Coincidentally, since this software is useful for simulating quantum computers, many people here at CDL should be interested in this software too!
 
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
 
-As our main success lies in being able to simulate the bond-breaking of nitrogen, the most obvious customers would then be businesses who are heavily invested in ammonia production. Many countries are heavily invested in ammonia production, like China, USA and India. With good research, one might be able to break into their markets:
+### Example of ammonia production
+
+As our main success lies in being able to simulate the bond-breaking of nitrogen, we first look at the customers interested in ammonia produciton. The most obvious customers would then be businesses who are heavily invested in ammonia production. Many countries are heavily invested in ammonia production, like China, USA and India. With good research, one might be able to break into their markets:
 
 In the USA:
 https://www.statista.com/statistics/1266394/ammonia-capacities-by-company-united-states/
@@ -51,6 +63,25 @@ Companies that are interested in this are generally in the European region:
 - Siemens (Germany)
 - NEL Hydrogen (Norway)
 - ITM Power (UK)
+
+### Other companies who would be interested
+
+https://www.ventureradar.com/keyword/Material%20Science
+
+Material design:
+- CarbonCure Technologies
+- Sila Nanotechnologies
+- Algiknit
+
+Pharmaceutical companies:
+- GlaxoSmithKline (GSK)
+- AstraZeneca
+- Pfizer
+
+Quantum Computer simulation
+- IBM
+- Amazon
+- You all at CDL
 
 ## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
 
