@@ -68,10 +68,7 @@ For a mapping from fermionic operators to qubits operators to be valid, it becom
 
 ### (2) Consequences of a real electronic Hamiltonian on the qubit Hamiltonian after the Jordan-Wigner transformation
 
-All Hamiltonians in quantum mechanics are necessarily Hermitian operators, representable as Hermitian matrices.  If, however, the Hamiltonian also satisfies time-reversal symmetry, then it can be shown that it is always possible to represent the Hamiltonian as a real-valued matrix--which, given the further condition of Hermiticity, implies a real symmetric matrix. Given that the Jordan-Wigner transformation replaces creation and annihilation operators with tensor products of spin operators, x, y, and z, on the multi-qubit space, it becomes clear that each spin-product term or "Pauli word" in the Hamiltonian should be expressible using an $even$ number of y spin (i.e. $\hat\sigma_y$) operators, for each qubit. Otherwise, there would have to be imaginary contributions to some of the matrix elements.
-
-As an additional, intriguing consideration, it also may  be possible to eliminate the y spin contributions altogether--specifically by using commutation relations to move around y operations so that they are arranged in adjacent pairs. Since  $\hat\sigma_y^2=\hat I$, they can then be removed from the expressions. 
-
+All Hamiltonians in quantum mechanics are necessarily Hermitian operators, representable as Hermitian matrices.  If, however, the Hamiltonian also satisfies time-reversal symmetry, then it can be shown that it is always possible to represent the Hamiltonian as a real-valued matrix--which, given the further condition of Hermiticity, implies a real symmetric matrix. Given that the Jordan-Wigner transformation replaces creation and annihilation operators with tensor products of spin operators, x, y, and z, on the multi-qubit space, it becomes clear that each spin-product term or "Pauli word" in the Hamiltonian should be expressible using an $even$ number of y spin (i.e. $\hat\sigma_y$) operators. Otherwise, there would have to be imaginary contributions to the matrix elements.
 
 ### (3) Optional: Pros and cons of Bravyi-Kitaev (BK) compared to Jordan-Wigner (JW) encoding
 
