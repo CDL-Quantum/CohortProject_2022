@@ -2,19 +2,19 @@
 
 ## Project 2: VQE: Constructing potential energy surfaces for small molecules
 
-This project will guide you through the state-of-the-art techniques for solving electronic structure problems on NISQ computers.
+Drive Folder: [https://drive.google.com/drive/folders/1FHHW9zKOTnyRL8Z3XdqYLToBXP_sbn2o?usp=sharing](https://drive.google.com/drive/folders/1FHHW9zKOTnyRL8Z3XdqYLToBXP_sbn2o?usp=sharing)
 
-Open up [instructions.pdf](./Instructions.pdf) to begin learning about your tasks for this week!
+We present our solutions to the CDL Cohort Project Week 2 problems. Written solutions to task questions can be found in `solutions.pdf` as well as in modifications to the provided notebooks. 
 
-**Please edit this markdown file directly with links to your completed tasks and challenges.**
+Our video presentation and slides covering potential business applications of this technique can be found at the Google Drive folder linked above. 
 
 ## Tasks include:
 
-- Generating PES using classical methods.
-- Generating the qubit Hamiltonian.
-- Unitary transformations.
-- Hamiltonian measurements.
-- Use of quantum hardware.
+- [x] Generating PES using classical methods.
+- [x] Generating the qubit Hamiltonian.
+- [x] Unitary transformations.
+- [x] Hamiltonian measurements.
+- [x] Use of quantum hardware.
 
 ## Further Challenges:
 
