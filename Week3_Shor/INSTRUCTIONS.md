@@ -188,7 +188,9 @@ make
  
 The particulars of this fictional algorithm and how it works are not
 important. Rather, we will be judging how your creation portrays the risks and
-the benefits present in this situation.
+the benefits present in this situation. 
+
+Develop your solution in your [Business Application](./Business_Application.md) file, and don't forget to include a link to your 90-second video!
 
 ### Once you are comfortable with the above tasks, you may turn to one or more of the below optional **Challenges** for any time remaining in your project. 
 
@@ -212,7 +214,9 @@ number can you successfully factor?
 
 Researchers have also explored how to factor using quantum annealers. Try
 implementing the method described [in this
-paper](https://www.nature.com/articles/s41598-018-36058-z). Again, compare its
+paper](https://www.nature.com/articles/s41598-018-36058-z). 
+Consider a solution that uses simulated classical annealing, i.e. classical Monte Carlo.
+Again, compare its
 resources and solution quality to your initial implementation, and that of
 Challenge 2 if you completed it.
 
