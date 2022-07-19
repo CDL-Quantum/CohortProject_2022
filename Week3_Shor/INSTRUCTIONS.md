@@ -214,7 +214,9 @@ number can you successfully factor?
 
 Researchers have also explored how to factor using quantum annealers. Try
 implementing the method described [in this
-paper](https://www.nature.com/articles/s41598-018-36058-z). Again, compare its
+paper](https://www.nature.com/articles/s41598-018-36058-z). 
+Consider a solution that uses simulated classical annealing, i.e. classical Monte Carlo.
+Again, compare its
 resources and solution quality to your initial implementation, and that of
 Challenge 2 if you completed it.
 
