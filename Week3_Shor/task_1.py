@@ -18,7 +18,6 @@ message_from_friend = [
     53, 127, 233, 24, 268, 24, 251, 248
 ]
 
-
 def decrypt(message, private_d, N):
     """Decrypt an encoded message. 
  
@@ -31,9 +30,20 @@ def decrypt(message, private_d, N):
     Returns:
         str: The decoded message.
     """
-    decoded_message = ""
+        
+    # Decode each integer into its alphabetical integer
+    integer_decoded_message = []
+    for item in message:
+        integer_decoded_message.append(item ** private_d % N)
 
-    # YOUR CODE HERE
+    
+    # Translate into words
+    int_to_string = {string.printable[i]: i for i in range(0,36)}
+    int_to_string[" "] = 36
+    
+    decoded_message = ""
+    for item in integer_decoded_message:
+        decoded_message += int_to_string[item]
 
     return decoded_message
 
@@ -50,8 +60,24 @@ def encrypt(message, public_e, N):
     Returns:
         list[int]: The message, encoded using the public key as a list of integers.
     """
+  
+  
+    # Set dictionary for translation to integers
+    string_to_int = {string.printable[i] : i for i in range(0, 36)}
+    string_to_int[' '] = 36
+    
+    # Encode the message
     encoded_message = []
-
-    # YOUR CODE HERE
+    for item in message:
+        encoded_message.append(string_to_int[item] ** public_e % N)
 
     return encoded_message
+
+   (d,e,N) = (169, 25, 299)
+   decoded_message = decrypt(message_from_friend, d, N)
+   print(decoded_message)
+   
+   answer = "I love all colors"
+   encoded_message = encrypt(answer, e, N)
+   print(encoded_message)
+   
