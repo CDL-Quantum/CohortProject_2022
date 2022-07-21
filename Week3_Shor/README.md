@@ -28,6 +28,7 @@ What is common among these three challenges is that they all investigate how NIS
 The number field sieve (NFS) [[1]](#1) is the best known classical method for factorizing integers. It was used in 2020 to factorize the 829-bit RSA-250 number [[2]](#2). The next number in the RSA catalog is RSA-260, which has 862 bits and has not been factored so far with any method.
 
 A high level overview of the NFS algorithm is given here [[3]](#3):
+
 ![fig1](./nfs.png)
 
 Without having to understand all the mathematical details, it is clear that the main computational pressure is on the for loop from steps 6 to 10. The algorithm is attempting to search for a pair of integers $(a,b)$, such that the integers $a+bm$ and g(a,b) are y-smooth. A y-smooth integer is one which is not divisible by any primes larger than $y$.
@@ -54,10 +55,12 @@ Both of these factors make GBS a promising candidate for seeing some of the firs
 
 ### Solving a CirtcuitSAT with GBS
 
-First, Hamilton et al. showed that the probability distribuiton $p(\bar{n})$ in GBS can be used to calculate the Hafnian of a matrix.
-$$
+First, Hamilton et al. showed that the probability distribuiton $ p(\bar{n}) $ in GBS can be used to calculate the Hafnian of a matrix.
+
+$
 p(\bar{n})=|\sigma_Q|^{-1/2}|\text{Haf}(B_s)|^2
-$$
+$
+
 test math
 ## Business Application
 For each week, your team is asked to complete a Business Application. Questions you will be asked are:
