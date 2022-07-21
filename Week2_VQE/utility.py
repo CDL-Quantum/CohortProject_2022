@@ -86,11 +86,17 @@ def get_molecular_data(mol, geometry, xyz_format=False):
             ['N', [0, 0, geometry]]
         ]
     elif mol == 'h4':
+        # Angular stretch between two neighboring H. R = 1.738 Å fixed radius from center to each H.
+        # Geometry is the angle of the circular sector H-origin-H.
+        R = 1.738
+        angle = math.radians(geometry/2)                
+        x = R*math.cos(angle)
+        y = R*math.sin(angle)
         mol_data = [
-            ['H', [0, 0, 0]],
-            ['H', [0, 0, geometry]],
-            ['H', [0, geometry, 0]],
-            ['H', [0, geometry, geometry]]
+            ['H', [x, y, 0]],
+            ['H', [x, -y, 0]],
+            ['H', [-x, y, 0]],
+            ['H', [-x, -y, 0]]
         ]
     elif mol == 'nh3':
         bondAngle = 107
@@ -106,8 +112,15 @@ def get_molecular_data(mol, geometry, xyz_format=False):
             ['H', [0.0, sin * geometry, cos * geometry]],
             ['H', [thirdxRatio * geometry, thirdyRatio * geometry, cos * geometry]],
             ['N', [0.0, 0.0, 0.0]]
-            ]
-
+            ]       
+    elif mol == 'h2x2':            
+        r0 = 0.741
+        mol_data = [
+            ['H', [0, 0, 0]],
+            ['H', [0, 0, r0]],
+            ['H', [0, 0, r0+geometry]],
+            ['H', [0, 0, 2*r0+geometry]] 
+        ]
     else:
         raise(ValueError(mol, 'Unknown moleucles given'))
 
@@ -321,7 +334,7 @@ def obtain_PES(molecule, bond_lengths, basis, method):
 
             try:
                 mol_data = get_molecular_data(molecule, bond_lengths[i], xyz_format=True)
-                mol_data = quantumchemistry.Molecule(mol_data, basis)
+                mol_data = quantumchemistry.Molecule(mol_data, basis, backend='pyscf')
 
                 if method == 'cisd':
                     result = mol_data.compute_energy('detci', options={"detci__ex_level": 2})
