@@ -55,11 +55,17 @@ Both of these factors make GBS a promising candidate for seeing some of the firs
 
 ### Solving a CirtcuitSAT with GBS
 
-First, Hamilton et al. showed that the probability distribuiton $p(\bar{n})$ in GBS can be used to calculate the Hafnian of a matrix.
+First, Hamilton et al. [[7]](#7) showed that the probability distribution $p(\bar{n})$ in GBS can be used to calculate the Hafnian of a matrix $B_S$.
 
 $p(\bar{n})=|\sigma_Q|^{-1/2}|\text{Haf}(B_s)|^2$
 
-test math
+The matrix $B_S$, can be specified by choosing appropriate parameters for the squeezers, beam splitters, and phase shifters in the device. The precise values needed to implement a specific matrix can be derived using a combination of various matrix decompositions, which have also been implemented by Xanadu in an open-source package called StrawberryFields [[8]](#8)
+
+If the matrix that we are investigating is an adjacency matrix of a graph, then the Hafnian of the matrix is equal to the number of perfect matchings in this graph [[9]](#9). For a given number of vertices, the graph which has the highest number of perfect matchings is a clique (a graph in which all vertices are connected to each other). When we perform GBS, we don't always detect photons on every output. We can actually regulate, by tuning the squeezing parameters, how many detections we would like to have on average. This means that we can take a graph, calculate its adjacency matrix, prepare the corresponding GBS experiment, and sample submatrices (which correspond to subgraphs). When we do this sampling, we detect a particular pattern of photons, each with a probability given by the equation above. With the highest probability, we will detect photons at the outputs which correspond to the submatrix with the highest hafnian, which in turn corresponds to the subgraph which is closest to being a clique. Therefore, we can use a GBS device to find cliques in graphs. This has been previously applied to an important problem in chemistry, namely molecular docking [[10]](#10) and Xanadu has a nice tutorial which explains all of this with a coded example [[11]](#11).
+
+Now that we have established that a GBS device is able to find cliques in graphs, lets see how a CircuitSAT is equivalent to this problem. We know that this should in principle be possible if we recognize that both the CircuitSAT problem and k-Clique problem (to see if a graph contains a clique larger than k), are both NP-complete problems, which have been proven to be reducible to one another in polynomial time [[12]](#12). To do this, we take an intermediate step. First, we show that we can solve a boolean satisfiability problem (SAT) by identifying cliques in a graph. The process was essentially explained already by Karp in 1972 [[12]](#12) in almost a single sentence and there exist plenty of more detailed explanations as well, for example in Ref [[13]](#13). A short description of the procedure is the following:
+
+In an SAT, you are given a set of $n$ boolean variables and a set of $m$ logical clauses using those variables. The task is to find out if there exist values for each boolean variable, such that all the logical clauses simultaneously evaluate to true. For every clause $C_m$, we create a vertex in the graph for every boolean variable in that clause. Then we connect all vertices, which do not belong to the same clause and also do not include opposite values for the same boolean variable.
 ## Business Application
 For each week, your team is asked to complete a Business Application. Questions you will be asked are:
 
@@ -89,5 +95,23 @@ Mosca, Michele, and Sebastian R. Verschoor. "Factoring semi-primes with (quantum
 <a id="6">[6]</a>
 Verschoor, S. R. SAT factoring. GitHub. https://github.com/sebastianv89/factoring-sat (2019).
 
-<a id="6">[7]</a>
+<a id="7">[7]</a>
 Hamilton, Craig S., et al. "Gaussian boson sampling." Physical review letters 119.17 (2017): 170501.
+
+<a id="8">[8]</a>
+https://strawberryfields.readthedocs.io/en/stable/code/api/strawberryfields.ops.Interferometer.html
+
+<a id="9">[9]</a>
+https://the-walrus.readthedocs.io/en/latest/hafnian.html
+
+<a id="10">[10]</a>
+Banchi, Leonardo, et al. "Molecular docking with Gaussian boson sampling." Science advances 6.23 (2020): eaax1950.
+
+<a id="11">[11]</a>
+https://strawberryfields.ai/photonics/apps/run_tutorial_max_clique.html
+
+<a id="12">[12]</a>
+Karp, Richard M. "Reducibility among combinatorial problems." Complexity of computer computations. Springer, Boston, MA, 1972. 85-103.
+
+<a id="13">[13]</a>
+Bronts, M. M. Giving a step-by-step reduction from SAT to TSP and giving some remarks on Neil Tennant's 'Changes of Mind'. Diss. Faculty of Science and Engineering, 2014.
