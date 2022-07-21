@@ -55,11 +55,9 @@ Both of these factors make GBS a promising candidate for seeing some of the firs
 
 ### Solving a CirtcuitSAT with GBS
 
-First, Hamilton et al. showed that the probability distribuiton $ p(\bar{n}) $ in GBS can be used to calculate the Hafnian of a matrix.
+First, Hamilton et al. showed that the probability distribuiton $p(\bar{n})$ in GBS can be used to calculate the Hafnian of a matrix.
 
-$
-p(\bar{n})=|\sigma_Q|^{-1/2}|\text{Haf}(B_s)|^2
-$
+$p(\bar{n})=|\sigma_Q|^{-1/2}|\text{Haf}(B_s)|^2$
 
 test math
 ## Business Application
