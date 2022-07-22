@@ -31,7 +31,7 @@ A high level overview of the NFS algorithm is given here [[3]](#3):
 
 ![fig1](./nfs.png)
 
-Without having to understand all the mathematical details, it is clear that the main computational pressure is on the for loop from steps 6 to 10. The algorithm is attempting to search for a pair of integers $(a,b)$, such that the integers $a+bm$ and g(a,b) are y-smooth. A y-smooth integer is one which is not divisible by any primes larger than $y$.
+Without having to understand all the mathematical details, it is clear that the main computational pressure is on the for loop from steps 6 to 10. The algorithm is attempting to search for a pair of integers $(a,b)$, such that the integers $a+bm$ and $g(a,b)$ are y-smooth. A y-smooth integer is one which is not divisible by any primes larger than $y$.
 
 So how could a quantum computer make this algorithm faster? The best bet is to try and find a quantum algorithm to perform the search for smoothness. In recent research it has been shown, that if a quantum computer could achieve any asymptotic speedup in this task, then the overall algorithm would become faster [[4]](#4)
 
@@ -61,7 +61,7 @@ Here we will see that a CircuitSAT can be solved with GBS using the following pi
 
 First, Hamilton et al. [[7]](#7) showed that the probability distribution $p(\bar{n})$ in GBS can be used to calculate the Hafnian of a matrix $B_S$.
 
-$p(\bar{n})=|\sigma_Q|^{-1/2}|\text{Haf}(B_s)|^2$
+$$p(\bar{n})=|\sigma_Q|^{-1/2}|\text{Haf}(B_s)|^2$$
 
 The matrix $B_S$, can be specified by choosing appropriate parameters for the squeezers, beam splitters, and phase shifters in the device. The precise values needed to implement a specific matrix can be derived using a combination of various matrix decompositions, which have also been implemented by Xanadu in an open-source package called StrawberryFields [[8]](#8)
 
