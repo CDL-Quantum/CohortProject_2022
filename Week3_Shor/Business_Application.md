@@ -1,4 +1,4 @@
-file:///Users/sultanatokhy/Downloads/BreadCrumbTrail_1300.jpg
+https://d2r55xnwy6nx47.cloudfront.net/uploads/2015/09/BreadCrumbTrail_1300.jpg
 # Quantum Cohort Project Business Application
 
 For each weekly project, your team is asked to complete the below business application exercise.
