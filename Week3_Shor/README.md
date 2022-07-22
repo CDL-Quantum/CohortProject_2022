@@ -9,9 +9,111 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 **Please edit this markdown file directly with links to your completed tasks and challenges.**
 
 ## Tasks include:
+
+## Task 1: Encrypt and decrypt RSA
 * Encrypt and decrypt a message using RSA
+
+Note that one can view the full code for the task in task_1.ipynb notebook. We do not put the helper functions here for brevity.
+
+For our first part of the task, we were given an encrypted message to decrypt with public key e = 25, N  = 299 and private key d = 169. Following the protocol, we define the following decrypt function: 
+
+'''
+def decrypt(message, private_d, N):
+    """Decrypt an encoded message. 
+ 
+    Args:
+        message (list[int]): A list of integers representing the secret message.
+            Each integer in the list represents a different character in the message.
+        private_d (int): Your (private) portion of the RSA key.
+        N (int): The modulus of the RSA key.
+ 
+    Returns:
+        str: The decoded message.
+    """
+    
+    decoded_message = ""
+    
+    for i in range(len(message)):
+        c = message[i]
+        c_prime = c ** private_d
+        m = c_prime % N
+        
+        m_str = decode_from_int(m)
+        decoded_message += m_str
+
+    return decoded_message
+'''
+
+With this function, we can see our friend's message.
+
+'''
+decrypt(message_from_friend, d, N)
+'''
+'''
+'what is your favourite colour'
+'''
+
+Following that, we want to give our friend a proper response, which would be:
+'''
+answer = "my favourite colour is green and my favourite number is 369 what is yours"
+'''
+
+We then encrypt it using the following function, with public key e = 29 and N = 91:
+
+'''
+def encrypt(message, public_e, N):
+    """Encrypt a message 
+
+    Args:
+        message (str): A string representation of the message to send. It should
+            contain only the characters a-z (lowercase), numbers 0-9, and spaces.
+        public_e (int): The public portion of the RSA key (e, N) used for encoding.
+        N (int): The modulus of the RSA key.
+ 
+    Returns:
+        list[int]: The message, encoded using the public key as a list of integers.
+    """
+    encoded_message = []
+
+    for i in range(len(message)):
+        ch = message[i]
+        ch_int = encode_from_char(ch)
+        m_prime = ch_int ** public_e
+        c = m_prime % N
+        encoded_message.append(c)
+        
+
+    return encoded_message
+ 
+
+encrypted = encrypt(answer, e, N)
+print(encrypted)
+'''
+
+Our encrypted message then looks like the following:
+
+'''
+[29, 34, 43, 71, 82, 5, 33, 88, 27, 44, 22, 14, 43, 38, 33, 21, 33, 88, 27, 43, 44, 84, 43, 74, 27, 14, 14, 4, 43, 82, 4, 13, 43, 29, 34, 43, 71, 82, 5, 33, 88, 27, 44, 22, 14, 43, 4, 88, 29, 72, 14, 27, 43, 44, 84, 43, 61, 41, 81, 43, 2, 75, 82, 22, 43, 44, 84, 43, 34, 33, 88, 27, 84]
+'''
+
+From Task 2 (spoiler alert), we know that N = 91 prime factorization is 7 and 13, so p = 7, q = 13. The theta in the RSA protocol in the graphic is then 6 X 12 = 72. Thus, we know that e = 29, theta = 72, so we just need to find d such that d X e = 1 mod 72. After a quick search, we see that d = 5 (or 77), either of which works, so we just need to plug those values into the decrypt function to get back the original message:
+
+'''
+decrypt(encrypted, 77, N)
+'''
+'''
+'my favourite colour is green and my favourite number is 369 what is yours'
+'''
+
+## Task 2: Implementing Shor's Algorithm
 * Research and implement the quantum algorithm for order finding
+
+In this task, we are meant to implement the quantum algorithm for order finding, and then to test it on N = 91. 
+
+## Task 3: Benchmarking
 * Use Shor's algorithm to factor increasingly large sequences
+
+## Task 4: Business Application
 * Discuss a new quantum-safe protocol as part of your Business Application
 
 After you have completed your tasks, consider the optional Challenges below!
