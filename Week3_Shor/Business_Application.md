@@ -1,4 +1,4 @@
- ## High-Park and Security Under Threat: A path to qunatum saftey by Sultana Hadi
+ ## High-Park and Security Under Threat: A path to qunatum saftey 
 
 ![BreadCrumbTrail_1300](https://user-images.githubusercontent.com/25537090/180493882-86dc8fc1-8346-43f3-b78a-919a986c83a5.jpg)[1](https://www.quantamagazine.org/quantum-secure-cryptography-crosses-red-line-20150908/) 
 
@@ -42,3 +42,5 @@ The heads departed, each one filled with a new purpose, and the promise of secur
 
 Waiting for the train to arrive and take her home, Muska thought to herself, what a strange world we are living in one hand we humans are so sophisticated that we can go inside an atom and manipulate and make it do all kinds of spooky work, and other another hand we are still in the barbarian skin that we can use this technology to threaten others.  
 The train arrived, and Muska started to shift her focus on how his Ph.D. supervisor and co-founder Benjamin would build a team and deliver the product soon.   
+
+by Sultana Hadi
