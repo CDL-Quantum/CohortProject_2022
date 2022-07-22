@@ -6,12 +6,13 @@ To complement the technical tasks, please consdier the four questions below.
 You are free to format your response to these four questions as you wish (with the final question done as a short recorded video), and to include
 the content (or links to the content) on your forked repository.
 
-A brief example for each question is included for the 
-[Traveling Salesman Problem.](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
-
 ## Step 1: Explain the technical problem you solved in this exercise
 
 Example: Finding a global minimum in settings where a classical approach may not be able to find a global minimum.
+
+In this exercise, we explored public-key cryptography by using the RSA algorithm to distribute asymmetric keys, and we used those keys to encrypt and decrypt messages from plaintext to ciphertext and vice versa. We then implemented a simulation of Shor's algorithm and broke RSA for small numbers by prime factorization, demonstrating the threat that a fault-tolerant quantum computer presents to RSA (as well as to discrete logarithm- and elliptical curve discrete logarithm-based key distribution algorithms). The majority of Shor's algorithm is actually classical in nature, with the exception of one key step: order finding.
+
+We showed that 
 
 ## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
 
