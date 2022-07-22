@@ -1,5 +1,5 @@
-[https://d2r55xnwy6nx47.cloudfront.net/uploads/2015/09/BreadCrumbTrail_1300.jpg]
 # Quantum Cohort Project Business Application
+https://d2r55xnwy6nx47.cloudfront.net/uploads/2015/09/BreadCrumbTrail_1300.jpg![image](https://user-images.githubusercontent.com/25537090/180493669-b9245f5d-c218-4cb0-8ced-bf8e846ccff4.png)
 
 For each weekly project, your team is asked to complete the below business application exercise.
 To complement the technical tasks, please consdier the four questions below.
