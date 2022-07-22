@@ -49,11 +49,13 @@ With this function, we can see our friend's message.
 '''
 decrypt(message_from_friend, d, N)
 '''
+
 '''
 'what is your favourite colour'
 '''
 
 Following that, we want to give our friend a proper response, which would be:
+
 '''
 answer = "my favourite colour is green and my favourite number is 369 what is yours"
 '''
@@ -101,6 +103,7 @@ From Task 2 (spoiler alert), we know that N = 91 prime factorization is 7 and 13
 '''
 decrypt(encrypted, 77, N)
 '''
+
 '''
 'my favourite colour is green and my favourite number is 369 what is yours'
 '''
