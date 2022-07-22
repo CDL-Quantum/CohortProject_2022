@@ -1,5 +1,4 @@
-(https://user-images.githubusercontent.com/25537090/180491761-b99bda92-1eba-4cc5-a19f-2fe0a77c2d5d.jpg)
-
+file:///Users/sultanatokhy/Downloads/BreadCrumbTrail_1300.jpg
 # Quantum Cohort Project Business Application
 
 For each weekly project, your team is asked to complete the below business application exercise.
