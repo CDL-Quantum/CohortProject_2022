@@ -31,7 +31,7 @@ A high level overview of the NFS algorithm is given here [[3]](#3):
 
 ![fig1](./nfs.png)
 
-Without having to understand all the mathematical details, it is clear that the main computational pressure is on the for loop from steps 6 to 10. The algorithm is attempting to search for a pair of integers $(a,b)$, such that the integers $a+bm$ and g(a,b) are y-smooth. A y-smooth integer is one which is not divisible by any primes larger than $y$.
+Without having to understand all the mathematical details, it is clear that the main computational pressure is on the for loop from steps 6 to 10. The algorithm is attempting to search for a pair of integers $(a,b)$, such that the integers $a+bm$ and $g(a,b)$ are y-smooth. A y-smooth integer is one which is not divisible by any primes larger than $y$.
 
 So how could a quantum computer make this algorithm faster? The best bet is to try and find a quantum algorithm to perform the search for smoothness. In recent research it has been shown, that if a quantum computer could achieve any asymptotic speedup in this task, then the overall algorithm would become faster [[4]](#4)
 
@@ -53,11 +53,15 @@ Second, it turns out that the task that GBS is preforming is difficult to simula
 
 Both of these factors make GBS a promising candidate for seeing some of the first examples of quantum advantage in real-world problems, but the major hurdle here is that the problem that GBS solves doesn't really appear anywhere in business or nature. Nonetheless, if we are creative, we can find a pathway between the calculation and an application.
 
-### Solving a CirtcuitSAT with GBS
+### Solving a CircuitSAT with GBS
+
+Here we will see that a CircuitSAT can be solved with GBS using the following pipeline:
+
+![fig31](pipeline.png)
 
 First, Hamilton et al. [[7]](#7) showed that the probability distribution $p(\bar{n})$ in GBS can be used to calculate the Hafnian of a matrix $B_S$.
 
-$p(\bar{n})=|\sigma_Q|^{-1/2}|\text{Haf}(B_s)|^2$
+$$p(\bar{n})=|\sigma_Q|^{-1/2}|\text{Haf}(B_s)|^2$$
 
 The matrix $B_S$, can be specified by choosing appropriate parameters for the squeezers, beam splitters, and phase shifters in the device. The precise values needed to implement a specific matrix can be derived using a combination of various matrix decompositions, which have also been implemented by Xanadu in an open-source package called StrawberryFields [[8]](#8)
 
@@ -65,7 +69,14 @@ If the matrix that we are investigating is an adjacency matrix of a graph, then 
 
 Now that we have established that a GBS device is able to find cliques in graphs, lets see how a CircuitSAT is equivalent to this problem. We know that this should in principle be possible if we recognize that both the CircuitSAT problem and k-Clique problem (to see if a graph contains a clique larger than k), are both NP-complete problems, which have been proven to be reducible to one another in polynomial time [[12]](#12). To do this, we take an intermediate step. First, we show that we can solve a boolean satisfiability problem (SAT) by identifying cliques in a graph. The process was essentially explained already by Karp in 1972 [[12]](#12) in almost a single sentence and there exist plenty of more detailed explanations as well, for example in Ref [[13]](#13). A short description of the procedure is the following:
 
-In an SAT, you are given a set of $n$ boolean variables and a set of $m$ logical clauses using those variables. The task is to find out if there exist values for each boolean variable, such that all the logical clauses simultaneously evaluate to true. For every clause $C_m$, we create a vertex in the graph for every boolean variable in that clause. Then we connect all vertices, which do not belong to the same clause and also do not include opposite values for the same boolean variable.
+In an SAT, you are given a set of $n$ boolean variables and a set of $m$ logical clauses using those variables or their negations. Each of those clauses evaluate to true if at least one of the variables or their negations in the clause are true. The task is to find out if there exist values for each boolean variable, such that all the logical clauses simultaneously evaluate to true. For every clause $C_m$, we create a vertex in the graph for every boolean variable in that clause. Then we connect all vertices, which do not belong to the same clause and also do not include opposite values for the same boolean variable. So what have we achieved? Well, we know that we have $m$ groups of vertices, which are not connected internally. Therefore, the biggest clique that could possibly exist in this graph is of size $m$. We also know that if each clause evaluates to true, then each of those groups must contain a boolean variable that has a value of true. Based on how we constructed the edges, we know that all of these vertices are connected to each other if and only if they have no contradictions. Therefore, the SAT problem is satisfiable if and only if there exists a clique of size $m$ in the graph that we have constructed! In conclusion, we can find the solution to an SAT problem by using a GBS device to search for cliques of size $m$.
+
+Below is an example, where we can see that for the variables $x_1$, $x_2$ and $x_3$, the clauses $C_1$, $C_2$ and $C_3$ are mutually satisfiable due to the existence of a clique in the graph.
+
+![fig4](SAT_clique.png)
+
+The last step is to show that a CircuitSAT problem can be formulated as a SAT problem. This step might not even be necessary from a mathematical point of view, because it seems to be true from Ref [[4]](#4) that the smoothness problem can be directly expressed as a SAT. However, from a practical point of view, if we want to make use of the existing code that generates a CircuitSAT formulation for the smoothness search [[6]](#6), we ought to add this extra step. The reduction of a CircuitSAT to a SAT is not particularly complicated and can be found in chapter 3 of Ref [[14]](#14)
+
 ## Business Application
 For each week, your team is asked to complete a Business Application. Questions you will be asked are:
 
@@ -115,3 +126,6 @@ Karp, Richard M. "Reducibility among combinatorial problems." Complexity of comp
 
 <a id="13">[13]</a>
 Bronts, M. M. Giving a step-by-step reduction from SAT to TSP and giving some remarks on Neil Tennant's 'Changes of Mind'. Diss. Faculty of Science and Engineering, 2014.
+
+<a id="14">[14]</a>
+https://web.archive.org/web/20111226032218/http://www.cs.berkeley.edu/~luca/cs170/notes/lecture22.pdf
