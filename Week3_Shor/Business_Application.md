@@ -26,7 +26,9 @@ After Benjamin’s long talk, Peter’s red face turned even redder and asked fo
 
 
 ![cryptography-766x300](https://user-images.githubusercontent.com/25537090/180494648-35af5715-8af1-4dd2-a9ad-ee176a92c6b5.jpg) [2](https://securityboulevard.com/2020/09/adopting-quantum-cryptography-why-y2q-will-be-too-late/) 
-Secrets saved
+   Secrets saved
+
+
 
 Peter, took a sigh of relief and said,” So our security is not jeopardized yet.”
 “If we act now, and change our encryption scheme in a year, then no,” Benjamin said. 
