@@ -20,9 +20,12 @@ A bike behind them rang its bell to pass. Their talk after a short pause continu
 Peter continued to ask questions about the seriousness of the threat.
 Benjamin in his calm manner explained to him the laws of quantum mechanics can be used to break RSA, which was used to encrypt digital secrets.  He went on in detail. 
 
-After Benjamin’s long talk Peter’s red face turned even redder and asked for more about the new protocol. 
+After Benjamin’s long talk, Peter’s red face turned even redder and asked for more about the new protocol. 
 
 “Our quantum-safe protocol will target to generate a key-pairs that does not follow RSA logistics and is completely built on quantum random generator based on quantum correlation. Our protocol will make every key unhackable because the key will be generated only through this unique new protocol using quantum memory which is erased permanently after the generation of the key. “Muska added.” Unless the generator (person) of the key carefully notes it down, no one on the planet can hack it anymore, including the generator. ”
+
+
+![cryptography-766x300](https://user-images.githubusercontent.com/25537090/180494648-35af5715-8af1-4dd2-a9ad-ee176a92c6b5.jpg)
 
 Peter, took a sigh of relief and said,” So our security is not jeopardized yet.”
 “If we act now, and change our encryption scheme in a year, then no,” Benjamin said. 
