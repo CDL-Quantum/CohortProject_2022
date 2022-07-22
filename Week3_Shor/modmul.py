@@ -7,7 +7,10 @@ def unitary_for_ax_mod_N(a, N):
     for x in range(dim):
         fx = (x*a)%N
         A[x][fx]=1
+    #######
+    # DOESNT WORK. NEEDS TO BE UNITARY.
     U = np.block([[np.zeros([dim,dim]),A],[A.T,np.zeros([dim,dim])]])
+    #######
     return U
 
 def gate_for_ax_mod_N(a,N):
