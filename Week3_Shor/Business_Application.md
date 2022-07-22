@@ -1,4 +1,4 @@
- ##                High-Park and Security Under Threat: A path to qunatum saftey 
+ ##                High-Park and Security Under Threat: A path to Quantum saftey 
 
 ![BreadCrumbTrail_1300](https://user-images.githubusercontent.com/25537090/180493882-86dc8fc1-8346-43f3-b78a-919a986c83a5.jpg)[1](https://www.quantamagazine.org/quantum-secure-cryptography-crosses-red-line-20150908/) 
 
