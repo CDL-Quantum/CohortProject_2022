@@ -1,6 +1,6 @@
  ##                High-Park and Security Under Threat: A path to Post-Quantum saftey 
 
-![BreadCrumbTrail_1300](https://user-images.githubusercontent.com/25537090/180493882-86dc8fc1-8346-43f3-b78a-919a986c83a5.jpg)[1](https://www.quantamagazine.org/quantum-secure-cryptography-crosses-red-line-20150908/) 
+![BreadCrumbTrail_1300](https://user-images.githubusercontent.com/25537090/180493882-86dc8fc1-8346-43f3-b78a-919a986c83a5.jpg)[1](https://www.quantamagazine.org/quantum-secure-cryptography-crosses-red-line-20150908/) Secrets stolen
 
 The world was on high alert, but nature was unaware of it. The bright April sun was looking over the lush green grounds of the high park, Toronto, Canada. The trees were standing squarely, doing their best to guard the park from city life. The high rises were visible, hinting that civilization was nearby. Birds were chirping in the trees, squirrels munching on the fallen tree leaves. The geese were roaming around, mixing with humans, who came to enjoy the beauty of nature. The river was flowing, shimmering under the sun like the beads of Afghan women’s necklaces under the chandelier of big wedding halls in Kabul. 
 
@@ -25,7 +25,7 @@ After Benjamin’s long talk, Peter’s red face turned even redder and asked fo
 “Our quantum-safe protocol will target to generate a key-pairs that does not follow RSA logistics and is completely built on quantum random generator based on quantum correlation. Our protocol will make every key unhackable because the key will be generated only through this unique new protocol using quantum memory which is erased permanently after the generation of the key. “Muska added.” Unless the generator (person) of the key carefully notes it down, no one on the planet can hack it anymore, including the generator. ”
 
 
-![cryptography-766x300](https://user-images.githubusercontent.com/25537090/180494648-35af5715-8af1-4dd2-a9ad-ee176a92c6b5.jpg) [2](https://securityboulevard.com/2020/09/adopting-quantum-cryptography-why-y2q-will-be-too-late/)
+![cryptography-766x300](https://user-images.githubusercontent.com/25537090/180494648-35af5715-8af1-4dd2-a9ad-ee176a92c6b5.jpg) [2](https://securityboulevard.com/2020/09/adopting-quantum-cryptography-why-y2q-will-be-too-late/) Secrets saved
 
 Peter, took a sigh of relief and said,” So our security is not jeopardized yet.”
 “If we act now, and change our encryption scheme in a year, then no,” Benjamin said. 
