@@ -1,6 +1,6 @@
  ## High-Park and Security Under Threat: A path to qunatum saftey by Sultana Hadi
 
-![BreadCrumbTrail_1300](https://user-images.githubusercontent.com/25537090/180493882-86dc8fc1-8346-43f3-b78a-919a986c83a5.jpg)[1](https://www.quantamagazine.org/quantum-secure-cryptography-crosses-red-line-20150908/) Secrets stolen
+![BreadCrumbTrail_1300](https://user-images.githubusercontent.com/25537090/180493882-86dc8fc1-8346-43f3-b78a-919a986c83a5.jpg)[1](https://www.quantamagazine.org/quantum-secure-cryptography-crosses-red-line-20150908/) 
 
 The bright April sun was looking over the lush green grounds of the high park, Toronto, Canada. The trees were standing squarely, doing their best to guard the park from city life. The high rises were visible, hinting that civilization was nearby. Birds were chirping in the trees, squirrels munching on the fallen tree leaves. The geese were roaming around, mixing with humans, who came to enjoy the beauty of nature. The river was flowing, shimmering under the sun like the beads of Afghan women’s necklaces under the chandelier of big wedding halls in Kabul. 
 
