@@ -43,4 +43,4 @@ The heads departed, each one filled with a new purpose, and the promise of secur
 Waiting for the train to arrive and take her home, Muska thought to herself, what a strange world we are living in one hand we humans are so sophisticated that we can go inside an atom and manipulate and make it do all kinds of spooky work, and other another hand we are still in the barbarian skin that we can use this technology to threaten others.  
 The train arrived, and Muska started to shift her focus on how his Ph.D. supervisor and co-founder Benjamin would build a team and deliver the product soon.   
 
-by Sultana Hadi ( Its a fictional piece)
+by Sultana Hadi - Its a fictional piece)
