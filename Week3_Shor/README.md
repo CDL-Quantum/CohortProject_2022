@@ -33,9 +33,7 @@ Our analysis shows that even using a classical order finding method, breaking RS
 
 Please see [task2_3_calculations.ipynb](./Calculations/task2_3_calculations.ipynb) for the calculation details associated with task #2 and #3.
 
-You will likely have noticed in Task 2 that Shor's algorithm is not guaranteed to find a solution. In fact, there are few potential points of failure. How often does your implementation succeed? How does this depend on the size of ?
-
-Present your results graphically and use this to infer the scaling of these resources with the size of the problem instance.
+You will likely have noticed in Task 2 that Shor's algorithm is not guaranteed to find a solution. In fact, there are few potential points of failure. How often does your implementation succeed? How does this depend on the size of ? Present your results graphically and use this to infer the scaling of these resources with the size of the problem instance.
 
 To investigate the runtime and failure rate associated with Shor's algorithm, we utilize the code as implemented in task #2 ([task2_3_calculations.ipynb](./Calculations/task2_3_calculations.ipynb)). Recall that instead of stimulating the quantum order finding algorithm, we execute a classical version. Thus, our analysis here can be veiwed as an upperbound to the runtime associated with Shor's algorithm which utilizes quantum order finding.
 
