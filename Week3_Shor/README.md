@@ -9,9 +9,167 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 **Please edit this markdown file directly with links to your completed tasks and challenges.**
 
 ## Tasks include:
+
+## Task 1: Encrypt and decrypt RSA
 * Encrypt and decrypt a message using RSA
+
+Note that one can view the full code for the task in task_1.ipynb notebook. We do not put the helper functions here for brevity.
+
+For our first part of the task, we were given an encrypted message to decrypt with public key e = 25, N  = 299 and private key d = 169. Following the protocol, we define the following decrypt function: 
+
+```
+def decrypt(message, private_d, N):
+    """Decrypt an encoded message. 
+ 
+    Args:
+        message (list[int]): A list of integers representing the secret message.
+            Each integer in the list represents a different character in the message.
+        private_d (int): Your (private) portion of the RSA key.
+        N (int): The modulus of the RSA key.
+ 
+    Returns:
+        str: The decoded message.
+    """
+    
+    decoded_message = ""
+    
+    for i in range(len(message)):
+        c = message[i]
+        c_prime = c ** private_d
+        m = c_prime % N
+        
+        m_str = decode_from_int(m)
+        decoded_message += m_str
+
+    return decoded_message
+```
+
+With this function, we can see our friend's message.
+
+```
+decrypt(message_from_friend, d, N)
+```
+
+```
+'what is your favourite colour'
+```
+
+Following that, we want to give our friend a proper response, which would be:
+
+```
+answer = "my favourite colour is green and my favourite number is 369 what is yours"
+```
+
+We then encrypt it using the following function, with public key e = 29 and N = 91:
+
+```
+def encrypt(message, public_e, N):
+    """Encrypt a message 
+
+    Args:
+        message (str): A string representation of the message to send. It should
+            contain only the characters a-z (lowercase), numbers 0-9, and spaces.
+        public_e (int): The public portion of the RSA key (e, N) used for encoding.
+        N (int): The modulus of the RSA key.
+ 
+    Returns:
+        list[int]: The message, encoded using the public key as a list of integers.
+    """
+    encoded_message = []
+
+    for i in range(len(message)):
+        ch = message[i]
+        ch_int = encode_from_char(ch)
+        m_prime = ch_int ** public_e
+        c = m_prime % N
+        encoded_message.append(c)
+        
+
+    return encoded_message
+ 
+
+encrypted = encrypt(answer, e, N)
+print(encrypted)
+```
+
+Our encrypted message then looks like the following:
+
+```
+[29, 34, 43, 71, 82, 5, 33, 88, 27, 44, 22, 14, 43, 38, 33, 21, 33, 88, 27, 43, 44, 84, 43, 74, 27, 14, 14, 4, 43, 82, 4, 13, 43, 29, 34, 43, 71, 82, 5, 33, 88, 27, 44, 22, 14, 43, 4, 88, 29, 72, 14, 27, 43, 44, 84, 43, 61, 41, 81, 43, 2, 75, 82, 22, 43, 44, 84, 43, 34, 33, 88, 27, 84]
+```
+
+From Task 2 (spoiler alert), we know that N = 91 prime factorization is 7 and 13, so p = 7, q = 13. The theta in the RSA protocol in the graphic is then 6 X 12 = 72. Thus, we know that e = 29, theta = 72, so we just need to find d such that d X e = 1 mod 72. After a quick search, we see that d = 5 (or 77), either of which works, so we just need to plug those values into the decrypt function to get back the original message:
+
+```
+decrypt(encrypted, 77, N)
+```
+
+```
+'my favourite colour is green and my favourite number is 369 what is yours'
+```
+
+## Task 2: Implementing Shor's Algorithm
 * Research and implement the quantum algorithm for order finding
+
+In this task, we are meant to implement the quantum algorithm for order finding, and then to test it on by using Shor's algorithm on N = 91. To do this task, therefore first implemented the classical parts of Shor's algorithm (the pseudocode given with corrections), and then created two versions of the order finding algorithm: a naive classical version; and then the quantum version that utilizes Quantum Phase Estimation. The reason why we created the classical version as well was to see how well the quantum version was able to hold up to the naive classical implementation with it's current day limitations.
+
+Note that in our discussion, we only examine the order finding mechanism since this is the most complex part (and also most interesting). For a full idea of our code, please look at the task_2.ipynb notebook. We first tested the classical version of the algorithm, which looks like the following:
+
+```
+def order_finding_classical(a, N):
+    
+    m = 1
+    res = copy.deepcopy(a)
+    
+    while res != 1:
+        res = res * a
+        res = res % N
+        m += 1
+    
+    return m
+```
+
+As one can tell, this is an extremely naive way of performing order finding (without error checks I know, but let us assume that the person knows that the input given is alright). However, when N is small, like in our case of N = 91, it does the job extremely quickly, finding out that the prime factorization of 91 is 7 and 13 almost instantly:
+
+```
+shors(91)
+```
+
+```
+a is  44
+m is  12
+Execution time: 0.0 seconds
+(7, 13)
+```
+
+On the other hand, we were having trouble implementing a quantum version of the order finding algorithm. The main problem we had was that we could not think of an efficient way to create the controlled unitary we needed to implement for the Quantum Phase Estimation:
+
+$$
+U_{Na} \vert k \rangle = |a k \hbox{ mod} N \rangle.
+$$
+
+Fortunately, we were able to find an implementation someone else did on the IBMQ systems online from the GitHub: https://github.com/ttlion/ShorAlgQiskit. We therefore used their implementation to test for different N. However, we soon hit another snag in our attempt to test N = 91.
+
+We segue a bit to discuss about the theoretical aspect for resource management in the implementation of Shor's algorithm. In the order finding (or period finding) aspect of the algorithm, we need to basically perform Quantum Phase Estimation using a controlled version of the unitary above. The source register needs to have K qubits such that $N^2 < 2^K < 2 N^2$, while the output register needs to have just enough qubits to store N (and generally more) basis state. Generally, this means that we need more than $3 log_{2} N$ qubits. For example, for N = 91, we find that we are going to need 14 qubits for the source register, and 7 qubits for the output register, so we need 21 qubits at the very least. 
+
+Furthermore, we also need to consider the implementation of the unitary we need to use above. It is technically easy to calculate the binary representation for multiplication in classical systems (and then division), but this becomes a lot more difficult in quantum systems. It oftens requires the need for ancillary qubits in general cases, much like the implementation that we have copied from the above GitHub, further adding resources used. We note that in principle, if one knows that outcome, one does not need to use any ancillary qubits, much like the tutorial given by IBM (https://qiskit.org/textbook/ch-algorithms/shor.html#1.-The-Problem:-Period-Finding), but for general cases, one is going to need to use them.
+
+There comes the problem that we faced while trying to run Shor's algorithm (with quantum order finding) with N = 91. Although in principle, we only need 21 qubits, with the general implementation of Shor's for any N, we are going to need 30 qubits (with a = 2). Simulators available to us are not able to handle the load of 30 qubits (admittedly, we have not tried any tensor network simulators, only statevector ones), so we could not test the implementation. We discuss our benchmarking of other values of N below.
+
+## Task 3: Benchmarking
 * Use Shor's algorithm to factor increasingly large sequences
+
+In the previous task, we have stated our inability to factor N = 91, which requires a relatively large amount of qubits compared to what most simulators are able to handle today. But the question then lies: what can it handle?
+
+The answer is that it is able to handle surprisingly little. For N = 15, it was able to find out that it was 3 times 5 fairly easily, requiring a little over two minutes and 18 qubits:
+
+```
+Execution time: 122.52815866470337 seconds
+```
+
+However, when we tried N = 21, the algorithm already started failing. 
+
+## Task 4: Business Application
 * Discuss a new quantum-safe protocol as part of your Business Application
 
 After you have completed your tasks, consider the optional Challenges below!
