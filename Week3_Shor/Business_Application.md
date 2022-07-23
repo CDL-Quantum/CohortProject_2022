@@ -1,12 +1,13 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
-# Quantum Cohort Project Business Application
 
 ![RSA and QISQ Comic](img/RSA_Encryption_Comic_2.png)
 
 
 ## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
 
-![Cupboard Logo](img/Cupboard_logo.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MQS-mark/CohortProject_2022/main/Week3_Shor/img/Cupboard_Logo.png">
+</p>
 
 Cupboard provides quantum secure encryption and analysis tools to protect your valuable porcelain.
 
@@ -14,8 +15,9 @@ Our SaaS enterprise solutions allow you to implement the most cutting-edge cyber
 
 Our tools combine articifial intelligence and quantum technologies to prepare you for the hybrid cloud and post-RSA era.
 
-![Cupboard Product Stack](img/Cupboard_Stack.png)
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MQS-mark/CohortProject_2022/main/Week3_Shor/img/Cupboard_Stack.png">
+</p>
 
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
 
