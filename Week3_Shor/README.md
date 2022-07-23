@@ -35,15 +35,7 @@ Please see [task2_3_calculations.ipynb](./Calculations/task2_3_calculations.ipyn
 
 You will likely have noticed in Task 2 that Shor's algorithm is not guaranteed to find a solution. In fact, there are few potential points of failure. How often does your implementation succeed? How does this depend on the size of ?
 
-Further to this point, now that you have an implementation, let's stress test it. Use Shor's algorithm to factor a sequence of increasingly large . How large of a number can you reliably factor with your computer? As you are increasing , take the opportunity to perform an analysis of:
-
-- Run time (wall time)
-- Number of qubits required
-- Number of quantum gates required
-
 Present your results graphically and use this to infer the scaling of these resources with the size of the problem instance.
-
-After, consider the following: how does the size of your largest solved instance compare with the size of RSA keys in use today? Can you estimate the quantum resources that would be needed to factor numbers of this size, and when we might have a device capable of doing so? Consider the qubit count and gate count in your estimate. To take things further, you could even estimate a rough wall time by looking at circuit depth, and gate operation speeds of present-day hardware.
 
 To investigate the runtime and failure rate associated with Shor's algorithm, we utilize the code as implemented in task #2 ([task2_3_calculations.ipynb](./Calculations/task2_3_calculations.ipynb)). Recall that instead of stimulating the quantum order finding algorithm, we execute a classical version. Thus, our analysis here can be veiwed as an upperbound to the runtime associated with Shor's algorithm which utilizes quantum order finding.
 
