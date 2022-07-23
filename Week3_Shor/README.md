@@ -187,7 +187,7 @@ The number field sieve (NFS) [[1]](#1) is the best known classical method for fa
 
 A high level overview of the NFS algorithm is given here [[3]](#3):
 
-![fig1](./nfs.png)
+![fig1](img/nfs.png)
 
 Without having to understand all the mathematical details, it is clear that the main computational pressure is on the for loop from steps 6 to 10. The algorithm is attempting to search for a pair of integers $(a,b)$, such that the integers $a+bm$ and $g(a,b)$ are y-smooth. A y-smooth integer is one which is not divisible by any primes larger than $y$.
 
@@ -197,9 +197,9 @@ There have been proposals to do this by translating the smoothness search into a
 
 ### Gaussian Boson Sampling
 
-Gaussian boson sampling (GBS) is a non-universal scheme for quantum computing [[7]](#7). A device which executes gaussian boson sampling is called a gaussian boson sampler, and it has very limited functionality. It cannot execute arbitrary quantum algorithms, in fact it cannot even execute a simple quantum circuit, because it is a quantum computer that has no qubits. Instead, it has modes of squeezed light and the only thing it can do with those modes is to send them through an interferometer and count the number of photons that arrive at the output.
+Gaussian boson sampling (GBS) is a non-universal scheme for quantum computing [[7]](#7). A device which executes gaussian boson sampling is called a gaussian boson sampler, and it has very limited functionality. It cannot execute arbitrary quantum algorithms, in fact it cannot even execute a simple quantum circuit, because it is a quantum computer that has no qubits. Instead, it has modes of squeezed light and the only thing it can do with those modes is to send them through an interferometer and count the number of photons that arrive at the output. Below is a schematic of a gaussian boson sampler, where the interferometer is denoted as $U$. Some inputs are squeezed coherent states (depicted with their elliptical Wigner functions), whereas others are empty (depicted with the circular Wigner function of the vacuum state). The detectors at the output (the popsicles on the far right) count the number of photons (small black circles) arriving from the output.
 
-schematic picture here
+![fig2](img/gbs.png)
 
 Two aspects make GBS particular interesting for near-term applications:
 
@@ -207,7 +207,7 @@ First, the physical setup only necessitates components which already exist today
 
 Second, it turns out that the task that GBS is preforming is difficult to simulate classically. Out of the four quantum advantage experiments that have been performed to date, two of them have used GBS.
 
-![fig3](advantage.png)
+![fig3](img/advantage.png)
 
 Both of these factors make GBS a promising candidate for seeing some of the first examples of quantum advantage in real-world problems, but the major hurdle here is that the problem that GBS solves doesn't really appear anywhere in business or nature. Nonetheless, if we are creative, we can find a pathway between the calculation and an application.
 
@@ -215,7 +215,7 @@ Both of these factors make GBS a promising candidate for seeing some of the firs
 
 Here we will see that a CircuitSAT can be solved with GBS using the following pipeline:
 
-![fig31](pipeline.png)
+![fig31](img/pipeline.png)
 
 First, Hamilton et al. [[7]](#7) showed that the probability distribution $p(\bar{n})$ in GBS can be used to calculate the Hafnian of a matrix $B_S$.
 
@@ -231,9 +231,20 @@ In an SAT, you are given a set of $n$ boolean variables and a set of $m$ logical
 
 Below is an example, where we can see that for the variables $x_1$, $x_2$ and $x_3$, the clauses $C_1$, $C_2$ and $C_3$ are mutually satisfiable due to the existence of a clique in the graph. Not only do we find out that there exists a solution, we can also read the solution from the graph: in this case, $x_1$ must be true, while $x_2$ and $x_3$ are false.
 
-![fig4](SAT_clique.png)
+![fig4](img/SAT_clique.png)
 
 The last step is to show that a CircuitSAT problem can be formulated as a SAT problem. This step might not even be necessary from a mathematical point of view, because it seems to be implied from Ref [[4]](#4) that the smoothness problem can be directly expressed as a SAT. However, from a practical point of view, if we want to make use of the existing code that generates a CircuitSAT formulation for the smoothness search [[6]](#6), we ought to add this extra step. The reduction of a CircuitSAT to a SAT is not particularly complicated and can be found in chapter 3 of Ref [[14]](#14)
+
+In summary, we have identified a series of steps that can be taken to use GBS to perform the search step in NFS. There is a lot more to explore about this approach and we leave this as a set of challenges to the next team of curious thinkers:
+* How large is the overhead of each step, in terms of time and number of variables?
+* What is the computational complexity of using GBS to perform the search?
+* How many modes of light are needed to help factor a number?
+* How can we compare this approach to the other three challenges?
+* Could it be possible to make use of Xanadu's new Borealis device [[15]](#15) for this task?
+* Create a code implementation of one of the steps in this pipeline
+* What other problems in business or nature could be tackled with a similar approach?
+* GBS is actually able to solve a *weighted* clique problem [[10]](#10). Can this additional capability be leveraged here somehow?
+
 
 ## Business Application
 For each week, your team is asked to complete a Business Application. Questions you will be asked are:
@@ -287,3 +298,6 @@ Bronts, M. M. Giving a step-by-step reduction from SAT to TSP and giving some re
 
 <a id="14">[14]</a>
 https://web.archive.org/web/20111226032218/http://www.cs.berkeley.edu/~luca/cs170/notes/lecture22.pdf
+
+<a id="15">[15]</a>
+https://www.xanadu.ai/products/borealis/
