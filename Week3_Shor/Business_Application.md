@@ -1,14 +1,21 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
 # Quantum Cohort Project Business Application
 
-## Step 1: Explain the technical problem you solved in this exercise
-
-![Tux, the Linux mascot](img/RSA_Encryption_Comic_2.png)
+![RSA and QISQ Comic](img/RSA_Encryption_Comic_2.png)
 
 
 ## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
 
-Example: A courier has to deliver parcels to several locations and is looking to minimize its travel time. (e.g., “the travelling salesman problem”).
+![Cupboard Logo](img/Cupboard_logo.png)
+
+Cupboard provides quantum secure encryption and analysis tools to protect your valuable porcelain.
+
+Our SaaS enterprise solutions allow you to implement the most cutting-edge cyber-security infrastructure to have the most efficient architecture for your business while being protected against malicious attacks.
+
+Our tools combine articifial intelligence and quantum technologies to prepare you for the hybrid cloud and post-RSA era.
+
+![Cupboard Product Stack](img/Cupboard_Stack.png)
+
 
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
 
