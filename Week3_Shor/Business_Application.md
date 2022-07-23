@@ -33,6 +33,7 @@ After Benjamin’s long talk, Peter’s red face turned even redder and asked fo
 
 
 Peter, took a sigh of relief and said,” So our security is not jeopardized yet.”
+
 “If we act now, and change our encryption scheme in a year, then no,” Benjamin said. 
 
 The smell of flowers permeated the air. The cherry trees were in their full bloom, giving shade to Muska, Benjamin, and Peter, as they walked underneath them. A damp spring breeze wafted in the air, and children with their parents passed by,  oblivious to the important conversation happening in their midst. 
