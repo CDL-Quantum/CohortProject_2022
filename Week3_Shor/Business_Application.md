@@ -16,13 +16,16 @@ A bike behind them rang its bell to pass. Their talk after a short pause continu
 
 “Even if Pakistan didn’t achieve the breakthrough in Fault-tolerant quantum computers, years from now all the data was in threat, so even a graduate student in a lab would be able to decode some of the most important secrets. ” Benjamin added. 
 
-“We knew the type the threat we would face when Quantum computers become a reality so we started working on those projects to not get caught off-guard when a country that poses a threat to our national security first builds Quantum computers,”  Muska added enthusiastically. ” Quantum computers are still five years away and what the lab in Pakistan just showed that they now have experimentally shown that  Fault-tolerant entangling gates, a very crucial stepping stone to Quantum computer.” 
+“We knew the type the threat we would face when Quantum computers become a reality so we started working on those projects to not get caught off-guard when a country that poses a threat to our national security first builds Quantum computers,”  Muska added enthusiastically. ” Quantum computers are still five years away and what the lab in Pakistan just showed that they now have experimentally shown that Fault-tolerant entangling gates, a very crucial stepping stone to Quantum computer.” 
+
 Peter continued to ask questions about the seriousness of the threat.
 Benjamin in his calm manner explained to him the laws of quantum mechanics can be used to break RSA, which was used to encrypt digital secrets.  He went on in detail. 
 
 After Benjamin’s long talk, Peter’s red face turned even redder and asked for more about the new protocol. 
 
-“Our quantum-safe protocol will target to generate a key-pairs that does not follow RSA logistics and is completely built on quantum random generator based on quantum correlation. Our protocol will make every key unhackable because the key will be generated only through this unique new protocol using quantum memory which is erased permanently after the generation of the key. “Muska added.” Unless the generator (person) of the key carefully notes it down, no one on the planet can hack it anymore, including the generator. ”
+“Our quantum-safe protocol will target to generate a key-pairs that does not follow RSA logistics and is completely built on quantum random generator based on quantum correlation. Our protocol will make every key unhackable because the key will be generated only through this unique new protocol using quantum memory which is erased permanently after the generation of the key. “Muska added.” Unless the generator (person) of the key carefully notes it down, no one on the planet can hack it anymore. ”
+
+"Our scheme is at the top of QIST selection," Benjamin informed. 
 
 
 ![cryptography-766x300](https://user-images.githubusercontent.com/25537090/180494648-35af5715-8af1-4dd2-a9ad-ee176a92c6b5.jpg) [2](https://securityboulevard.com/2020/09/adopting-quantum-cryptography-why-y2q-will-be-too-late/) 
@@ -35,8 +38,9 @@ Peter, took a sigh of relief and said,” So our security is not jeopardized yet
 The smell of flowers permeated the air. The cherry trees were in their full bloom, giving shade to Muska, Benjamin, and Peter, as they walked underneath them. A damp spring breeze wafted in the air, and children with their parents passed by,  oblivious to the important conversation happening in their midst. 
 
 “ We have proven our new scheme against quantum computing capabilities and we are positive that it is secure. Our technology is ready just needs mass production.” Muska said in an enlightening tone. 
+
 “How much would you need to make this happen?” Peter asked. 
-“ one-billion”  Benjamin added. 
+“One-billion,”  Benjamin added with an air of confidence. 
 “We will wire you a one-billion dollars to make your technology available as soon as possible,” Peter concluded. 
 
 In High Park, the smell of flowers continued to fill the air, and the trees ruffled in the breeze. Emerging out to the streets, the fire truck’s alarm blared and cars honked.
