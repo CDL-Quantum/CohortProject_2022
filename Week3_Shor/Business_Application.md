@@ -1,5 +1,7 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
-# Quantum Cohort Project Business Application: A score system for quantum hardware
+# Quantum Cohort Project Business Application
+
+In this business application, we present a scoring system for quantum hardware. This neutral, transparent, and understandable benchmarking system is based on Shor's algorithm. It allows all actors on the quantum computing scene to communicate with a common knowledge of the devices, thereby building a bridge between the expert and laymen communities at play.
 
 ## Step 1: Explain the technical problem you solved in this exercise
 
@@ -42,6 +44,13 @@ Building a comprehensive measure for benchmarking is a difficult task in itself.
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
 
 Our service can be attractive both for quantum technology experts, in the academia and in private research institutions, and laymen. For the former, young quantum hardware companies are given the opportunity to compete on an equal footing with the largest companies and quantum developpers are offered access to the data bank to choose the most suitable platform for their application. On the other hand, the score strengthens trust to attract potential investments: a clear report is provided to distinguish rumors and real achievements. Any institution dealing with sensitive data, such as banks or governments, must keep an eye on the evolution of quantum technologies to protect them: to make this process easier, we provide access to our certified data base and encyclopedia for a rapid grasp of the technological evolution.
+
+## References
+- Anschuetz, Eric R., Jonathan P. Olson, Alan Aspuru-Guzik, and Yudong Cao. 2018. “Variational Quantum Factoring.” ArXiv, 08 27, 2018, arxiv.1808.08927. https://arxiv.org/abs/1808.08927.
+- Cross, Andrew, Lev Bishop, Sarah Sheldon, and Paul Nation. 2018. “Validating quantum computers using randomized model circuits.” PRA, 09 20, 2018, 032328. https://journals.aps.org/pra/abstract/10.1103/PhysRevA.100.032328.
+- Kendon, Vivien, and William Munro. 2006. Entanglement and its role in Shor's algorithm. https://arxiv.org/abs/quant-ph/0412140.
+- Kim, Jin-Sung, Lev S. Bishop, Antonio D. Corcoles, Seth Merkel, John A. Smolin, and Sarah Sheldon. 2021. “Hardware-efficient random circuits to classify noise in a multiqubit system.” Physical Review A, 08 1, 2021, 022609. https://doi.org/10.1103%2Fphysreva.104.022609.
+- Uzdin, Raam. 2021. “Methods for measuring noise, purity changes, and entanglement entropy in quantum devices and systems.” ArXiv, 12 1, 2021, arXiv:2112.00546. https://arxiv.org/abs/2112.00546.
 
 ## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
 
