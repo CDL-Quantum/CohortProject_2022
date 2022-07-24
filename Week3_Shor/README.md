@@ -8,7 +8,7 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 
 **Please edit this markdown file directly with links to your completed tasks and challenges.**
 
-## Tasks include:
+-> Business Plan Application: https://github.com/MQS-mark/CohortProject_2022/blob/main/Week3_Shor/Business_Application.md
 
 ## Task 1: Encrypt and decrypt RSA
 * Encrypt and decrypt a message using RSA

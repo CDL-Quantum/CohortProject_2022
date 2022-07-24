@@ -25,7 +25,7 @@ The market size for the global healthcare cyber security market was by the end o
   <img src="https://raw.githubusercontent.com/MQS-mark/CohortProject_2022/main/Week3_Shor/img/cyber_security_market.png">
 </p>
 
-Existing solutions on the market do not take a freely licensed and open-source infrastructure approach and whereas Cupboard focuses on the de-facto standard container orchestration system Kubernetes. A non-exhaustive list of players on the market can be assessed for comparison:
+Existing solutions on the market do not take a freely licensed and open-source infrastructure approach whereas Cupboard focuses on the de-facto standard container orchestration system Kubernetes. A non-exhaustive list of players on the market can be assessed for comparison:
 
 - SandboxAQ (https://sandboxaq.com/)
 
@@ -37,8 +37,5 @@ Existing solutions on the market do not take a freely licensed and open-source i
 
 - QuSecure (https://qusecure.com/)
 
-## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
 
-Example: By travelling to all destinations via the shortest route, a courier can generate the same revenue that it would have generated following any other route, but will minimize travel costs (e.g., fuel costs). By minimizing travel costs, the courier will be more profitable than it would have been had it travelled through any other route.
-
-**Please store your video externally to the repo, and provide a link e.g. to Google Drive**
+Video presentation: https://www.loom.com/share/c672bc4d5b9048e9aaa29cfaaa4b49e5
