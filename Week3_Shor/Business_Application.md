@@ -36,7 +36,7 @@ The smell of flowers permeated the air. The cherry trees were in their full bloo
 “ We have proven our new scheme against quantum computing capabilities and we are positive that it is secure. Our technology is ready just needs mass production.” Muska said in an enlightening tone. 
 
 “How much would you need to make this happen?” Peter asked. 
-“One-billion,”  Benjamin added with an air of confidence. 
+“One-billion CAD”  Benjamin added with an air of confidence. 
 “We will wire you a one-billion dollars to make your technology available as soon as possible,” Peter concluded. 
 
 In High Park, the smell of flowers continued to fill the air, and the trees ruffled in the breeze. Emerging out to the streets, the fire truck’s alarm blared and cars honked.
