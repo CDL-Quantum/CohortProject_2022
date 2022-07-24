@@ -8,6 +8,8 @@ Team 2 - Week 3: Mykola Maksymenko, Jordan Smith, Sourav Sen Choudhury, Ezad Sho
 
 Suppose you would like to send and receive messages using RSA. To start, you generate the key $(d, e, N) = (169, 25, 299)$ and publish the public part, $(25, 299)$. Shortly after, you receive an encrypted message from a friend. Implement two functions, `decrypt` and `encrypt`, according to the RSA protocol described above, to decrypt your friend's message.  Then, you can send them a response! Their public key is $(e, N) = (29, 91)$. Note that since this is a small case, you can determine by hand what their private key is. In a real-world setting, $N$ is a very large number, e.g., 2048-or 4096-bit.
 
+Please see [task1_calculations.ipynb](./Calculations/task1_calculations.ipynb) for the calculation details associated with task #1.
+
 ### Information Security using RSA
 
 In our digital age, the information that we send across networks is largely secured using an asymmetric cryptographic protocol called RSA. RSA depends on the mathematical difficulty of prime factorization of large numbers that are on the order of 2048+ bits long. Using classical computers, prime factorization of such numbers is intractable (requiring sub-exponential time), but a quantum computer running some derivative of Shor's algorithm could complete such a calculation in a super-polynomial time. Given a number to be prime factorized, $N=pq$, we calculate a parameter $\theta = (p-1)(q-1)$, choose a value of $e$ such that $\mbox{gcd}(e, \theta) = 1$, and then find $d$ such that $de = 1\ (\mbox{mod}\ \theta)$. Finally, the key is given as $(d, e, N)$. Now, to encrypt the plaintext message ($m$) into ciphertext ($c$), we use the equality:
