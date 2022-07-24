@@ -146,7 +146,7 @@ We also observe that resulting samples from above BQM model not necessary result
 While the embedding procedure will result in significantly larger number of physical qubits (in the paper it is highlighted that 74 qubits of Ising model were embedded to 1803 physical quits) for factoring large numbers it will go far beyond capacity of current devices. 
 
 The proposed mapping to Ising model, however, may be combined with state of the art classical simulations. In 
-[Surungan et.al.](https://iopscience.iop.org/article/10.1088/1751-8121/abc72c) MC simulations were reported for system sizes of up to N = 262144 spins of 2D square lattice. Hence the above example of RSA 768 may be well in range of classical simulations.
+[Surungan et.al.](https://iopscience.iop.org/article/10.1088/1751-8121/abc72c) MC simulations were reported for system sizes of up to N = 262144 spins of 2D square lattice. While [Lin et. al.](https://www.sciencedirect.com/science/article/pii/S002199911200736X) use FPGA to simulate large Ising arrays of $1024 x 1024 = 1048576$ sites. Hence the above example of RSA 768 may be well in range of classical simulations.
 
 ## References
 
