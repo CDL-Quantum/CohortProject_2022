@@ -116,13 +116,15 @@ Looking at the original paper ([variational quantum factoring](https://arxiv.org
 
 ## Challenge 3
 
-As was highlighted in Challenge 2, factoring problem $m=p \times q$ can be mapped to optimisation problem via binary representation of $m, p, q$ (see above) and a number of constraints that could result in Ising-like Hamiltonian. The result however is prone to limitations of current NISQ devices and effects of noise.
+As was highlighted in Challenge 2, factoring problem $m=p \times q$ can be mapped to optimisation problem via binary representation of $m, p, q$ (see above) and a number of constraints that could result in Ising-like Hamiltonian. The result however is prone to limitations of training the variational quantum circuits and effects of noise.
 
-The mapping to optimisation problem suggests potential to utilise quantum annealers for its solving. Here we explore CSP-based factoring on the quantum annealer and further comment on the Jiag et.al paper and its limitation.  We explored early mapping of factoring problem to Constraints Satisfaction Problem following ( https://www.dwavesys.com/media/l0tjzis2/14-1002a_b_tr_boosting_integer_factorization_via_quantum_annealing_offsets.pdf ). Here the global multiplication constraint that product of two numbers $a$ and $b$ should result in $p$ translates to bitwise multiplication constraints, i.e. $C_{\Alpha}(a_{0}, b_{0}, p_{0})$  and can be represented via AND logical gate. This results in mapping the initial problem to a corresponding logical circuit. For example, for 3-bit numbers $a$ and $b$ this translates in the following circuit. 
+The mapping to optimisation problem suggests potential to utilise quantum annealers for its solving. Here we explore CSP-based factoring on the quantum annealer and further comment on the Jiag et.al paper and its limitation.
 
-![bqm_circuit](images/challenge3_bqm_graph.png)
+We explored early mapping of factoring problem to Constraints Satisfaction Problem following ( https://www.dwavesys.com/media/l0tjzis2/14-1002a_b_tr_boosting_integer_factorization_via_quantum_annealing_offsets.pdf ). Here the global multiplication constraint that product of two numbers $a$ and $b$ should result in $p$ translates to bitwise multiplication constraints, i.e. $C_{\Lambda}(a_{0}, b_{0}, p_{0})$  and can be represented via AND logical gate. This results in mapping the initial problem to a corresponding logical circuit. For example, for 3-bit numbers $a$ and $b$ this translates in the following circuit. 
 
-The Factory Problem solution is then performed in the next steps.
+![bqm_circuit](Images/challenge3_bqm_graph.png)
+
+The Factoring Problem is then solved in the next steps.
 
 1. Formulate CSP problem by building a mutiplication circuit
 2. Convert CSP to a  BQM problem in which each node represents a variable
@@ -135,13 +137,14 @@ We also observe that resulting samples from above BQM model not necessary result
 
 | Sampled energies  | Postprocessed result |
 | ------------- | ------------- |
-| ![bqm_circuit](images/challenge3_energies.png)  | ![bqm_circuit](images/challenge3_energies.png) |
+| ![bqm_circuit](Images/challenge3_energies.png)  | ![bqm_circuit](Images/challenge3_energies_filtered.png) |
 
-Turning to Jiag et.al, the advantage of proposed method is in reduction of a number of necessary Ising-model qubits, which scales as $O(log^{2}(N))$.  For example factoring N=59989 requires just 59 variables. Far RSA 768 this would require 147456 qubits.   While the embedding procedure will result in significantly larger physical number of physical qubits (in the paper it is highlighted that 74 qubits of Ising model were embedded to 1803 physical quits) for factoring large numbers it will go far beyond capacity of current devices. 
+**Turning to Jiag et.al**, the advantage of proposed method is in reduction of a number of necessary Ising-model qubits, which scales as $O(log^{2}(N))$.  For example factoring N=59989 requires just 59 variables. For RSA 768 this would require 147456 qubits. 
 
-The proposed mapping to Ising model however may be combined with state of the art classical simulations. In 
+While the embedding procedure will result in significantly larger number of physical qubits (in the paper it is highlighted that 74 qubits of Ising model were embedded to 1803 physical quits) for factoring large numbers it will go far beyond capacity of current devices. 
+
+The proposed mapping to Ising model, however, may be combined with state of the art classical simulations. In 
 [Surungan et.al.](https://iopscience.iop.org/article/10.1088/1751-8121/abc72c) MC simulations were reported for system sizes of up to N = 262144 spins of 2D square lattice. Hence the above example of RSA 768 may be well in range of classical simulations.
-. 
 
 ## References
 
