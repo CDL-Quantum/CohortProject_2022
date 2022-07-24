@@ -167,7 +167,55 @@ The answer is that it is able to handle surprisingly little. For N = 15, it was 
 Execution time: 122.52815866470337 seconds
 ```
 
-However, when we tried N = 21, the algorithm already started failing. 
+However, when we tried N = 21, the algorithm already started taking an extremely long time. However, after about two hours, the algorithm finally finished running:
+
+```
+Execution time: 7021.139513254166 seconds
+```
+
+Beyond these two values though, the other values of N we tried to benchmark required more than 24 qubits, which was the limit of the IBM QASM simulator, so we were unable to try to run them to benchmark them. We also noticed that for both N = 15 and N = 21, we had a chance of failing. From the notebook, where we left the result of N = 21, we see that:
+
+```
+Using a=2, found the factors of N=21 in 32.8000 % of the cases
+```
+
+This arises from the fact that the measurement constantly gives different measurement results, and not every measurement result is guarenteed to provide the correct factors. For a simulator, and for small values of N, it is still possible to go through all the results we get one by one until we arrive at one that provides the correct factorization, like we did in this example. However, for a quantum computer with noise, many of the measurement results will be influenced by noise, and be rubbish. For higher values of N, it becomes more and more impractical to go through one by one until we get one that provides the correct factorization if some of the measurement results are due to noise, simply because of how many values one has to get through (the values needed to be checked rises exponentially). Thus, this speaks to the need for fault tolerant quantum computers to ensure correct results to limit the number of measurement results one has to go through.
+
+Now that we have established that we were unable to benchmark the running time, we looked at the number of qubits and the circuit depth instead. The table below shows a brief rundown of the different valus of N we tried and the number of qubits and circuit depth required:
+
+| N             | Number of qubits | Circuit Depth  |
+| ------------- |:----------------:| --------------:|
+| 15            | 18               | 6433           |
+| 21            | 22               | 12060          |
+| 33            | 26               | 20566          |
+| 51            | 26               | 20566          |
+| 69            | 30               | 32755          |
+| 85            | 30               | 32755          |
+| 91            | 30               | 32755          |
+| 143           | 34               | 49527          |
+| 187           | 34               | 49527          |
+
+![fig_3_1](img/qubits_plot.png)
+![fig_3_2](img/circuit_depth.png)
+
+As one can see, as N increases, the number of qubits and circuit depth increases at an logarithmic rate. From the table, one can tell that the boundaries for the increase in number of qubits and circuit depth comes with every exponential of 2, for example 33 and 51 needs the same number of qubits and circuit depth because they are between 32 and 64, and 65, 85 and 91 needs the same number of qubits and circuit depth because they are between 64 and 128, and so on so forth. From these results, one can tell of the algorithm's potential, as the rate of which the resources required increases with the size of N actually increases fairly slowly. 
+
+However, the baseline resources required to run the algorithm is extremely high. Even for N = 15, we require 18 qubits to begin with, more than most current day quantum computers have, with an incredibly long circuit depth of 6433. The length of this circuit pretty much guarentees that one would need a fault-tolerant quantum computer to run it. This is inline with most current research on Quantum Phase Estimation, as it requires extremely long circuit depths to run. The only reason why our implementation of N = 15 and N = 21 succeeded was because we were running on a simulator, otherwise the long circuit depth and noise from the quantum computer would have given us basically unusable result. 
+
+As a last experiment, we wanted to test our classical implementation to see where it fails. We note that this is no where near to the best classical implementation there is (that would be the general number field sieve), but we thought it would be instructive in interests of seeing where the quantum implementation needs to be to even beat a naive implementation. 
+
+| N             | Elapsed Time  | Factorization  | Number of Qubits | Circuit Depth  |
+| ------------- |:-------------:|:--------------:|:----------------:|:--------------:|
+| 91            | 0.0           | (7, 13)        | 30               | 32755          |
+| 3901          | 0.000997066   | (47, 83)       | 50               | 183805         |
+| 64777         | 0.0009970664  | (307, 211)     | 66               | 488371         |
+| 904279        | 0.08884477    | (907, 997)     | 82               | ?              |
+| 38089591      | 16.2632269    | (5051, 7541)   | 106              | ?              |
+| 99400891      | 170.481374    | (9967, 9973)   | 110              | ?              |
+
+Note: The question marks are there because my computer started hanging trying to construct the circuit.
+
+While we could have gone higher with the classical one, we decided to stop because the time elapsed would grow pretty quickly. That being said, we can glean from this as to how far quantum computing has to go. As mentioned earlier, the circuit depth pretty much ensures that we need fault tolerant quantum computers with proper logical qubits, and to even achieve the same results as a classical computer running a fairly naive algorithm that takes about slightly longer than two minutes to run, we are going to need around 100 logical qubits. That being said, we can also see that the scaling of the qubits with respect to N is actually quite slow, which speaks well of at least its long term potential.
 
 ## Task 4: Business Application
 * Discuss a new quantum-safe protocol as part of your Business Application
