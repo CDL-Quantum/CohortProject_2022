@@ -65,5 +65,6 @@ For the experts, young quantum hardware companies are given the opportunity to c
 ## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
 
 link to the presentation: https://drive.google.com/file/d/1hJBm_Fq2kv5P8hXvCocEHjzK3p4Hn8lp/view?usp=sharing
+
 link to the slides: https://docs.google.com/presentation/d/1P6UYxQ1xh4E1AhxwI4ynlWlgVs7XNjeMEnK-kQHldD4/edit?usp=sharing
 
