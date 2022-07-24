@@ -44,7 +44,6 @@ def decrypt(message, private_d, N):
     """
     decoded_message = ""
 
-    # YOUR CODE HERE
     for c in message:
         decoded_message += decode[c ** private_d % N]
 
@@ -65,7 +64,6 @@ def encrypt(message, public_e, N):
     """
     encoded_message = []
 
-    # YOUR CODE HERE
     for lett in message:
         encoded_message.append(encode[lett]**public_e % N)
 
