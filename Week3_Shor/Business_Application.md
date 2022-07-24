@@ -2,28 +2,23 @@
 
 ![RSA and QISQ Comic](img/RSA_Encryption_Comic_2.png)
 
-
-## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/MQS-mark/CohortProject_2022/main/Week3_Shor/img/Cupboard_Logo.png">
 </p>
 
-Cupboard provides quantum secure encryption and analysis tools to protect your valuable porcelain.
+<p align="center">
+<b>Cupboard</b> provides quantum secure encryption and analysis tools to protect your valuable porcelain.
 
-Our SaaS enterprise solutions allow you to implement the most cutting-edge cyber-security infrastructure to have the most efficient architecture for your business while being protected against malicious attacks.
+Our SaaS enterprise solutions allow you to implement the most cutting-edge cyber-security infrastructure to build on top your business while being protected against malicious attacks.
 
 Our tools combine articifial intelligence and quantum technologies to prepare you for the hybrid cloud and post-RSA era.
+</p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/MQS-mark/CohortProject_2022/main/Week3_Shor/img/Cupboard_Stack.png">
 </p>
 
-## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
-
-Examples: 
-- Federal Express
-- Canada Post
+The pharma and health industries are dealing with very demanding data security protection when it comes to novel pharmaceutical recipes, clinical research data with human trials and of course health documents of individuals for optimal patients treatment. This means that throughout the whole domain drug discovery, drug development, drug manufacturing and disease treatment a very cyber-secure infrastructure needs to be provided for numerous entities including companies, authorities, research institutions, hospitals and connected service providers. 
 
 ## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
 
