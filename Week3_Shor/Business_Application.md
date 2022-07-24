@@ -20,6 +20,8 @@ Building a comprehensive measure for benchmarking is a difficult task in itself.
   - To identify information loss causes, we  implement a measure to detect losses in purity. In the short term, we use the negativity measure $\eta = Tr(\rho^T)-1$ (Kendon and Munro 2006) to circumvent memory issues. In the intermediate term, measures such a Von Neumann entropy $S_{VN}(\rho) = -Tr[\rho \log(\rho)]$ or second order Rényi entropy $S^{(2)}(\rho) = - \log(Tr(\rho^2))$ can be computed at strategic steps of the algorithm. The protocol proposed in (Uzdin 2021) will eventually enable us to quantify explicitly the information loss by building the expectation value of the dissipator. We will ultimately be able to seperate coherent and incoherent errors in our measure, while keeping the test scalable.
 - The score can be adapted to perform a holistic or specialized assessment of the hardware. For example, Shor's algorithm can be used for the former, while its variational translation (Anschuetz et al. 2018) quantifies whether the device already has the resources necessary for variational algorithms.
 
+The code for the noisy simulations can be found [here](./NoisyFactorization.ipynb).
+
 
 ## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
 
