@@ -139,7 +139,7 @@ After this the the above equations  are simplified (i.e truncating the summation
 
 - step 6: Measure quantum state to obtain results
 
-Therefore there are essentials four blocks  in the VQFT implementation.
+Therefore there are essentially four blocks  in the VQFT implementation.
 
 1. Preprocessing
 2. Hamiltonian creation
@@ -151,13 +151,13 @@ Therefore there are essentials four blocks  in the VQFT implementation.
 
 Looking at the original paper ([variational quantum factoring](https://arxiv.org/abs/1808.08927)) and the experiments performed by [mstechly](https://github.com/mstechly/vqf) we find the following- 
 
-1. As $m$ gets bigger the the number of qubits needed to factor $m = p \times q$ icreases rapidly without classical preprocessing. With classical preprocessing however the number of qubits increases much more slowly.
+1. As $m$ gets bigger the the number of qubits needed to factor $m = p \times q$ icreases rapidly without classical preprocessing. With classical preprocessing however the number of qubits increases much more slowly. After the classical preprocessing, the number of qubits necessary for the VQF algorithm scales approximately as $\mathcal{O}(n_m)$. In contrast, with no classical preprocessing, VQF’s qubit requirements scale as $\mathcal{O}(n_mlog (n_m))$ asymptotically(see FIG. 1. in [variational quantum factoring](https://arxiv.org/abs/1808.08927)). 
 
-2. Further elaborating on the above if we don't know the length of $p, q$ the qubit scaling (with classical preprocessing)  in advance is worse that compared to the case when the  length of $p, q$ is known.
+2. Further elaborating on the above, if we don't know the length of $p, q$ in advance, the qubit scaling (with classical preprocessing)  is worse than that compared to the case when the  length of $p, q$ is known.
 
-3. The closeness of the VQF results tothe exact result crucially depends of the choice of $m$. For certain numbers the VQF results are very close to the exact one, whereas for others its very bad (see FIG. 2. in [variational quantum factoring](https://arxiv.org/abs/1808.08927)).   
+3. The closeness of the VQF results to the exact result crucially depends of the choice of $m$. For certain numbers the VQF results are very close to the exact one, whereas for others its very bad (see FIG. 2. in [variational quantum factoring](https://arxiv.org/abs/1808.08927)).   
 
-4. The number of BFGS function evaluations increases withthe number of circuit layers (see FIG. 3. in [variational quantum factoring](https://arxiv.org/abs/1808.08927)). (The scaling is approximately linear.) 
+4. The number of BFGS function evaluations increases with the number of circuit layers (see FIG. 3. in [variational quantum factoring](https://arxiv.org/abs/1808.08927)). (The scaling is approximately linear.) 
 
 5. [mstechly](https://github.com/mstechly/vqf) also found that for certain numbers no matter how hard you try, you cannot find the exact solution with just one QAOA layer.
 
