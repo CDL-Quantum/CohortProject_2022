@@ -14,6 +14,72 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 * Use Shor's algorithm to factor increasingly large sequences
 * Discuss a new quantum-safe protocol as part of your Business Application
 
+### Task 1: Privacy is key
+
+``` python
+
+message_from_friend = [
+    292, 290, 218, 55, 127, 174, 171, 127, 112, 24,
+    251, 248, 127, 132, 218, 213, 24, 251, 248, 174, 55,
+    53, 127, 233, 24, 268, 24, 251, 248
+]
+
+lett = "0123456789abcdefghijklmnopqrstuvwxyz "
+
+decode = {ii:lett[ii] for ii in range(37)}
+
+encode = {lett[ii]:ii for ii in range(37)}
+
+def decrypt(message, private_d, N):
+    """Decrypt an encoded message. 
+ 
+    Args:
+        message (list[int]): A list of integers representing the secret message.
+            Each integer in the list represents a different character in the message.
+        private_d (int): Your (private) portion of the RSA key.
+        N (int): The modulus of the RSA key.
+ 
+    Returns:
+        str: The decoded message.
+    """
+    decoded_message = ""
+
+    # YOUR CODE HERE
+    for c in message:
+        decoded_message += decode[c ** private_d % N]
+
+    return decoded_message
+
+
+def encrypt(message, public_e, N):
+    """Encrypt a message 
+
+    Args:
+        message (str): A string representation of the message to send. It should
+            contain only the characters a-z (lowercase), numbers 0-9, and spaces.
+        public_e (int): The public portion of the RSA key (e, N) used for encoding.
+        N (int): The modulus of the RSA key.
+ 
+    Returns:
+        list[int]: The message, encoded using the public key as a list of integers.
+    """
+    encoded_message = []
+
+    # YOUR CODE HERE
+    for lett in message:
+        encoded_message.append(encode[lett]**public_e % N)
+
+    return encoded_message
+
+print(decrypt(message_from_friend, 169, 299))
+
+```
+The result of the above code is: `what is your favourite colour`
+
+## Task 2: Everything is in order
+
+
+
 After you have completed your tasks, consider the optional Challenges below!
 
 ## Further Challenges:
