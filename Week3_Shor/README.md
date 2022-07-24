@@ -120,7 +120,9 @@ As was highlighted in Challenge 2, factoring problem $m=p \times q$ can be mappe
 
 The mapping to optimisation problem suggests potential to utilise quantum annealers for its solving. Here we explore CSP-based factoring on the quantum annealer and further comment on the Jiag et.al paper and its limitation.
 
-We explored early mapping of factoring problem to Constraints Satisfaction Problem following ( https://www.dwavesys.com/media/l0tjzis2/14-1002a_b_tr_boosting_integer_factorization_via_quantum_annealing_offsets.pdf ). Here the global multiplication constraint that product of two numbers $a$ and $b$ should result in $p$ translates to bitwise multiplication constraints, i.e. $C_{\Lambda}(a_{0}, b_{0}, p_{0})$  and can be represented via AND logical gate. This results in mapping the initial problem to a corresponding logical circuit. For example, for 3-bit numbers $a$ and $b$ this translates in the following circuit. 
+In the [Factoring_CSP notebook](Factoring_CSP.ipynb) we explored early mapping of factoring problem to Constraints Satisfaction Problem following ( https://www.dwavesys.com/media/l0tjzis2/14-1002a_b_tr_boosting_integer_factorization_via_quantum_annealing_offsets.pdf ) and solving it on the DWave machine. 
+
+Here the global multiplication constraint that product of two numbers $a$ and $b$ should result in $p$ translates to bitwise multiplication constraints, i.e. $C_{\Lambda}(a_{0}, b_{0}, p_{0})$  and can be represented via AND logical gate. This results in mapping the initial problem to a corresponding logical circuit. For example, for 3-bit numbers $a$ and $b$ this translates in the following circuit. 
 
 ![bqm_circuit](Images/challenge3_bqm_graph.png)
 
