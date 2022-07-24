@@ -1,11 +1,56 @@
 ![CDL 2022 Cohort Project](../CDL_logo.jpg)
+
 ## Project 3: Shor's algorithm
 
 Team 2 - Week 3: Mykola Maksymenko, Jordan Smith, Sourav Sen Choudhury, Ezad Shojaee, Kenneth Sharman
 
 ## Task 1: Privacy is key
 
-...
+Suppose you would like to send and receive messages using RSA. To start, you generate the key $(d, e, N) = (169, 25, 299)$ and publish the public part, $(25, 299)$. Shortly after, you receive an encrypted message from a friend. Implement two functions, `decrypt` and `encrypt`, according to the RSA protocol described above, to decrypt your friend's message.  Then, you can send them a response! Their public key is $(e, N) = (29, 91)$. Note that since this is a small case, you can determine by hand what their private key is. In a real-world setting, $N$ is a very large number, e.g., 2048-or 4096-bit.
+
+### Information Security using RSA
+
+In our digital age, the information that we send across networks is largely secured using an asymmetric cryptographic protocol called RSA. RSA depends on the mathematical difficulty of prime factorization of large numbers that are on the order of 2048+ bits long. Using classical computers, prime factorization of such numbers is intractable (requiring sub-exponential time), but a quantum computer running some derivative of Shor's algorithm could complete such a calculation in a super-polynomial time. Given a number to be prime factorized, $N=pq$, we calculate a parameter $\theta = (p-1)(q-1)$, choose a value of $e$ such that $\mbox{gcd}(e, \theta) = 1$, and then find $d$ such that $de = 1\ (\mbox{mod}\ \theta)$. Finally, the key is given as $(d, e, N)$. Now, to encrypt the plaintext message ($m$) into ciphertext ($c$), we use the equality:
+
+$c = m^{e}\ \mbox{mod}\ N$
+
+And to decrypt a ciphertext message into plaintext we use:
+
+$m = c^{d}\ \mbox{mod}\ N$.
+
+To explore how RSA works and why it can be defeated by Shor's algorithm, we will use the RSA protocol to decrypt an encrypted message, which has the following two layers of mapping: characters $\rightarrow$ plaintext $\rightarrow$ ciphertext.
+
+After defining the 'decrypt' and 'encrypt' functions, we take a desired ciphertext message (sent from our friend, message= [292, 290, 218, 55, 127, 174, 171, 127, 112, 24, 251, 248, 127, 132, 218, 213, 24, 251, 248, 174, 55, 53, 127, 233, 24, 268, 24, 251, 248]) and decode it using the known key $(d, e, N) = (169, 25, 299)$ and our dictionary which maps character $\leftrightarrow$ plaintext, dic ={0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:a, 11:b, 12:c, 13:d, 14:e, 15:f, 16:g, 17:h, 18:i, 19:j, 20:k, 21:l, 22:m, 23:n, 24:o, 25:p, 26:q, 27:r, 28:s, 29:t, 30:u, 31:v, 32:w, 33:x, 34:y, 35:z, 36: }.
+
+Using our 'decrypt' function, 'dic', and our known key, we decrypt the message and find it to be: 
+
+plaintext=[32, 17, 10, 29, 36, 18, 28, 36, 34, 24, 30, 27, 36, 15, 10, 31, 24, 30, 27, 18, 29, 14, 36, 12, 24, 21, 24, 30, 27]. 
+
+Now we must map the message from plaintext (integers) to characters using our 'map_plaintext_to_char' function and find that the message says: 'what is your favourite colour'. The good news is that this is not jibberish, so it seems that we decrypted and mapped the message correctly.
+
+Now let's use our dictionary and our friend's public key, $(e, N) = (29, 91)$ to map and encode a response: 
+
+'my favourite colour is blue' $\rightarrow$ plaintext=[22, 34, 36, 15, 10, 31, 24, 30, 27, 18, 29, 14, 36, 12, 24, 21, 24, 30, 27, 36, 18, 28, 36, 11, 21, 30, 14] $\rightarrow$ ciphertext=[29, 34, 43, 71, 82, 5, 33, 88, 27, 44, 22, 14, 43, 38, 33, 21, 33, 88, 27, 43, 44, 84, 43, 72, 21, 88, 14].
+
+Okay, so we have what appears to be a mapped and encrypted message consisting of ciphertext. Now to confirm that we encoded the message correctly, let's find the prime factors of $N = 91$ using an online calculator, calculate $\theta$, and solve for the value of the private key parameter $d$. We use this value of $d$ to decrypt our message using our 'decrypt' function to ensure that the plaintext reads correctly:
+
+$(e, N) = (29, 91)$
+
+$p = 7$
+
+$q = 13$
+
+$\theta = 72$
+
+$d = 5$
+
+So our friend's entire key is $(d, e, N) = (5, 29, 91)$. Now decrypting using this key, our message in plaintext is:
+
+plaintext=[22, 34, 36, 15, 10, 31, 24, 30, 27, 18, 29, 14, 36, 12, 24, 21, 24, 30, 27, 36, 18, 28, 36, 11, 21, 30, 14]
+
+And mapping from plaintext to characters, we recover 'my favourite colour is blue'.
+
+Mission complete!
 
 ## Task 2: Everything is in order
 
@@ -120,7 +165,7 @@ As was highlighted in Challenge 2, factoring problem $m=p \times q$ can be mappe
 
 The mapping to optimisation problem suggests potential to utilise quantum annealers for its solving. Here we explore CSP-based factoring on the quantum annealer and further comment on the Jiag et.al paper and its limitation.
 
-In the [Factoring_CSP notebook](Factoring_CSP.ipynb) we explored early mapping of factoring problem to Constraints Satisfaction Problem following ( https://www.dwavesys.com/media/l0tjzis2/14-1002a_b_tr_boosting_integer_factorization_via_quantum_annealing_offsets.pdf ) and solving it on the DWave machine. 
+In [challenge3_calculations.ipynb](./Calculations/challenge3_calculations.ipynb) we explored early mapping of factoring problem to Constraints Satisfaction Problem following ( https://www.dwavesys.com/media/l0tjzis2/14-1002a_b_tr_boosting_integer_factorization_via_quantum_annealing_offsets.pdf ) and solving it on the DWave machine. 
 
 Here the global multiplication constraint that product of two numbers $a$ and $b$ should result in $p$ translates to bitwise multiplication constraints, i.e. $C_{\Lambda}(a_{0}, b_{0}, p_{0})$  and can be represented via AND logical gate. This results in mapping the initial problem to a corresponding logical circuit. For example, for 3-bit numbers $a$ and $b$ this translates in the following circuit. 
 
