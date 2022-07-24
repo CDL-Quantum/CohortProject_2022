@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-<b>Cupboard</b> provides quantum secure encryption and analysis tools to protect your valuable porcelain.
+<b>Cupboard provides quantum secure encryption and analysis tools to protect your valuable porcelain.</b>
 
 Our SaaS enterprise solutions allow you to implement the most cutting-edge cyber-security infrastructure to build on top your business while being protected against malicious attacks.
 
