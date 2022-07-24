@@ -43,7 +43,7 @@ the private part of the key from the public one.
 Suppose Alice would like to send a message to Bob. The RSA protocol looks
 something like this:
 
-![RSA flowchart](rsa.png)
+![RSA flowchart](img/rsa.png)
 
 There is some underlying number theory behind *why* this works. The details are
 provided in [these slides](rsa_number_theory.pdf), if you are keen to explore

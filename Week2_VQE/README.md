@@ -484,6 +484,8 @@ value of a, once they are all combined together.
 Other options would be to apply constraint penalty within the variational
 algorithm, or to apply an (approximate unitary) projection operator. 
 
+-> All questions from the instructions pdf have been answered in this pdf document: https://github.com/MQS-mark/CohortProject_2022/blob/main/Week2_VQE/CDL_week_2_answers.pdf
+
 ## Further Challenges:
 
 - How to obtain excited electronic states of the same or different symmetry?
@@ -500,6 +502,8 @@ This has been discussed in many contexts. The challenge is to limit not only the
 - Compress larger basis sets into smaller number of qubits.
 Of course, spin symmetry provides one way to do this. There are other techniques discussed in the references, e.g. "qubit tapering". 
 
+-> All questions from the instructions pdf have been answered in this pdf document: https://github.com/MQS-mark/CohortProject_2022/blob/main/Week2_VQE/CDL_week_2_answers.pdf
+
 ## Business Application
 
 For each week, your team is asked to complete a Business Application. Questions you will be asked are:
@@ -510,3 +514,5 @@ For each week, your team is asked to complete a Business Application. Questions 
 - Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language.
 
 For more details refer to the [Business Application found here](./Business_Application.md)
+
+-> The business application can be found here: https://github.com/MQS-mark/CohortProject_2022/blob/main/Week2_VQE/Business_Application_final.md
