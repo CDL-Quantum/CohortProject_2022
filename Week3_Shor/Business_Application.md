@@ -1,30 +1,48 @@
-![CDL 2022 Cohort Project](../CDL_logo.jpg)
-# Quantum Cohort Project Business Application
+ ##                High-Park and Security Under Threat: A path to Post-Quantum Security 
 
-For each weekly project, your team is asked to complete the below business application exercise.
-To complement the technical tasks, please consdier the four questions below.
-You are free to format your response to these four questions as you wish (with the final question done as a short recorded video), and to include
-the content (or links to the content) on your forked repository.
+![BreadCrumbTrail_1300](https://user-images.githubusercontent.com/25537090/180493882-86dc8fc1-8346-43f3-b78a-919a986c83a5.jpg)[1](https://www.quantamagazine.org/quantum-secure-cryptography-crosses-red-line-20150908/) Stolen Secrets
 
-A brief example for each question is included for the 
-[Traveling Salesman Problem.](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+The world was on high alert, but nature was unaware of it. The bright April sun was looking over the lush green grounds of the high park, Toronto, Canada. The Trees were standing squarely against the sky, doing their best to guard the park from city life.  The skyline was visible, hinting that civilization was nearby. Birds perched on the trees were chirping, squirrels munching on the fallen tree leaves. The geese were roaming around, mixing with humans, who came to spend their idle hours in the appreciation of nature. The river was flowing, shimmering under the sun like the beads of Afghan women’s necklaces under the chandelier of Kabul wedding halls. Fish were swimming, softly and steadily, in the river deep below, far from the prying eyes of humans.
 
-## Step 1: Explain the technical problem you solved in this exercise
+In the midst of all this, three heads entered the park. A woman, and two men. All three of them seemed to be on the verge of a serious conversation. They were talking about the recent breakthrough in Fault-tolerant quantum Computers, from a lab in Pakistan,  and how that was a threat to the national security of Canada.
 
-Example: Finding a global minimum in settings where a classical approach may not be able to find a global minimum.
+The three people in question who were striding on the walking path were: Muska, a young Afghan graduate student at the University of Toronto, who looked around age 26, wearing blue jeans and a fainted yellow shirt, and Benjamin, a professor named from the University of Toronto, a bald, middle-aged man, with eyes beaming with curiosity, in a white shirt and black pants.  Muska and Benjamin are co-founders of a startup and have developed a new protocol that was selected as secure by all quantumist in the field.  And Peter, from the Canadian security intelligence service (CSIS), in a tie and a suit, wearing black sunglasses, looked like James Bond.
 
-## Step 2: Explain or provide examples of the types of real-world problems this solution can solve
+“Explain to me what has just happened and how the protocol you have come up with in your lab would help the government of Canada,” Peter asked in a dominating serious tone, typical of people in those jobs.” We think that is just a fictional threat.” 
 
-Example: A courier has to deliver parcels to several locations and is looking to minimize its travel time. (e.g., “the travelling salesman problem”).
+“No, no! one thing that is not fiction is the reality of the emergence of Quantum technology,” Benjamin said emphatically.  “We entered the Quantum era when google announced its quantum supremacy back in 2019. Since then, my Ph.D. students and I started working tirelessly to come up with new schemes to protect the national interests of Canada.” 
 
-## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
+A bike behind them rang its bell to pass. Their talk after a short pause continued. 
 
-Examples: 
-- Federal Express
-- Canada Post
+“Even if Pakistan didn’t achieve the breakthrough in Fault-tolerant quantum computers, years from now all the data was in threat, so even a graduate student in a lab would be able to decode some of the most important secrets. ” Benjamin added. 
 
-## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
+“We knew the type the threat we would face when Quantum computers become a reality so we started working on those projects to not get caught off-guard when a country that poses a threat to our national security first builds Quantum computers,”  Muska added enthusiastically. ” Quantum computers are still five years away and what the lab in Pakistan just showed that they now have experimentally shown that Fault-tolerant entangling gates, a very crucial stepping stone to Quantum computer.” 
 
-Example: By travelling to all destinations via the shortest route, a courier can generate the same revenue that it would have generated following any other route, but will minimize travel costs (e.g., fuel costs). By minimizing travel costs, the courier will be more profitable than it would have been had it travelled through any other route.
+Peter continued to ask questions about the seriousness of the threat.
+Benjamin in his calm manner explained to him the laws of quantum mechanics can be used to break RSA, which was used to encrypt digital secrets.  He went on in detail. 
 
-**Please store your video externally to the repo, and provide a link e.g. to Google Drive**
+After Benjamin’s long talk, Peter’s red face turned even redder and asked for more about the new protocol. 
+
+“Our quantum-safe protocol will target to generate a key-pairs that does not follow RSA logistics and is completely built on quantum random generator based on quantum correlation. Our protocol will make every key unhackable because the key will be generated only through this unique new protocol using quantum memory which is erased permanently after the generation of the key. “Muska added.” Unless the generator (person) of the key carefully notes it down, no one on the planet can hack it anymore. ”
+
+"Our scheme is at the top of QIST selection," Benjamin informed. 
+
+Peter, took a sigh of relief and said,” So our security is not jeopardized yet.”
+
+“If we act now, and change our encryption scheme in a year, then no,” Benjamin said. 
+
+The smell of flowers permeated the air. The cherry trees were in their full bloom, giving shade to Muska, Benjamin, and Peter, as they walked underneath them. A damp spring breeze wafted in the air, and children with their parents passed by,  oblivious to the important conversation happening in their midst. 
+
+“ We have proven our new scheme against quantum computing capabilities and we are positive that it is secure. Our technology is ready just needs mass production.” Muska said in an enlightening tone. 
+
+“How much would you need to make this happen?” Peter asked. 
+“One-billion CAD”  Benjamin added with an air of confidence. 
+“We will wire you a one-billion dollars to make your technology available as soon as possible,” Peter concluded. 
+
+In High Park, the smell of flowers continued to fill the air, and the trees ruffled in the breeze. Emerging out to the streets, the fire truck’s alarm blared and cars honked.
+The heads departed, each one filled with a new purpose, and the promise of security was made, in a verbal agreement. 
+
+Waiting for the train to arrive and take her home, Muska thought to herself, what a strange world we are living in one hand we humans are so sophisticated that we can go inside an atom and manipulate and make it do all kinds of spooky work, and other another hand we are still in the barbarian skin that we can use this technology to threaten others.  
+The train arrived, and Muska started to shift her focus on how his Ph.D. supervisor and co-founder Benjamin would build a team and deliver the product soon.   
+
+This is a fictional piece by team member Sultana Hadi
