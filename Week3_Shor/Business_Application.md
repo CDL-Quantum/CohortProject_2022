@@ -43,7 +43,15 @@ Building a comprehensive measure for benchmarking is a difficult task in itself.
 
 ## Step 3: Identify at least one potential customer for this solution - ie: a business who has this problem and would consider paying to have this problem solved
 
-Our service can be attractive both for quantum technology experts, in the academia and in private research institutions, and laymen. For the former, young quantum hardware companies are given the opportunity to compete on an equal footing with the largest companies and quantum developpers are offered access to the data bank to choose the most suitable platform for their application. On the other hand, the score strengthens trust to attract potential investments: a clear report is provided to distinguish rumors and real achievements. Any institution dealing with sensitive data, such as banks or governments, must keep an eye on the evolution of quantum technologies to protect them: to make this process easier, we provide access to our certified data base and encyclopedia for a rapid grasp of the technological evolution.
+Our service can be attractive both for:
+- quantum technology experts
+  - in the academia, eg. university labs 
+  -  private research institutions such as IBM, Xanadu, IonQ, Google (and other start-ups to be formed at the CDL)
+-  investors in the quantum field
+-  banking institutions: Credit Suisse, JPMorgan Chase & Co
+-  Governements, in particular the military and any department requiring data protection, but also the ministry in charge of research to allocate fundings.  
+
+For the experts, young quantum hardware companies are given the opportunity to compete on an equal footing with the largest companies and quantum developpers are offered access to the data bank to choose the most suitable platform for their application. On the other hand, the score strengthens trust to attract potential investments: a clear report is provided to distinguish rumors and real achievements. Any institution dealing with sensitive data, such as banks or governments, must keep an eye on the evolution of quantum technologies to protect them: to make this process easier, we provide access to our certified data base and encyclopedia for a rapid grasp of the technological evolution.
 
 ## References
 - Anschuetz, Eric R., Jonathan P. Olson, Alan Aspuru-Guzik, and Yudong Cao. 2018. “Variational Quantum Factoring.” ArXiv, 08 27, 2018, arxiv.1808.08927. https://arxiv.org/abs/1808.08927.
@@ -53,4 +61,6 @@ Our service can be attractive both for quantum technology experts, in the academ
 - Uzdin, Raam. 2021. “Methods for measuring noise, purity changes, and entanglement entropy in quantum devices and systems.” ArXiv, 12 1, 2021, arXiv:2112.00546. https://arxiv.org/abs/2112.00546.
 
 ## Step 4: Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language
+
+link to the slides: https://docs.google.com/presentation/d/1P6UYxQ1xh4E1AhxwI4ynlWlgVs7XNjeMEnK-kQHldD4/edit?usp=sharing
 
