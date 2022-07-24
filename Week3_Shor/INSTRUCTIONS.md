@@ -110,7 +110,7 @@ p, q = 1, 1
 while p * q is not N:
     choose value a in the range [2, ..., N - 2]
 	
-    if a and N are coprime:
+    if a and N are not coprime:
         # we are lucky!
         p = a
         q = N / a
