@@ -19,6 +19,54 @@ message_from_friend = [
 ]
 
 
+def char_to_number(letter: str)->int:
+    """
+    Function that converts characters to numbers via the mapping:
+    - Numbers 0-9: 0-9
+    - Letters a-z: 10-35
+    - Space: 36
+
+    Using unicode ord() function, we get numeric representation 
+    of the character and then map to the appropriate ranges.
+    """
+    letter_unicode = ord(letter)
+
+    if ord("0") <= letter_unicode <= ord("9"):
+        letter_decoded = (letter_unicode - ord("0"))
+    
+    elif ord("a") <= letter_unicode <= ord("z"):
+        letter_decoded = (letter_unicode - ord("a")) + 10
+    
+    elif letter == " ":
+        letter_decoded = 36
+    
+    return letter_decoded
+
+
+def number_to_char(number: int)->str:
+    """
+    Function that converts characters to numbers via the mapping:
+    - 0-9: numbers 0-9
+    - 10-35: letters a-z (only lowercase is used)
+    - 36: space
+
+    Using unicode chr() function, we get numeric representation 
+    of the character and then map to the appropriate ranges.
+    """
+
+    if 0 <= number <= 9:
+        unicode = number + ord("0")
+    
+    elif 10 <= number <= 35:
+        unicode = number + ord("a") - 10
+
+    elif number == 36:
+        unicode = ord(" ")
+
+    return chr(unicode)
+
+
+
 def decrypt(message, private_d, N):
     """Decrypt an encoded message. 
  
@@ -31,11 +79,12 @@ def decrypt(message, private_d, N):
     Returns:
         str: The decoded message.
     """
-    decoded_message = ""
-
-    # YOUR CODE HERE
-
-    return decoded_message
+    # Implement RSA decoding cᵈ mod N
+    decoded_message = [(c**private_d) % N for c in message]
+    
+    # Map from decoded characters to string
+    decoded_letters = [number_to_char(char) for char in decoded_message]
+    return "".join(decoded_letters)
 
 
 def encrypt(message, public_e, N):
@@ -50,8 +99,8 @@ def encrypt(message, public_e, N):
     Returns:
         list[int]: The message, encoded using the public key as a list of integers.
     """
-    encoded_message = []
-
-    # YOUR CODE HERE
-
+    numeric_message = [char_to_number(letter) for letter in list(message)]
+    
+    # Implement RSA encoding c = mᵉ mod N
+    encoded_message = [(m**public_e) % N for m in numeric_message]
     return encoded_message
