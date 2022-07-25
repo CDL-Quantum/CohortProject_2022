@@ -22,7 +22,7 @@ The most widely researched scheme is the $\mathrm{BB} 84$ protocol by Bennett an
 3. A qubit cannot be cloned unless its state is known
 
 
-![task_4-2.png](attachment:task_4-2.png)
+![task_4-2.png](task_4.png)
 
 <center> Fig 1. How works BB84? </center>
 
@@ -63,12 +63,15 @@ You can find 2 proposal of this in the following links:
 
 - [product 1](./Challenge.ipynb),
 - [product 2 version 1](./BB84.py),
-- [product 2 version 2](./task_solution_4.ipynbb)
+- [product 2 version 2](./task_solution_4.ipynb)
 
 
 
 ## Potential customer 
 
+As possible customers we consider telephone companies such as AT&T and entertainment platform companies such as Netflix, Amazon Prime, Disney +, HBO Max among others, as it is following the security trend where the accounts of its users can be shared among family and friends can be supported in these protocols to reduce the incidence of theft of passwords for such services,
 
 
-[Video presentation](https://drive.google.com/file/d/1FOh_QsKEUat25lQVEpN4Ykd452iau5Uz/view?usp=sharing)
+## Presentation 
+
+[Video of the presentation](https://drive.google.com/file/d/1FOh_QsKEUat25lQVEpN4Ykd452iau5Uz/view?usp=sharing)
