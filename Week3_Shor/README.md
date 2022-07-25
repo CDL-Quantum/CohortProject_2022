@@ -9,10 +9,10 @@ Open [INSTRUCTIONS.md](./INSTRUCTIONS.md) to begin learning about your project f
 **Please edit this markdown file directly with links to your completed tasks and challenges.**
 
 ## Tasks include:
-* Encrypt and decrypt a message using RSA
-* Research and implement the quantum algorithm for order finding
-* Use Shor's algorithm to factor increasingly large sequences
-* Discuss a new quantum-safe protocol as part of your Business Application
+* [Encrypt and decrypt a message using RSA](./task_1.py)
+* [Research and implement the quantum algorithm for order finding](./Simple_Factorization.ipynb)
+* [Use Shor's algorithm to factor increasingly large sequences](./Simple_Factorization.ipynb)
+* [Discuss a new quantum-safe protocol as part of your Business Application](./Business_Application.md)
 
 After you have completed your tasks, consider the optional Challenges below!
 
