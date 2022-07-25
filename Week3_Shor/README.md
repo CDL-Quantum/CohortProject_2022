@@ -111,7 +111,7 @@ The following screenshot summarizes the job submission on one of the IBM machine
 
 ![IBM_run](./Images/Shor_algorithm_on_IBM_07.24.png)
 
-The result for factoring $ N = 91 $ is:
+The result for factoring N = 91 is:
 
 ![IBM_result](./Images/ibm_result.PNG)
 
