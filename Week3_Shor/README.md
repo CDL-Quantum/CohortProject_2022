@@ -988,9 +988,283 @@ plt.show()
     
 
 
-#### Conclusion
+#### Limitations
 
 The posibility to find in a simulator try to use Shor's algorithm in a real problem sounds complciate, because the number of gates increse in a logaritmith gate, and the time of execution is exponential, similar to the cxlassical algorithm RSA. Exist the possibility to works with a quantum hardware, but the limitation of the number of qubits do this proposal limitate for now. when you can try with number of more of 5 digits.
+
+
+## Task 4: Business applications
+
+Even though organizations like NIST are establishing standards, it can take years or decades for them to be widely adopted (case in point: explore the history of the hash function SHA-1). It is likely that much of our data will still be vulnerable to quantum attack once large enough devices come online, despite having quantum-resistant algorithms available.
+
+To that end, your knowledge of Shor's algorithm is powerful, and with great power comes great responsibility. It is important not only to understand, but also to be able to convey to others the risks of using vulnerable cryptographic protocols, within both your own organization, and to organizations that you do business with.
+
+Suppose that your team is part of a company that has developed a new protocol which was selected by the (fictional) standards body QIST as one of its options for quantum-resistant cryptography. Using any type media you wish, design an advertisement for your product. Be creative! For example, you can make
+
+    A flashy web page
+    A TV commercial or infomercial
+    A script of a conversation between your company and a potential client
+    A slide deck for a business pitch
+
+The particulars of this fictional algorithm and how it works are not important. Rather, we will be judging how your creation portrays the risks and the benefits present in this situation.
+
+Develop your solution in your Business Application file, and don't forget to include a link to your 90-second video!
+
+
+For more details refer to the [Business Application found here](./Business_Application.md)
+
+
+## Further Challenges:
+* Try running your implementation of Shor's algorithm on any available quantum hardware
+
+
+# Challenge 1:
+
+Try running your implementation of Shor's algorithm on real quantum
+hardware. How large of a number can you successfully (and reliably) factor?
+
+
+If you want to check all the procces you can find use the notebook [Challenge 1](./Challenge.ipynb).
+
+# Implementation
+
+Import for mathematical operators, variables o functions from math; and import a integer random generator  from random library. And using time library for check timeexecution for methods in our proposal solution.
+
+
+```python
+from math import gcd,ceil, pi, log2
+from random import randint
+import time
+```
+
+Using in the framework qiskit for the quantum computing algorithm for this we use the Quantum fourier Transform predefine method with other to run in a simulator backend.
+
+
+```python
+# Importing standard Qiskit libraries
+from qiskit import QuantumCircuit, transpile, assemble, Aer, IBMQ
+from qiskit.circuit.library import QFT
+```
+
+Method to design any unitary gate using  the format $2^i mod(N)$
+
+
+```python
+def unitary_gate(data_qubits,value,exp,N):
+    qc = QuantumCircuit(data_qubits)
+    
+    ## find the output for the modulo  
+    const = (value**exp)%N
+    
+    # obtain the binary number with the same lenght
+    a = bin(const)[2:]
+    while len(a) < data_qubits:
+        a = '0'+a
+        
+    a=a[::-1]
+    
+    # consider a list for all the rotation we can reduce
+    list_a = [0]*data_qubits  
+    for i in range(data_qubits): 
+        if a[i] =='1':
+            k = 0
+            for j in range(i,data_qubits):
+                # save the values rotation in a
+                list_a[data_qubits-j-1] +=pi/float(2**(k))  
+                k+=1
+
+    # apply the result of the list in a quantum circuit
+    for i in range(data_qubits):
+        if list_a[i] != 0:
+            qc.p(list_a[i],i)
+            k+=1
+
+    # convert the quantum circuit into a quantum gate
+    return qc.to_gate(label=" [ "+ str(value)+"^"+str(exp)+"% "+str(N) + "] ") 
+```
+
+Design the quantum part from the Shor algorithm using Quantum Phase Estimation method and add a return value the qc.
+
+
+## Adder the quantum hardware
+
+Usin a quantum computer form IBM with 16 qubits.
+
+
+```python
+# load the token
+IBMQ.load_account()
+# select the provider
+provider = IBMQ.providers()[2]
+# select the backend 
+backend =provider.get_backend('ibmq_guadalupe')
+```
+
+Replace the **aer_sim** variable that is the `qasm_simulator` for the variable **backend** that works using `ibm_guadalupe`, 
+the next code replace the indication:
+
+`result = backend.run(qobj).result()
+    readings = result.get_counts()`
+
+
+```python
+def qpe(a,N):
+    # select the qubits for the quantum circuit 
+    n = len(bin(N)[2:])
+    m = int(ceil(log2(N)))
+    
+    qc = QuantumCircuit(n+m,n)
+    
+    # apply hadamard gates in the measurements qubits
+    qc.h(range(n)) 
+    qc.barrier()
+
+    # apply the untiary gates 
+    qc.h(range(n,m+n))
+    for i in range(n): 
+        qc.append(unitary_gate(m, a,i,N).control(1) ,[i]+[i for i in range(n,m+n)])
+    
+    qc.barrier()
+    
+    # apply inverse of the Quantum Fourier Transform QFT 
+    qc.append(QFT(n,do_swaps=False).inverse(),range(n))
+    
+    #measure only the qubits that are equals to the lenght of N
+    qc.measure(range(n), range(n))
+    
+    #not consider this backend
+    aer_sim = Aer.get_backend('aer_simulator')
+    
+    # apply the real hardware calling the variable backend
+    t_qc = transpile(qc, backend)
+    qobj = assemble(t_qc, shots=1)
+    result = backend.run(qobj).result()
+    readings = result.get_counts()
+    k = int(list(readings.keys())[0],2)/2**n
+    return k,qc
+
+```
+
+## Generate the shor algortihm
+
+connect our porposal of the Quantum Phase Estimation  to find the **m** value correct for the shor algorithm, and using the pseudo code provided for the task . for check the potential of the quantu malgorithm we don't consider the case when are not coprime value in the a variable.
+
+
+```python
+list_only_quantum = []
+list_quantum = []
+list_shor = []
+list_num_qubits = []
+list_num_gates = []
+list_num_nolocal_gates = []
+list_depth = []
+```
+
+
+```python
+def shor(N):
+    
+    p, q = 13, 23
+    
+    while p * q is not N:
+        
+        a = randint(2, N-2)
+        if gcd(a,N)!=1:
+            # we are lucky!
+            p = a
+            q = int(N / a)
+    
+        else:
+            #use a quantum computer to find order m of U_Na
+            start_time = time.time()
+            m,qc  = qpe(a,N)
+            list_only_quantum.append(time.time() - start_time)
+            if m %2 == 1:
+                # invalid
+                continue
+
+            else:
+                x = int((a ** m) % N)
+
+                if (x == 1 or x == -1) % N:
+                    # invalid
+                    continue
+                else:
+                    # valid!
+                    p = gcd(x - 1, N)
+                    q = gcd(x + 1, N)
+        #print(p,q,len(qc.qubits))
+    return p,q,qc
+```
+
+### Run algorithm
+
+Using our proposal solution with different values, and we using an extra library numpy for manipulate  list values
+
+
+```python
+import numpy as np
+```
+
+For the real quantum computer is of 16 qubits, the limit is  in that number, for that reason was used the input 91 that works with 14 qubits in the proposal of the Shor's algorithms of the task 2 and 3.
+
+
+```python
+inputs = [91]
+```
+
+Using the same idea of the Task , was compared the number of the qubits, the number of gates, the time and depth 2 times, because the real hardware is used from a cloud platform and we need ti wait to use the hardware with the quantum circuit.
+
+
+```python
+for i in inputs:
+     for j in range(2):
+        start_time_v2 = time.time()
+        p,q,qc1 = shor(i)
+        list_only_quantum.append(time.time() - start_time_v2)
+
+        list_num_qubits.append(len(qc1.qubits))
+        qc2 = qc1.decompose().decompose()
+        list_num_gates.append(qc2.size())
+        list_num_nolocal_gates.append(qc2.num_nonlocal_gates())
+        list_depth.append(qc2.depth())
+        list_quantum.append([np.average(list_only_quantum),np.std(list_only_quantum)])
+        list_only_quantum = []
+        print(i, len(qc1.qubits))
+```
+
+    91 14
+
+
+### Results
+
+The algorithm was used 2 times and their results for the algorithm is depends of p & q, where those are 13 and 7, in other words the quantum computer could find  the correct values.
+
+
+```python
+p,q
+```
+
+
+
+
+    (13, 7)
+
+
+
+The time for each iteratios is between, 22 and 32 seconds, that depends of the position in when the job was selected to use in the quantum platform. This porject can confirn  in secnds can find the value using a quantum computer
+
+
+```python
+list_quantum
+```
+
+
+
+
+    [[22.335453351338703, 8.487457141398883],
+     [32.86271196603775, 37.35823521336561]]
+
 
 
 
@@ -1002,10 +1276,7 @@ The posibility to find in a simulator try to use Shor's algorithm in a real prob
 [Beauregard, Stephane. (2002). Circuit for Shor's algorithm using 2n+3 qubits. Quantum information & computation. 3. 10.26421/QIC3.2-8.](https://arxiv.org/pdf/quant-ph/0205095.pdf)
 
 
-## Further Challenges:
-* Try running your implementation of Shor's algorithm on any available quantum hardware
-* Explore variational quantum factoring
-* Attempt factoring using quantum annealers
+
 
 ## Business Application
 For each week, your team is asked to complete a Business Application. Questions you will be asked are:
