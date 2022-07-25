@@ -1286,4 +1286,4 @@ For each week, your team is asked to complete a Business Application. Questions 
 * Identify at least one potential customer for this solution - i.e. a business who has this problem and would consider paying to have this problem solved.
 * Prepare a 90 second video explaining the value proposition of your innovation to this potential customer in non-technical language.
 
-FYuo can find the  [Business Application found here](./Business_Application.md)
+You can find the  [Business Application found here](./Business_Application.md)
