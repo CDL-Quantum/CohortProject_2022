@@ -76,6 +76,8 @@ For $N = 91$, our code calculates the factors to be (p,q) = (13,7). Since 13x7=9
 
 Our analysis shows that even using a classical order finding method, breaking RSA which uses 7 bit number (91 = 0b1011011) is very easy. It only takes ~15 microseconds to run the (rather unoptimized) code. That's just a 7 bit number though- we should expect that this will get much tougher for larger numbers.
 
+### Note
+
 After completing this work presented here, we found an implementation of Shor's algorithm for up to a 12-bit number, which can be found [here](https://github.com/toddwildey/shors-python/blob/master/shors.py). Unfortunately, we did not have time to investigate this software package, but the curious reader can try it out if they please!
 
 ## Task 3: Are we running Shor-t on time?
