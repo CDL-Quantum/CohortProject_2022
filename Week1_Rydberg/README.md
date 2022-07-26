@@ -211,14 +211,37 @@ Please see [task2_calculations.ipynb](./Calculations/task2_calculations.ipynb) f
 
 ![Challenge2_Smooth_pulse_shape](./Images/Challenge2_Smooth_pulse_shape.png)
 
-#### C2.4.3 Optimize through the Nelder-Mead method to make the right answers, more probable  
+## Tasks include:
+
+* Simulate the preparation of a quantum state in a 1D Rydberg atom array of 9 sites. [Julia file](https://github.com/MQS-mark/CohortProject_2022/blob/main/Week1_Rydberg/tasks_1_and_2.jl)
+
+* Explore the maximum number of atoms for which you can simulate the state quantum preparation procedure, and compare to the *blockade approximation*. [Julia file](https://github.com/MQS-mark/CohortProject_2022/blob/main/Week1_Rydberg/tasks_1_and_2.jl)
+
+* Find the solution for a Maximum Independent Set (MIS) problem using the adiabatic approach. [Julia file](https://github.com/MQS-mark/CohortProject_2022/blob/main/Week1_Rydberg/task_3.jl)
+
+* Turn your numerical tools onto a problem with an industrial application, e.g. from [this paper](https://arxiv.org/abs/2205.08500). [See business application](https://github.com/MQS-mark/CohortProject_2022/blob/main/Week1_Rydberg/Business_Application_final.md) where we tried to solve the Hubbard model for material design applications.
+
+#### C2.4.3 Optimize through the Nelder-Mead method to make the right answers, more probable
 
 For instance, look at the following sequences, as correct instances:
 (1) starts with 1001 and ends with 11 (no more 1s)
 (2) starts with 1001 and ends with 10001 (no more 1s) 
 
-![Challenge2_QAOA_Solution](./Images/Challenge2_QAOA_Solution.png)
 
+## Further Challenges:
+* Apply a tensor network strategy to the above problems.
+
+* Attempt other state preparation protocols, such as the Quantum Approximate Optimization Algorithm (QAOA).
+
+* Explore additional business applications beyond the groundstate preparation protocol. [Hubbard model](https://github.com/MQS-mark/CohortProject_2022/blob/main/Week1_Rydberg/Business_Application_final.md)
+
+* Employing the appropriate mapping, attempt to run your problems on real quantum computing hardware.
+
+## Business Application
+
+Business application for this project: [Hubbard model](https://github.com/MQS-mark/CohortProject_2022/blob/main/Week1_Rydberg/Business_Application_final.md)
+
+![Challenge2_QAOA_Solution](./Images/Challenge2_QAOA_Solution.png)
 
 # References
 [1] Albash, Tameem, and Daniel A. Lidar. "Adiabatic quantum computation." Reviews of Modern Physics 90.1 (2018): 015002.
